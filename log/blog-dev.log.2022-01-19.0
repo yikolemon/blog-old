@@ -1,0 +1,458 @@
+2022-01-19 23:03:25.882  INFO 6520 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication using Java 1.8.0_311 on DESKTOP-NAD1TLO with PID 6520 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-01-19 23:03:25.886 DEBUG 6520 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-01-19 23:03:25.887  INFO 6520 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-01-19 23:03:26.748  INFO 6520 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-19 23:03:26.756  INFO 6520 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-19 23:03:26.756  INFO 6520 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-19 23:03:26.812  INFO 6520 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-19 23:03:26.813  INFO 6520 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 895 ms
+2022-01-19 23:03:27.126  INFO 6520 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-19 23:03:27.280  INFO 6520 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-19 23:03:27.287  INFO 6520 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 1.963 seconds (JVM running for 2.735)
+2022-01-19 23:03:29.823  INFO 6520 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-19 23:03:29.823  INFO 6520 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-19 23:03:29.824  INFO 6520 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-01-19 23:03:29.882  INFO 6520 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:03:29.890  INFO 6520 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:04:24.657  INFO 6520 --- [http-nio-8080-exec-6] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:04:24.657  INFO 6520 --- [http-nio-8080-exec-6] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:04:35.881  INFO 6520 --- [http-nio-8080-exec-8] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/blog', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[]}
+2022-01-19 23:04:35.882  INFO 6520 --- [http-nio-8080-exec-8] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-01-19 23:07:22.382  INFO 8492 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication using Java 1.8.0_311 on DESKTOP-NAD1TLO with PID 8492 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-01-19 23:07:22.387 DEBUG 8492 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-01-19 23:07:22.387  INFO 8492 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-01-19 23:07:23.399  INFO 8492 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-19 23:07:23.405  INFO 8492 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-19 23:07:23.405  INFO 8492 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-19 23:07:23.454  INFO 8492 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-19 23:07:23.455  INFO 8492 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1021 ms
+2022-01-19 23:07:23.754  INFO 8492 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-19 23:07:23.931  INFO 8492 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-19 23:07:23.940  INFO 8492 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 2.02 seconds (JVM running for 2.556)
+2022-01-19 23:07:27.492  INFO 8492 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-19 23:07:27.492  INFO 8492 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-19 23:07:27.493  INFO 8492 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-01-19 23:07:27.544  INFO 8492 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:07:27.551  INFO 8492 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:08:24.303  INFO 8492 --- [http-nio-8080-exec-2] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:08:24.304  INFO 8492 --- [http-nio-8080-exec-2] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:08:26.533  INFO 8492 --- [http-nio-8080-exec-3] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:08:26.534  INFO 8492 --- [http-nio-8080-exec-3] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:08:30.417  INFO 8492 --- [http-nio-8080-exec-5] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:08:30.417  INFO 8492 --- [http-nio-8080-exec-5] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:09:20.992  INFO 9940 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication using Java 1.8.0_311 on DESKTOP-NAD1TLO with PID 9940 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-01-19 23:09:20.995 DEBUG 9940 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-01-19 23:09:20.995  INFO 9940 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-01-19 23:09:21.762  INFO 9940 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-19 23:09:21.768  INFO 9940 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-19 23:09:21.768  INFO 9940 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-19 23:09:21.814  INFO 9940 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-19 23:09:21.815  INFO 9940 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 782 ms
+2022-01-19 23:09:22.054  INFO 9940 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-19 23:09:22.173  INFO 9940 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-19 23:09:22.179  INFO 9940 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 1.56 seconds (JVM running for 2.093)
+2022-01-19 23:09:22.287  INFO 9940 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-19 23:09:22.288  INFO 9940 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-19 23:09:22.288  INFO 9940 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-01-19 23:09:22.335  INFO 9940 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:09:22.343  INFO 9940 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:09:24.599  INFO 9940 --- [http-nio-8080-exec-2] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:09:24.600  INFO 9940 --- [http-nio-8080-exec-2] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:09:36.404  INFO 11872 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication using Java 1.8.0_311 on DESKTOP-NAD1TLO with PID 11872 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-01-19 23:09:36.406 DEBUG 11872 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-01-19 23:09:36.406  INFO 11872 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-01-19 23:09:37.097  INFO 11872 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-19 23:09:37.103  INFO 11872 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-19 23:09:37.103  INFO 11872 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-19 23:09:37.159  INFO 11872 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-19 23:09:37.159  INFO 11872 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 720 ms
+2022-01-19 23:09:37.405  INFO 11872 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-19 23:09:37.527  INFO 11872 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-19 23:09:37.533  INFO 11872 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 1.492 seconds (JVM running for 2.065)
+2022-01-19 23:09:37.642  INFO 11872 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-19 23:09:37.642  INFO 11872 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-19 23:09:37.642  INFO 11872 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-01-19 23:09:37.691  INFO 11872 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:09:37.698  INFO 11872 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:09:39.374  INFO 11872 --- [http-nio-8080-exec-2] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:09:39.375  INFO 11872 --- [http-nio-8080-exec-2] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:09:40.772  INFO 11872 --- [http-nio-8080-exec-3] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:09:40.773  INFO 11872 --- [http-nio-8080-exec-3] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:10:09.003  INFO 3236 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication using Java 1.8.0_311 on DESKTOP-NAD1TLO with PID 3236 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-01-19 23:10:09.005 DEBUG 3236 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-01-19 23:10:09.005  INFO 3236 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-01-19 23:10:09.715  INFO 3236 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-19 23:10:09.720  INFO 3236 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-19 23:10:09.720  INFO 3236 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-19 23:10:09.764  INFO 3236 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-19 23:10:09.765  INFO 3236 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 724 ms
+2022-01-19 23:10:10.008  INFO 3236 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-19 23:10:10.127  INFO 3236 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-19 23:10:10.133  INFO 3236 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 1.541 seconds (JVM running for 2.073)
+2022-01-19 23:10:10.277  INFO 3236 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-19 23:10:10.278  INFO 3236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-19 23:10:10.279  INFO 3236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-01-19 23:10:10.334  INFO 3236 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:10:10.342  INFO 3236 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:10:16.669  INFO 3236 --- [http-nio-8080-exec-2] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:10:16.671  INFO 3236 --- [http-nio-8080-exec-2] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:10:19.177  INFO 3236 --- [http-nio-8080-exec-3] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:10:19.177  INFO 3236 --- [http-nio-8080-exec-3] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:10:21.442  INFO 3236 --- [http-nio-8080-exec-4] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:10:21.442  INFO 3236 --- [http-nio-8080-exec-4] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:10:24.922  INFO 3236 --- [http-nio-8080-exec-5] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:10:24.922  INFO 3236 --- [http-nio-8080-exec-5] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:10:26.859  INFO 3236 --- [http-nio-8080-exec-6] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:10:26.860  INFO 3236 --- [http-nio-8080-exec-6] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:10:32.177  INFO 3236 --- [http-nio-8080-exec-7] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:10:32.178  INFO 3236 --- [http-nio-8080-exec-7] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:20:18.112  INFO 576 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication using Java 1.8.0_311 on DESKTOP-NAD1TLO with PID 576 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-01-19 23:20:18.117 DEBUG 576 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-01-19 23:20:18.117  INFO 576 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-01-19 23:20:18.936  INFO 576 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-19 23:20:18.942  INFO 576 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-19 23:20:18.942  INFO 576 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-19 23:20:18.997  INFO 576 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-19 23:20:18.998  INFO 576 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 801 ms
+2022-01-19 23:20:19.235  INFO 576 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-19 23:20:19.354  INFO 576 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-19 23:20:19.360  INFO 576 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 1.865 seconds (JVM running for 2.391)
+2022-01-19 23:20:19.430  INFO 576 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-19 23:20:19.431  INFO 576 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-19 23:20:19.431  INFO 576 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-01-19 23:20:19.480  INFO 576 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='127.0.0.1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:20:19.488  INFO 576 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:21:09.695  INFO 4788 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication using Java 1.8.0_311 on DESKTOP-NAD1TLO with PID 4788 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-01-19 23:21:09.697 DEBUG 4788 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-01-19 23:21:09.697  INFO 4788 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-01-19 23:21:10.348  INFO 4788 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-19 23:21:10.354  INFO 4788 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-19 23:21:10.354  INFO 4788 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-19 23:21:10.407  INFO 4788 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-19 23:21:10.408  INFO 4788 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 683 ms
+2022-01-19 23:21:10.641  INFO 4788 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-19 23:21:10.763  INFO 4788 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-19 23:21:10.769  INFO 4788 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 1.41 seconds (JVM running for 1.913)
+2022-01-19 23:21:12.279  INFO 4788 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-19 23:21:12.279  INFO 4788 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-19 23:21:12.280  INFO 4788 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-01-19 23:21:12.295  INFO 4788 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:21:12.303  INFO 4788 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:24:57.602  INFO 9644 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication using Java 1.8.0_311 on DESKTOP-NAD1TLO with PID 9644 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-01-19 23:24:57.605 DEBUG 9644 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-01-19 23:24:57.605  INFO 9644 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-01-19 23:24:58.302  INFO 9644 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-19 23:24:58.308  INFO 9644 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-19 23:24:58.308  INFO 9644 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-19 23:24:58.355  INFO 9644 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-19 23:24:58.355  INFO 9644 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 718 ms
+2022-01-19 23:24:58.610  INFO 9644 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-19 23:24:58.733  INFO 9644 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-19 23:24:58.740  INFO 9644 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 1.667 seconds (JVM running for 2.414)
+2022-01-19 23:24:58.806  INFO 9644 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-19 23:24:58.806  INFO 9644 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-19 23:24:58.806  INFO 9644 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-01-19 23:24:58.857  INFO 9644 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='127.0.0.1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:24:58.864  INFO 9644 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:25:16.751  INFO 9644 --- [http-nio-8080-exec-2] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/types', ip='127.0.0.1', classMethod='com.yikolemon.web.IndexController.types', args=[]}
+2022-01-19 23:25:16.751  INFO 9644 --- [http-nio-8080-exec-2] com.yikolemon.aspect.LogAspect           : Result : types
+2022-01-19 23:25:31.323  INFO 9644 --- [http-nio-8080-exec-3] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/types', ip='127.0.0.1', classMethod='com.yikolemon.web.IndexController.types', args=[]}
+2022-01-19 23:25:31.323  INFO 9644 --- [http-nio-8080-exec-3] com.yikolemon.aspect.LogAspect           : Result : types
+2022-01-19 23:25:32.874  INFO 9644 --- [http-nio-8080-exec-4] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/types', ip='127.0.0.1', classMethod='com.yikolemon.web.IndexController.types', args=[]}
+2022-01-19 23:25:32.875  INFO 9644 --- [http-nio-8080-exec-4] com.yikolemon.aspect.LogAspect           : Result : types
+2022-01-19 23:26:18.382  INFO 4524 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication using Java 1.8.0_311 on DESKTOP-NAD1TLO with PID 4524 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-01-19 23:26:18.384 DEBUG 4524 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-01-19 23:26:18.384  INFO 4524 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-01-19 23:26:19.047  INFO 4524 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-19 23:26:19.052  INFO 4524 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-19 23:26:19.053  INFO 4524 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-19 23:26:19.108  INFO 4524 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-19 23:26:19.108  INFO 4524 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 684 ms
+2022-01-19 23:26:19.354  INFO 4524 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-19 23:26:19.473  INFO 4524 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-19 23:26:19.479  INFO 4524 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 1.459 seconds (JVM running for 2.076)
+2022-01-19 23:26:20.362  INFO 4524 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-19 23:26:20.362  INFO 4524 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-19 23:26:20.363  INFO 4524 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-01-19 23:26:20.379  INFO 4524 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/blog', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[]}
+2022-01-19 23:26:20.387  INFO 4524 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-01-19 23:26:23.806  INFO 4524 --- [http-nio-8080-exec-3] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/blog', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[]}
+2022-01-19 23:26:23.806  INFO 4524 --- [http-nio-8080-exec-3] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-01-19 23:26:25.954  INFO 4524 --- [http-nio-8080-exec-5] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/blog', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[]}
+2022-01-19 23:26:25.954  INFO 4524 --- [http-nio-8080-exec-5] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-01-19 23:26:34.890  INFO 6960 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication using Java 1.8.0_311 on DESKTOP-NAD1TLO with PID 6960 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-01-19 23:26:34.893 DEBUG 6960 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-01-19 23:26:34.893  INFO 6960 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-01-19 23:26:35.617  INFO 6960 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-19 23:26:35.623  INFO 6960 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-19 23:26:35.623  INFO 6960 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-19 23:26:35.669  INFO 6960 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-19 23:26:35.669  INFO 6960 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 744 ms
+2022-01-19 23:26:35.917  INFO 6960 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-19 23:26:36.039  INFO 6960 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-19 23:26:36.046  INFO 6960 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 1.509 seconds (JVM running for 2.092)
+2022-01-19 23:26:36.169  INFO 6960 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-19 23:26:36.170  INFO 6960 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-19 23:26:36.170  INFO 6960 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-01-19 23:26:36.220  INFO 6960 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/blog', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[]}
+2022-01-19 23:26:36.228  INFO 6960 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-01-19 23:26:38.139  INFO 6960 --- [http-nio-8080-exec-3] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/blog', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[]}
+2022-01-19 23:26:38.139  INFO 6960 --- [http-nio-8080-exec-3] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-01-19 23:26:50.879  INFO 9548 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication using Java 1.8.0_311 on DESKTOP-NAD1TLO with PID 9548 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-01-19 23:26:50.882 DEBUG 9548 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-01-19 23:26:50.882  INFO 9548 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-01-19 23:26:51.667  INFO 9548 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-19 23:26:51.673  INFO 9548 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-19 23:26:51.674  INFO 9548 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-19 23:26:51.722  INFO 9548 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-19 23:26:51.722  INFO 9548 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 779 ms
+2022-01-19 23:26:51.974  INFO 9548 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-19 23:26:52.094  INFO 9548 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-19 23:26:52.101  INFO 9548 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 1.572 seconds (JVM running for 2.112)
+2022-01-19 23:26:52.150  INFO 9548 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-19 23:26:52.150  INFO 9548 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-19 23:26:52.150  INFO 9548 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-01-19 23:26:52.198  INFO 9548 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/blog', ip='127.0.0.1', classMethod='com.yikolemon.web.IndexController.blog', args=[]}
+2022-01-19 23:26:52.204  INFO 9548 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-01-19 23:26:54.550  INFO 9548 --- [http-nio-8080-exec-3] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/blog', ip='127.0.0.1', classMethod='com.yikolemon.web.IndexController.blog', args=[]}
+2022-01-19 23:26:54.551  INFO 9548 --- [http-nio-8080-exec-3] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-01-19 23:27:41.858  INFO 9548 --- [http-nio-8080-exec-5] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/blog', ip='127.0.0.1', classMethod='com.yikolemon.web.IndexController.blog', args=[]}
+2022-01-19 23:27:41.859  INFO 9548 --- [http-nio-8080-exec-5] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-01-19 23:31:57.712  INFO 9548 --- [http-nio-8080-exec-10] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/blog', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[]}
+2022-01-19 23:31:57.713  INFO 9548 --- [http-nio-8080-exec-10] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-01-19 23:32:01.612  INFO 9548 --- [http-nio-8080-exec-2] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/blog', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[]}
+2022-01-19 23:32:01.612  INFO 9548 --- [http-nio-8080-exec-2] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-01-19 23:33:42.075  INFO 7360 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication using Java 1.8.0_311 on DESKTOP-NAD1TLO with PID 7360 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-01-19 23:33:42.077 DEBUG 7360 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-01-19 23:33:42.077  INFO 7360 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-01-19 23:33:42.788  INFO 7360 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-19 23:33:42.793  INFO 7360 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-19 23:33:42.794  INFO 7360 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-19 23:33:42.842  INFO 7360 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-19 23:33:42.842  INFO 7360 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 729 ms
+2022-01-19 23:33:43.086  INFO 7360 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-19 23:33:43.210  INFO 7360 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-19 23:33:43.217  INFO 7360 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 1.501 seconds (JVM running for 2.046)
+2022-01-19 23:33:46.892  INFO 7360 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-19 23:33:46.892  INFO 7360 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-19 23:33:46.893  INFO 7360 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-01-19 23:33:46.942  INFO 7360 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/blog', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[]}
+2022-01-19 23:33:46.949  INFO 7360 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-01-19 23:34:13.423  INFO 7360 --- [http-nio-8080-exec-5] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:34:13.423  INFO 7360 --- [http-nio-8080-exec-5] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:36:02.575  INFO 7360 --- [http-nio-8080-exec-8] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:36:02.576  INFO 7360 --- [http-nio-8080-exec-8] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:36:36.862  INFO 6032 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication using Java 1.8.0_311 on DESKTOP-NAD1TLO with PID 6032 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-01-19 23:36:36.865 DEBUG 6032 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-01-19 23:36:36.865  INFO 6032 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-01-19 23:36:37.531  INFO 6032 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-19 23:36:37.537  INFO 6032 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-19 23:36:37.538  INFO 6032 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-19 23:36:37.583  INFO 6032 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-19 23:36:37.583  INFO 6032 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 688 ms
+2022-01-19 23:36:37.822  INFO 6032 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-19 23:36:37.943  INFO 6032 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-19 23:36:37.949  INFO 6032 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 1.441 seconds (JVM running for 2.022)
+2022-01-19 23:36:38.006  INFO 6032 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-19 23:36:38.006  INFO 6032 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-19 23:36:38.006  INFO 6032 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-01-19 23:36:38.054  INFO 6032 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='127.0.0.1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:36:38.061  INFO 6032 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:39:08.042  INFO 6032 --- [http-nio-8080-exec-5] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:39:08.043  INFO 6032 --- [http-nio-8080-exec-5] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:39:14.847  INFO 6032 --- [http-nio-8080-exec-6] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:39:14.848  INFO 6032 --- [http-nio-8080-exec-6] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:40:16.042  INFO 6032 --- [http-nio-8080-exec-9] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:40:16.043  INFO 6032 --- [http-nio-8080-exec-9] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:40:46.151  INFO 3772 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication using Java 1.8.0_311 on DESKTOP-NAD1TLO with PID 3772 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-01-19 23:40:46.154 DEBUG 3772 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-01-19 23:40:46.154  INFO 3772 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-01-19 23:40:46.872  INFO 3772 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-19 23:40:46.878  INFO 3772 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-19 23:40:46.878  INFO 3772 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-19 23:40:46.924  INFO 3772 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-19 23:40:46.924  INFO 3772 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 737 ms
+2022-01-19 23:40:47.172  INFO 3772 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-19 23:40:47.307  INFO 3772 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-19 23:40:47.314  INFO 3772 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 1.525 seconds (JVM running for 2.064)
+2022-01-19 23:40:47.387  INFO 3772 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-19 23:40:47.388  INFO 3772 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-19 23:40:47.388  INFO 3772 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-01-19 23:40:47.437  INFO 3772 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='127.0.0.1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:40:47.444  INFO 3772 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:43:01.442  INFO 3772 --- [http-nio-8080-exec-5] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/types', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.types', args=[]}
+2022-01-19 23:43:01.443  INFO 3772 --- [http-nio-8080-exec-5] com.yikolemon.aspect.LogAspect           : Result : types
+2022-01-19 23:44:31.084  INFO 2364 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication using Java 1.8.0_311 on DESKTOP-NAD1TLO with PID 2364 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-01-19 23:44:31.086 DEBUG 2364 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-01-19 23:44:31.086  INFO 2364 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-01-19 23:44:31.754  INFO 2364 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-19 23:44:31.760  INFO 2364 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-19 23:44:31.760  INFO 2364 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-19 23:44:31.805  INFO 2364 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-19 23:44:31.805  INFO 2364 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 689 ms
+2022-01-19 23:44:32.044  INFO 2364 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-19 23:44:32.164  INFO 2364 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-19 23:44:32.170  INFO 2364 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 1.466 seconds (JVM running for 2.038)
+2022-01-19 23:44:32.347  INFO 2364 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-19 23:44:32.347  INFO 2364 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-19 23:44:32.347  INFO 2364 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-01-19 23:44:32.394  INFO 2364 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/types', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.types', args=[]}
+2022-01-19 23:44:32.402  INFO 2364 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Result : types
+2022-01-19 23:46:16.608  INFO 3040 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication using Java 1.8.0_311 on DESKTOP-NAD1TLO with PID 3040 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-01-19 23:46:16.610 DEBUG 3040 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-01-19 23:46:16.610  INFO 3040 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-01-19 23:46:17.278  INFO 3040 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-19 23:46:17.284  INFO 3040 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-19 23:46:17.285  INFO 3040 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-19 23:46:17.342  INFO 3040 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-19 23:46:17.343  INFO 3040 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 705 ms
+2022-01-19 23:46:17.636  INFO 3040 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-19 23:46:17.766  INFO 3040 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-19 23:46:17.773  INFO 3040 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 1.512 seconds (JVM running for 2.046)
+2022-01-19 23:46:18.042  INFO 3040 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-19 23:46:18.042  INFO 3040 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-19 23:46:18.043  INFO 3040 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-01-19 23:46:18.090  INFO 3040 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/types', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.types', args=[]}
+2022-01-19 23:46:18.098  INFO 3040 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Result : types
+2022-01-19 23:46:35.387  INFO 2680 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication using Java 1.8.0_311 on DESKTOP-NAD1TLO with PID 2680 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-01-19 23:46:35.389 DEBUG 2680 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-01-19 23:46:35.389  INFO 2680 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-01-19 23:46:35.920  INFO 11356 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication using Java 1.8.0_311 on DESKTOP-NAD1TLO with PID 11356 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-01-19 23:46:35.922 DEBUG 11356 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-01-19 23:46:35.923  INFO 11356 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-01-19 23:46:36.433  INFO 2680 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-19 23:46:36.440  INFO 2680 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-19 23:46:36.441  INFO 2680 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-19 23:46:36.499  INFO 2680 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-19 23:46:36.499  INFO 2680 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1069 ms
+2022-01-19 23:46:36.773  INFO 11356 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-19 23:46:36.779  INFO 11356 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-19 23:46:36.779  INFO 11356 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-19 23:46:36.813  INFO 2680 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-19 23:46:36.827  INFO 11356 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-19 23:46:36.828  INFO 11356 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 861 ms
+2022-01-19 23:46:37.014  INFO 2680 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-19 23:46:37.028  INFO 2680 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 2.152 seconds (JVM running for 3.192)
+2022-01-19 23:46:37.178  INFO 11356 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-19 23:46:37.311  WARN 11356 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2022-01-19 23:46:37.313  INFO 11356 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-01-19 23:46:37.335  INFO 11356 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-01-19 23:46:37.350 ERROR 11356 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2022-01-19 23:46:37.842  INFO 2680 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-19 23:46:37.842  INFO 2680 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-19 23:46:37.843  INFO 2680 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-01-19 23:46:37.867  INFO 2680 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/types', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.types', args=[]}
+2022-01-19 23:46:37.877  INFO 2680 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Result : types
+2022-01-19 23:47:26.412  INFO 2680 --- [http-nio-8080-exec-2] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/tags', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.tags', args=[]}
+2022-01-19 23:47:26.412  INFO 2680 --- [http-nio-8080-exec-2] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-01-19 23:48:51.864  INFO 2824 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication using Java 1.8.0_311 on DESKTOP-NAD1TLO with PID 2824 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-01-19 23:48:51.867 DEBUG 2824 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-01-19 23:48:51.868  INFO 2824 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-01-19 23:48:52.858  INFO 2824 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-19 23:48:52.863  INFO 2824 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-19 23:48:52.863  INFO 2824 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-19 23:48:52.908  INFO 2824 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-19 23:48:52.908  INFO 2824 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 958 ms
+2022-01-19 23:48:53.170  INFO 2824 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-19 23:48:53.327  INFO 2824 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-19 23:48:53.334  INFO 2824 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 1.924 seconds (JVM running for 2.436)
+2022-01-19 23:48:54.748  INFO 2824 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-19 23:48:54.748  INFO 2824 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-19 23:48:54.749  INFO 2824 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-01-19 23:48:54.800  INFO 2824 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/tags', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.tags', args=[]}
+2022-01-19 23:48:54.807  INFO 2824 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-01-19 23:49:27.929  INFO 2380 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication using Java 1.8.0_311 on DESKTOP-NAD1TLO with PID 2380 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-01-19 23:49:27.931 DEBUG 2380 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-01-19 23:49:27.931  INFO 2380 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-01-19 23:49:28.851  INFO 2380 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-19 23:49:28.865  INFO 2380 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-19 23:49:28.865  INFO 2380 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-19 23:49:28.941  INFO 2380 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-19 23:49:28.941  INFO 2380 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 978 ms
+2022-01-19 23:49:29.365  INFO 2380 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-19 23:49:29.591  INFO 2380 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-19 23:49:29.602  INFO 2380 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 2.009 seconds (JVM running for 2.527)
+2022-01-19 23:49:31.670  INFO 2380 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-19 23:49:31.670  INFO 2380 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-19 23:49:31.670  INFO 2380 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-01-19 23:49:31.718  INFO 2380 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/tags', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.tags', args=[]}
+2022-01-19 23:49:31.725  INFO 2380 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-01-19 23:49:34.393  INFO 2380 --- [http-nio-8080-exec-2] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/tags', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.tags', args=[]}
+2022-01-19 23:49:34.394  INFO 2380 --- [http-nio-8080-exec-2] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-01-19 23:49:49.324  INFO 11316 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication using Java 1.8.0_311 on DESKTOP-NAD1TLO with PID 11316 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-01-19 23:49:49.326 DEBUG 11316 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-01-19 23:49:49.326  INFO 11316 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-01-19 23:49:50.012  INFO 11316 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-19 23:49:50.017  INFO 11316 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-19 23:49:50.018  INFO 11316 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-19 23:49:50.062  INFO 11316 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-19 23:49:50.062  INFO 11316 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 702 ms
+2022-01-19 23:49:50.300  INFO 11316 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-19 23:49:50.420  INFO 11316 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-19 23:49:50.427  INFO 11316 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 1.462 seconds (JVM running for 1.992)
+2022-01-19 23:49:50.550  INFO 11316 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-19 23:49:50.550  INFO 11316 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-19 23:49:50.551  INFO 11316 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-01-19 23:49:50.599  INFO 11316 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/tags', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.tags', args=[]}
+2022-01-19 23:49:50.606  INFO 11316 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-01-19 23:50:48.420  INFO 11316 --- [http-nio-8080-exec-3] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/tags', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.tags', args=[]}
+2022-01-19 23:50:48.420  INFO 11316 --- [http-nio-8080-exec-3] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-01-19 23:51:18.692  INFO 11316 --- [http-nio-8080-exec-8] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:51:18.692  INFO 11316 --- [http-nio-8080-exec-8] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:54:13.200  INFO 11316 --- [http-nio-8080-exec-3] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:54:13.201  INFO 11316 --- [http-nio-8080-exec-3] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:56:53.008  INFO 11316 --- [http-nio-8080-exec-7] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/types', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.types', args=[]}
+2022-01-19 23:56:53.009  INFO 11316 --- [http-nio-8080-exec-7] com.yikolemon.aspect.LogAspect           : Result : types
+2022-01-19 23:56:59.169  INFO 11316 --- [http-nio-8080-exec-9] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/tags', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.tags', args=[]}
+2022-01-19 23:56:59.170  INFO 11316 --- [http-nio-8080-exec-9] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-01-19 23:57:13.946  INFO 11316 --- [http-nio-8080-exec-10] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/types', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.types', args=[]}
+2022-01-19 23:57:13.946  INFO 11316 --- [http-nio-8080-exec-10] com.yikolemon.aspect.LogAspect           : Result : types
+2022-01-19 23:57:17.667  INFO 11316 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:57:17.668  INFO 11316 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:57:25.285  INFO 11316 --- [http-nio-8080-exec-2] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/blog', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[]}
+2022-01-19 23:57:25.285  INFO 11316 --- [http-nio-8080-exec-2] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-01-19 23:57:33.993  INFO 11316 --- [http-nio-8080-exec-4] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/about', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.about', args=[]}
+2022-01-19 23:57:33.993  INFO 11316 --- [http-nio-8080-exec-4] com.yikolemon.aspect.LogAspect           : Result : about
+2022-01-19 23:57:50.161  INFO 11316 --- [http-nio-8080-exec-7] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:57:50.162  INFO 11316 --- [http-nio-8080-exec-7] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:57:58.991  INFO 11316 --- [http-nio-8080-exec-9] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/types', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.types', args=[]}
+2022-01-19 23:57:58.991  INFO 11316 --- [http-nio-8080-exec-9] com.yikolemon.aspect.LogAspect           : Result : types
+2022-01-19 23:58:21.800  INFO 11564 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication using Java 1.8.0_311 on DESKTOP-NAD1TLO with PID 11564 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-01-19 23:58:21.802 DEBUG 11564 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-01-19 23:58:21.802  INFO 11564 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-01-19 23:58:22.543  INFO 11564 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-19 23:58:22.549  INFO 11564 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-19 23:58:22.549  INFO 11564 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-19 23:58:22.595  INFO 11564 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-19 23:58:22.595  INFO 11564 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 760 ms
+2022-01-19 23:58:22.852  INFO 11564 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-19 23:58:22.981  INFO 11564 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-19 23:58:22.987  INFO 11564 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 1.543 seconds (JVM running for 2.085)
+2022-01-19 23:58:24.213  INFO 11564 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-19 23:58:24.213  INFO 11564 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-19 23:58:24.214  INFO 11564 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-01-19 23:58:24.265  INFO 11564 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/types', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.types', args=[]}
+2022-01-19 23:58:24.272  INFO 11564 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Result : types
+2022-01-19 23:58:36.648  INFO 11564 --- [http-nio-8080-exec-2] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:58:36.649  INFO 11564 --- [http-nio-8080-exec-2] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-19 23:58:42.569  INFO 11564 --- [http-nio-8080-exec-3] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/blog', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[]}
+2022-01-19 23:58:42.569  INFO 11564 --- [http-nio-8080-exec-3] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-01-19 23:59:21.005  INFO 11564 --- [http-nio-8080-exec-5] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/about', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.about', args=[]}
+2022-01-19 23:59:21.005  INFO 11564 --- [http-nio-8080-exec-5] com.yikolemon.aspect.LogAspect           : Result : about
+2022-01-19 23:59:59.133  INFO 11564 --- [http-nio-8080-exec-10] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-19 23:59:59.133  INFO 11564 --- [http-nio-8080-exec-10] com.yikolemon.aspect.LogAspect           : Result : index

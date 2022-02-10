@@ -1,0 +1,10 @@
+logging:
+  level:
+    root: info
+    com.yikolemon: debug
+  file:
+    name: log/blog-dev.log
+server:
+  port: 8080
+
+

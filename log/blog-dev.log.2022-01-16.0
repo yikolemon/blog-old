@@ -1,0 +1,336 @@
+2022-01-16 21:10:40.699  INFO 8324 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication using Java 1.8.0_311 on DESKTOP-NAD1TLO with PID 8324 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-01-16 21:10:40.701 DEBUG 8324 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-01-16 21:10:40.701  INFO 8324 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-01-16 21:10:41.452  INFO 8324 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-16 21:10:41.459  INFO 8324 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-16 21:10:41.471  INFO 8324 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-16 21:10:41.524  INFO 8324 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-16 21:10:41.524  INFO 8324 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 783 ms
+2022-01-16 21:10:41.933  INFO 8324 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-16 21:10:41.939  INFO 8324 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 1.631 seconds (JVM running for 2.181)
+2022-01-16 21:10:55.823  INFO 8324 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-16 21:10:55.823  INFO 8324 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-16 21:10:55.824  INFO 8324 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-01-16 21:10:55.874  INFO 8324 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-16 21:10:55.884 ERROR 8324 --- [http-nio-8080-exec-1] c.y.handler.ControllerExceptionHandler   : Requst URL : http://localhost:8080/，Exception : {}
+
+java.lang.ArithmeticException: / by zero
+	at com.yikolemon.web.IndexController.index(IndexController.java:17)
+	at com.yikolemon.web.IndexController$$FastClassBySpringCGLIB$$cb24de38.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:49)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at com.yikolemon.web.IndexController$$EnhancerBySpringCGLIB$$7408eb9c.index(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2022-01-16 21:11:01.208  INFO 8324 --- [http-nio-8080-exec-2] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-16 21:11:01.210 ERROR 8324 --- [http-nio-8080-exec-2] c.y.handler.ControllerExceptionHandler   : Requst URL : http://localhost:8080/，Exception : {}
+
+java.lang.ArithmeticException: / by zero
+	at com.yikolemon.web.IndexController.index(IndexController.java:17)
+	at com.yikolemon.web.IndexController$$FastClassBySpringCGLIB$$cb24de38.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:49)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at com.yikolemon.web.IndexController$$EnhancerBySpringCGLIB$$7408eb9c.index(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2022-01-16 21:18:44.768  INFO 1104 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication using Java 1.8.0_311 on DESKTOP-NAD1TLO with PID 1104 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-01-16 21:18:44.770 DEBUG 1104 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-01-16 21:18:44.770  INFO 1104 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-01-16 21:18:45.614  INFO 1104 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-16 21:18:45.621  INFO 1104 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-16 21:18:45.622  INFO 1104 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-16 21:18:45.685  INFO 1104 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-16 21:18:45.685  INFO 1104 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 870 ms
+2022-01-16 21:18:45.999  INFO 1104 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-16 21:18:46.153  INFO 1104 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-16 21:18:46.160  INFO 1104 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 1.781 seconds (JVM running for 2.371)
+2022-01-16 21:18:49.422  INFO 1104 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-16 21:18:49.422  INFO 1104 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-16 21:18:49.423  INFO 1104 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-01-16 21:18:49.472  INFO 1104 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-16 21:18:49.481 ERROR 1104 --- [http-nio-8080-exec-1] c.y.handler.ControllerExceptionHandler   : Requst URL : http://localhost:8080/，Exception : {}
+
+java.lang.ArithmeticException: / by zero
+	at com.yikolemon.web.IndexController.index(IndexController.java:14)
+	at com.yikolemon.web.IndexController$$FastClassBySpringCGLIB$$cb24de38.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:49)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at com.yikolemon.web.IndexController$$EnhancerBySpringCGLIB$$7408eb9c.index(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2022-01-16 21:20:00.810  INFO 8032 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication using Java 1.8.0_311 on DESKTOP-NAD1TLO with PID 8032 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-01-16 21:20:00.812 DEBUG 8032 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-01-16 21:20:00.813  INFO 8032 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-01-16 21:20:01.594  INFO 8032 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-16 21:20:01.601  INFO 8032 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-16 21:20:01.602  INFO 8032 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-16 21:20:01.652  INFO 8032 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-16 21:20:01.652  INFO 8032 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 798 ms
+2022-01-16 21:20:01.917  INFO 8032 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-16 21:20:02.051  INFO 8032 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-16 21:20:02.057  INFO 8032 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 1.625 seconds (JVM running for 2.137)
+2022-01-16 21:20:04.201  INFO 8032 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-16 21:20:04.201  INFO 8032 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-16 21:20:04.202  INFO 8032 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-01-16 21:20:50.336  INFO 8032 --- [http-nio-8080-exec-4] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-16 21:20:50.345  INFO 8032 --- [http-nio-8080-exec-4] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-16 21:21:07.001  INFO 8032 --- [http-nio-8080-exec-5] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-16 21:21:07.001  INFO 8032 --- [http-nio-8080-exec-5] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-16 21:21:22.518  INFO 8032 --- [http-nio-8080-exec-9] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-16 21:21:22.518  INFO 8032 --- [http-nio-8080-exec-9] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-16 21:21:34.451  INFO 8032 --- [http-nio-8080-exec-8] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-16 21:21:34.451  INFO 8032 --- [http-nio-8080-exec-8] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-16 21:22:40.700  INFO 8032 --- [http-nio-8080-exec-6] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-16 21:22:40.700  INFO 8032 --- [http-nio-8080-exec-6] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-16 21:22:43.877  INFO 8032 --- [http-nio-8080-exec-8] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/blog', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[]}
+2022-01-16 21:22:43.878  INFO 8032 --- [http-nio-8080-exec-8] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-01-16 21:23:49.933  INFO 8032 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-16 21:23:49.933  INFO 8032 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-16 21:23:53.552  INFO 8032 --- [http-nio-8080-exec-2] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-16 21:23:53.553  INFO 8032 --- [http-nio-8080-exec-2] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-16 21:24:20.956  INFO 11732 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication using Java 1.8.0_311 on DESKTOP-NAD1TLO with PID 11732 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-01-16 21:24:20.958 DEBUG 11732 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-01-16 21:24:20.958  INFO 11732 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-01-16 21:24:21.615  INFO 11732 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-16 21:24:21.621  INFO 11732 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-16 21:24:21.622  INFO 11732 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-16 21:24:21.670  INFO 11732 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-16 21:24:21.670  INFO 11732 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 686 ms
+2022-01-16 21:24:21.913  INFO 11732 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-16 21:24:22.044  INFO 11732 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-16 21:24:22.050  INFO 11732 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 1.428 seconds (JVM running for 1.913)
+2022-01-16 21:24:23.967  INFO 11732 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-16 21:24:23.967  INFO 11732 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-16 21:24:23.968  INFO 11732 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-01-16 21:24:24.017  INFO 11732 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-16 21:24:24.023  INFO 11732 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-16 21:25:25.533  INFO 1980 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication using Java 1.8.0_311 on DESKTOP-NAD1TLO with PID 1980 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-01-16 21:25:25.535 DEBUG 1980 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-01-16 21:25:25.535  INFO 1980 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-01-16 21:25:26.168  INFO 1980 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-16 21:25:26.174  INFO 1980 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-16 21:25:26.174  INFO 1980 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-16 21:25:26.218  INFO 1980 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-16 21:25:26.218  INFO 1980 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 651 ms
+2022-01-16 21:25:26.463  INFO 1980 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-16 21:25:26.593  INFO 1980 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-16 21:25:26.600  INFO 1980 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 1.415 seconds (JVM running for 2.095)
+2022-01-16 21:25:29.353  INFO 1980 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-16 21:25:29.353  INFO 1980 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-16 21:25:29.353  INFO 1980 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-01-16 21:25:29.406  INFO 1980 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-16 21:25:29.413  INFO 1980 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-16 21:25:35.007  INFO 1980 --- [http-nio-8080-exec-2] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-16 21:25:35.007  INFO 1980 --- [http-nio-8080-exec-2] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-16 21:25:54.546  INFO 7272 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication using Java 1.8.0_311 on DESKTOP-NAD1TLO with PID 7272 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-01-16 21:25:54.548 DEBUG 7272 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-01-16 21:25:54.548  INFO 7272 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-01-16 21:25:55.209  INFO 7272 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-16 21:25:55.215  INFO 7272 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-16 21:25:55.215  INFO 7272 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-16 21:25:55.259  INFO 7272 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-16 21:25:55.260  INFO 7272 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 685 ms
+2022-01-16 21:25:55.491  INFO 7272 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-16 21:25:55.610  INFO 7272 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-16 21:25:55.616  INFO 7272 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 1.401 seconds (JVM running for 1.887)
+2022-01-16 21:25:59.646  INFO 7272 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-16 21:25:59.647  INFO 7272 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-16 21:25:59.647  INFO 7272 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-01-16 21:25:59.693  INFO 7272 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-16 21:25:59.700  INFO 7272 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-16 21:26:09.426  INFO 7272 --- [http-nio-8080-exec-3] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[]}
+2022-01-16 21:26:09.426  INFO 7272 --- [http-nio-8080-exec-3] com.yikolemon.aspect.LogAspect           : Result : index
+2022-01-16 21:26:40.230  INFO 7272 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/blog', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[]}
+2022-01-16 21:26:40.231  INFO 7272 --- [http-nio-8080-exec-1] com.yikolemon.aspect.LogAspect           : Result : blog

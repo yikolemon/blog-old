@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragment :: basic-head(~{::title})">
+  <title>搜索结果</title>
+</head>
+<body>
+
+  <!--导航-->
+  <nav th:replace="fragment :: menu(1)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small"></nav>
+
+  <!--中间内容-->
+  <div  class="m-container m-padded-tb-big  animated fadeInUp">
+    <div class="ui container">
+
+      <!--header-->
+      <div class="ui top attached segment">
+        <div class="ui middle aligned eight column grid">
+          <div class="column"></div>
+          <div class="six wide column"><h3 class="ui miku-colour header">搜索结果</h3></div>
+          <div class="right aligned six wide column">
+            共 <h2 class="ui orange header m-inline-block m-text-thin" th:text="${pageInfo.getTotal()}"> 14 </h2> 篇
+          </div>
+          <div class="column"></div>
+        </div>
+      </div>
+
+      <div class="ui attached teal segment">
+        <div th:if="${pageInfo.getTotal()}==0">
+          <h1 align="middle" class="miku-colour">查找无数据</h1>
+        </div>
+        <div th:if="${pageInfo.getTotal()}!=0">
+          <div class="ui padded vertical segment m-padded-tb-large"  th:each="blog : ${pageInfo.list}">
+            <div class="ui middle aligned mobile reversed stackable grid">
+              <div class="eleven wide column">
+                <h3 class="ui header"><a class="m-black"  th:text="${blog.title}" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank">你真的理解什么是财富自由吗</a></h3>
+                <p class="m-text" th:if="${blog.description}!=null"  th:text=" |${blog.description}......|">正确做好任何一件事情的前提是清晰、正确的理解目标。而事实是，我们很多人很多时候根本没有对目标正确的定义，甚至根本从来就没有想过，只是大家都那么做而已…...</p>
+                <div class="ui grid">
+                  <div class="eleven wide column">
+                    <div class="ui mini horizontal link list">
+                      <div class="item">
+                        <img src="https://unsplash.it/100/100?image=1005" th:src="@{/images/me.png}" th:width="125px" th:height="125px" alt="" class="ui avatar image avatar-size">
+                        <div class="content"><a href="#" class="header" th:text="${blog.nickname}">李仁密</a></div>
+                      </div>
+                      <div class="item">
+                        <i class="calendar icon"></i><span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}">2017-10-01</span>
+                      </div>
+                      <div class="item">
+                        <i class="eye icon"></i> <span th:text="${blog.view}">2342</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="right aligned five wide column">
+                    <a href="#" target="_blank" class="ui teal basic label m-padded-tiny m-text-thin" th:text="${blog.typeName}">认知升级</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="five wide column" >
+                <a href="#" target="_blank" th:href="@{/blog/{id}(id=${blog.id})}">
+                  <img src="https://unsplash.it/800/450?image=1005" alt="" class="ui rounded image" align="middle" th:src="${blog.firstPicture}">
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!--底部上下页-->
+      <div class="ui bottom attached segment" th:if="${!pageInfo.isIsFirstPage()} or ${!pageInfo.isIsLastPage()}">
+        <div class="ui middle aligned two column grid">
+          <div class="column">
+            <div class="teal basic" align="middle">
+              <button class="miku-colour page-button" th:if="${!pageInfo.isIsFirstPage()}"
+                 onclick="index(this)" th:attr="data-page=${pageInfo.getPageNum()}-1">
+                上一页
+              </button>
+            </div>
+            <!--<a href="#" class="ui mini teal basic button">上一页</a>-->
+          </div>
+          <div class="right aligned column">
+            <div class="teal basic" align="middle">
+              <button class="miku-colour page-button" th:if="${!pageInfo.isIsLastPage()}"
+                 onclick="index(this)" th:attr="data-page=${pageInfo.getPageNum()}+1">
+                下一页
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <form method="post" th:action="@{/search}" id="index-form">
+    <input type="hidden" name="pageNum">
+    <input type="hidden" name="title" th:value="${title}">
+  </form>
+
+  <br>
+  <br>
+  <div th:if="${pageInfo.getTotal()}==0">
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+  </div>
+  <!--底部footer-->
+  <footer th:replace="fragment :: footer" class="ui inverted vertical segment m-padded-tb-massive"></footer>
+
+  <div th:replace="fragment::basic-script"></div>
+
+  <script>
+    $('.menu.toggle').click(function () {
+      $('.m-item').toggleClass('m-mobile-hide');
+    });
+    function index(obj) {
+      $("[name='pageNum']").val($(obj).data("page"));
+      var form = document.getElementById('index-form');
+      form.submit();
+    }
+
+  </script>
+</body>
+</html>

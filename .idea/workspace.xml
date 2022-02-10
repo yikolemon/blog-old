@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0bb89a36-baa6-42c5-943c-9284bb5985b3" name="默认更改列表" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="blog@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="blog@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="FxmlFile" />
+        <option value="Interface" />
+        <option value="JUnit4 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="F:\Java\Maven repository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../Maven/apache-maven-3.6.1" />
+        <option name="userSettingsFile" value="F:\Java\Maven\apache-maven-3.6.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="jdkForImporter" value="1.8" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="1.8" />
+  </component>
+  <component name="ProjectId" id="22uCpVXxlzDprpWmfLi0uPICP3E" />
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/images" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.yikolemon.web.admin" />
+      <recent name="com.yikolemon.util" />
+      <recent name="com.yikolemon.web" />
+      <recent name="com.yikolemon.service" />
+      <recent name="com.yikolemon.mapper" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.yikolemon" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\images" />
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\templates" />
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\templates\error" />
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\templates\admin" />
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\Jquery" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.yikolemon.pojo" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\images" />
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\templates" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.MyblogApplication">
+    <configuration name="put64" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yikolemon.web.put64" />
+      <module name="myblog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yikolemon.web.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BlogServiceImplTest.getLike" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myblog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yikolemon.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yikolemon.service" />
+      <option name="MAIN_CLASS_NAME" value="com.yikolemon.service.BlogServiceImplTest" />
+      <option name="METHOD_NAME" value="getLike" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileControllerTest.delete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myblog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yikolemon.web.admin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yikolemon.web.admin" />
+      <option name="MAIN_CLASS_NAME" value="com.yikolemon.web.admin.FileControllerTest" />
+      <option name="METHOD_NAME" value="delete" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileControllerTest.uploadImg" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myblog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yikolemon.web.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yikolemon.web" />
+      <option name="MAIN_CLASS_NAME" value="com.yikolemon.web.FileControllerTest" />
+      <option name="METHOD_NAME" value="uploadImg" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QiniuCloudUtilTest.upload" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myblog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yikolemon.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yikolemon.util" />
+      <option name="MAIN_CLASS_NAME" value="com.yikolemon.util.QiniuCloudUtilTest" />
+      <option name="METHOD_NAME" value="upload" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyblogApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="myblog" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.yikolemon.MyblogApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.FileControllerTest.delete" />
+        <item itemvalue="JUnit.QiniuCloudUtilTest.upload" />
+        <item itemvalue="Application.put64" />
+        <item itemvalue="JUnit.FileControllerTest.uploadImg" />
+        <item itemvalue="JUnit.BlogServiceImplTest.getLike" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand />
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0bb89a36-baa6-42c5-943c-9284bb5985b3" name="默认更改列表" comment="" />
+      <created>1640678267805</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1640678267805</updated>
+      <workItem from="1640678273110" duration="154000" />
+      <workItem from="1640678444601" duration="813000" />
+      <workItem from="1641642224180" duration="600000" />
+      <workItem from="1641818935074" duration="56000" />
+      <workItem from="1642331972641" duration="22000" />
+      <workItem from="1642332081114" duration="747000" />
+      <workItem from="1642335001823" duration="2235000" />
+      <workItem from="1642337254382" duration="1337000" />
+      <workItem from="1642338606763" duration="141000" />
+      <workItem from="1642338761362" duration="1051000" />
+      <workItem from="1642492556691" duration="10599000" />
+      <workItem from="1642604152316" duration="4048000" />
+      <workItem from="1642670244800" duration="14741000" />
+      <workItem from="1642687646979" duration="337000" />
+      <workItem from="1642760431691" duration="7087000" />
+      <workItem from="1642768875373" duration="9755000" />
+      <workItem from="1642780283120" duration="936000" />
+      <workItem from="1642781273758" duration="479000" />
+      <workItem from="1642854947894" duration="8551000" />
+      <workItem from="1642865282869" duration="599000" />
+      <workItem from="1642938008691" duration="9759000" />
+      <workItem from="1642948630865" duration="1886000" />
+      <workItem from="1642950527274" duration="93000" />
+      <workItem from="1642950626885" duration="93000" />
+      <workItem from="1642950731671" duration="209000" />
+      <workItem from="1642950962593" duration="3699000" />
+      <workItem from="1643014129894" duration="24760000" />
+      <workItem from="1643116732516" duration="7329000" />
+      <workItem from="1643124288293" duration="8470000" />
+      <workItem from="1643190615467" duration="15347000" />
+      <workItem from="1643259985512" duration="16391000" />
+      <workItem from="1643284842416" duration="269000" />
+      <workItem from="1643285126067" duration="453000" />
+      <workItem from="1643285586894" duration="811000" />
+      <workItem from="1643361081793" duration="21543000" />
+      <workItem from="1643453915042" duration="13470000" />
+      <workItem from="1643520928217" duration="14190000" />
+      <workItem from="1643546667784" duration="5258000" />
+      <workItem from="1643552946149" duration="560000" />
+      <workItem from="1643779247150" duration="40000" />
+      <workItem from="1643804452105" duration="9280000" />
+      <workItem from="1643868831089" duration="2649000" />
+      <workItem from="1643889380209" duration="1588000" />
+      <workItem from="1643892962611" duration="824000" />
+      <workItem from="1643948280489" duration="452000" />
+      <workItem from="1643948749073" duration="96000" />
+      <workItem from="1643948861740" duration="13666000" />
+      <workItem from="1644037075856" duration="10868000" />
+      <workItem from="1644054401456" duration="51000" />
+      <workItem from="1644123094029" duration="2290000" />
+      <workItem from="1644219220113" duration="13012000" />
+      <workItem from="1644306262140" duration="3662000" />
+      <workItem from="1644387452710" duration="15513000" />
+      <workItem from="1644475500806" duration="20136000" />
+      <workItem from="1644498286160" duration="3000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/main/resources/templates/admin/tags.html</url>
+          <line>38</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="tagIds[0].hash" />
+        <watch expression="blog" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/myblog$TypeServiceImplTest_getTypeTop.ic" NAME="TypeServiceImplTest.getTypeTop Coverage Results" MODIFIED="1643197994784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.yikolemon.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/myblog$MyblogApplication.ic" NAME="MyblogApplication Coverage Results" MODIFIED="1643807606370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>

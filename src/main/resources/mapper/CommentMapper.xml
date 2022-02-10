@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yikolemon.mapper.CommentMapper">
+
+    <!--saveComment-->
+    <update id="saveComment" parameterType="com.yikolemon.pojo.Comment">
+        insert into blog.t_comment values (#{id},#{nickname},#{email},
+        #{content},#{createTime},#{blogId},#{parentCommentId},#{parentNickname},#{flag})
+    </update>
+
+    <!--listCommentByBlogId-->
+    <select id="listCommentByBlogId" resultType="com.yikolemon.pojo.Comment">
+        select id,nickname,content,create_time,parent_comment_id,parent_nickname,flag
+        from t_comment where blog_id=#{blogId} order by id desc
+    </select>
+
+</mapper>

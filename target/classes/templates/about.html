@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragment :: basic-head(~{::title})">
+  <title>关于我</title>
+</head>
+<body>
+
+  <!--导航-->
+  <nav th:replace="fragment :: menu(5)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small"></nav>
+
+  <!--中间内容-->
+  <div  class="m-container m-padded-tb-big">
+    <div class="ui container">
+
+      <div class="ui grid">
+
+        <div class="ui stackable grid">
+          <!--左侧内容-->
+          <div class="eleven wide column animated fadeInLeft">
+            <div class="ui segment open-bg">
+              <h2 th:align="middle" class="m-margin-top">关于我</h2>
+              <p class="m-text p-indent" >&nbsp;&nbsp;物联网专业在校生一枚，主要进行java相关知识的学习，对Ardunio和单片机开发稍有了解。欢迎交流学习。</p>
+              <h2 th:align="middle" class="m-margin-top">关于本站</h2>
+              <p class="m-text p-indent" >&nbsp;&nbsp;本站使用thymeleaf结合springboot，前端模板使用semantic，组合开发。</p>
+              <p class="m-text p-indent">&nbsp;&nbsp;本站是一个技术性（其实没啥技术）的博客，我会将学习中的一些知识性总结内容放在这里，希望大家一起进步。</p>
+              <br>
+            </div>
+          </div>
+          <!--右侧内容-->
+          <div class="five wide column animated fadeInRight">
+            <div class="ui top attached segment open-bg" th:align="middle">
+              <img th:src="@{/images/me.png}" alt="" class="ui rounded image" th:width="274px">
+            </div>
+            <div class="ui attached segment open-bg">
+              <h3 th:align="middle">Yikolemon</h3>
+            </div>
+            <div class="ui attached segment open-bg">
+              <div class="ui pink basic left pointing label">编程</div>
+              <div class="ui pink basic left pointing label">漫画</div>
+              <div class="ui pink basic left pointing label">二次元</div>
+              <div class="ui pink basic left pointing label">摇滚</div>
+            </div>
+            <div class="ui attached segment open-bg">
+              <div class="ui violet basic left pointing label m-margin-tb-tiny">Java</div>
+              <div class="ui violet basic left pointing label m-margin-tb-tiny">C</div>
+              <div class="ui violet basic left pointing label m-margin-tb-tiny">Ardunio</div>
+              <div class="ui violet basic left pointing label m-margin-tb-tiny">Spring</div>
+              <div class="ui violet basic left pointing label m-margin-tb-tiny">SQL</div>
+              <div class="ui violet basic left pointing label m-margin-tb-tiny">...</div>
+            </div>
+            <div class="ui bottom attached segment open-bg">
+              <a href="https://github.com/Yikolemon" target="_blank" class="ui inverted circular icon button"><i class="black github icon"></i></a>
+              <a  class="ui inverted wechat circular icon button"><i class="green wechat icon"></i></a>
+              <a  class="ui inverted qq circular icon button" data-content="Yikolemon" data-position="bottom center"><i class="blue qq icon"></i></a>
+              <a  class="ui inverted email circular icon button" data-content="yikolemon@qq.com" data-position="bottom center"><i class="grey envelope icon"></i></a>
+              <div class="ui wechat-qr flowing popup bottom center transition hidden" style="inset: 50.8px auto auto 5.64996px;">
+                <img th:src="@{/images/wechat.jpg}" alt="" class="ui rounded image" style="width: 110px">
+              </div>
+            </div>
+
+            <div class="ui wechat-qr flowing popup transition hidden">
+              <img th:src="@{/images/me.png}"  alt="" class="ui rounded image" style="width: 110px">
+            </div>
+            </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!--底部footer-->
+  <br>
+  <br>
+  <footer th:replace="fragment :: footer" class="ui inverted vertical segment m-padded-tb-massive"></footer>
+
+  <div th:replace="fragment::basic-script"></div>
+
+  <script>
+    $('.menu.toggle').click(function () {
+      $('.m-item').toggleClass('m-mobile-hide');
+    });
+    $('.wechat').popup({
+      popup : $('.wechat-qr'),
+      position: 'bottom center',
+    });
+    $('.email').popup()
+    $('.qq').popup();
+  </script>
+
+</body>
+</html>
