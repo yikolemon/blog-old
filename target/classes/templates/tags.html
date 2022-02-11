@@ -42,7 +42,7 @@
                   <div class="ui mini horizontal link list">
                     <div class="item">
                       <img src="https://unsplash.it/100/100?image=1005" th:src="@{/images/me.png}" th:width="125px" th:height="125px" alt="" class="ui avatar image avatar-size">
-                      <div class="content"><a th:href="@{/about}" class="header" th:text="${blog.nickname}">李仁密</a></div>
+                      <div class="content"><a th:href="@{/about}" class="header" th:text="${blog.nickname}">姓名</a></div>
                     </div>
                     <div class="item">
                       <i class="calendar icon"></i><span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}">2017-10-01</span>
@@ -53,14 +53,14 @@
                   </div>
                 </div>
                 <div class="right aligned five wide column">
-                  <a href="#" target="_blank" class="ui teal basic label m-padded-tiny m-text-thin" th:text="${blog.typeName}" th:href="@{/types/{id}(id=${blog.typeId})}">认知升级</a>
+                  <a href="#" target="_blank" class="ui blog-type basic label m-padded-tiny m-text-thin" th:text="${blog.typeName}" th:href="@{/types/{id}(id=${blog.typeId})}">认知升级</a>
                 </div>
               </div>
             </div>
 
             <div class="five wide column" >
               <a href="#" target="_blank" th:href="@{/blog/{id}(id=${blog.id})}">
-                <img src="https://unsplash.it/800/450?image=1005" alt="" class="ui rounded image" align="middle" th:src="${blog.firstPicture}">
+                <img src="#" alt="" class="ui rounded image img-hover" align="middle" th:src="${blog.firstPicture}">
               </a>
             </div>
 

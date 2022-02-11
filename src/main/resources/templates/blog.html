@@ -6,10 +6,10 @@
 <body>
 
   <!--导航-->
-  <nav th:replace="fragment :: menu(1)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small" ></nav>
+  <nav th:replace="fragment :: menu(1)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small"></nav>
 
   <!--中间内容-->
-  <div id="waypoint" class="m-container-big m-padded-tb-big animated fadeInUp ">
+  <div  class="m-container-big m-padded-tb-big animated fadeInUp " id="waypoint" >
     <input type="hidden" name="blog.id.hidden" th:value="${blog.id}">
     <div class="ui container">
       <div class="ui top attached segment open-bg">
@@ -169,7 +169,7 @@
     </div>
   </div>
 
-  <div id="toolbar" class="m-padded m-fixed m-right-bottom" style="display: none">
+  <div id="toolbar" class="m-padded animated fadeIn m-fixed m-right-bottom" style="display: none">
     <div class="ui vertical icon buttons ">
       <button type="button" class="ui toc teal button" >目录</button>
       <a href="#comment-container" class="ui teal button" th:if="${blog.commentabled}==true">留言</a>
@@ -198,9 +198,27 @@
   <div th:replace="fragment :: blog-script"></div>
 
   <script>
+  var waypoint = new Waypoint({
+    element: document.getElementById('waypoint'),
+    handler: function(direction) {
+      if (direction == 'down') {
+        $('#toolbar').show();
+      } else {
+          $('#toolbar').hide();
+      }
+      console.log('Scrolled to waypoint!  ' + direction);
+    }
+  });
+  </script>
+
+  <script>
 
     $('.menu.toggle').click(function () {
       $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    $('#toTop-button').click(function () {
+      $(window).scrollTo(0,500);
     });
 
 
@@ -232,23 +250,7 @@
       colorLight : "#ffffff",
       correctLevel : QRCode.CorrectLevel.H
     });
-    
-    $('#toTop-button').click(function () {
-      $(window).scrollTo(0,500);
-    });
 
-
-    var waypoint = new Waypoint({
-      element: document.getElementById('waypoint'),
-      handler: function(direction) {
-        if (direction == 'down') {
-          $('#toolbar').show(60);
-        } else {
-          $('#toolbar').hide(500);
-        }
-        console.log('Scrolled to waypoint!  ' + direction);
-      }
-    })
 
     $('.ui.form').form({
       fields : {

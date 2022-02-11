@@ -24,12 +24,14 @@ F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\web\ArchiveBlogControll
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\service\TagServiceImpl.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\web\CommentController.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\MyblogApplication.java
+F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\web\TestController.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\service\TagBlogServiceImpl.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\service\TypeService.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\pojo\Type.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\mapper\BlogMapper.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\aspect\LogAspect.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\queue\IndexType.java
+F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\json\Img.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\web\admin\LoginController.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\util\TagBlogUtils.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\web\LikeController.java

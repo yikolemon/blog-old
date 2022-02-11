@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="../static/lib/prism/prism.css" th:href="@{/lib/prism/prism.css}">
   <link rel="stylesheet" href="../static/lib/tocbot/tocbot.css" th:href="@{/lib/tocbot/tocbot.css}">
   <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}">
+  <link rel="icon" href="/favicon.ico" th:href="@{/favicon.ico}">
 </head>
 
 <head th:fragment="basic-head(title)">
@@ -18,7 +19,11 @@
   <title th:replace="${title}">博客详情</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
   <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}">
-    <link rel="stylesheet" href="../static/css/animate.css" th:href="@{/css/animate.css}">
+  <link rel="stylesheet" href="../static/css/animate.css" th:href="@{/css/animate.css}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+  <link rel="icon" href="/favicon.ico" th:href="@{/favicon.ico}">
+  <script th:src="@{/lib/live2d/autoload.js}"></script>
+
 </head>
 
 
@@ -85,7 +90,7 @@
   <script src="../static/lib/prism/prism.js" th:src="@{/lib/prism/prism.js}"></script>
   <script src="../static/lib/tocbot/tocbot.min.js" th:src="@{/lib/tocbot/tocbot.min.js}"></script>
   <script src="../static/lib/qrcode/qrcode.min.js" th:src="@{/lib/qrcode/qrcode.min.js}"></script>
-  <script src="../static/lib/waypoints/jquery.waypoints.min.js" th:src="@{/lib/waypoints/jquery.waypoints.min.js}"></script>
+  <script src="../static/lib/waypoints/jquery.waypoints.min.js" th:src="@{/lib/waypoints/jquery.waypoints.js}"></script>
 </th:block>
 
 <!--基本的js和css-->

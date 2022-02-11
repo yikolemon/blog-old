@@ -1,5 +1,4 @@
-
-/*package com.yikolemon.interceptor;
+package com.yikolemon.interceptor;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -14,5 +13,5 @@ public class WebConfig implements WebMvcConfigurer {
                 .excludePathPatterns("/admin")
                 .excludePathPatterns("/admin/login");
     }
-}*/
+}
 

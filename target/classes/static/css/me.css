@@ -208,6 +208,11 @@ body {
     border-color: #93D6D6 !important;
     background: white !important;
 }
+.miku-label-right:hover{
+    color: #00000066 !important;
+    border-color: #00000066 !important;
+    background: #ffffffe6 !important;
+}
 .a-colour{
     color: #666 !important;
 }
@@ -236,6 +241,25 @@ body {
 }
 .upload-margin{
     margin-left: 0.5em !important;
+}
+.img-hover{
+    -webkit-transition: .5s ease;
+}
+.img-hover:hover{
+     transform: scale(1.1);
+}
+.m-black:hover{
+    color: #93D6D6 !important;
+}
+.blog-type{
+    color: #93d6d6 !important;
+    background: #ffffff4d !important;
+    border: 1px solid #93d6d6 !important;
+}
+.blog-type:hover{
+    color: #00000066 !important;
+    border-color: #00000066 !important;
+    background: #ffffffe6 !important;
 }
 @media screen and (max-width: 768px){
     .m-mobile-hide {

@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0bb89a36-baa6-42c5-943c-9284bb5985b3" name="默认更改列表" comment="" />
+    <list default="true" id="0bb89a36-baa6-42c5-943c-9284bb5985b3" name="默认更改列表" comment="">
+      <change beforePath="$PROJECT_DIR$/Myblog/src/main/resources/static/lib/waypoints/jquery.waypoints.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Myblog/src/main/resources/static/lib/waypoints/jquery.waypoints.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Myblog/target/classes/static/lib/waypoints/jquery.waypoints.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Myblog/target/classes/static/lib/waypoints/jquery.waypoints.min.js" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +48,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Myblog" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -62,6 +70,7 @@
     <option name="jreName" value="1.8" />
   </component>
   <component name="ProjectId" id="22uCpVXxlzDprpWmfLi0uPICP3E" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RequestMappingsPanelOrder0" value="0" />
@@ -73,13 +82,13 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/lib/waypoints" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -92,22 +101,25 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static" />
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources" />
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib" />
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\templates\test" />
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\images" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.yikolemon" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\images" />
-      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\templates" />
-      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\templates\error" />
-      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\templates\admin" />
-      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\Jquery" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.yikolemon.pojo" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\images" />
-      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\templates" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib\waypoints" />
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib\scrollwatch" />
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static" />
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib" />
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib\live2d" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -292,11 +304,27 @@
       <workItem from="1644387452710" duration="15513000" />
       <workItem from="1644475500806" duration="20136000" />
       <workItem from="1644498286160" duration="3000" />
+      <workItem from="1644500582362" duration="479000" />
+      <workItem from="1644557957531" duration="16371000" />
+      <workItem from="1644585241270" duration="648000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -319,6 +347,6 @@
     <SUITE FILE_PATH="coverage/myblog$TypeServiceImplTest_getTypeTop.ic" NAME="TypeServiceImplTest.getTypeTop Coverage Results" MODIFIED="1643197994784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.yikolemon.service.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/myblog$MyblogApplication.ic" NAME="MyblogApplication Coverage Results" MODIFIED="1643807606370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/myblog$MyblogApplication.ic" NAME="MyblogApplication Coverage Results" MODIFIED="1644583466491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

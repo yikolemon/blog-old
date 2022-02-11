@@ -5,6 +5,7 @@ com\yikolemon\util\MarkdownUtils.class
 com\yikolemon\NotFoundException.class
 com\yikolemon\util\TopConfig.class
 com\yikolemon\MyblogApplication.class
+com\yikolemon\json\Img.class
 com\yikolemon\service\UserService.class
 com\yikolemon\web\admin\AboutController.class
 com\yikolemon\service\TypeService.class
@@ -32,6 +33,7 @@ com\yikolemon\web\ArchiveBlogController.class
 com\yikolemon\web\CommentController.class
 com\yikolemon\service\TagBlogServiceImpl.class
 com\yikolemon\service\BlogServiceImpl.class
+com\yikolemon\interceptor\WebConfig.class
 com\yikolemon\util\MarkdownUtils$1.class
 com\yikolemon\util\QiniuCloudUtil$Ret.class
 com\yikolemon\service\TagServiceImpl.class
@@ -47,6 +49,7 @@ com\yikolemon\service\UserServiceImpl.class
 com\yikolemon\queue\SearchBlog.class
 com\yikolemon\web\admin\TypeController.class
 com\yikolemon\web\LikeController.class
+com\yikolemon\web\TestController.class
 com\yikolemon\service\TypeServiceImpl.class
 com\yikolemon\service\TagService.class
 com\yikolemon\util\MarkdownUtils$CustomAttributeProvider.class

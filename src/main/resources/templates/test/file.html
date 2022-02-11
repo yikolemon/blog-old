@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragment :: basic-head(~{::title})">
+    <title>文件</title>
+</head>
+<body>
+
+<!--<form th:action="@{/getfile}" method="post" enctype="multipart/form-data">
+    <input type="file" name="img">
+    <input type="submit">
+</form>-->
+<button onclick="show()">测试</button>
+<div class="ui modal">
+    <input type="hidden" id="filename">
+    <div class="header">
+        图片上传七牛云
+    </div>
+    <i class="close icon"></i>
+    <div id="img-container">
+        <div class="contant modal-padding" align="middle">
+            <h2 class="modal-tittle" id="title">请提交图片</h2>
+            <button  class="ui button disabled" id="url" onclick="copy()">复制url</button>
+            <button class="ui button disabled" id="delete" onclick="img_delete()">删除图片</button>
+        </div>
+        <div class="content" align="middle">
+            <img src="#" th:src="@{/static/images/tip.png}" class="modal-img" id="img">
+        </div>
+    </div>
+
+    <div class="contant modal-padding" align="middle">
+        <form th:action="@{/getfile}" method="post" enctype="multipart/form-data">
+            <input type="file" name="upload_img" class="ui button" id="file">
+            <button class="ui button" type="button" onclick="upload()">上传</button>
+        </form>
+
+    </div>
+    <br>
+
+    <div class="actions" style="padding: 2em"></div>
+
+</div>
+<div th:replace="fragment::basic-script"></div>
+<script>
+   function show() {
+       console.log("函数");
+       $('.ui.modal')
+           .modal('show')
+       ;
+   }
+
+   function upload() {
+       var fileInput = $('#file').get(0).files[0];
+       if (fileInput){
+            load();
+           $('#url').removeClass("disabled");
+           $('#delete').removeClass("disabled");
+       }else {
+          alert("请选择要上传的文件");
+       }
+   }
+   function load() {
+       var files = $('#file').prop('files');
+       var data = new FormData();
+       data.append('img', files[0]);
+       $.ajax({
+           type: 'POST',
+           url: "/admin/getfile",
+           data: data,
+           cache: false,
+           processData: false,
+           contentType: false,
+           dataType: 'json',
+           success: function (data) {
+               $("#title").text(data.src);
+               $("#img").attr('src',data.src);
+               $("#filename").val(data.filename);
+           }
+       });
+   }
+   
+   function copy() {
+       $("#title").after("<input id='copyVal'></input>");
+       var text =$("#title").text();
+       console.log(text)
+       var input = document.getElementById("copyVal");
+       input.value = text;//修改文本框的内容
+       input.select();// 选中文本
+       document.execCommand("copy");//执行浏览器复制命令
+       $("#copyVal").remove();
+       alert("复制成功");
+   }
+   
+   function img_delete() {
+       var params={
+           "filename" : $("#filename").val()
+       };
+       $.ajax({
+           type: 'POST',
+           ansyv:true,
+           url: "/admin/delete",
+           data:params,
+           dataType: 'json',
+           success: function (data) {
+               $("#img").attr('src',"/images/tip.png");
+               $("#title").text("请提交图片");
+               $('#url').addClass("disabled");
+               $('#delete').addClass("disabled");
+               alert(data.msg);
+           }
+       });
+   }
+
+</script>
+</body>
+</html>
