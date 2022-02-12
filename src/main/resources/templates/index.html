@@ -4,7 +4,6 @@
   <title>博客</title>
 </head>
 <body>
-
   <!--导航-->
   <nav th:replace="fragment :: menu(1)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small"></nav>
 
@@ -177,7 +176,6 @@
   <footer th:replace="fragment :: footer" class="ui inverted vertical segment m-padded-tb-massive"></footer>
 
   <div th:replace="fragment::basic-script"></div>
-
   <script>
     $('.menu.toggle').click(function () {
       $('.m-item').toggleClass('m-mobile-hide');
@@ -187,8 +185,7 @@
       var form = document.getElementById('index-form');
       form.submit();
     }
-
   </script>
-
 </body>
+
 </html>

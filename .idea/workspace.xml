@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0bb89a36-baa6-42c5-943c-9284bb5985b3" name="默认更改列表" comment="">
-      <change beforePath="$PROJECT_DIR$/Myblog/src/main/resources/static/lib/waypoints/jquery.waypoints.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Myblog/src/main/resources/static/lib/waypoints/jquery.waypoints.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Myblog/target/classes/static/lib/waypoints/jquery.waypoints.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Myblog/target/classes/static/lib/waypoints/jquery.waypoints.min.js" beforeDir="false" />
-    </list>
+    <list default="true" id="0bb89a36-baa6-42c5-943c-9284bb5985b3" name="默认更改列表" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +77,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/lib/waypoints" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/lib/music" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -101,25 +96,25 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.yikolemon" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib\music" />
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib\click" />
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib\waypoints" />
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib\scrollwatch" />
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.yikolemon.pojo" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static" />
       <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources" />
       <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib" />
       <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\templates\test" />
       <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\images" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.yikolemon" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.yikolemon.pojo" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib\waypoints" />
-      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib\scrollwatch" />
-      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static" />
-      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib" />
-      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib\live2d" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -306,7 +301,8 @@
       <workItem from="1644498286160" duration="3000" />
       <workItem from="1644500582362" duration="479000" />
       <workItem from="1644557957531" duration="16371000" />
-      <workItem from="1644585241270" duration="648000" />
+      <workItem from="1644585241270" duration="2885000" />
+      <workItem from="1644642780798" duration="7599000" />
     </task>
     <servers />
   </component>
@@ -333,6 +329,12 @@
           <url>file://$PROJECT_DIR$/src/main/resources/templates/admin/tags.html</url>
           <line>38</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/main/resources/templates/index.html</url>
+          <line>179</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

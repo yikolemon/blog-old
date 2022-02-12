@@ -1,3 +1,4 @@
+/*
 package com.yikolemon.web;
 
 import org.springframework.stereotype.Controller;
@@ -9,4 +10,10 @@ public class TestController {
     public String getlive2d(){
         return "test/demo2";
     }
+
+    @GetMapping("/music")
+    public String music(){
+        return "test/music";
+    }
 }
+*/

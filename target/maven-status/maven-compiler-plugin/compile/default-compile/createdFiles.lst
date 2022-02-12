@@ -49,7 +49,6 @@ com\yikolemon\service\UserServiceImpl.class
 com\yikolemon\queue\SearchBlog.class
 com\yikolemon\web\admin\TypeController.class
 com\yikolemon\web\LikeController.class
-com\yikolemon\web\TestController.class
 com\yikolemon\service\TypeServiceImpl.class
 com\yikolemon\service\TagService.class
 com\yikolemon\util\MarkdownUtils$CustomAttributeProvider.class
