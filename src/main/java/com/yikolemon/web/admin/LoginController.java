@@ -30,7 +30,7 @@ public class LoginController {
                         HttpSession session,
                         RedirectAttributes attributes
     ){
-        User user=userService.checkUser(username,password);
+        User user=userService.checkUser(username,password);//这里是md5加密的密码
         if(user!=null){
             user.setPassword(null);
             session.setAttribute("user",user);

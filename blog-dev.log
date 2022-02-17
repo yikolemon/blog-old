@@ -1,0 +1,65 @@
+2022-02-15 23:51:35.086 ERROR 1232 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under 'logging.level' to java.util.Map<java.lang.String, org.springframework.boot.logging.LogLevel>
+	at org.springframework.boot.context.properties.bind.Binder.handleBindError(Binder.java:364)
+	at org.springframework.boot.context.properties.bind.Binder.bind(Binder.java:324)
+	at org.springframework.boot.context.properties.bind.Binder.bind(Binder.java:308)
+	at org.springframework.boot.context.properties.bind.Binder.bind(Binder.java:238)
+	at org.springframework.boot.context.properties.bind.Binder.bind(Binder.java:212)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.setLogLevels(LoggingApplicationListener.java:398)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeFinalLoggingLevels(LoggingApplicationListener.java:338)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:289)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:76)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:345)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.yikolemon.MyblogApplication.main(MyblogApplication.java:10)
+Caused by: org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [java.lang.String] to type [java.util.Map<java.lang.String, org.springframework.boot.logging.LogLevel>]
+	at org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:321)
+	at org.springframework.core.convert.support.GenericConversionService.convert(GenericConversionService.java:194)
+	at org.springframework.boot.context.properties.bind.BindConverter$CompositeConversionService.convert(BindConverter.java:170)
+	at org.springframework.boot.context.properties.bind.BindConverter.convert(BindConverter.java:96)
+	at org.springframework.boot.context.properties.bind.BindConverter.convert(BindConverter.java:88)
+	at org.springframework.boot.context.properties.bind.MapBinder.bindAggregate(MapBinder.java:64)
+	at org.springframework.boot.context.properties.bind.AggregateBinder.bind(AggregateBinder.java:56)
+	at org.springframework.boot.context.properties.bind.Binder.lambda$bindAggregate$3(Binder.java:415)
+	at org.springframework.boot.context.properties.bind.Binder$Context.withIncreasedDepth(Binder.java:572)
+	at org.springframework.boot.context.properties.bind.Binder$Context.access$100(Binder.java:513)
+	at org.springframework.boot.context.properties.bind.Binder.bindAggregate(Binder.java:415)
+	at org.springframework.boot.context.properties.bind.Binder.bindObject(Binder.java:376)
+	at org.springframework.boot.context.properties.bind.Binder.bind(Binder.java:320)
+	... 19 common frames omitted
+
+2022-02-15 23:52:38.175  INFO 9864 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication on DESKTOP-NAD1TLO with PID 9864 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-02-15 23:52:38.178 DEBUG 9864 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2022-02-15 23:52:38.179  INFO 9864 --- [main] com.yikolemon.MyblogApplication          : No active profile set, falling back to default profiles: default
+2022-02-15 23:52:39.683  INFO 9864 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-15 23:52:39.695  INFO 9864 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-15 23:52:39.695  INFO 9864 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2022-02-15 23:52:39.834  INFO 9864 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-15 23:52:39.834  INFO 9864 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1599 ms
+2022-02-15 23:52:40.683  INFO 9864 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-15 23:52:40.799  INFO 9864 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-02-15 23:52:41.208  INFO 9864 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-15 23:52:41.212  INFO 9864 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 3.763 seconds (JVM running for 5.017)
+2022-02-15 23:54:24.173  INFO 9864 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-02-15 23:54:28.389  INFO 6084 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication on DESKTOP-NAD1TLO with PID 6084 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-02-15 23:54:28.394  INFO 6084 --- [main] com.yikolemon.MyblogApplication          : No active profile set, falling back to default profiles: default
+2022-02-15 23:54:30.036  INFO 6084 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-15 23:54:30.049  INFO 6084 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-15 23:54:30.050  INFO 6084 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2022-02-15 23:54:30.217  INFO 6084 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-15 23:54:30.218  INFO 6084 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1760 ms
+2022-02-15 23:54:31.165  INFO 6084 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-15 23:54:31.288  INFO 6084 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-02-15 23:54:31.768  INFO 6084 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-15 23:54:31.772  INFO 6084 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 4.183 seconds (JVM running for 5.434)
+2022-02-15 23:58:58.362  INFO 6084 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

@@ -2,15 +2,15 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <!--http://www.thymeleaf.org-->
 <head th:replace="admin/admin_fragement :: basic-head(~{::title})">
-  <title>标签管理</title>
+  <title>评论管理</title>
 </head>
 <body>
 
   <!--导航-->
-  <nav th:replace="admin/admin_fragement :: menu(3)"></nav>
+  <nav th:replace="admin/admin_fragement :: menu(4)"></nav>
 
   <!--二级导航-->
-  <div th:replace="admin/admin_fragement::tag-second-menu(2)"></div>
+  <div th:replace="admin/admin_fragement::comments-second-menu(2)"></div>
 
   <!--中间内容-->
   <div  class="m-container-small m-padded-tb-big">
@@ -31,12 +31,12 @@
           </tr>
         </thead>
         <tbody>
-         <tr th:each="tag,iterStat : ${tags}">
+         <tr th:each="blog,iterStat : ${blogs}">
             <td th:text="${iterStat.count}">计数</td>
-            <td th:text="${tag.name}">标签名称</td>
+            <td th:text="${blog.title}">博客名称</td>
             <td>
-              <a href="#" class="ui mini teal basic button" th:href="@{/admin/tags/{id}/input(id=${tag.id})}">编辑</a>
-              <a href="#" class="ui mini red basic button" onclick="return confirm('你确定要删除吗？')"th:href="@{/admin/tags/{id}/delete(id=${tag.id})}">删除</a>
+              <a href="#" class="ui mini teal basic button" th:href="@{/admin/comments/{id}/edit(id=${blog.id})}">编辑</a>
+              <a href="#" class="ui mini red basic button" onclick="return confirm('你确定要清空吗？')"th:href="@{/admin/comments/{id}/clear(id=${blog.id})}">清空</a>
             </td>
           </tr>
         </tbody>
@@ -48,7 +48,6 @@
                 <a class=" item">上一页</a>
                 <a class=" item">下一页</a>
               </div>-->
-              <a href="#" class="ui mini right floated teal basic button" th:href="@{/admin/tags/input}">新增</a>
             </th>
           </tr>
         </tfoot>

@@ -4,6 +4,8 @@ logging:
     com.yikolemon: debug
   file:
     name: log/blog-dev.log
+  config: classpath:logback-spring.xml
+
 server:
   port: 8080
 

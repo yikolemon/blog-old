@@ -126,7 +126,7 @@
                           <p th:text="${childcomment.content}">评论内容</p>
                         </div>
                         <div class="actions">
-                          <a class="reply" onclick="reply(this)" th:attr="data-commentnickname=${childcomment.nickname},data-commentid=${childcomment.id}" >回复</a>
+                          <a class="reply" onclick="reply(this)" th:attr="data-commentnickname=${childcomment.nickname},data-commentid=${comment.id}" >回复</a>
                         </div>
                       </div>
                     </div>

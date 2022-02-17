@@ -28,6 +28,8 @@
       <a href="#" class=" m-item item m-mobile-hide" th:classappend="${n==1} ? 'active'" th:href="@{/admin/blogs}"><i class="home icon"></i>博客</a>
       <a href="#" class=" m-item item m-mobile-hide" th:classappend="${n==2} ? 'active'" th:href="@{/admin/types}"><i class="idea icon"></i>分类</a>
       <a href="#" class=" m-item item m-mobile-hide" th:classappend="${n==3} ? 'active'" th:href="@{/admin/tags}"><i class="tags icon"></i>标签</a>
+      <a href="#" class=" m-item item m-mobile-hide" th:classappend="${n==4} ? 'active'" th:href="@{/admin/comments}"><i class="comments icon"></i>评论</a>
+
       <!--注销按钮-->
       <div class="right m-item m-mobile-hide menu">
         <div class="ui dropdown  item">
@@ -76,6 +78,17 @@
     </div>
   </div>
 </div>
+
+<!--评论管理的二级导航-->
+<div th:fragment="comments-second-menu(n)" class="ui attached pointing menu">
+  <div class="ui container">
+    <div class="right menu">
+      <a href="#" class="item" th:classappend="${n==1} ? 'blue active'">编辑</a>
+      <a href="#" class="item" th:classappend="${n==2} ? 'blue active'" th:href="@{/admin/comments}">列表</a>
+    </div>
+  </div>
+</div>
+
 <!--底部footer-->
 <footer th:fragment="footer" class="ui inverted vertical segment m-padded-tb-massive">
   <div class="ui center aligned container">

@@ -18,7 +18,7 @@ public class User {
     private String password;
     private String email;
     private String avatar;
-    private Integer type;
+    private Boolean type;
     private Date createTime;
     private Date updateTime;
 

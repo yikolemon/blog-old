@@ -31,12 +31,12 @@
           </tr>
         </thead>
         <tbody>
-         <tr th:each="tags,iterStat : ${tags}">
+         <tr th:each="tag,iterStat : ${tags}">
             <td th:text="${iterStat.count}">计数</td>
-            <td th:text="${tags.name}">标签名称</td>
+            <td th:text="${tag.name}">标签名称</td>
             <td>
-              <a href="#" class="ui mini teal basic button" th:href="@{/admin/tags/{id}/input(id=${tags.id})}">编辑</a>
-              <a href="#" class="ui mini red basic button" onclick="return confirm('你确定要删除吗？')"th:href="@{/admin/tags/{id}/delete(id=${tags.id})}">删除</a>
+              <a href="#" class="ui mini teal basic button" th:href="@{/admin/tags/{id}/input(id=${tag.id})}">编辑</a>
+              <a href="#" class="ui mini red basic button" onclick="return confirm('你确定要删除吗？')"th:href="@{/admin/tags/{id}/delete(id=${tag.id})}">删除</a>
             </td>
           </tr>
         </tbody>

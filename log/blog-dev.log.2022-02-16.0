@@ -1,0 +1,33 @@
+2022-02-16 00:00:26.289  INFO 10924 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication on DESKTOP-NAD1TLO with PID 10924 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-02-16 00:00:26.292 DEBUG 10924 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2022-02-16 00:00:26.292  INFO 10924 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-02-16 00:00:27.814  INFO 10924 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-16 00:00:27.825  INFO 10924 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-16 00:00:27.836  INFO 10924 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2022-02-16 00:00:27.975  INFO 10924 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-16 00:00:27.975  INFO 10924 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1628 ms
+2022-02-16 00:00:28.844  INFO 10924 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-16 00:00:28.971  INFO 10924 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-02-16 00:00:29.419  INFO 10924 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-16 00:00:29.423  INFO 10924 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 3.859 seconds (JVM running for 5.07)
+2022-02-16 00:13:58.412  INFO 10924 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-16 00:13:58.412  INFO 10924 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-16 00:13:58.424  INFO 10924 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2022-02-16 00:14:02.569  INFO 10924 --- [http-nio-8080-exec-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-16 00:14:02.785  INFO 10924 --- [http-nio-8080-exec-4] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (com.mysql.jdbc.JDBC4Connection.getNetworkTimeout()I)
+2022-02-16 00:14:02.790  INFO 10924 --- [http-nio-8080-exec-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-16 00:14:02.799 DEBUG 10924 --- [http-nio-8080-exec-4] c.y.m.U.checkByUsernameAndPassword       : ==>  Preparing: select * from blog.t_user where username = ? and password = ?;
+2022-02-16 00:14:02.818 DEBUG 10924 --- [http-nio-8080-exec-4] c.y.m.U.checkByUsernameAndPassword       : ==> Parameters: yikolemon(String), e10adc3949ba59abbe56e057f20f883e(String)
+2022-02-16 00:14:02.838 DEBUG 10924 --- [http-nio-8080-exec-4] c.y.m.U.checkByUsernameAndPassword       : <==      Total: 1
+2022-02-16 00:14:06.392 DEBUG 10924 --- [http-nio-8080-exec-5] c.y.m.BlogMapper.listBlogsAdmin_COUNT    : ==>  Preparing: SELECT count(0) FROM t_blog JOIN t_type ON t_blog.type_id = t_type.id
+2022-02-16 00:14:06.393 DEBUG 10924 --- [http-nio-8080-exec-5] c.y.m.BlogMapper.listBlogsAdmin_COUNT    : ==> Parameters: 
+2022-02-16 00:14:06.398 DEBUG 10924 --- [http-nio-8080-exec-5] c.y.m.BlogMapper.listBlogsAdmin_COUNT    : <==      Total: 1
+2022-02-16 00:14:06.401 DEBUG 10924 --- [http-nio-8080-exec-5] c.y.mapper.BlogMapper.listBlogsAdmin     : ==>  Preparing: select t_blog.id id,title,type_id,recommend,t_type.name typeName,update_time,published from t_blog join t_type on t_blog.type_id=t_type.id LIMIT ?
+2022-02-16 00:14:06.402 DEBUG 10924 --- [http-nio-8080-exec-5] c.y.mapper.BlogMapper.listBlogsAdmin     : ==> Parameters: 8(Integer)
+2022-02-16 00:14:06.406 DEBUG 10924 --- [http-nio-8080-exec-5] c.y.mapper.BlogMapper.listBlogsAdmin     : <==      Total: 4
+2022-02-16 00:14:06.422 DEBUG 10924 --- [http-nio-8080-exec-5] c.y.mapper.TypeMapper.getAllTypes        : ==>  Preparing: select * from blog.t_type;
+2022-02-16 00:14:06.422 DEBUG 10924 --- [http-nio-8080-exec-5] c.y.mapper.TypeMapper.getAllTypes        : ==> Parameters: 
+2022-02-16 00:14:06.423 DEBUG 10924 --- [http-nio-8080-exec-5] c.y.mapper.TypeMapper.getAllTypes        : <==      Total: 2
+2022-02-16 00:14:09.278  INFO 10924 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-02-16 00:14:09.280  INFO 10924 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-16 00:14:09.285  INFO 10924 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
