@@ -72,7 +72,7 @@ public class MarkdownUtils {
     }
 
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         String table = "| hello | hi   | 哈哈哈   |\n" +
                 "| ----- | ---- | ----- |\n" +
                 "| 斯维尔多  | 士大夫  | f啊    |\n" +
@@ -80,6 +80,6 @@ public class MarkdownUtils {
                 "\n";
         String a = "[ONESTAR](http://122.51.28.187:8080/)";
         System.out.println(markdownToHtmlExtensions(a));
-    }
+    }*/
 
 }

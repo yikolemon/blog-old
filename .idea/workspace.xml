@@ -83,7 +83,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates/admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/lib/bg" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -102,25 +102,25 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.yikolemon" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\templates\admin" />
-      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib\music" />
-      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib\click" />
-      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib\waypoints" />
-      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib\scrollwatch" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.yikolemon.pojo" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static" />
       <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources" />
       <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib" />
       <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\templates\test" />
       <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\images" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.yikolemon" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.yikolemon.pojo" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib\bg" />
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib\react-background" />
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\templates\admin" />
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib\music" />
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib\click" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -314,6 +314,7 @@
       <workItem from="1644939313882" duration="94000" />
       <workItem from="1644939430899" duration="2216000" />
       <workItem from="1645094862143" duration="18581000" />
+      <workItem from="1645254694521" duration="7513000" />
     </task>
     <servers />
   </component>

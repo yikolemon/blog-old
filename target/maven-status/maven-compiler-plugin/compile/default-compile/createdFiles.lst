@@ -40,6 +40,7 @@ com\yikolemon\service\TagServiceImpl.class
 com\yikolemon\queue\IndexTag.class
 com\yikolemon\mapper\BlogMapper.class
 com\yikolemon\queue\RightTopBlog.class
+com\yikolemon\web\admin\CommentAdminController.class
 com\yikolemon\queue\IndexType.class
 com\yikolemon\mapper\TagBlogMapper.class
 com\yikolemon\pojo\User.class

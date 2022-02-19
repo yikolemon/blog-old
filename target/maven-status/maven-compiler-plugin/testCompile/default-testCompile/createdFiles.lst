@@ -9,3 +9,4 @@ com\yikolemon\mapper\UserMapperTest.class
 com\yikolemon\service\BlogServiceImplTest.class
 com\yikolemon\web\admin\FileControllerTest.class
 com\yikolemon\service\UserServiceImplTest.class
+com\yikolemon\mapper\CommentMapperTest.class

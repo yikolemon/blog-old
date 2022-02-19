@@ -48,6 +48,7 @@ F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\service\CommentService.
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\service\UserService.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\mapper\CommentMapper.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\queue\RightTopBlog.java
+F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\web\admin\CommentAdminController.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\queue\IndexBlog.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\util\QiniuCloudUtil.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\web\TypeBlogController.java

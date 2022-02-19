@@ -41,7 +41,7 @@ public class CommentController {
         }
         if (comment.getParentNickname().isEmpty())
             comment.setParentNickname(null);
-        System.out.println(comment);
+        /*System.out.println(comment);*/
         commentService.saveComment(comment);
         return "redirect:/comments/"+comment.getBlogId();
     }

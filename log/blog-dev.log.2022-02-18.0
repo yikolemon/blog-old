@@ -1,0 +1,344 @@
+2022-02-18 00:53:45.190  INFO 15896 --- [http-nio-8080-exec-5] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-02-18 00:53:45.230 DEBUG 15896 --- [http-nio-8080-exec-5] c.y.m.BlogMapper.listBlogsIndex_COUNT    : ==>  Preparing: SELECT count(0) FROM t_blog, t_type, t_user WHERE t_blog.type_id = t_type.id AND t_blog.user_id = t_user.id AND published = true
+2022-02-18 00:53:45.231 DEBUG 15896 --- [http-nio-8080-exec-5] c.y.m.BlogMapper.listBlogsIndex_COUNT    : ==> Parameters: 
+2022-02-18 00:53:45.232 DEBUG 15896 --- [http-nio-8080-exec-5] c.y.m.BlogMapper.listBlogsIndex_COUNT    : <==      Total: 1
+2022-02-18 00:53:45.234 DEBUG 15896 --- [http-nio-8080-exec-5] c.y.mapper.BlogMapper.listBlogsIndex     : ==>  Preparing: select t_blog.id,title,first_picture,description,nickname,`view`,type_id,t_type.name typeName,t_blog.update_time,avatar from t_blog,t_type,t_user where t_blog.type_id=t_type.id and t_blog.user_id=t_user.id and published=true ORDER BY t_blog.id desc LIMIT ?
+2022-02-18 00:53:45.234 DEBUG 15896 --- [http-nio-8080-exec-5] c.y.mapper.BlogMapper.listBlogsIndex     : ==> Parameters: 8(Integer)
+2022-02-18 00:53:45.237 DEBUG 15896 --- [http-nio-8080-exec-5] c.y.mapper.BlogMapper.listBlogsIndex     : <==      Total: 4
+2022-02-18 00:53:45.239 DEBUG 15896 --- [http-nio-8080-exec-5] c.y.m.BlogMapper.listBlogsIndex_COUNT    : ==>  Preparing: SELECT count(0) FROM t_blog, t_type, t_user WHERE t_blog.type_id = t_type.id AND t_blog.user_id = t_user.id AND published = true
+2022-02-18 00:53:45.239 DEBUG 15896 --- [http-nio-8080-exec-5] c.y.m.BlogMapper.listBlogsIndex_COUNT    : ==> Parameters: 
+2022-02-18 00:53:45.240 DEBUG 15896 --- [http-nio-8080-exec-5] c.y.m.BlogMapper.listBlogsIndex_COUNT    : <==      Total: 1
+2022-02-18 00:53:45.241 DEBUG 15896 --- [http-nio-8080-exec-5] c.y.mapper.BlogMapper.listBlogsIndex     : ==>  Preparing: select t_blog.id,title,first_picture,description,nickname,`view`,type_id,t_type.name typeName,t_blog.update_time,avatar from t_blog,t_type,t_user where t_blog.type_id=t_type.id and t_blog.user_id=t_user.id and published=true ORDER BY t_blog.id desc LIMIT ?
+2022-02-18 00:53:45.241 DEBUG 15896 --- [http-nio-8080-exec-5] c.y.mapper.BlogMapper.listBlogsIndex     : ==> Parameters: 8(Integer)
+2022-02-18 00:53:45.243 DEBUG 15896 --- [http-nio-8080-exec-5] c.y.mapper.BlogMapper.listBlogsIndex     : <==      Total: 4
+2022-02-18 00:53:45.247 DEBUG 15896 --- [http-nio-8080-exec-5] c.y.mapper.TypeMapper.getTypeTop         : ==>  Preparing: select type_id id,t_type.`name`,COUNT(*) as num from t_blog,t_type where t_blog.type_id=t_type.id and t_blog.published=true group by t_blog.type_id ORDER BY num desc limit ?
+2022-02-18 00:53:45.248 DEBUG 15896 --- [http-nio-8080-exec-5] c.y.mapper.TypeMapper.getTypeTop         : ==> Parameters: 6(Integer)
+2022-02-18 00:53:45.249 DEBUG 15896 --- [http-nio-8080-exec-5] c.y.mapper.TypeMapper.getTypeTop         : <==      Total: 2
+2022-02-18 00:53:45.251 DEBUG 15896 --- [http-nio-8080-exec-5] c.yikolemon.mapper.TagMapper.getTagTop   : ==>  Preparing: select t_tag.id id,t_tag.`name`,count(*) as num from t_tag,t_tag_blog,t_blog where t_tag.id=t_tag_blog.tag_id and t_tag_blog.blog_id=t_blog.id and t_blog.published=true GROUP BY t_tag.id ORDER BY num desc limit ?
+2022-02-18 00:53:45.252 DEBUG 15896 --- [http-nio-8080-exec-5] c.yikolemon.mapper.TagMapper.getTagTop   : ==> Parameters: 6(Integer)
+2022-02-18 00:53:45.253 DEBUG 15896 --- [http-nio-8080-exec-5] c.yikolemon.mapper.TagMapper.getTagTop   : <==      Total: 3
+2022-02-18 00:53:45.254 DEBUG 15896 --- [http-nio-8080-exec-5] c.y.m.BlogMapper.listRecommendNewBlog    : ==>  Preparing: select t_blog.id id,t_blog.title title FROM t_blog where t_blog.recommend=true and t_blog.published=true ORDER BY update_time DESC limit ?
+2022-02-18 00:53:45.254 DEBUG 15896 --- [http-nio-8080-exec-5] c.y.m.BlogMapper.listRecommendNewBlog    : ==> Parameters: 6(Integer)
+2022-02-18 00:53:45.255 DEBUG 15896 --- [http-nio-8080-exec-5] c.y.m.BlogMapper.listRecommendNewBlog    : <==      Total: 2
+2022-02-18 00:53:45.255 DEBUG 15896 --- [http-nio-8080-exec-5] c.y.mapper.BlogMapper.listMostviewBlog   : ==>  Preparing: select t_blog.id id,t_blog.title title FROM t_blog where t_blog.published=true ORDER BY `view` DESC limit ?
+2022-02-18 00:53:45.256 DEBUG 15896 --- [http-nio-8080-exec-5] c.y.mapper.BlogMapper.listMostviewBlog   : ==> Parameters: 6(Integer)
+2022-02-18 00:53:45.256 DEBUG 15896 --- [http-nio-8080-exec-5] c.y.mapper.BlogMapper.listMostviewBlog   : <==      Total: 4
+2022-02-18 00:53:45.256  INFO 15896 --- [http-nio-8080-exec-5] com.yikolemon.aspect.LogAspect           : Result : index
+2022-02-18 00:53:48.364 DEBUG 15896 --- [http-nio-8080-exec-10] c.y.m.BlogMapper.listBlogsAdmin_COUNT    : ==>  Preparing: SELECT count(0) FROM t_blog JOIN t_type ON t_blog.type_id = t_type.id
+2022-02-18 00:53:48.365 DEBUG 15896 --- [http-nio-8080-exec-10] c.y.m.BlogMapper.listBlogsAdmin_COUNT    : ==> Parameters: 
+2022-02-18 00:53:48.366 DEBUG 15896 --- [http-nio-8080-exec-10] c.y.m.BlogMapper.listBlogsAdmin_COUNT    : <==      Total: 1
+2022-02-18 00:53:48.366 DEBUG 15896 --- [http-nio-8080-exec-10] c.y.mapper.BlogMapper.listBlogsAdmin     : ==>  Preparing: select t_blog.id id,title,type_id,recommend,t_type.name typeName,update_time,published from t_blog join t_type on t_blog.type_id=t_type.id LIMIT ?
+2022-02-18 00:53:48.366 DEBUG 15896 --- [http-nio-8080-exec-10] c.y.mapper.BlogMapper.listBlogsAdmin     : ==> Parameters: 8(Integer)
+2022-02-18 00:53:48.370 DEBUG 15896 --- [http-nio-8080-exec-10] c.y.mapper.BlogMapper.listBlogsAdmin     : <==      Total: 4
+2022-02-18 00:53:48.382 DEBUG 15896 --- [http-nio-8080-exec-10] c.y.mapper.TypeMapper.getAllTypes        : ==>  Preparing: select * from blog.t_type;
+2022-02-18 00:53:48.383 DEBUG 15896 --- [http-nio-8080-exec-10] c.y.mapper.TypeMapper.getAllTypes        : ==> Parameters: 
+2022-02-18 00:53:48.384 DEBUG 15896 --- [http-nio-8080-exec-10] c.y.mapper.TypeMapper.getAllTypes        : <==      Total: 2
+2022-02-18 00:53:49.327 DEBUG 15896 --- [http-nio-8080-exec-7] c.y.m.C.listBlogIfHasComments            : ==>  Preparing: select t_blog.id,title from t_blog where t_blog.id in (select t_comment.blog_id from t_comment group by t_comment.blog_id)
+2022-02-18 00:53:49.327 DEBUG 15896 --- [http-nio-8080-exec-7] c.y.m.C.listBlogIfHasComments            : ==> Parameters: 
+2022-02-18 00:53:49.328 DEBUG 15896 --- [http-nio-8080-exec-7] c.y.m.C.listBlogIfHasComments            : <==      Total: 1
+2022-02-18 00:53:50.272 DEBUG 15896 --- [http-nio-8080-exec-9] c.y.m.CommentMapper.listCommentByBlogId  : ==>  Preparing: select id,nickname,content,create_time,parent_comment_id,parent_nickname,flag from t_comment where blog_id=? order by id desc
+2022-02-18 00:53:50.272 DEBUG 15896 --- [http-nio-8080-exec-9] c.y.m.CommentMapper.listCommentByBlogId  : ==> Parameters: 251(Long)
+2022-02-18 00:53:50.273 DEBUG 15896 --- [http-nio-8080-exec-9] c.y.m.CommentMapper.listCommentByBlogId  : <==      Total: 4
+2022-02-18 00:54:49.183  INFO 15460 --- [main] com.yikolemon.mapper.CommentMapperTest   : Starting CommentMapperTest on DESKTOP-NAD1TLO with PID 15460 (started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-02-18 00:54:49.184 DEBUG 15460 --- [main] com.yikolemon.mapper.CommentMapperTest   : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2022-02-18 00:54:49.184  INFO 15460 --- [main] com.yikolemon.mapper.CommentMapperTest   : The following profiles are active: dev
+2022-02-18 00:54:53.314  INFO 15460 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-18 00:54:53.519  INFO 15460 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-02-18 00:54:54.119  INFO 15460 --- [main] com.yikolemon.mapper.CommentMapperTest   : Started CommentMapperTest in 5.372 seconds (JVM running for 6.273)
+2022-02-18 00:54:54.486  INFO 15460 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-18 00:54:54.714 DEBUG 15896 --- [http-nio-8080-exec-3] c.y.m.CommentMapper.listCommentByBlogId  : ==>  Preparing: select id,nickname,content,create_time,parent_comment_id,parent_nickname,flag from t_comment where blog_id=? order by id desc
+2022-02-18 00:54:54.715 DEBUG 15896 --- [http-nio-8080-exec-3] c.y.m.CommentMapper.listCommentByBlogId  : ==> Parameters: 251(Long)
+2022-02-18 00:54:54.717 DEBUG 15896 --- [http-nio-8080-exec-3] c.y.m.CommentMapper.listCommentByBlogId  : <==      Total: 4
+2022-02-18 00:54:54.750  INFO 15460 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (com.mysql.jdbc.JDBC4Connection.getNetworkTimeout()I)
+2022-02-18 00:54:54.759  INFO 15460 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-18 00:54:54.776 DEBUG 15460 --- [main] c.y.mapper.CommentMapper.getChildIds     : ==>  Preparing: select t_comment.id from t_comment where t_comment.parent_comment_id=?
+2022-02-18 00:54:54.805 DEBUG 15460 --- [main] c.y.mapper.CommentMapper.getChildIds     : ==> Parameters: 24(Long)
+2022-02-18 00:54:54.824 DEBUG 15460 --- [main] c.y.mapper.CommentMapper.getChildIds     : <==      Total: 2
+2022-02-18 00:54:54.852  INFO 15460 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-02-18 00:54:54.855  INFO 15460 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-18 00:54:54.862  INFO 15460 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-18 00:55:09.903  INFO 15896 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-02-18 00:55:09.904  INFO 15896 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-18 00:55:09.907  INFO 15896 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-18 00:55:12.746  INFO 15396 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication on DESKTOP-NAD1TLO with PID 15396 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-02-18 00:55:12.748 DEBUG 15396 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2022-02-18 00:55:12.749  INFO 15396 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-02-18 00:55:14.587  INFO 15396 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-18 00:55:14.600  INFO 15396 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-18 00:55:14.600  INFO 15396 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2022-02-18 00:55:14.718  INFO 15396 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-18 00:55:14.719  INFO 15396 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1941 ms
+2022-02-18 00:55:15.524  INFO 15396 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-18 00:55:15.635  INFO 15396 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-02-18 00:55:16.162  INFO 15396 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-18 00:55:16.172  INFO 15396 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 3.832 seconds (JVM running for 4.493)
+2022-02-18 00:55:18.357  INFO 15396 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-18 00:55:18.357  INFO 15396 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-18 00:55:18.366  INFO 15396 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2022-02-18 00:55:18.453  INFO 15396 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-18 00:55:18.625  INFO 15396 --- [http-nio-8080-exec-1] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (com.mysql.jdbc.JDBC4Connection.getNetworkTimeout()I)
+2022-02-18 00:55:18.632  INFO 15396 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-18 00:55:18.642 DEBUG 15396 --- [http-nio-8080-exec-1] c.y.m.CommentMapper.listCommentByBlogId  : ==>  Preparing: select id,nickname,content,create_time,parent_comment_id,parent_nickname,flag from t_comment where blog_id=? order by id desc
+2022-02-18 00:55:18.662 DEBUG 15396 --- [http-nio-8080-exec-1] c.y.m.CommentMapper.listCommentByBlogId  : ==> Parameters: 251(Long)
+2022-02-18 00:55:18.680 DEBUG 15396 --- [http-nio-8080-exec-1] c.y.m.CommentMapper.listCommentByBlogId  : <==      Total: 4
+2022-02-18 00:55:20.236 DEBUG 15396 --- [http-nio-8080-exec-4] c.y.m.CommentMapper.listCommentByBlogId  : ==>  Preparing: select id,nickname,content,create_time,parent_comment_id,parent_nickname,flag from t_comment where blog_id=? order by id desc
+2022-02-18 00:55:20.237 DEBUG 15396 --- [http-nio-8080-exec-4] c.y.m.CommentMapper.listCommentByBlogId  : ==> Parameters: 251(Long)
+2022-02-18 00:55:20.240 DEBUG 15396 --- [http-nio-8080-exec-4] c.y.m.CommentMapper.listCommentByBlogId  : <==      Total: 4
+2022-02-18 00:55:31.545 DEBUG 15396 --- [http-nio-8080-exec-8] c.y.mapper.CommentMapper.hasParent       : ==>  Preparing: select not ISNULL(t_comment.parent_comment_id) from t_comment where t_comment.id=?
+2022-02-18 00:55:31.545 DEBUG 15396 --- [http-nio-8080-exec-8] c.y.mapper.CommentMapper.hasParent       : ==> Parameters: 24(Long)
+2022-02-18 00:55:31.546 DEBUG 15396 --- [http-nio-8080-exec-8] c.y.mapper.CommentMapper.hasParent       : <==      Total: 1
+2022-02-18 00:55:31.547 DEBUG 15396 --- [http-nio-8080-exec-8] c.y.mapper.CommentMapper.getChildIds     : ==>  Preparing: select t_comment.id from t_comment where t_comment.parent_comment_id=?
+2022-02-18 00:55:31.547 DEBUG 15396 --- [http-nio-8080-exec-8] c.y.mapper.CommentMapper.getChildIds     : ==> Parameters: 24(Long)
+2022-02-18 00:55:31.548 DEBUG 15396 --- [http-nio-8080-exec-8] c.y.mapper.CommentMapper.getChildIds     : <==      Total: 2
+2022-02-18 00:55:31.548 DEBUG 15396 --- [http-nio-8080-exec-8] c.y.m.CommentMapper.deleteCommentById    : ==>  Preparing: delete from t_comment where t_comment.id=?
+2022-02-18 00:55:31.548 DEBUG 15396 --- [http-nio-8080-exec-8] c.y.m.CommentMapper.deleteCommentById    : ==> Parameters: 25(Long)
+2022-02-18 00:55:31.549 DEBUG 15396 --- [http-nio-8080-exec-8] c.y.m.CommentMapper.deleteCommentById    : <==    Updates: 1
+2022-02-18 00:55:31.549 DEBUG 15396 --- [http-nio-8080-exec-8] c.y.m.CommentMapper.deleteCommentById    : ==>  Preparing: delete from t_comment where t_comment.id=?
+2022-02-18 00:55:31.550 DEBUG 15396 --- [http-nio-8080-exec-8] c.y.m.CommentMapper.deleteCommentById    : ==> Parameters: 26(Long)
+2022-02-18 00:55:31.550 DEBUG 15396 --- [http-nio-8080-exec-8] c.y.m.CommentMapper.deleteCommentById    : <==    Updates: 1
+2022-02-18 00:55:31.550 DEBUG 15396 --- [http-nio-8080-exec-8] c.y.m.CommentMapper.deleteCommentById    : ==>  Preparing: delete from t_comment where t_comment.id=?
+2022-02-18 00:55:31.550 DEBUG 15396 --- [http-nio-8080-exec-8] c.y.m.CommentMapper.deleteCommentById    : ==> Parameters: 24(Long)
+2022-02-18 00:55:31.555 DEBUG 15396 --- [http-nio-8080-exec-8] c.y.m.CommentMapper.deleteCommentById    : <==    Updates: 1
+2022-02-18 00:55:44.369 DEBUG 15396 --- [http-nio-8080-exec-7] c.y.m.CommentMapper.listCommentByBlogId  : ==>  Preparing: select id,nickname,content,create_time,parent_comment_id,parent_nickname,flag from t_comment where blog_id=? order by id desc
+2022-02-18 00:55:44.370 DEBUG 15396 --- [http-nio-8080-exec-7] c.y.m.CommentMapper.listCommentByBlogId  : ==> Parameters: 251(Long)
+2022-02-18 00:55:44.371 DEBUG 15396 --- [http-nio-8080-exec-7] c.y.m.CommentMapper.listCommentByBlogId  : <==      Total: 1
+2022-02-18 00:55:46.435 DEBUG 15396 --- [http-nio-8080-exec-3] c.y.m.CommentMapper.listCommentByBlogId  : ==>  Preparing: select id,nickname,content,create_time,parent_comment_id,parent_nickname,flag from t_comment where blog_id=? order by id desc
+2022-02-18 00:55:46.435 DEBUG 15396 --- [http-nio-8080-exec-3] c.y.m.CommentMapper.listCommentByBlogId  : ==> Parameters: 251(Long)
+2022-02-18 00:55:46.436 DEBUG 15396 --- [http-nio-8080-exec-3] c.y.m.CommentMapper.listCommentByBlogId  : <==      Total: 1
+2022-02-18 00:55:47.103 DEBUG 15396 --- [http-nio-8080-exec-9] c.y.m.CommentMapper.listCommentByBlogId  : ==>  Preparing: select id,nickname,content,create_time,parent_comment_id,parent_nickname,flag from t_comment where blog_id=? order by id desc
+2022-02-18 00:55:47.103 DEBUG 15396 --- [http-nio-8080-exec-9] c.y.m.CommentMapper.listCommentByBlogId  : ==> Parameters: 251(Long)
+2022-02-18 00:55:47.105 DEBUG 15396 --- [http-nio-8080-exec-9] c.y.m.CommentMapper.listCommentByBlogId  : <==      Total: 1
+2022-02-18 00:57:00.645 DEBUG 15396 --- [http-nio-8080-exec-4] c.y.m.CommentMapper.listCommentByBlogId  : ==>  Preparing: select id,nickname,content,create_time,parent_comment_id,parent_nickname,flag from t_comment where blog_id=? order by id desc
+2022-02-18 00:57:00.646 DEBUG 15396 --- [http-nio-8080-exec-4] c.y.m.CommentMapper.listCommentByBlogId  : ==> Parameters: 251(Long)
+2022-02-18 00:57:00.647 DEBUG 15396 --- [http-nio-8080-exec-4] c.y.m.CommentMapper.listCommentByBlogId  : <==      Total: 1
+2022-02-18 00:57:04.922 DEBUG 15396 --- [http-nio-8080-exec-8] c.y.m.C.listBlogIfHasComments            : ==>  Preparing: select t_blog.id,title from t_blog where t_blog.id in (select t_comment.blog_id from t_comment group by t_comment.blog_id)
+2022-02-18 00:57:04.922 DEBUG 15396 --- [http-nio-8080-exec-8] c.y.m.C.listBlogIfHasComments            : ==> Parameters: 
+2022-02-18 00:57:04.924 DEBUG 15396 --- [http-nio-8080-exec-8] c.y.m.C.listBlogIfHasComments            : <==      Total: 1
+2022-02-18 00:57:06.380 DEBUG 15396 --- [http-nio-8080-exec-2] c.y.m.CommentMapper.listCommentByBlogId  : ==>  Preparing: select id,nickname,content,create_time,parent_comment_id,parent_nickname,flag from t_comment where blog_id=? order by id desc
+2022-02-18 00:57:06.381 DEBUG 15396 --- [http-nio-8080-exec-2] c.y.m.CommentMapper.listCommentByBlogId  : ==> Parameters: 251(Long)
+2022-02-18 00:57:06.382 DEBUG 15396 --- [http-nio-8080-exec-2] c.y.m.CommentMapper.listCommentByBlogId  : <==      Total: 1
+2022-02-18 00:57:42.906 DEBUG 15396 --- [http-nio-8080-exec-5] c.y.m.CommentMapper.listCommentByBlogId  : ==>  Preparing: select id,nickname,content,create_time,parent_comment_id,parent_nickname,flag from t_comment where blog_id=? order by id desc
+2022-02-18 00:57:42.907 DEBUG 15396 --- [http-nio-8080-exec-5] c.y.m.CommentMapper.listCommentByBlogId  : ==> Parameters: 251(Long)
+2022-02-18 00:57:42.921 DEBUG 15396 --- [http-nio-8080-exec-5] c.y.m.CommentMapper.listCommentByBlogId  : <==      Total: 4
+2022-02-18 00:58:00.357  INFO 15396 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-02-18 00:58:00.357  INFO 15396 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-18 00:58:00.361  INFO 15396 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-18 00:58:03.152  INFO 16700 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication on DESKTOP-NAD1TLO with PID 16700 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-02-18 00:58:03.186 DEBUG 16700 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2022-02-18 00:58:03.186  INFO 16700 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-02-18 00:58:04.114  INFO 16700 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-18 00:58:04.120  INFO 16700 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-18 00:58:04.121  INFO 16700 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2022-02-18 00:58:04.200  INFO 16700 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-18 00:58:04.200  INFO 16700 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 981 ms
+2022-02-18 00:58:04.706  INFO 16700 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-18 00:58:04.777  INFO 16700 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-02-18 00:58:05.045  INFO 16700 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-18 00:58:05.048  INFO 16700 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 2.296 seconds (JVM running for 3.039)
+2022-02-18 00:58:06.001  INFO 16700 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-18 00:58:06.002  INFO 16700 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-18 00:58:06.010  INFO 16700 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2022-02-18 00:58:06.059  INFO 16700 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-18 00:58:06.190  INFO 16700 --- [http-nio-8080-exec-1] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (com.mysql.jdbc.JDBC4Connection.getNetworkTimeout()I)
+2022-02-18 00:58:06.193  INFO 16700 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-18 00:58:06.199 DEBUG 16700 --- [http-nio-8080-exec-1] c.y.m.CommentMapper.listCommentByBlogId  : ==>  Preparing: select id,nickname,content,create_time,parent_comment_id,parent_nickname,flag from t_comment where blog_id=? order by id desc
+2022-02-18 00:58:06.223 DEBUG 16700 --- [http-nio-8080-exec-1] c.y.m.CommentMapper.listCommentByBlogId  : ==> Parameters: 251(Long)
+2022-02-18 00:58:06.237 DEBUG 16700 --- [http-nio-8080-exec-1] c.y.m.CommentMapper.listCommentByBlogId  : <==      Total: 4
+2022-02-18 00:58:14.081 DEBUG 16700 --- [http-nio-8080-exec-2] c.y.mapper.CommentMapper.hasParent       : ==>  Preparing: select not ISNULL(t_comment.parent_comment_id) from t_comment where t_comment.id=?
+2022-02-18 00:58:14.081 DEBUG 16700 --- [http-nio-8080-exec-2] c.y.mapper.CommentMapper.hasParent       : ==> Parameters: 26(Long)
+2022-02-18 00:58:14.081 DEBUG 16700 --- [http-nio-8080-exec-2] c.y.mapper.CommentMapper.hasParent       : <==      Total: 1
+2022-02-18 00:58:14.082 DEBUG 16700 --- [http-nio-8080-exec-2] c.y.m.CommentMapper.deleteCommentById    : ==>  Preparing: delete from t_comment where t_comment.id=?
+2022-02-18 00:58:14.083 DEBUG 16700 --- [http-nio-8080-exec-2] c.y.m.CommentMapper.deleteCommentById    : ==> Parameters: 26(Long)
+2022-02-18 00:58:14.084 DEBUG 16700 --- [http-nio-8080-exec-2] c.y.m.CommentMapper.deleteCommentById    : <==    Updates: 1
+2022-02-18 00:58:18.826 DEBUG 16700 --- [http-nio-8080-exec-4] c.y.m.CommentMapper.listCommentByBlogId  : ==>  Preparing: select id,nickname,content,create_time,parent_comment_id,parent_nickname,flag from t_comment where blog_id=? order by id desc
+2022-02-18 00:58:18.826 DEBUG 16700 --- [http-nio-8080-exec-4] c.y.m.CommentMapper.listCommentByBlogId  : ==> Parameters: 251(Long)
+2022-02-18 00:58:18.827 DEBUG 16700 --- [http-nio-8080-exec-4] c.y.m.CommentMapper.listCommentByBlogId  : <==      Total: 3
+2022-02-18 00:59:55.410 DEBUG 16700 --- [http-nio-8080-exec-7] c.y.m.CommentMapper.listCommentByBlogId  : ==>  Preparing: select id,nickname,content,create_time,parent_comment_id,parent_nickname,flag from t_comment where blog_id=? order by id desc
+2022-02-18 00:59:55.410 DEBUG 16700 --- [http-nio-8080-exec-7] c.y.m.CommentMapper.listCommentByBlogId  : ==> Parameters: 251(Long)
+2022-02-18 00:59:55.412 DEBUG 16700 --- [http-nio-8080-exec-7] c.y.m.CommentMapper.listCommentByBlogId  : <==      Total: 3
+2022-02-18 01:05:14.085  INFO 16700 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-02-18 01:05:14.086  INFO 16700 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-18 01:05:14.088  INFO 16700 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-18 01:05:18.998  INFO 16492 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication on DESKTOP-NAD1TLO with PID 16492 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-02-18 01:05:19.001 DEBUG 16492 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2022-02-18 01:05:19.001  INFO 16492 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-02-18 01:05:19.952  INFO 16492 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-18 01:05:19.958  INFO 16492 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-18 01:05:19.958  INFO 16492 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2022-02-18 01:05:20.040  INFO 16492 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-18 01:05:20.040  INFO 16492 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 973 ms
+2022-02-18 01:05:20.581  INFO 16492 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-18 01:05:20.649  INFO 16492 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-02-18 01:05:20.895  INFO 16492 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-18 01:05:20.897  INFO 16492 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 2.325 seconds (JVM running for 3.066)
+2022-02-18 01:05:21.268  INFO 16492 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-18 01:05:21.268  INFO 16492 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-18 01:05:21.276  INFO 16492 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2022-02-18 01:05:21.330  INFO 16492 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-18 01:05:21.475  INFO 16492 --- [http-nio-8080-exec-1] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (com.mysql.jdbc.JDBC4Connection.getNetworkTimeout()I)
+2022-02-18 01:05:21.478  INFO 16492 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-18 01:05:21.484 DEBUG 16492 --- [http-nio-8080-exec-1] c.y.m.CommentMapper.listCommentByBlogId  : ==>  Preparing: select id,nickname,content,create_time,parent_comment_id,parent_nickname,flag from t_comment where blog_id=? order by id desc
+2022-02-18 01:05:21.496 DEBUG 16492 --- [http-nio-8080-exec-1] c.y.m.CommentMapper.listCommentByBlogId  : ==> Parameters: 251(Long)
+2022-02-18 01:05:21.522 DEBUG 16492 --- [http-nio-8080-exec-1] c.y.m.CommentMapper.listCommentByBlogId  : <==      Total: 3
+2022-02-18 01:05:28.484 DEBUG 16492 --- [http-nio-8080-exec-2] c.y.m.C.getBlogIdByCommentId             : ==>  Preparing: select t_comment.blog_id from t_comment where t_comment.id=?
+2022-02-18 01:05:28.484 DEBUG 16492 --- [http-nio-8080-exec-2] c.y.m.C.getBlogIdByCommentId             : ==> Parameters: 25(Long)
+2022-02-18 01:05:28.485 DEBUG 16492 --- [http-nio-8080-exec-2] c.y.m.C.getBlogIdByCommentId             : <==      Total: 1
+2022-02-18 01:05:28.497 DEBUG 16492 --- [http-nio-8080-exec-2] c.y.mapper.CommentMapper.hasParent       : ==>  Preparing: select not ISNULL(t_comment.parent_comment_id) from t_comment where t_comment.id=?
+2022-02-18 01:05:28.498 DEBUG 16492 --- [http-nio-8080-exec-2] c.y.mapper.CommentMapper.hasParent       : ==> Parameters: 25(Long)
+2022-02-18 01:05:28.498 DEBUG 16492 --- [http-nio-8080-exec-2] c.y.mapper.CommentMapper.hasParent       : <==      Total: 1
+2022-02-18 01:05:28.499 DEBUG 16492 --- [http-nio-8080-exec-2] c.y.m.CommentMapper.deleteCommentById    : ==>  Preparing: delete from t_comment where t_comment.id=?
+2022-02-18 01:05:28.500 DEBUG 16492 --- [http-nio-8080-exec-2] c.y.m.CommentMapper.deleteCommentById    : ==> Parameters: 25(Long)
+2022-02-18 01:05:28.511 DEBUG 16492 --- [http-nio-8080-exec-2] c.y.m.CommentMapper.deleteCommentById    : <==    Updates: 1
+2022-02-18 01:05:50.799  INFO 16492 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-02-18 01:05:50.800  INFO 16492 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-18 01:05:50.802  INFO 16492 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-18 01:05:54.823  INFO 15736 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication on DESKTOP-NAD1TLO with PID 15736 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-02-18 01:05:54.860 DEBUG 15736 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2022-02-18 01:05:54.860  INFO 15736 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-02-18 01:05:55.826  INFO 15736 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-18 01:05:55.833  INFO 15736 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-18 01:05:55.833  INFO 15736 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2022-02-18 01:05:55.914  INFO 15736 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-18 01:05:55.914  INFO 15736 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1020 ms
+2022-02-18 01:05:56.438  INFO 15736 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-18 01:05:56.510  INFO 15736 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-02-18 01:05:56.773  INFO 15736 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-18 01:05:56.775  INFO 15736 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 2.377 seconds (JVM running for 3.109)
+2022-02-18 01:05:56.843  INFO 15736 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-18 01:05:56.844  INFO 15736 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-18 01:05:56.850  INFO 15736 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2022-02-18 01:05:56.890  INFO 15736 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-18 01:05:57.018  INFO 15736 --- [http-nio-8080-exec-1] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (com.mysql.jdbc.JDBC4Connection.getNetworkTimeout()I)
+2022-02-18 01:05:57.021  INFO 15736 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-18 01:05:57.026 DEBUG 15736 --- [http-nio-8080-exec-1] c.y.m.CommentMapper.listCommentByBlogId  : ==>  Preparing: select id,nickname,content,create_time,parent_comment_id,parent_nickname,flag from t_comment where blog_id=? order by id desc
+2022-02-18 01:05:57.052 DEBUG 15736 --- [http-nio-8080-exec-1] c.y.m.CommentMapper.listCommentByBlogId  : ==> Parameters: 251(Long)
+2022-02-18 01:05:57.063 DEBUG 15736 --- [http-nio-8080-exec-1] c.y.m.CommentMapper.listCommentByBlogId  : <==      Total: 2
+2022-02-18 01:05:59.709 DEBUG 15736 --- [http-nio-8080-exec-2] c.y.m.C.getBlogIdByCommentId             : ==>  Preparing: select t_comment.blog_id from t_comment where t_comment.id=?
+2022-02-18 01:05:59.710 DEBUG 15736 --- [http-nio-8080-exec-2] c.y.m.C.getBlogIdByCommentId             : ==> Parameters: 24(Long)
+2022-02-18 01:05:59.710 DEBUG 15736 --- [http-nio-8080-exec-2] c.y.m.C.getBlogIdByCommentId             : <==      Total: 1
+2022-02-18 01:05:59.725 DEBUG 15736 --- [http-nio-8080-exec-2] c.y.mapper.CommentMapper.hasParent       : ==>  Preparing: select not ISNULL(t_comment.parent_comment_id) from t_comment where t_comment.id=?
+2022-02-18 01:05:59.726 DEBUG 15736 --- [http-nio-8080-exec-2] c.y.mapper.CommentMapper.hasParent       : ==> Parameters: 24(Long)
+2022-02-18 01:05:59.726 DEBUG 15736 --- [http-nio-8080-exec-2] c.y.mapper.CommentMapper.hasParent       : <==      Total: 1
+2022-02-18 01:05:59.727 DEBUG 15736 --- [http-nio-8080-exec-2] c.y.mapper.CommentMapper.getChildIds     : ==>  Preparing: select t_comment.id from t_comment where t_comment.parent_comment_id=?
+2022-02-18 01:05:59.727 DEBUG 15736 --- [http-nio-8080-exec-2] c.y.mapper.CommentMapper.getChildIds     : ==> Parameters: 24(Long)
+2022-02-18 01:05:59.728 DEBUG 15736 --- [http-nio-8080-exec-2] c.y.mapper.CommentMapper.getChildIds     : <==      Total: 0
+2022-02-18 01:05:59.728 DEBUG 15736 --- [http-nio-8080-exec-2] c.y.m.CommentMapper.deleteCommentById    : ==>  Preparing: delete from t_comment where t_comment.id=?
+2022-02-18 01:05:59.729 DEBUG 15736 --- [http-nio-8080-exec-2] c.y.m.CommentMapper.deleteCommentById    : ==> Parameters: 24(Long)
+2022-02-18 01:05:59.730 DEBUG 15736 --- [http-nio-8080-exec-2] c.y.m.CommentMapper.deleteCommentById    : <==    Updates: 1
+2022-02-18 01:05:59.765 DEBUG 15736 --- [http-nio-8080-exec-4] c.y.m.CommentMapper.listCommentByBlogId  : ==>  Preparing: select id,nickname,content,create_time,parent_comment_id,parent_nickname,flag from t_comment where blog_id=? order by id desc
+2022-02-18 01:05:59.765 DEBUG 15736 --- [http-nio-8080-exec-4] c.y.m.CommentMapper.listCommentByBlogId  : ==> Parameters: 251(Long)
+2022-02-18 01:05:59.766 DEBUG 15736 --- [http-nio-8080-exec-4] c.y.m.CommentMapper.listCommentByBlogId  : <==      Total: 1
+2022-02-18 01:06:02.950 DEBUG 15736 --- [http-nio-8080-exec-3] c.y.m.C.getBlogIdByCommentId             : ==>  Preparing: select t_comment.blog_id from t_comment where t_comment.id=?
+2022-02-18 01:06:02.951 DEBUG 15736 --- [http-nio-8080-exec-3] c.y.m.C.getBlogIdByCommentId             : ==> Parameters: 27(Long)
+2022-02-18 01:06:02.952 DEBUG 15736 --- [http-nio-8080-exec-3] c.y.m.C.getBlogIdByCommentId             : <==      Total: 1
+2022-02-18 01:06:02.953 DEBUG 15736 --- [http-nio-8080-exec-3] c.y.mapper.CommentMapper.hasParent       : ==>  Preparing: select not ISNULL(t_comment.parent_comment_id) from t_comment where t_comment.id=?
+2022-02-18 01:06:02.954 DEBUG 15736 --- [http-nio-8080-exec-3] c.y.mapper.CommentMapper.hasParent       : ==> Parameters: 27(Long)
+2022-02-18 01:06:02.954 DEBUG 15736 --- [http-nio-8080-exec-3] c.y.mapper.CommentMapper.hasParent       : <==      Total: 1
+2022-02-18 01:06:02.955 DEBUG 15736 --- [http-nio-8080-exec-3] c.y.mapper.CommentMapper.getChildIds     : ==>  Preparing: select t_comment.id from t_comment where t_comment.parent_comment_id=?
+2022-02-18 01:06:02.955 DEBUG 15736 --- [http-nio-8080-exec-3] c.y.mapper.CommentMapper.getChildIds     : ==> Parameters: 27(Long)
+2022-02-18 01:06:02.955 DEBUG 15736 --- [http-nio-8080-exec-3] c.y.mapper.CommentMapper.getChildIds     : <==      Total: 0
+2022-02-18 01:06:02.955 DEBUG 15736 --- [http-nio-8080-exec-3] c.y.m.CommentMapper.deleteCommentById    : ==>  Preparing: delete from t_comment where t_comment.id=?
+2022-02-18 01:06:02.956 DEBUG 15736 --- [http-nio-8080-exec-3] c.y.m.CommentMapper.deleteCommentById    : ==> Parameters: 27(Long)
+2022-02-18 01:06:02.956 DEBUG 15736 --- [http-nio-8080-exec-3] c.y.m.CommentMapper.deleteCommentById    : <==    Updates: 1
+2022-02-18 01:06:02.979 DEBUG 15736 --- [http-nio-8080-exec-5] c.y.m.CommentMapper.listCommentByBlogId  : ==>  Preparing: select id,nickname,content,create_time,parent_comment_id,parent_nickname,flag from t_comment where blog_id=? order by id desc
+2022-02-18 01:06:02.979 DEBUG 15736 --- [http-nio-8080-exec-5] c.y.m.CommentMapper.listCommentByBlogId  : ==> Parameters: 251(Long)
+2022-02-18 01:06:02.981 DEBUG 15736 --- [http-nio-8080-exec-5] c.y.m.CommentMapper.listCommentByBlogId  : <==      Total: 0
+2022-02-18 01:06:24.457 DEBUG 15736 --- [http-nio-8080-exec-6] c.y.m.CommentMapper.listCommentByBlogId  : ==>  Preparing: select id,nickname,content,create_time,parent_comment_id,parent_nickname,flag from t_comment where blog_id=? order by id desc
+2022-02-18 01:06:24.457 DEBUG 15736 --- [http-nio-8080-exec-6] c.y.m.CommentMapper.listCommentByBlogId  : ==> Parameters: 251(Long)
+2022-02-18 01:06:24.459 DEBUG 15736 --- [http-nio-8080-exec-6] c.y.m.CommentMapper.listCommentByBlogId  : <==      Total: 4
+2022-02-18 01:06:26.873 DEBUG 15736 --- [http-nio-8080-exec-7] c.y.m.CommentMapper.listCommentByBlogId  : ==>  Preparing: select id,nickname,content,create_time,parent_comment_id,parent_nickname,flag from t_comment where blog_id=? order by id desc
+2022-02-18 01:06:26.874 DEBUG 15736 --- [http-nio-8080-exec-7] c.y.m.CommentMapper.listCommentByBlogId  : ==> Parameters: 251(Long)
+2022-02-18 01:06:26.875 DEBUG 15736 --- [http-nio-8080-exec-7] c.y.m.CommentMapper.listCommentByBlogId  : <==      Total: 4
+2022-02-18 01:06:28.729 DEBUG 15736 --- [http-nio-8080-exec-8] c.y.m.C.getBlogIdByCommentId             : ==>  Preparing: select t_comment.blog_id from t_comment where t_comment.id=?
+2022-02-18 01:06:28.729 DEBUG 15736 --- [http-nio-8080-exec-8] c.y.m.C.getBlogIdByCommentId             : ==> Parameters: 27(Long)
+2022-02-18 01:06:28.730 DEBUG 15736 --- [http-nio-8080-exec-8] c.y.m.C.getBlogIdByCommentId             : <==      Total: 1
+2022-02-18 01:06:28.732 DEBUG 15736 --- [http-nio-8080-exec-8] c.y.mapper.CommentMapper.hasParent       : ==>  Preparing: select not ISNULL(t_comment.parent_comment_id) from t_comment where t_comment.id=?
+2022-02-18 01:06:28.732 DEBUG 15736 --- [http-nio-8080-exec-8] c.y.mapper.CommentMapper.hasParent       : ==> Parameters: 27(Long)
+2022-02-18 01:06:28.733 DEBUG 15736 --- [http-nio-8080-exec-8] c.y.mapper.CommentMapper.hasParent       : <==      Total: 1
+2022-02-18 01:06:28.734 DEBUG 15736 --- [http-nio-8080-exec-8] c.y.mapper.CommentMapper.getChildIds     : ==>  Preparing: select t_comment.id from t_comment where t_comment.parent_comment_id=?
+2022-02-18 01:06:28.734 DEBUG 15736 --- [http-nio-8080-exec-8] c.y.mapper.CommentMapper.getChildIds     : ==> Parameters: 27(Long)
+2022-02-18 01:06:28.735 DEBUG 15736 --- [http-nio-8080-exec-8] c.y.mapper.CommentMapper.getChildIds     : <==      Total: 0
+2022-02-18 01:06:28.736 DEBUG 15736 --- [http-nio-8080-exec-8] c.y.m.CommentMapper.deleteCommentById    : ==>  Preparing: delete from t_comment where t_comment.id=?
+2022-02-18 01:06:28.736 DEBUG 15736 --- [http-nio-8080-exec-8] c.y.m.CommentMapper.deleteCommentById    : ==> Parameters: 27(Long)
+2022-02-18 01:06:28.749 DEBUG 15736 --- [http-nio-8080-exec-8] c.y.m.CommentMapper.deleteCommentById    : <==    Updates: 1
+2022-02-18 01:06:28.771 DEBUG 15736 --- [http-nio-8080-exec-9] c.y.m.CommentMapper.listCommentByBlogId  : ==>  Preparing: select id,nickname,content,create_time,parent_comment_id,parent_nickname,flag from t_comment where blog_id=? order by id desc
+2022-02-18 01:06:28.771 DEBUG 15736 --- [http-nio-8080-exec-9] c.y.m.CommentMapper.listCommentByBlogId  : ==> Parameters: 251(Long)
+2022-02-18 01:06:28.778 DEBUG 15736 --- [http-nio-8080-exec-9] c.y.m.CommentMapper.listCommentByBlogId  : <==      Total: 3
+2022-02-18 01:06:55.449 DEBUG 15736 --- [http-nio-8080-exec-10] c.y.m.C.listBlogIfHasComments            : ==>  Preparing: select t_blog.id,title from t_blog where t_blog.id in (select t_comment.blog_id from t_comment group by t_comment.blog_id)
+2022-02-18 01:06:55.449 DEBUG 15736 --- [http-nio-8080-exec-10] c.y.m.C.listBlogIfHasComments            : ==> Parameters: 
+2022-02-18 01:06:55.452 DEBUG 15736 --- [http-nio-8080-exec-10] c.y.m.C.listBlogIfHasComments            : <==      Total: 1
+2022-02-18 01:06:58.212 DEBUG 15736 --- [http-nio-8080-exec-4] c.y.m.CommentMapper.listCommentByBlogId  : ==>  Preparing: select id,nickname,content,create_time,parent_comment_id,parent_nickname,flag from t_comment where blog_id=? order by id desc
+2022-02-18 01:06:58.212 DEBUG 15736 --- [http-nio-8080-exec-4] c.y.m.CommentMapper.listCommentByBlogId  : ==> Parameters: 251(Long)
+2022-02-18 01:06:58.215 DEBUG 15736 --- [http-nio-8080-exec-4] c.y.m.CommentMapper.listCommentByBlogId  : <==      Total: 3
+2022-02-18 01:06:58.216 DEBUG 15736 --- [http-nio-8080-exec-4] c.y.m.CommentMapper.deleteCommentById    : ==>  Preparing: delete from t_comment where t_comment.id=?
+2022-02-18 01:06:58.216 DEBUG 15736 --- [http-nio-8080-exec-4] c.y.m.CommentMapper.deleteCommentById    : ==> Parameters: 26(Long)
+2022-02-18 01:06:58.217 DEBUG 15736 --- [http-nio-8080-exec-4] c.y.m.CommentMapper.deleteCommentById    : <==    Updates: 1
+2022-02-18 01:06:58.217 DEBUG 15736 --- [http-nio-8080-exec-4] c.y.m.CommentMapper.deleteCommentById    : ==>  Preparing: delete from t_comment where t_comment.id=?
+2022-02-18 01:06:58.217 DEBUG 15736 --- [http-nio-8080-exec-4] c.y.m.CommentMapper.deleteCommentById    : ==> Parameters: 25(Long)
+2022-02-18 01:06:58.218 DEBUG 15736 --- [http-nio-8080-exec-4] c.y.m.CommentMapper.deleteCommentById    : <==    Updates: 1
+2022-02-18 01:06:58.218 DEBUG 15736 --- [http-nio-8080-exec-4] c.y.m.CommentMapper.deleteCommentById    : ==>  Preparing: delete from t_comment where t_comment.id=?
+2022-02-18 01:06:58.218 DEBUG 15736 --- [http-nio-8080-exec-4] c.y.m.CommentMapper.deleteCommentById    : ==> Parameters: 24(Long)
+2022-02-18 01:06:58.221 DEBUG 15736 --- [http-nio-8080-exec-4] c.y.m.CommentMapper.deleteCommentById    : <==    Updates: 1
+2022-02-18 01:06:58.259 DEBUG 15736 --- [http-nio-8080-exec-3] c.y.m.C.listBlogIfHasComments            : ==>  Preparing: select t_blog.id,title from t_blog where t_blog.id in (select t_comment.blog_id from t_comment group by t_comment.blog_id)
+2022-02-18 01:06:58.260 DEBUG 15736 --- [http-nio-8080-exec-3] c.y.m.C.listBlogIfHasComments            : ==> Parameters: 
+2022-02-18 01:06:58.260 DEBUG 15736 --- [http-nio-8080-exec-3] c.y.m.C.listBlogIfHasComments            : <==      Total: 0
+2022-02-18 01:08:13.488  INFO 15736 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-02-18 01:08:13.489  INFO 15736 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-18 01:08:13.491  INFO 15736 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-18 01:08:17.265  INFO 9324 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication on DESKTOP-NAD1TLO with PID 9324 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-02-18 01:08:17.268 DEBUG 9324 --- [main] com.yikolemon.MyblogApplication          : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2022-02-18 01:08:17.268  INFO 9324 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: dev
+2022-02-18 01:08:18.257  INFO 9324 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-18 01:08:18.265  INFO 9324 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-18 01:08:18.265  INFO 9324 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2022-02-18 01:08:18.352  INFO 9324 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-18 01:08:18.352  INFO 9324 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1013 ms
+2022-02-18 01:08:18.908  INFO 9324 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-18 01:08:18.976  INFO 9324 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-02-18 01:08:19.223  INFO 9324 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-18 01:08:19.226  INFO 9324 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 2.353 seconds (JVM running for 3.079)
+2022-02-18 01:08:19.320  INFO 9324 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-18 01:08:19.320  INFO 9324 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-18 01:08:19.326  INFO 9324 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2022-02-18 01:08:19.360  INFO 9324 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-18 01:08:19.490  INFO 9324 --- [http-nio-8080-exec-1] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (com.mysql.jdbc.JDBC4Connection.getNetworkTimeout()I)
+2022-02-18 01:08:19.493  INFO 9324 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-18 01:08:19.498 DEBUG 9324 --- [http-nio-8080-exec-1] c.y.m.C.listBlogIfHasComments            : ==>  Preparing: select t_blog.id,title from t_blog where t_blog.id in (select t_comment.blog_id from t_comment group by t_comment.blog_id)
+2022-02-18 01:08:19.510 DEBUG 9324 --- [http-nio-8080-exec-1] c.y.m.C.listBlogIfHasComments            : ==> Parameters: 
+2022-02-18 01:08:19.523 DEBUG 9324 --- [http-nio-8080-exec-1] c.y.m.C.listBlogIfHasComments            : <==      Total: 1
+2022-02-18 01:08:21.450 DEBUG 9324 --- [http-nio-8080-exec-2] c.y.m.C.listBlogIfHasComments            : ==>  Preparing: select t_blog.id,title from t_blog where t_blog.id in (select t_comment.blog_id from t_comment group by t_comment.blog_id)
+2022-02-18 01:08:21.450 DEBUG 9324 --- [http-nio-8080-exec-2] c.y.m.C.listBlogIfHasComments            : ==> Parameters: 
+2022-02-18 01:08:21.451 DEBUG 9324 --- [http-nio-8080-exec-2] c.y.m.C.listBlogIfHasComments            : <==      Total: 1
+2022-02-18 01:08:24.019 DEBUG 9324 --- [http-nio-8080-exec-6] c.y.m.CommentMapper.listCommentByBlogId  : ==>  Preparing: select id,nickname,content,create_time,parent_comment_id,parent_nickname,flag from t_comment where blog_id=? order by id desc
+2022-02-18 01:08:24.019 DEBUG 9324 --- [http-nio-8080-exec-6] c.y.m.CommentMapper.listCommentByBlogId  : ==> Parameters: 251(Long)
+2022-02-18 01:08:24.022 DEBUG 9324 --- [http-nio-8080-exec-6] c.y.m.CommentMapper.listCommentByBlogId  : <==      Total: 4
+2022-02-18 01:08:26.074 DEBUG 9324 --- [http-nio-8080-exec-4] c.y.m.C.getBlogIdByCommentId             : ==>  Preparing: select t_comment.blog_id from t_comment where t_comment.id=?
+2022-02-18 01:08:26.074 DEBUG 9324 --- [http-nio-8080-exec-4] c.y.m.C.getBlogIdByCommentId             : ==> Parameters: 26(Long)
+2022-02-18 01:08:26.075 DEBUG 9324 --- [http-nio-8080-exec-4] c.y.m.C.getBlogIdByCommentId             : <==      Total: 1
+2022-02-18 01:08:26.083 DEBUG 9324 --- [http-nio-8080-exec-4] c.y.mapper.CommentMapper.hasParent       : ==>  Preparing: select not ISNULL(t_comment.parent_comment_id) from t_comment where t_comment.id=?
+2022-02-18 01:08:26.084 DEBUG 9324 --- [http-nio-8080-exec-4] c.y.mapper.CommentMapper.hasParent       : ==> Parameters: 26(Long)
+2022-02-18 01:08:26.084 DEBUG 9324 --- [http-nio-8080-exec-4] c.y.mapper.CommentMapper.hasParent       : <==      Total: 1
+2022-02-18 01:08:26.085 DEBUG 9324 --- [http-nio-8080-exec-4] c.y.m.CommentMapper.deleteCommentById    : ==>  Preparing: delete from t_comment where t_comment.id=?
+2022-02-18 01:08:26.086 DEBUG 9324 --- [http-nio-8080-exec-4] c.y.m.CommentMapper.deleteCommentById    : ==> Parameters: 26(Long)
+2022-02-18 01:08:26.099 DEBUG 9324 --- [http-nio-8080-exec-4] c.y.m.CommentMapper.deleteCommentById    : <==    Updates: 1
+2022-02-18 01:08:26.139 DEBUG 9324 --- [http-nio-8080-exec-5] c.y.m.CommentMapper.listCommentByBlogId  : ==>  Preparing: select id,nickname,content,create_time,parent_comment_id,parent_nickname,flag from t_comment where blog_id=? order by id desc
+2022-02-18 01:08:26.139 DEBUG 9324 --- [http-nio-8080-exec-5] c.y.m.CommentMapper.listCommentByBlogId  : ==> Parameters: 251(Long)
+2022-02-18 01:08:26.141 DEBUG 9324 --- [http-nio-8080-exec-5] c.y.m.CommentMapper.listCommentByBlogId  : <==      Total: 3
+2022-02-18 01:08:28.097 DEBUG 9324 --- [http-nio-8080-exec-9] c.y.m.C.getBlogIdByCommentId             : ==>  Preparing: select t_comment.blog_id from t_comment where t_comment.id=?
+2022-02-18 01:08:28.097 DEBUG 9324 --- [http-nio-8080-exec-9] c.y.m.C.getBlogIdByCommentId             : ==> Parameters: 25(Long)
+2022-02-18 01:08:28.098 DEBUG 9324 --- [http-nio-8080-exec-9] c.y.m.C.getBlogIdByCommentId             : <==      Total: 1
+2022-02-18 01:08:28.099 DEBUG 9324 --- [http-nio-8080-exec-9] c.y.mapper.CommentMapper.hasParent       : ==>  Preparing: select not ISNULL(t_comment.parent_comment_id) from t_comment where t_comment.id=?
+2022-02-18 01:08:28.099 DEBUG 9324 --- [http-nio-8080-exec-9] c.y.mapper.CommentMapper.hasParent       : ==> Parameters: 25(Long)
+2022-02-18 01:08:28.100 DEBUG 9324 --- [http-nio-8080-exec-9] c.y.mapper.CommentMapper.hasParent       : <==      Total: 1
+2022-02-18 01:08:28.100 DEBUG 9324 --- [http-nio-8080-exec-9] c.y.m.CommentMapper.deleteCommentById    : ==>  Preparing: delete from t_comment where t_comment.id=?
+2022-02-18 01:08:28.100 DEBUG 9324 --- [http-nio-8080-exec-9] c.y.m.CommentMapper.deleteCommentById    : ==> Parameters: 25(Long)
+2022-02-18 01:08:28.101 DEBUG 9324 --- [http-nio-8080-exec-9] c.y.m.CommentMapper.deleteCommentById    : <==    Updates: 1
+2022-02-18 01:08:28.123 DEBUG 9324 --- [http-nio-8080-exec-7] c.y.m.CommentMapper.listCommentByBlogId  : ==>  Preparing: select id,nickname,content,create_time,parent_comment_id,parent_nickname,flag from t_comment where blog_id=? order by id desc
+2022-02-18 01:08:28.124 DEBUG 9324 --- [http-nio-8080-exec-7] c.y.m.CommentMapper.listCommentByBlogId  : ==> Parameters: 251(Long)
+2022-02-18 01:08:28.125 DEBUG 9324 --- [http-nio-8080-exec-7] c.y.m.CommentMapper.listCommentByBlogId  : <==      Total: 2
+2022-02-18 01:08:30.743 DEBUG 9324 --- [http-nio-8080-exec-8] c.y.m.CommentMapper.listCommentByBlogId  : ==>  Preparing: select id,nickname,content,create_time,parent_comment_id,parent_nickname,flag from t_comment where blog_id=? order by id desc
+2022-02-18 01:08:30.743 DEBUG 9324 --- [http-nio-8080-exec-8] c.y.m.CommentMapper.listCommentByBlogId  : ==> Parameters: 251(Long)
+2022-02-18 01:08:30.744 DEBUG 9324 --- [http-nio-8080-exec-8] c.y.m.CommentMapper.listCommentByBlogId  : <==      Total: 2
+2022-02-18 01:08:35.249  INFO 9324 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-02-18 01:08:35.250  INFO 9324 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-18 01:08:35.252  INFO 9324 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

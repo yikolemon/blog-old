@@ -89,7 +89,7 @@ public class BlogController {
         PageHelper.startPage(page,pageSize);
         List<Blog> list = blogService.listAllBlogsSearch(blog);
         PageInfo<Blog> pageInfo = new PageInfo<>(list);
-        System.out.println(pageInfo.isIsFirstPage());
+        /*System.out.println(pageInfo.isIsFirstPage());*/
         model.addAttribute("pageInfo",pageInfo);
         return "admin/blogs :: blogList";
     }

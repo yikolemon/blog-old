@@ -34,7 +34,7 @@ public class FileController {
         Img imgBean=new Img(src,filename);
         Gson gson=new Gson();
         String imgJson = gson.toJson(imgBean);
-        System.out.println(imgJson);
+        /*System.out.println(imgJson);*/
         return imgJson;
     }
 

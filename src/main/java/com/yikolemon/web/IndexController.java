@@ -93,7 +93,7 @@ public class IndexController {
         User user = userService.getUser(userId);
         model.addAttribute("user",user);
         List<Tag> tags = tagService.getTagsByBlogId(blog.getId());
-        System.out.println(tags);
+        /*System.out.println(tags);*/
         model.addAttribute("tags",tags);
         return "blog";
     }

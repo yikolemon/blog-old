@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragment :: basic-head(~{::title})">
+    <title>bg</title>
+</head>
+<body>
+<div id="root"></div>
+<div>
+    <div id="particles-js">
+        <canvas class="particles-js-canvas-el"></canvas>
+    </div>
+    <script th:src="@{/lib/bg/bg.js}"></script>
+</div>
+
+</body>
+</html>
