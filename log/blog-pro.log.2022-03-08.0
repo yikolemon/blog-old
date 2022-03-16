@@ -1,0 +1,39 @@
+2022-03-08 10:53:47.245  INFO 12268 --- [main] com.yikolemon.MyblogApplicationTests     : Starting MyblogApplicationTests on DESKTOP-NAD1TLO with PID 12268 (started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-03-08 10:53:47.247  INFO 12268 --- [main] com.yikolemon.MyblogApplicationTests     : The following profiles are active: pro
+2022-03-08 10:53:49.516  INFO 12268 --- [main] com.yikolemon.MyblogApplicationTests     : Started MyblogApplicationTests in 2.586 seconds (JVM running for 3.358)
+2022-03-08 11:03:45.720  INFO 5136 --- [main] com.yikolemon.MyblogApplicationTests     : Starting MyblogApplicationTests on DESKTOP-NAD1TLO with PID 5136 (started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-03-08 11:03:45.722  INFO 5136 --- [main] com.yikolemon.MyblogApplicationTests     : The following profiles are active: pro
+2022-03-08 11:03:48.043  INFO 5136 --- [main] com.yikolemon.MyblogApplicationTests     : Started MyblogApplicationTests in 2.665 seconds (JVM running for 3.413)
+2022-03-08 13:17:32.520  INFO 2240 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication on DESKTOP-NAD1TLO with PID 2240 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-03-08 13:17:32.525  INFO 2240 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: pro
+2022-03-08 13:17:34.289  INFO 2240 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 2.174 seconds (JVM running for 3.719)
+2022-03-08 13:17:34.635  INFO 2240 --- [http-nio-8765-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8765/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-08 13:17:34.850  INFO 2240 --- [http-nio-8765-exec-1] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-08 13:18:18.203  INFO 2240 --- [http-nio-8765-exec-9] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8765/blog/256', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[256, {}]}
+2022-03-08 13:18:18.280  INFO 2240 --- [http-nio-8765-exec-9] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-08 13:18:53.781  INFO 2240 --- [http-nio-8765-exec-8] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8765/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-08 13:18:53.800  INFO 2240 --- [http-nio-8765-exec-8] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-08 13:18:55.421  INFO 2240 --- [http-nio-8765-exec-2] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8765/blog/256', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[256, {}]}
+2022-03-08 13:18:55.445  INFO 2240 --- [http-nio-8765-exec-2] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-08 13:19:03.872  INFO 2240 --- [http-nio-8765-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8765/blog/255', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[255, {}]}
+2022-03-08 13:19:03.891  INFO 2240 --- [http-nio-8765-exec-1] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-08 13:21:08.449  INFO 2240 --- [http-nio-8765-exec-4] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8765/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[-1, 1, {}]}
+2022-03-08 13:21:08.473  INFO 2240 --- [http-nio-8765-exec-4] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-08 13:21:09.861  INFO 2240 --- [http-nio-8765-exec-7] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8765/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[-1, 1, {}]}
+2022-03-08 13:21:09.891  INFO 2240 --- [http-nio-8765-exec-7] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-08 13:21:11.217  INFO 2240 --- [http-nio-8765-exec-8] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8765/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.ArchiveBlogController.archiveShowBlog', args=[{}]}
+2022-03-08 13:21:11.230  INFO 2240 --- [http-nio-8765-exec-8] com.yikolemon.aspect.LogAspect           : Result : archives
+2022-03-08 13:21:18.057  INFO 2240 --- [http-nio-8765-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8765/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.ArchiveBlogController.archiveShowBlog', args=[{}]}
+2022-03-08 13:21:18.063  INFO 2240 --- [http-nio-8765-exec-1] com.yikolemon.aspect.LogAspect           : Result : archives
+2022-03-08 13:21:20.458  INFO 2240 --- [http-nio-8765-exec-9] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8765/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[-1, 1, {}]}
+2022-03-08 13:21:20.473  INFO 2240 --- [http-nio-8765-exec-9] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-08 13:21:22.581  INFO 2240 --- [http-nio-8765-exec-5] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8765/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[-1, 1, {}]}
+2022-03-08 13:21:22.591  INFO 2240 --- [http-nio-8765-exec-5] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-08 13:21:25.550  INFO 2240 --- [http-nio-8765-exec-6] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8765/types/24', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[24, 1, {}]}
+2022-03-08 13:21:25.560  INFO 2240 --- [http-nio-8765-exec-6] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-08 13:21:43.427  INFO 2240 --- [http-nio-8765-exec-10] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8765/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-08 13:21:43.451  INFO 2240 --- [http-nio-8765-exec-10] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-08 13:21:50.866  INFO 2240 --- [http-nio-8765-exec-3] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8765/blog/256', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[256, {}]}
+2022-03-08 13:21:50.877  INFO 2240 --- [http-nio-8765-exec-3] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-08 13:22:01.731  INFO 2240 --- [http-nio-8765-exec-4] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8765/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-08 13:22:01.751  INFO 2240 --- [http-nio-8765-exec-4] com.yikolemon.aspect.LogAspect           : Result : index

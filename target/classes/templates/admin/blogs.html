@@ -46,8 +46,8 @@
           </div>
           <div class="field">
             <div class="ui checkbox">
-              <input type="checkbox" id="published" name="published">
-              <label for="published">未发布</label>
+              <input type="checkbox" id="unpublished" name="unpublished">
+              <label for="unpublished">未发布</label>
             </div>
           </div>
           <div class="field">
@@ -131,7 +131,7 @@
         typeId : $("[name='typeId']").val(),
         page : $("[name='page']").val(),
         recommend: $("[name='recommend']").prop("checked"),
-        published: $("[name='published']").prop("unchecked")
+        unpublished: $("[name='unpublished']").prop("checked")
       });
     }
     $('#clear-btn')

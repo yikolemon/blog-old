@@ -1,3 +1,6 @@
+/*-------------------设置footer固定在底部-------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------------*/
 body::before {
     content: "";
     top: 0;
@@ -152,18 +155,22 @@ body {
 .m-container {
     max-width: 72em !important;
     margin: auto !important;
+    min-height: 62% !important;
 }
 .m-container-small {
     max-width: 60em !important;
     margin: auto !important;
+    min-height: 62% !important;
 }
 .m-container-middle{
     max-width: 77em !important;
     margin: auto !important;
+    min-height: 62% !important;
 }
 .m-container-big {
     max-width: 90em !important;
     margin: auto !important;
+    min-height: 62% !important;
 }
 
 /*------shadow------*/

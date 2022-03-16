@@ -71,9 +71,6 @@
       <div  class="ui attached teal segment open-bg" th:if="${pageInfo.getTotal()}==0">
         <h1 align="middle" class="miku-colour">无博客</h1>
       </div>
-      <div th:if="${pageInfo.getTotal()}==0">
-        <br><br><br>
-      </div>
 
       <div class="ui bottom attached segment open-bg" th:if="${!pageInfo.isIsFirstPage()} or ${!pageInfo.isIsLastPage()}">
         <div class="ui middle aligned two column grid">
@@ -99,8 +96,6 @@
 
     </div>
   </div>
-  <br>
-  <br>
 
   <form method="get" th:action="@{/tags/{id}(id=${tagId})}" id="index-form">
     <input type="hidden" name="pageNum">

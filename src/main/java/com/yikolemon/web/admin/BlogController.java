@@ -85,8 +85,13 @@ public class BlogController {
 
 
     @PostMapping("/blogs/search")
-    public String search(Model model, SearchBlog blog, int page){
+    public String search(Model model, SearchBlog blog, int page,HttpServletRequest request){
         PageHelper.startPage(page,pageSize);
+        boolean published=true;
+        String unpublished = request.getParameter("unpublished");
+        System.out.println(unpublished);
+        if (unpublished.equals("true")) published=false;
+        blog.setPublished(published);
         List<Blog> list = blogService.listAllBlogsSearch(blog);
         PageInfo<Blog> pageInfo = new PageInfo<>(list);
         /*System.out.println(pageInfo.isIsFirstPage());*/

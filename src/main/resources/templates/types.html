@@ -4,6 +4,7 @@
   <title>分类</title>
 </head>
 <body>
+
   <div th:replace="fragment :: canvas-bg"></div>
   <!--导航-->
   <nav th:replace="fragment :: menu(2)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small"></nav>
@@ -71,9 +72,6 @@
       <div  class="ui attached teal segment open-bg" th:if="${pageInfo.getTotal()}==0">
         <h1 align="middle" class="miku-colour">无博客</h1>
       </div>
-      <div th:if="${pageInfo.getTotal()}==0">
-        <br><br><br>
-      </div>
 
 
       <div class="ui bottom attached segment open-bg" th:if="${!pageInfo.isIsFirstPage()} or ${!pageInfo.isIsLastPage()}">
@@ -122,5 +120,6 @@
       form.submit();
     }
   </script>
+
 </body>
 </html>

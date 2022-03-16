@@ -169,7 +169,7 @@
     </div>
   </div>
 
-  <div id="toolbar" class="m-padded animated fadeIn m-fixed m-right-bottom" style="display: none">
+  <div id="toolbar" class="m-padded animated fadeIn m-fixed m-right-bottom">
     <div class="ui vertical icon buttons ">
       <button type="button" class="ui toc teal button" >目录</button>
       <a href="#comment-container" class="ui teal button" th:if="${blog.commentabled}==true">留言</a>
@@ -197,7 +197,7 @@
 
   <div th:replace="fragment :: blog-script"></div>
 
-  <script>
+ <!-- <script>
   var waypoint = new Waypoint({
     element: document.getElementById('waypoint'),
     handler: function(direction) {
@@ -209,7 +209,7 @@
       console.log('Scrolled to waypoint!  ' + direction);
     }
   });
-  </script>
+  </script>-->
 
   <script>
 
@@ -228,7 +228,7 @@
       // Where to grab the headings to build the table of contents.
       contentSelector: '.js-toc-content',
       // Which headings to grab inside of the contentSelector element.
-      headingSelector: 'h1, h2, h3',
+      headingSelector: 'h1, h2',
     });
 
     $('.toc.button').popup({

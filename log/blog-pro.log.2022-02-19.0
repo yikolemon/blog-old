@@ -1,0 +1,61 @@
+2022-02-19 15:46:47.876  INFO 14828 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication on DESKTOP-NAD1TLO with PID 14828 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-02-19 15:46:47.879  INFO 14828 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: pro
+2022-02-19 15:46:49.685  INFO 14828 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 2.198 seconds (JVM running for 2.898)
+2022-02-19 15:47:07.804  INFO 14828 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-02-19 15:47:08.019  INFO 14828 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Result : index
+2022-02-19 15:47:14.775  INFO 14828 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/blog/254', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[254, {}]}
+2022-02-19 15:47:14.827  INFO 14828 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-02-19 15:50:26.254  INFO 6408 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication on DESKTOP-NAD1TLO with PID 6408 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-02-19 15:50:26.256  INFO 6408 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: pro
+2022-02-19 15:50:28.094  INFO 6408 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 2.23 seconds (JVM running for 3.125)
+2022-02-19 15:50:56.178  INFO 4828 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication on DESKTOP-NAD1TLO with PID 4828 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-02-19 15:50:56.180  INFO 4828 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: pro
+2022-02-19 15:50:58.069  INFO 4828 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 2.29 seconds (JVM running for 2.957)
+2022-02-19 15:50:59.621  INFO 4828 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-02-19 15:50:59.836  INFO 4828 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Result : index
+2022-02-19 15:51:04.402  INFO 4828 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/21', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[21, 1, {}]}
+2022-02-19 15:51:04.418  INFO 4828 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Result : types
+2022-02-19 15:51:45.452  INFO 4828 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-02-19 15:51:45.466  INFO 4828 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Result : index
+2022-02-19 15:52:22.346  INFO 11696 --- [main] com.yikolemon.MyblogApplicationTests     : Starting MyblogApplicationTests on DESKTOP-NAD1TLO with PID 11696 (started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-02-19 15:52:22.347  INFO 11696 --- [main] com.yikolemon.MyblogApplicationTests     : The following profiles are active: pro
+2022-02-19 15:52:24.506  INFO 11696 --- [main] com.yikolemon.MyblogApplicationTests     : Started MyblogApplicationTests in 2.443 seconds (JVM running for 3.164)
+2022-02-19 17:30:17.024  INFO 13896 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication on DESKTOP-NAD1TLO with PID 13896 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-02-19 17:30:17.027  INFO 13896 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: pro
+2022-02-19 17:30:18.813  INFO 13896 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 2.199 seconds (JVM running for 2.761)
+2022-02-19 17:30:18.920  INFO 13896 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-02-19 17:30:19.121  INFO 13896 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Result : index
+2022-02-19 17:30:22.724  INFO 13896 --- [http-nio-8081-exec-4] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-02-19 17:30:22.746  INFO 13896 --- [http-nio-8081-exec-4] com.yikolemon.aspect.LogAspect           : Result : index
+2022-02-19 17:30:34.946  INFO 13896 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='127.0.0.1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-02-19 17:30:34.962  INFO 13896 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Result : index
+2022-02-19 17:30:41.935  INFO 13896 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/-1', ip='127.0.0.1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[-1, 1, {}]}
+2022-02-19 17:30:41.969  INFO 13896 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Result : types
+2022-02-19 17:30:43.306  INFO 13896 --- [http-nio-8081-exec-4] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/-1', ip='127.0.0.1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[-1, 1, {}]}
+2022-02-19 17:30:43.329  INFO 13896 --- [http-nio-8081-exec-4] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-02-19 17:30:46.974  INFO 13896 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/archives', ip='127.0.0.1', classMethod='com.yikolemon.web.ArchiveBlogController.archiveShowBlog', args=[{}]}
+2022-02-19 17:30:46.983  INFO 13896 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Result : archives
+2022-02-19 17:30:53.376  INFO 13896 --- [http-nio-8081-exec-9] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='127.0.0.1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-02-19 17:30:53.400  INFO 13896 --- [http-nio-8081-exec-9] com.yikolemon.aspect.LogAspect           : Result : index
+2022-02-19 17:31:24.666  INFO 4504 --- [main] com.yikolemon.MyblogApplicationTests     : Starting MyblogApplicationTests on DESKTOP-NAD1TLO with PID 4504 (started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-02-19 17:31:24.667  INFO 4504 --- [main] com.yikolemon.MyblogApplicationTests     : The following profiles are active: pro
+2022-02-19 17:31:26.764  INFO 4504 --- [main] com.yikolemon.MyblogApplicationTests     : Started MyblogApplicationTests in 2.375 seconds (JVM running for 3.076)
+2022-02-19 17:48:20.872  INFO 12236 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication on DESKTOP-NAD1TLO with PID 12236 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-02-19 17:48:20.874  INFO 12236 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: pro
+2022-02-19 17:48:23.148  INFO 9512 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication on DESKTOP-NAD1TLO with PID 9512 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-02-19 17:48:23.152  INFO 9512 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: pro
+2022-02-19 17:48:24.657  INFO 12236 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 4.403 seconds (JVM running for 5.102)
+2022-02-19 17:48:25.172 ERROR 9512 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8081 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
+

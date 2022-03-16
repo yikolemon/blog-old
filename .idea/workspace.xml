@@ -24,17 +24,6 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="blog@localhost" type="feb32156:DbDataSourceImpl" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="blog@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="blog@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="blog: schema" type="76f4a085:MysqlImplModel$Schema" />
-      </path>
     </expand>
     <select />
   </component>
@@ -83,7 +72,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/lib/bg" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/shiro/shiro-1" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -315,6 +304,28 @@
       <workItem from="1644939430899" duration="2216000" />
       <workItem from="1645094862143" duration="18581000" />
       <workItem from="1645254694521" duration="7513000" />
+      <workItem from="1645264091678" duration="35000" />
+      <workItem from="1645711358567" duration="53000" />
+      <workItem from="1645718789787" duration="206000" />
+      <workItem from="1646377070529" duration="5198000" />
+      <workItem from="1646384517053" duration="740000" />
+      <workItem from="1646449064882" duration="49000" />
+      <workItem from="1646449274654" duration="3000" />
+      <workItem from="1646460482351" duration="83000" />
+      <workItem from="1646566614864" duration="1433000" />
+      <workItem from="1646575645006" duration="92000" />
+      <workItem from="1646622670950" duration="115000" />
+      <workItem from="1646627163144" duration="14000" />
+      <workItem from="1646708005812" duration="1253000" />
+      <workItem from="1646812534376" duration="90000" />
+      <workItem from="1646893784404" duration="614000" />
+      <workItem from="1646894885552" duration="1582000" />
+      <workItem from="1646920524647" duration="493000" />
+      <workItem from="1647267621059" duration="757000" />
+      <workItem from="1647271648531" duration="590000" />
+      <workItem from="1647311822509" duration="670000" />
+      <workItem from="1647345382436" duration="335000" />
+      <workItem from="1647434815021" duration="3590000" />
     </task>
     <servers />
   </component>
@@ -358,6 +369,6 @@
     <SUITE FILE_PATH="coverage/myblog$TypeServiceImplTest_getTypeTop.ic" NAME="TypeServiceImplTest.getTypeTop Coverage Results" MODIFIED="1643197994784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.yikolemon.service.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/myblog$MyblogApplication.ic" NAME="MyblogApplication Coverage Results" MODIFIED="1644583466491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/myblog$MyblogApplication.ic" NAME="MyblogApplication Coverage Results" MODIFIED="1645264099504" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

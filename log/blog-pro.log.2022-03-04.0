@@ -1,0 +1,1374 @@
+2022-03-04 14:57:59.982  INFO 17352 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication on DESKTOP-NAD1TLO with PID 17352 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-03-04 14:57:59.992  INFO 17352 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: pro
+2022-03-04 14:58:02.461  INFO 17352 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 2.939 seconds (JVM running for 3.719)
+2022-03-04 15:00:44.187  INFO 17352 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 15:00:47.262 ERROR 17352 --- [http-nio-8081-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 0 ms ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1074)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2103)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:718)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:302)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:282)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:354)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:554)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at com.github.pagehelper.page.PageAutoDialect.getUrl(PageAutoDialect.java:177)
+	at com.github.pagehelper.page.PageAutoDialect.getDialect(PageAutoDialect.java:203)
+	at com.github.pagehelper.page.PageAutoDialect.initDelegateDialect(PageAutoDialect.java:99)
+	at com.github.pagehelper.PageHelper.skip(PageHelper.java:66)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:93)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy111.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	at com.sun.proxy.$Proxy78.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy79.listBlogsIndex(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy80.listBlogsIndex(Unknown Source)
+	at com.yikolemon.service.BlogServiceImpl.listBlogsIndex(BlogServiceImpl.java:65)
+	at com.yikolemon.web.IndexController.index(IndexController.java:56)
+	at com.yikolemon.web.IndexController$$FastClassBySpringCGLIB$$cb24de38.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:56)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:47)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:55)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.yikolemon.web.IndexController$$EnhancerBySpringCGLIB$$41802299.index(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:75)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:162)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394)
+	at java.net.Socket.connect(Socket.java:606)
+	at java.net.Socket.connect(Socket.java:555)
+	at java.net.Socket.<init>(Socket.java:451)
+	at java.net.Socket.<init>(Socket.java:261)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:253)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:280)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2026)
+	... 119 common frames omitted
+
+2022-03-04 15:00:47.268 ERROR 17352 --- [http-nio-8081-exec-1] c.y.handler.ControllerExceptionHandler   : Requst URL : http://localhost:8081/，Exception : {}
+
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: com.github.pagehelper.PageException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 0 ms ago.
+### Cause: com.github.pagehelper.PageException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 0 ms ago.
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:96)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:441)
+	at com.sun.proxy.$Proxy78.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy79.listBlogsIndex(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy80.listBlogsIndex(Unknown Source)
+	at com.yikolemon.service.BlogServiceImpl.listBlogsIndex(BlogServiceImpl.java:65)
+	at com.yikolemon.web.IndexController.index(IndexController.java:56)
+	at com.yikolemon.web.IndexController$$FastClassBySpringCGLIB$$cb24de38.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:56)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:47)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:55)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.yikolemon.web.IndexController$$EnhancerBySpringCGLIB$$41802299.index(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: com.github.pagehelper.PageException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 0 ms ago.
+### Cause: com.github.pagehelper.PageException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 0 ms ago.
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:149)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	... 89 common frames omitted
+Caused by: com.github.pagehelper.PageException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 0 ms ago.
+	at com.github.pagehelper.page.PageAutoDialect.getUrl(PageAutoDialect.java:180)
+	at com.github.pagehelper.page.PageAutoDialect.getDialect(PageAutoDialect.java:203)
+	at com.github.pagehelper.page.PageAutoDialect.initDelegateDialect(PageAutoDialect.java:99)
+	at com.github.pagehelper.PageHelper.skip(PageHelper.java:66)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:93)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy111.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	... 95 common frames omitted
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 0 ms ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1074)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2103)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:718)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:302)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:282)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:354)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:554)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at com.github.pagehelper.page.PageAutoDialect.getUrl(PageAutoDialect.java:177)
+	... 102 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:75)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:162)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394)
+	at java.net.Socket.connect(Socket.java:606)
+	at java.net.Socket.connect(Socket.java:555)
+	at java.net.Socket.<init>(Socket.java:451)
+	at java.net.Socket.<init>(Socket.java:261)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:253)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:280)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2026)
+	... 119 common frames omitted
+
+2022-03-04 15:00:53.249  INFO 17352 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 15:00:56.254 ERROR 17352 --- [http-nio-8081-exec-3] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 0 ms ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1074)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2103)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:718)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:302)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:282)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:354)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:554)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at com.github.pagehelper.page.PageAutoDialect.getUrl(PageAutoDialect.java:177)
+	at com.github.pagehelper.page.PageAutoDialect.getDialect(PageAutoDialect.java:203)
+	at com.github.pagehelper.page.PageAutoDialect.initDelegateDialect(PageAutoDialect.java:99)
+	at com.github.pagehelper.PageHelper.skip(PageHelper.java:66)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:93)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy111.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	at com.sun.proxy.$Proxy78.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy79.listBlogsIndex(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy80.listBlogsIndex(Unknown Source)
+	at com.yikolemon.service.BlogServiceImpl.listBlogsIndex(BlogServiceImpl.java:65)
+	at com.yikolemon.web.IndexController.index(IndexController.java:56)
+	at com.yikolemon.web.IndexController$$FastClassBySpringCGLIB$$cb24de38.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:56)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:47)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:55)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.yikolemon.web.IndexController$$EnhancerBySpringCGLIB$$41802299.index(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:75)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:162)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394)
+	at java.net.Socket.connect(Socket.java:606)
+	at java.net.Socket.connect(Socket.java:555)
+	at java.net.Socket.<init>(Socket.java:451)
+	at java.net.Socket.<init>(Socket.java:261)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:253)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:280)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2026)
+	... 119 common frames omitted
+
+2022-03-04 15:00:56.257 ERROR 17352 --- [http-nio-8081-exec-3] c.y.handler.ControllerExceptionHandler   : Requst URL : http://localhost:8081/，Exception : {}
+
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: com.github.pagehelper.PageException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 0 ms ago.
+### Cause: com.github.pagehelper.PageException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 0 ms ago.
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:96)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:441)
+	at com.sun.proxy.$Proxy78.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy79.listBlogsIndex(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy80.listBlogsIndex(Unknown Source)
+	at com.yikolemon.service.BlogServiceImpl.listBlogsIndex(BlogServiceImpl.java:65)
+	at com.yikolemon.web.IndexController.index(IndexController.java:56)
+	at com.yikolemon.web.IndexController$$FastClassBySpringCGLIB$$cb24de38.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:56)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:47)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:55)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.yikolemon.web.IndexController$$EnhancerBySpringCGLIB$$41802299.index(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: com.github.pagehelper.PageException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 0 ms ago.
+### Cause: com.github.pagehelper.PageException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 0 ms ago.
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:149)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	... 89 common frames omitted
+Caused by: com.github.pagehelper.PageException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 0 ms ago.
+	at com.github.pagehelper.page.PageAutoDialect.getUrl(PageAutoDialect.java:180)
+	at com.github.pagehelper.page.PageAutoDialect.getDialect(PageAutoDialect.java:203)
+	at com.github.pagehelper.page.PageAutoDialect.initDelegateDialect(PageAutoDialect.java:99)
+	at com.github.pagehelper.PageHelper.skip(PageHelper.java:66)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:93)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy111.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	... 95 common frames omitted
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 0 ms ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1074)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2103)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:718)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:302)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:282)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:354)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:554)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at com.github.pagehelper.page.PageAutoDialect.getUrl(PageAutoDialect.java:177)
+	... 102 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:75)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:162)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394)
+	at java.net.Socket.connect(Socket.java:606)
+	at java.net.Socket.connect(Socket.java:555)
+	at java.net.Socket.<init>(Socket.java:451)
+	at java.net.Socket.<init>(Socket.java:261)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:253)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:280)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2026)
+	... 119 common frames omitted
+
+2022-03-04 15:01:03.926  INFO 17352 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[-1, 1, {}]}
+2022-03-04 15:01:06.938 ERROR 17352 --- [http-nio-8081-exec-7] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 0 ms ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1074)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2103)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:718)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:302)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:282)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:354)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:554)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:80)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:67)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:337)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:86)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:108)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy111.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	at com.sun.proxy.$Proxy78.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy88.getAllIndexTypes(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy89.getAllIndexTypes(Unknown Source)
+	at com.yikolemon.service.TypeServiceImpl.getAllIndexTypes(TypeServiceImpl.java:51)
+	at com.yikolemon.service.TypeServiceImpl$$FastClassBySpringCGLIB$$f3274666.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:685)
+	at com.yikolemon.service.TypeServiceImpl$$EnhancerBySpringCGLIB$$2a7ee80e.getAllIndexTypes(<generated>)
+	at com.yikolemon.web.TypeBlogController.typeShowBlog(TypeBlogController.java:33)
+	at com.yikolemon.web.TypeBlogController$$FastClassBySpringCGLIB$$daf7be4e.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:56)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:47)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:55)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.yikolemon.web.TypeBlogController$$EnhancerBySpringCGLIB$$d4c5c99b.typeShowBlog(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:75)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:162)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394)
+	at java.net.Socket.connect(Socket.java:606)
+	at java.net.Socket.connect(Socket.java:555)
+	at java.net.Socket.<init>(Socket.java:451)
+	at java.net.Socket.<init>(Socket.java:261)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:253)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:280)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2026)
+	... 130 common frames omitted
+
+2022-03-04 15:01:06.941 ERROR 17352 --- [http-nio-8081-exec-7] c.y.handler.ControllerExceptionHandler   : Requst URL : http://localhost:8081/types/-1，Exception : {}
+
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 0 ms ago.
+### The error may exist in file [F:\Java\JavaWorkspace\myblog\target\classes\mapper\TypeMapper.xml]
+### The error may involve com.yikolemon.mapper.TypeMapper.getAllIndexTypes
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 0 ms ago.
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:96)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:441)
+	at com.sun.proxy.$Proxy78.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy88.getAllIndexTypes(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy89.getAllIndexTypes(Unknown Source)
+	at com.yikolemon.service.TypeServiceImpl.getAllIndexTypes(TypeServiceImpl.java:51)
+	at com.yikolemon.service.TypeServiceImpl$$FastClassBySpringCGLIB$$f3274666.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:685)
+	at com.yikolemon.service.TypeServiceImpl$$EnhancerBySpringCGLIB$$2a7ee80e.getAllIndexTypes(<generated>)
+	at com.yikolemon.web.TypeBlogController.typeShowBlog(TypeBlogController.java:33)
+	at com.yikolemon.web.TypeBlogController$$FastClassBySpringCGLIB$$daf7be4e.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:56)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:47)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:55)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.yikolemon.web.TypeBlogController$$EnhancerBySpringCGLIB$$d4c5c99b.typeShowBlog(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 0 ms ago.
+### The error may exist in file [F:\Java\JavaWorkspace\myblog\target\classes\mapper\TypeMapper.xml]
+### The error may involve com.yikolemon.mapper.TypeMapper.getAllIndexTypes
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 0 ms ago.
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:149)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	... 93 common frames omitted
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 0 ms ago.
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:82)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:80)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:67)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:337)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:86)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:108)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy111.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	... 99 common frames omitted
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 0 ms ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1074)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2103)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:718)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:302)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:282)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:354)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:554)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79)
+	... 111 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:75)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:162)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394)
+	at java.net.Socket.connect(Socket.java:606)
+	at java.net.Socket.connect(Socket.java:555)
+	at java.net.Socket.<init>(Socket.java:451)
+	at java.net.Socket.<init>(Socket.java:261)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:253)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:280)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2026)
+	... 130 common frames omitted
+
+2022-03-04 15:02:07.074  INFO 17352 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[-1, 1, {}]}
+2022-03-04 15:02:07.217  INFO 17352 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:02:09.159  INFO 17352 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 15:02:09.175  INFO 17352 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 15:02:20.952  INFO 17352 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/blog/254', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[254, {}]}
+2022-03-04 15:02:21.004  INFO 17352 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-04 15:02:28.528  INFO 17352 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/blog/253', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[253, {}]}
+2022-03-04 15:02:28.545  INFO 17352 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-04 15:02:29.012  INFO 17352 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/comments/253', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.CommentController.commentlist', args=[253, {}]}
+2022-03-04 15:02:29.016  INFO 17352 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Result : blog :: commentList
+2022-03-04 15:02:40.313  INFO 17352 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/blog/252', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[252, {}]}
+2022-03-04 15:02:40.330  INFO 17352 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-04 15:03:01.307  INFO 17352 --- [http-nio-8081-exec-9] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 15:03:01.317  INFO 17352 --- [http-nio-8081-exec-9] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 15:03:43.569  INFO 17352 --- [http-nio-8081-exec-10] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/blog/252', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[252, {}]}
+2022-03-04 15:03:43.585  INFO 17352 --- [http-nio-8081-exec-10] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-04 15:08:12.517  INFO 17352 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 15:08:12.528  INFO 17352 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 15:08:15.059  INFO 17352 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/blog/255', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[255, {}]}
+2022-03-04 15:08:15.082  INFO 17352 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-04 15:09:18.577  INFO 17352 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[-1, 1, {}]}
+2022-03-04 15:09:18.583  INFO 17352 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:09:19.807  INFO 17352 --- [http-nio-8081-exec-4] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[-1, 1, {}]}
+2022-03-04 15:09:19.815  INFO 17352 --- [http-nio-8081-exec-4] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 15:09:21.051  INFO 17352 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.ArchiveBlogController.archiveShowBlog', args=[{}]}
+2022-03-04 15:09:21.067  INFO 17352 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Result : archives
+2022-03-04 15:09:22.204  INFO 17352 --- [http-nio-8081-exec-10] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 15:09:22.213  INFO 17352 --- [http-nio-8081-exec-10] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 15:11:26.873  INFO 17352 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 15:11:26.880  INFO 17352 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 15:11:37.836  INFO 17352 --- [http-nio-8081-exec-9] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 15:11:37.842  INFO 17352 --- [http-nio-8081-exec-9] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 15:11:41.075  INFO 17352 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[-1, 1, {}]}
+2022-03-04 15:11:41.079  INFO 17352 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:11:43.337  INFO 17352 --- [http-nio-8081-exec-4] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[-1, 1, {}]}
+2022-03-04 15:11:43.342  INFO 17352 --- [http-nio-8081-exec-4] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 15:11:45.742  INFO 17352 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 15:11:45.748  INFO 17352 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 15:13:53.356  INFO 17352 --- [http-nio-8081-exec-4] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 15:13:53.362  INFO 17352 --- [http-nio-8081-exec-4] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 15:13:58.976  INFO 17352 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/blog/256', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[256, {}]}
+2022-03-04 15:13:59.005  INFO 17352 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-04 15:15:56.663  INFO 17352 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 15:15:56.669  INFO 17352 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 15:16:09.015  INFO 17352 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 15:16:09.020  INFO 17352 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 15:16:16.747  INFO 17352 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[-1, 1, {}]}
+2022-03-04 15:16:16.751  INFO 17352 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:16:20.425  INFO 17352 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/21', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[21, 1, {}]}
+2022-03-04 15:16:20.429  INFO 17352 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:16:22.082  INFO 17352 --- [http-nio-8081-exec-9] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/22', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[22, 1, {}]}
+2022-03-04 15:16:22.086  INFO 17352 --- [http-nio-8081-exec-9] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:16:24.336  INFO 17352 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[-1, 1, {}]}
+2022-03-04 15:16:24.340  INFO 17352 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 15:16:26.366  INFO 17352 --- [http-nio-8081-exec-4] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/10', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[10, 1, {}]}
+2022-03-04 15:16:26.370  INFO 17352 --- [http-nio-8081-exec-4] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 15:16:27.784  INFO 17352 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/13', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[13, 1, {}]}
+2022-03-04 15:16:27.789  INFO 17352 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 15:16:29.673  INFO 17352 --- [http-nio-8081-exec-10] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/10', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[10, 1, {}]}
+2022-03-04 15:16:29.677  INFO 17352 --- [http-nio-8081-exec-10] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 15:16:46.563  INFO 17352 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 15:16:46.569  INFO 17352 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 15:16:48.346  INFO 17352 --- [http-nio-8081-exec-9] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[-1, 1, {}]}
+2022-03-04 15:16:48.350  INFO 17352 --- [http-nio-8081-exec-9] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:16:56.355  INFO 17352 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[-1, 1, {}]}
+2022-03-04 15:16:56.359  INFO 17352 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 15:17:01.217  INFO 17352 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.ArchiveBlogController.archiveShowBlog', args=[{}]}
+2022-03-04 15:17:01.219  INFO 17352 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Result : archives
+2022-03-04 15:17:25.423  INFO 17352 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 15:17:25.428  INFO 17352 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 15:17:31.891  INFO 17352 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/blog/256', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[256, {}]}
+2022-03-04 15:17:31.913  INFO 17352 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-04 15:22:26.746  INFO 17352 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[-1, 1, {}]}
+2022-03-04 15:22:26.750  INFO 17352 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:22:30.903  INFO 17352 --- [http-nio-8081-exec-9] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/24', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[24, 1, {}]}
+2022-03-04 15:22:30.906  INFO 17352 --- [http-nio-8081-exec-9] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:22:33.931  INFO 17352 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/23', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[23, 1, {}]}
+2022-03-04 15:22:33.934  INFO 17352 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:22:35.458  INFO 17352 --- [http-nio-8081-exec-4] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/24', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[24, 1, {}]}
+2022-03-04 15:22:35.461  INFO 17352 --- [http-nio-8081-exec-4] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:22:36.855  INFO 17352 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[-1, 1, {}]}
+2022-03-04 15:22:36.859  INFO 17352 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 15:22:38.672  INFO 17352 --- [http-nio-8081-exec-10] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/13', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[13, 1, {}]}
+2022-03-04 15:22:38.676  INFO 17352 --- [http-nio-8081-exec-10] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 15:22:40.275  INFO 17352 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/8', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[8, 1, {}]}
+2022-03-04 15:22:40.279  INFO 17352 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 15:22:41.577  INFO 17352 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[-1, 1, {}]}
+2022-03-04 15:22:41.582  INFO 17352 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:22:43.144  INFO 17352 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/24', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[24, 1, {}]}
+2022-03-04 15:22:43.146  INFO 17352 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:24:58.758  INFO 10116 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication on DESKTOP-NAD1TLO with PID 10116 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-03-04 15:24:58.761  INFO 10116 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: pro
+2022-03-04 15:25:00.942  INFO 10116 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 2.687 seconds (JVM running for 3.611)
+2022-03-04 15:25:04.826  INFO 10116 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/24', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[24, 1, {}]}
+2022-03-04 15:25:04.998  INFO 10116 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:25:07.783  INFO 10116 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/23', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[23, 1, {}]}
+2022-03-04 15:25:07.795  INFO 10116 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:25:09.400  INFO 10116 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/24', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[24, 1, {}]}
+2022-03-04 15:25:09.405  INFO 10116 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:25:11.819  INFO 10116 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[-1, 1, {}]}
+2022-03-04 15:25:11.835  INFO 10116 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 15:25:13.102  INFO 10116 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[-1, 1, {}]}
+2022-03-04 15:25:13.109  INFO 10116 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:25:14.969  INFO 10116 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/24', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[24, 1, {}]}
+2022-03-04 15:25:14.974  INFO 10116 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:25:22.716  INFO 10116 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/23', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[23, 1, {}]}
+2022-03-04 15:25:22.725  INFO 10116 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:25:25.300  INFO 10116 --- [http-nio-8081-exec-4] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/21', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[21, 1, {}]}
+2022-03-04 15:25:25.305  INFO 10116 --- [http-nio-8081-exec-4] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:25:27.654  INFO 10116 --- [http-nio-8081-exec-9] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/20', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[20, 1, {}]}
+2022-03-04 15:25:27.659  INFO 10116 --- [http-nio-8081-exec-9] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:25:36.629  INFO 10116 --- [http-nio-8081-exec-10] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/21', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[21, 1, {}]}
+2022-03-04 15:25:36.635  INFO 10116 --- [http-nio-8081-exec-10] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:25:38.460  INFO 10116 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/20', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[20, 1, {}]}
+2022-03-04 15:25:38.465  INFO 10116 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:30:39.349  INFO 10116 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 15:30:39.366  INFO 10116 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 15:30:46.554  INFO 10116 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[-1, 1, {}]}
+2022-03-04 15:30:46.558  INFO 10116 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:30:47.779  INFO 10116 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 15:30:47.787  INFO 10116 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 15:37:41.057  INFO 15376 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication on DESKTOP-NAD1TLO with PID 15376 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-03-04 15:37:41.064  INFO 15376 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: pro
+2022-03-04 15:37:42.958  INFO 15376 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 2.544 seconds (JVM running for 3.788)
+2022-03-04 15:37:47.895  INFO 15376 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[-1, 1, {}]}
+2022-03-04 15:37:48.133  INFO 15376 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:37:49.995  INFO 15376 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/24', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[24, 1, {}]}
+2022-03-04 15:37:50.003  INFO 15376 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:37:52.003  INFO 15376 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/24', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[24, 1, {}]}
+2022-03-04 15:37:52.010  INFO 15376 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:37:55.218  INFO 15376 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/24', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[24, 1, {}]}
+2022-03-04 15:37:55.227  INFO 15376 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:38:55.686  INFO 6040 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication on DESKTOP-NAD1TLO with PID 6040 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-03-04 15:38:55.688  INFO 6040 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: pro
+2022-03-04 15:38:57.588  INFO 6040 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 2.321 seconds (JVM running for 3.278)
+2022-03-04 15:39:07.266  INFO 6040 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/24', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[24, 1, {}]}
+2022-03-04 15:39:07.455  INFO 6040 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:41:03.205  INFO 752 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication on DESKTOP-NAD1TLO with PID 752 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-03-04 15:41:03.209  INFO 752 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: pro
+2022-03-04 15:41:05.099  INFO 752 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 2.326 seconds (JVM running for 3.175)
+2022-03-04 15:41:05.177  INFO 752 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/24', ip='127.0.0.1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[24, 1, {}]}
+2022-03-04 15:41:05.381  INFO 752 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:43:31.391  INFO 752 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/24', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[24, 1, {}]}
+2022-03-04 15:43:31.396  INFO 752 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:46:32.288  INFO 3700 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication on DESKTOP-NAD1TLO with PID 3700 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-03-04 15:46:32.312  INFO 3700 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: pro
+2022-03-04 15:46:34.199  INFO 3700 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 2.317 seconds (JVM running for 3.406)
+2022-03-04 15:46:49.250  INFO 3700 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/24', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[24, 1, {}]}
+2022-03-04 15:46:49.441  INFO 3700 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:52:43.948  INFO 15628 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication on DESKTOP-NAD1TLO with PID 15628 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-03-04 15:52:43.952  INFO 15628 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: pro
+2022-03-04 15:52:45.860  INFO 15628 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 2.361 seconds (JVM running for 3.149)
+2022-03-04 15:52:45.929  INFO 15628 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/24', ip='127.0.0.1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[24, 1, {}]}
+2022-03-04 15:52:46.115  INFO 15628 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:58:32.842  INFO 7348 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication on DESKTOP-NAD1TLO with PID 7348 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-03-04 15:58:32.867  INFO 7348 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: pro
+2022-03-04 15:58:34.749  INFO 7348 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 2.331 seconds (JVM running for 3.201)
+2022-03-04 15:58:37.884  INFO 7348 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/24', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[24, 1, {}]}
+2022-03-04 15:58:38.120  INFO 7348 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:58:40.690  INFO 7348 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/24', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[24, 1, {}]}
+2022-03-04 15:58:40.696  INFO 7348 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 15:59:58.787  INFO 4652 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication on DESKTOP-NAD1TLO with PID 4652 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-03-04 15:59:58.789  INFO 4652 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: pro
+2022-03-04 16:00:00.701  INFO 4652 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 2.339 seconds (JVM running for 3.242)
+2022-03-04 16:01:27.769  INFO 4652 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/blog/256', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[256, {}]}
+2022-03-04 16:01:27.883  INFO 4652 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-04 16:01:30.960  INFO 4652 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[-1, 1, {}]}
+2022-03-04 16:01:30.995  INFO 4652 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 16:01:34.618  INFO 4652 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/24', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[24, 1, {}]}
+2022-03-04 16:01:34.625  INFO 4652 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 16:01:38.436  INFO 4652 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[-1, 1, {}]}
+2022-03-04 16:01:38.447  INFO 4652 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 16:01:40.335  INFO 4652 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/13', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[13, 1, {}]}
+2022-03-04 16:01:40.346  INFO 4652 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 16:01:43.842  INFO 4652 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/11', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[11, 1, {}]}
+2022-03-04 16:01:43.852  INFO 4652 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 16:01:45.298  INFO 4652 --- [http-nio-8081-exec-4] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/9', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[9, 1, {}]}
+2022-03-04 16:01:45.308  INFO 4652 --- [http-nio-8081-exec-4] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 16:01:48.468  INFO 4652 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 16:01:48.479  INFO 4652 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 16:01:50.535  INFO 4652 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[-1, 1, {}]}
+2022-03-04 16:01:50.542  INFO 4652 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 16:01:52.224  INFO 4652 --- [http-nio-8081-exec-10] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/9', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[9, 1, {}]}
+2022-03-04 16:01:52.231  INFO 4652 --- [http-nio-8081-exec-10] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 16:02:53.996  INFO 11096 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication on DESKTOP-NAD1TLO with PID 11096 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-03-04 16:02:54.000  INFO 11096 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: pro
+2022-03-04 16:02:56.243  INFO 11096 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 2.786 seconds (JVM running for 3.59)
+2022-03-04 16:03:20.388  INFO 11096 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/-1', ip='127.0.0.1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[-1, 1, {}]}
+2022-03-04 16:03:20.589  INFO 11096 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 16:03:22.677  INFO 11096 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[-1, 1, {}]}
+2022-03-04 16:03:22.691  INFO 11096 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 16:03:26.822  INFO 11096 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[-1, 1, {}]}
+2022-03-04 16:03:26.834  INFO 11096 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 16:03:28.366  INFO 11096 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 16:03:28.380  INFO 11096 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 16:03:39.050  INFO 11096 --- [http-nio-8081-exec-4] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/archives', ip='127.0.0.1', classMethod='com.yikolemon.web.ArchiveBlogController.archiveShowBlog', args=[{}]}
+2022-03-04 16:03:39.055  INFO 11096 --- [http-nio-8081-exec-4] com.yikolemon.aspect.LogAspect           : Result : archives
+2022-03-04 16:03:40.704  INFO 11096 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/-1', ip='127.0.0.1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[-1, 1, {}]}
+2022-03-04 16:03:40.719  INFO 11096 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 16:03:43.828  INFO 11096 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/-1', ip='127.0.0.1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[-1, 1, {}]}
+2022-03-04 16:03:43.836  INFO 11096 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 16:03:45.858  INFO 11096 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 16:03:45.868  INFO 11096 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 16:04:14.143  INFO 11096 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/24', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[24, 1, {}]}
+2022-03-04 16:04:14.149  INFO 11096 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 16:04:17.044  INFO 11096 --- [http-nio-8081-exec-4] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 16:04:17.054  INFO 11096 --- [http-nio-8081-exec-4] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 16:04:35.744  INFO 11096 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/blog/253', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[253, {}]}
+2022-03-04 16:04:35.778  INFO 11096 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-04 16:04:36.657  INFO 11096 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/comments/253', ip='127.0.0.1', classMethod='com.yikolemon.web.CommentController.commentlist', args=[253, {}]}
+2022-03-04 16:04:36.664  INFO 11096 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Result : blog :: commentList
+2022-03-04 16:04:40.355  INFO 11096 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/-1', ip='127.0.0.1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[-1, 1, {}]}
+2022-03-04 16:04:40.361  INFO 11096 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 16:04:44.360  INFO 11096 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/-1', ip='127.0.0.1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[-1, 1, {}]}
+2022-03-04 16:04:44.367  INFO 11096 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 16:04:47.775  INFO 11096 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 16:04:47.784  INFO 11096 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 16:05:06.364  INFO 11096 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/blog/256', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[256, {}]}
+2022-03-04 16:05:06.389  INFO 11096 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-04 16:06:41.132  INFO 11096 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 16:06:41.140  INFO 11096 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 16:07:08.952  INFO 11096 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[-1, 1, {}]}
+2022-03-04 16:07:08.959  INFO 11096 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 16:07:10.901  INFO 11096 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[-1, 1, {}]}
+2022-03-04 16:07:10.908  INFO 11096 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 16:07:26.499  INFO 11096 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.ArchiveBlogController.archiveShowBlog', args=[{}]}
+2022-03-04 16:07:26.502  INFO 11096 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Result : archives
+2022-03-04 16:07:46.080  INFO 11096 --- [http-nio-8081-exec-9] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.ArchiveBlogController.archiveShowBlog', args=[{}]}
+2022-03-04 16:07:46.084  INFO 11096 --- [http-nio-8081-exec-9] com.yikolemon.aspect.LogAspect           : Result : archives
+2022-03-04 16:07:48.231  INFO 11096 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[-1, 1, {}]}
+2022-03-04 16:07:48.237  INFO 11096 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 16:07:50.172  INFO 11096 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 16:07:50.180  INFO 11096 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 16:07:53.796  INFO 11096 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/blog/251', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[251, {}]}
+2022-03-04 16:07:53.800  INFO 11096 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-04 16:07:54.286  INFO 11096 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/comments/251', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.CommentController.commentlist', args=[251, {}]}
+2022-03-04 16:07:54.288  INFO 11096 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Result : blog :: commentList
+2022-03-04 16:11:33.756  INFO 11096 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[-1, 1, {}]}
+2022-03-04 16:11:33.762  INFO 11096 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 16:11:36.476  INFO 11096 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 16:11:36.484  INFO 11096 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 16:11:38.740  INFO 11096 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[-1, 1, {}]}
+2022-03-04 16:11:38.746  INFO 11096 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 16:11:41.937  INFO 11096 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[-1, 1, {}]}
+2022-03-04 16:11:41.944  INFO 11096 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 16:12:49.319  INFO 11096 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[-1, 1, {}]}
+2022-03-04 16:12:49.327  INFO 11096 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 16:12:50.996  INFO 11096 --- [http-nio-8081-exec-4] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.ArchiveBlogController.archiveShowBlog', args=[{}]}
+2022-03-04 16:12:50.998  INFO 11096 --- [http-nio-8081-exec-4] com.yikolemon.aspect.LogAspect           : Result : archives
+2022-03-04 16:12:52.499  INFO 11096 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 16:12:52.506  INFO 11096 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 16:13:06.447  INFO 11096 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[-1, 1, {}]}
+2022-03-04 16:13:06.453  INFO 11096 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 16:13:10.286  INFO 11096 --- [http-nio-8081-exec-10] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[-1, 1, {}]}
+2022-03-04 16:13:10.293  INFO 11096 --- [http-nio-8081-exec-10] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 16:13:11.905  INFO 11096 --- [http-nio-8081-exec-9] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.ArchiveBlogController.archiveShowBlog', args=[{}]}
+2022-03-04 16:13:11.907  INFO 11096 --- [http-nio-8081-exec-9] com.yikolemon.aspect.LogAspect           : Result : archives
+2022-03-04 16:15:34.724  INFO 11096 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 16:15:34.731  INFO 11096 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 16:15:53.081  INFO 11096 --- [http-nio-8081-exec-4] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/blog/256', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[256, {}]}
+2022-03-04 16:15:53.104  INFO 11096 --- [http-nio-8081-exec-4] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-04 16:25:30.369  INFO 11096 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/blog/256', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[256, {}]}
+2022-03-04 16:25:30.382  INFO 11096 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-04 16:26:44.277  INFO 11096 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/blog/256', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[256, {}]}
+2022-03-04 16:26:44.298  INFO 11096 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-04 16:31:35.471  INFO 11096 --- [http-nio-8081-exec-10] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 16:31:35.478  INFO 11096 --- [http-nio-8081-exec-10] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 16:32:02.145  INFO 11096 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/blog/256', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[256, {}]}
+2022-03-04 16:32:02.153  INFO 11096 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-04 16:34:13.080  INFO 14548 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication on DESKTOP-NAD1TLO with PID 14548 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-03-04 16:34:13.083  INFO 14548 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: pro
+2022-03-04 16:34:15.681  INFO 14548 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 3.217 seconds (JVM running for 4.28)
+2022-03-04 16:34:15.907  INFO 14548 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/blog/256', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[256, {}]}
+2022-03-04 16:34:16.034  INFO 14548 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-04 16:34:20.503  INFO 14548 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/blog/256', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[256, {}]}
+2022-03-04 16:34:20.514  INFO 14548 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-04 16:35:40.816  INFO 16056 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication on DESKTOP-NAD1TLO with PID 16056 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-03-04 16:35:40.819  INFO 16056 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: pro
+2022-03-04 16:35:43.751  INFO 16056 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 3.615 seconds (JVM running for 4.702)
+2022-03-04 16:35:45.417  INFO 16056 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/blog/256', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[256, {}]}
+2022-03-04 16:35:45.541  INFO 16056 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-04 16:36:26.674  INFO 16056 --- [http-nio-8081-exec-9] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/blog/256', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[256, {}]}
+2022-03-04 16:36:26.688  INFO 16056 --- [http-nio-8081-exec-9] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-04 16:37:22.827  INFO 16056 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 16:37:22.863  INFO 16056 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 16:37:25.310  INFO 16056 --- [http-nio-8081-exec-10] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 16:37:25.327  INFO 16056 --- [http-nio-8081-exec-10] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 16:37:28.358  INFO 16056 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/blog/256', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[256, {}]}
+2022-03-04 16:37:28.368  INFO 16056 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-04 16:38:06.820  INFO 16056 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 16:38:06.831  INFO 16056 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 16:38:08.837  INFO 16056 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/blog/255', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[255, {}]}
+2022-03-04 16:38:08.842  INFO 16056 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-04 16:39:12.891  INFO 16056 --- [http-nio-8081-exec-9] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/blog/254', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[254, {}]}
+2022-03-04 16:39:12.894  INFO 16056 --- [http-nio-8081-exec-9] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-04 16:39:25.961  INFO 16056 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/blog/253', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[253, {}]}
+2022-03-04 16:39:25.964  INFO 16056 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-04 16:39:26.438  INFO 16056 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/comments/253', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.CommentController.commentlist', args=[253, {}]}
+2022-03-04 16:39:26.444  INFO 16056 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Result : blog :: commentList
+2022-03-04 16:39:31.870  INFO 16056 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/blog/252', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[252, {}]}
+2022-03-04 16:39:31.873  INFO 16056 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-04 16:39:38.993  INFO 16056 --- [http-nio-8081-exec-9] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/blog/251', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[251, {}]}
+2022-03-04 16:39:38.996  INFO 16056 --- [http-nio-8081-exec-9] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-04 16:39:39.473  INFO 16056 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/comments/251', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.CommentController.commentlist', args=[251, {}]}
+2022-03-04 16:39:39.475  INFO 16056 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Result : blog :: commentList
+2022-03-04 16:39:54.156  INFO 16056 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/blog/256', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[256, {}]}
+2022-03-04 16:39:54.176  INFO 16056 --- [http-nio-8081-exec-3] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-04 16:40:17.705  INFO 16056 --- [http-nio-8081-exec-9] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 16:40:17.717  INFO 16056 --- [http-nio-8081-exec-9] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 16:40:19.612  INFO 16056 --- [http-nio-8081-exec-10] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/blog/256', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[256, {}]}
+2022-03-04 16:40:19.622  INFO 16056 --- [http-nio-8081-exec-10] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-04 16:40:29.491  INFO 16056 --- [http-nio-8081-exec-4] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 16:40:29.502  INFO 16056 --- [http-nio-8081-exec-4] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 16:40:31.521  INFO 16056 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 16:40:31.530  INFO 16056 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 16:40:44.586  INFO 16056 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[-1, 1, {}]}
+2022-03-04 16:40:44.596  INFO 16056 --- [http-nio-8081-exec-6] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 16:40:47.042  INFO 16056 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[-1, 1, {}]}
+2022-03-04 16:40:47.050  INFO 16056 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 16:40:48.884  INFO 16056 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.ArchiveBlogController.archiveShowBlog', args=[{}]}
+2022-03-04 16:40:48.889  INFO 16056 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Result : archives
+2022-03-04 16:40:52.536  INFO 16056 --- [http-nio-8081-exec-10] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 16:40:52.545  INFO 16056 --- [http-nio-8081-exec-10] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 16:40:57.530  INFO 16056 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.ArchiveBlogController.archiveShowBlog', args=[{}]}
+2022-03-04 16:40:57.533  INFO 16056 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Result : archives
+2022-03-04 16:41:17.172  INFO 16056 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.ArchiveBlogController.archiveShowBlog', args=[{}]}
+2022-03-04 16:41:17.176  INFO 16056 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Result : archives
+2022-03-04 16:41:21.924  INFO 16056 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.ArchiveBlogController.archiveShowBlog', args=[{}]}
+2022-03-04 16:41:21.926  INFO 16056 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Result : archives
+2022-03-04 16:42:18.069  INFO 16056 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[-1, 1, {}]}
+2022-03-04 16:42:18.076  INFO 16056 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 16:42:22.854  INFO 16056 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/9', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[9, 1, {}]}
+2022-03-04 16:42:22.861  INFO 16056 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 16:43:05.369  INFO 16056 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.ArchiveBlogController.archiveShowBlog', args=[{}]}
+2022-03-04 16:43:05.371  INFO 16056 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Result : archives
+2022-03-04 16:43:07.597  INFO 16056 --- [http-nio-8081-exec-10] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[-1, 1, {}]}
+2022-03-04 16:43:07.604  INFO 16056 --- [http-nio-8081-exec-10] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 16:43:10.184  INFO 16056 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[-1, 1, {}]}
+2022-03-04 16:43:10.190  INFO 16056 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 16:43:13.141  INFO 16056 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 16:43:13.149  INFO 16056 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 16:44:02.581  INFO 15352 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication on DESKTOP-NAD1TLO with PID 15352 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-03-04 16:44:02.584  INFO 15352 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: pro
+2022-03-04 16:44:04.575  INFO 15352 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 2.435 seconds (JVM running for 3.184)
+2022-03-04 16:44:08.179  INFO 15352 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.ArchiveBlogController.archiveShowBlog', args=[{}]}
+2022-03-04 16:44:08.343  INFO 15352 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Result : archives
+2022-03-04 16:44:10.417  INFO 15352 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.ArchiveBlogController.archiveShowBlog', args=[{}]}
+2022-03-04 16:44:10.421  INFO 15352 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Result : archives
+2022-03-04 16:44:31.702  INFO 15352 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.ArchiveBlogController.archiveShowBlog', args=[{}]}
+2022-03-04 16:44:31.706  INFO 15352 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Result : archives
+2022-03-04 16:44:48.412  INFO 15352 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.ArchiveBlogController.archiveShowBlog', args=[{}]}
+2022-03-04 16:44:48.415  INFO 15352 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Result : archives
+2022-03-04 16:45:00.089  INFO 15352 --- [http-nio-8081-exec-9] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[-1, 1, {}]}
+2022-03-04 16:45:00.128  INFO 15352 --- [http-nio-8081-exec-9] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 16:45:02.865  INFO 15352 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.ArchiveBlogController.archiveShowBlog', args=[{}]}
+2022-03-04 16:45:02.869  INFO 15352 --- [http-nio-8081-exec-8] com.yikolemon.aspect.LogAspect           : Result : archives
+2022-03-04 16:45:06.300  INFO 15352 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[-1, 1, {}]}
+2022-03-04 16:45:06.313  INFO 15352 --- [http-nio-8081-exec-2] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 16:45:08.269  INFO 15352 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 16:45:08.288  INFO 15352 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 16:45:17.346  INFO 15352 --- [http-nio-8081-exec-4] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.ArchiveBlogController.archiveShowBlog', args=[{}]}
+2022-03-04 16:45:17.348  INFO 15352 --- [http-nio-8081-exec-4] com.yikolemon.aspect.LogAspect           : Result : archives
+2022-03-04 16:45:18.780  INFO 15352 --- [http-nio-8081-exec-9] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TagBlogController.tagShowBlog', args=[-1, 1, {}]}
+2022-03-04 16:45:18.791  INFO 15352 --- [http-nio-8081-exec-9] com.yikolemon.aspect.LogAspect           : Result : tags
+2022-03-04 16:45:19.866  INFO 15352 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.TypeBlogController.typeShowBlog', args=[-1, 1, {}]}
+2022-03-04 16:45:19.874  INFO 15352 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Result : types
+2022-03-04 16:45:21.224  INFO 15352 --- [http-nio-8081-exec-10] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 16:45:21.236  INFO 15352 --- [http-nio-8081-exec-10] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 17:02:07.300  INFO 4288 --- [main] com.yikolemon.MyblogApplication          : Starting MyblogApplication on DESKTOP-NAD1TLO with PID 4288 (F:\Java\JavaWorkspace\myblog\target\classes started by Yikolemon in F:\Java\JavaWorkspace\myblog)
+2022-03-04 17:02:07.302  INFO 4288 --- [main] com.yikolemon.MyblogApplication          : The following profiles are active: pro
+2022-03-04 17:02:09.233  INFO 4288 --- [main] com.yikolemon.MyblogApplication          : Started MyblogApplication in 2.394 seconds (JVM running for 4.072)
+2022-03-04 17:03:41.384  INFO 4288 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.index', args=[1, {}]}
+2022-03-04 17:03:41.607  INFO 4288 --- [http-nio-8081-exec-1] com.yikolemon.aspect.LogAspect           : Result : index
+2022-03-04 17:03:43.960  INFO 4288 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/blog/256', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[256, {}]}
+2022-03-04 17:03:44.027  INFO 4288 --- [http-nio-8081-exec-5] com.yikolemon.aspect.LogAspect           : Result : blog
+2022-03-04 17:07:25.113  INFO 4288 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Request : {url='http://localhost:8081/blog/256', ip='0:0:0:0:0:0:0:1', classMethod='com.yikolemon.web.IndexController.blog', args=[256, {}]}
+2022-03-04 17:07:25.126  INFO 4288 --- [http-nio-8081-exec-7] com.yikolemon.aspect.LogAspect           : Result : blog
