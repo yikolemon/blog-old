@@ -1,2 +1,2 @@
 # Myblog
-这是我使用Springboot结合thymeleaf搭建的个人博客，目前已弃坑，准备重构添加中间件并且实现前后端分离。
+这是我使用Springboot结合thymeleaf搭建的个人博客.
