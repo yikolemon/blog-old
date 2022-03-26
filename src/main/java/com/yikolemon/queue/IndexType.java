@@ -4,10 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Data                              //get，set
 @NoArgsConstructor                 //无参构造
 @AllArgsConstructor                //有参构造
-public class IndexType {
+public class IndexType implements Serializable {
     private Long id;
 
     private String name;

@@ -1,6 +1,7 @@
 package com.yikolemon.web;
 
 import com.yikolemon.pojo.Blog;
+import com.yikolemon.service.BlogService;
 import com.yikolemon.service.BlogServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 public class LikeController {
 
     @Autowired
-    private BlogServiceImpl blogService;
+    private BlogService blogService;
 
     @Transactional
     @PostMapping("/like")

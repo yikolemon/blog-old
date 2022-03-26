@@ -204,11 +204,18 @@ body {
 .m-mobile-show {
    display: none !important;
 }
+
+.mean-button{
+    background: rgba(255, 255, 255, 0) !important;
+    border-block-color: rgba(255, 255, 255, 0)!important;
+    border: 0 !important;
+}
 /*颜色*/
 .miku-colour{
     color: #93D6D6 !important;
     max-width: none;
 }
+
 .page-button{
     border: none !important;
     background: none !important;

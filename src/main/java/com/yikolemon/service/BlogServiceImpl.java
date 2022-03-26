@@ -55,10 +55,6 @@ public class BlogServiceImpl implements BlogService{
         return blogMapper.deleteBlog(id);
     }
 
-    @Override
-    public List<Blog> listAllBlogs() {
-        return blogMapper.listAllBlogs();
-    }
 
     @Override
     public List<IndexBlog> listBlogsIndex() {

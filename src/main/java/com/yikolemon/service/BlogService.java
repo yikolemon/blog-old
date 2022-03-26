@@ -21,7 +21,6 @@ public interface BlogService {
 
     int deleteBlog(Long id);
 
-    List<Blog> listAllBlogs();
 
     List<IndexBlog> listBlogsIndex();
 

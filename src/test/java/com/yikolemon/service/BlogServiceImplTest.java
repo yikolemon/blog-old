@@ -73,18 +73,6 @@ public class BlogServiceImplTest {
         blogService.deleteBlog((long)3);
     }
 
-    @Test
-    public void listAllBlogs() {
-        PageHelper.startPage(1,5);
-        List<Blog> list = blogService.listAllBlogs();
-        for (Blog blog:
-             list) {
-            System.out.println(blog);
-        }
-        PageInfo<Blog> pageInfo = new PageInfo<>(list);
-        int pageNum = pageInfo.getPages();
-        System.out.println(pageNum);
-    }
 
     @Test
     public void listBlogsAdmin(){

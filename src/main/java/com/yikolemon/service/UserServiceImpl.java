@@ -6,7 +6,7 @@ import com.yikolemon.util.MD5Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("userServiceImpl")
 public class UserServiceImpl implements UserService{
 
     @Autowired
@@ -20,5 +20,20 @@ public class UserServiceImpl implements UserService{
     @Override
     public User getUser(long id) {
         return userMapper.getUser(id);
+    }
+
+    @Override
+    public User getUserByUsername(String name) {
+        return userMapper.getUserByUsername(name);
+    }
+
+    @Override
+    public Boolean isAdmin(String username) {
+        return userMapper.isAdmin(username);
+    }
+
+    @Override
+    public long getIdByName(String name) {
+        return userMapper.getIdByName(name);
     }
 }

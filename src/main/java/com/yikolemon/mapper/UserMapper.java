@@ -10,4 +10,10 @@ public interface UserMapper {
     User checkByUsernameAndPassword(String username,String password);
 
     User getUser(long id);
+
+    User getUserByUsername(String username);
+
+    Boolean isAdmin(String username);
+
+    long getIdByName(String name);
 }

@@ -31,16 +31,16 @@ import java.util.List;
 public class IndexController {
 
     @Autowired
-    private BlogServiceImpl blogService;
+    private BlogService blogService;
 
     @Autowired
-    private TypeServiceImpl typeService;
+    private TypeService typeService;
 
     @Autowired
-    private  TagServiceImpl tagService;
+    private  TagService tagService;
 
     @Autowired
-    private UserServiceImpl userService;
+    private UserService userService;
 
     int pageSize= PageUtils.getPageSize();
 

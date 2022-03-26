@@ -4,7 +4,9 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.yikolemon.queue.IndexBlog;
 import com.yikolemon.queue.IndexTag;
+import com.yikolemon.service.BlogService;
 import com.yikolemon.service.BlogServiceImpl;
+import com.yikolemon.service.TagService;
 import com.yikolemon.service.TagServiceImpl;
 import com.yikolemon.util.PageUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +22,9 @@ import java.util.List;
 public class TagBlogController {
 
     @Autowired
-    private TagServiceImpl tagService;
+    private TagService tagService;
     @Autowired
-    private BlogServiceImpl blogService;
+    private BlogService blogService;
 
     int pageSize= PageUtils.getPageSize();
 

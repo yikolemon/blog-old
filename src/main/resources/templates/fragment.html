@@ -36,7 +36,7 @@
       <a href="#" class="m-item item m-mobile-hide" th:classappend="${n==3} ? 'active'" th:href="@{/tags/-1}"><i class="tags icon"></i>标签</a>
       <a href="#" class="m-item item m-mobile-hide" th:classappend="${n==4} ? 'active'" th:href="@{/archives}"><i class="clone icon"></i>归档</a>
       <a href="#" class="m-item item m-mobile-hide" th:classappend="${n==5} ? 'active'" th:href="@{/about}"><i class="info icon"></i>关于我</a>
-      <div class="right m-item item m-mobile-hide">
+      <div class="right m-item item m-mobile-hide ">
         <form action="#" th:action="@{/search}" target="_blank" name="search" method="post">
           <div class="ui icon inverted transparent input m-margin-tb-tiny">
             <input type="text" placeholder="Search...." name="title">
@@ -47,7 +47,7 @@
 
     </div>
   </div>
-  <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+  <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show mean-button">
     <i class="sidebar icon"></i>
   </a>
 </nav>
@@ -91,25 +91,6 @@
   <script src="../static/lib/qrcode/qrcode.min.js" th:src="@{/lib/qrcode/qrcode.min.js}"></script>
   <script src="../static/lib/waypoints/jquery.waypoints.min.js" th:src="@{/lib/waypoints/jquery.waypoints.js}"></script>
   <script th:src="@{/lib/click/click.js}"></script>
-  <div><!--音乐播放插件-->
-    <!-- require APlayer -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" th:href="@{/lib/music/APlayer.min.css}">
-    <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" th:href="@{/lib/music/APlayer.min.js}"></script>
-    <!--require MetingJS -->
-    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js" th:href="@{/lib/music/Meting.min.js}"></script>
-    <meting-js
-            id="7288146458"
-            lrc-type="0"
-            server="netease"
-            order="list"
-            type="playlist"
-            fixed="true"
-            list-olded="true"
-            autoplay="false"
-            mutex="true"
-    >
-    </meting-js>
-  </div>
 </th:block>
 
 <!--基本的js和css-->
@@ -138,25 +119,6 @@
   </div>
 </div>
 
-<div><!--音乐播放插件-->
-  <!-- require APlayer -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" th:href="@{/lib/music/APlayer.min.css}">
-  <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" th:href="@{/lib/music/APlayer.min.js}"></script>
-  <!--require MetingJS -->
-  <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js" th:href="@{/lib/music/Meting.min.js}"></script>
-  <meting-js
-          id="7288146458"
-          lrc-type="0"
-          server="netease"
-          order="list"
-          type="playlist"
-          fixed="true"
-          list-olded="true"
-          autoplay="true"
-          mutex="true"
-  >
-  </meting-js>
-</div>
 
 <div th:fragment="canvas-bg">
   <div id="particles-js">

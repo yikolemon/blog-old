@@ -2,10 +2,9 @@ package com.yikolemon.mapper;
 
 
 import com.yikolemon.pojo.Blog;
-import com.yikolemon.queue.ArchiveBlog;
-import com.yikolemon.queue.IndexBlog;
-import com.yikolemon.queue.RightTopBlog;
-import com.yikolemon.queue.SearchBlog;
+import com.yikolemon.queue.*;
+import com.yikolemon.redis.MyRedisCache;
+import org.apache.ibatis.annotations.CacheNamespace;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -18,8 +17,6 @@ public interface BlogMapper {
     int saveBlog(Blog blog);
 
     Blog getBlog(Long id);
-
-    List<Blog> listAllBlogs();
 
     int updateBlog(Blog blog);
 

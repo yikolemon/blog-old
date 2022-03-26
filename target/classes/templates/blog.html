@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragment :: blog-head(~{::title})">
-  <title>博客详情</title>
+  <title th:text="${blog.title}">博客详情</title>
 </head>
 <body>
   <div th:replace="fragment :: canvas-bg"></div>
@@ -16,7 +16,7 @@
         <div class="ui horizontal link list">
           <div class="item">
             <img src="https://unsplash.it/100/100?image=1005" th:src="@{/images/me.png}" alt="" class="ui avatar image avatar-size">
-            <div class="content"><a  th:href="@{/about}" class="header" th:text="${user.nickname}">李仁密</a></div>
+            <div class="content"><a  th:href="@{/about}" class="header" th:text="${user.nickname}">用户名</a></div>
           </div>
           <div class="item">
             <i class="calendar icon"></i> <span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}">2017-10-01</span>
@@ -169,7 +169,7 @@
     </div>
   </div>
 
-  <div id="toolbar" class="m-padded animated fadeIn m-fixed m-right-bottom">
+  <div id="toolbar" class="m-padded animated fadeIn m-fixed m-right-bottom mobile-hidden">
     <div class="ui vertical icon buttons ">
       <button type="button" class="ui toc teal button" >目录</button>
       <a href="#comment-container" class="ui teal button" th:if="${blog.commentabled}==true">留言</a>

@@ -1,7 +1,9 @@
 package com.yikolemon.web.admin;
 
 import com.yikolemon.pojo.Type;
+import com.yikolemon.service.TypeService;
 import com.yikolemon.service.TypeServiceImpl;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.bind.BindResult;
 import org.springframework.stereotype.Controller;
@@ -16,12 +18,13 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.validation.Valid;
 import java.util.List;
 
+@RequiresRoles("admin")
 @Controller
 @RequestMapping("/admin")
 public class TypeController {
 
     @Autowired
-    private TypeServiceImpl typeService;
+    private TypeService typeService;
 
     @GetMapping("/types")
     public String types(Model model){

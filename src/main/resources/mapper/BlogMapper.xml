@@ -3,11 +3,11 @@
 <mapper namespace="com.yikolemon.mapper.BlogMapper">
 
     <!--saveBlog-->
-    <update id="saveBlog" parameterType="com.yikolemon.pojo.Blog" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+    <insert id="saveBlog" parameterType="com.yikolemon.pojo.Blog" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
         insert into blog.t_blog values (#{id},#{title},#{description},#{content},#{firstPicture},#{flag},
          #{view},#{like},#{shareStatement},#{commentabled},#{recommend},#{published},#{createTime},
          #{updateTime}, #{typeId},#{userId});
-    </update>
+    </insert>
 
     <!--getBlog-->
     <select id="getBlog" resultType="com.yikolemon.pojo.Blog">

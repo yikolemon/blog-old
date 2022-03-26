@@ -1,6 +1,7 @@
 package com.yikolemon.web;
 
 import com.yikolemon.queue.ArchiveBlog;
+import com.yikolemon.service.BlogService;
 import com.yikolemon.service.BlogServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,7 +15,7 @@ import java.util.Map;
 public class ArchiveBlogController {
 
     @Autowired
-    private BlogServiceImpl blogService;
+    private BlogService blogService;
 
     @GetMapping("/archives")
     public String archiveShowBlog(Model model){

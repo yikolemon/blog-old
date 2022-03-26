@@ -1,6 +1,7 @@
 package com.yikolemon.web;
 
 import com.yikolemon.pojo.Comment;
+import com.yikolemon.service.CommentService;
 import com.yikolemon.service.CommentServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,7 +19,7 @@ import java.util.List;
 public class CommentController {
 
     @Autowired
-    private CommentServiceImpl commentService;
+    private CommentService commentService;
 
     @GetMapping("/comments/{blogId}")
     public String commentlist(@PathVariable long blogId, Model model){

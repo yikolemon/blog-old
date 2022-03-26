@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.yikolemon.mapper.UserMapper">
+
     <select id="checkByUsernameAndPassword" resultType="com.yikolemon.pojo.User">
         select * from blog.t_user
         where username = #{username} and password = #{password};
@@ -10,4 +11,19 @@
     <select id="getUser" resultType="com.yikolemon.pojo.User">
         select t_user.nickname,t_user.avatar FROM t_user where t_user.id=#{id}
     </select>
+
+    <!--getUserByUsername-->
+    <select id="getUserByUsername" resultType="com.yikolemon.pojo.User">
+        select id,username,password FROM t_user where t_user.username=#{username}
+    </select>
+
+    <select id="isAdmin" resultType="_boolean">
+        select type from t_user where t_user.username=#{username}
+    </select>
+
+    <!--getIdByName-->
+    <select id="getIdByName" resultType="_long">
+        select id from t_user where t_user.username=#{username}
+    </select>
+
 </mapper>

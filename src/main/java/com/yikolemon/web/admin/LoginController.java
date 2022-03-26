@@ -1,7 +1,15 @@
 package com.yikolemon.web.admin;
 
 import com.yikolemon.pojo.User;
+import com.yikolemon.service.UserService;
 import com.yikolemon.service.UserServiceImpl;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.IncorrectCredentialsException;
+import org.apache.shiro.authc.UnknownAccountException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.authz.annotation.RequiresRoles;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,35 +25,40 @@ import javax.servlet.http.HttpSession;
 public class LoginController {
 
     @Autowired
-    private UserServiceImpl userService;
+    private UserService userService;
 
     @GetMapping("")
     public String loginPage(){
-        return "admin/login";
+        return "/admin/login";
     }
 
     @PostMapping("/login")
     public String login(@RequestParam String username,
                         @RequestParam String password,
-                        HttpSession session,
                         RedirectAttributes attributes
     ){
-        User user=userService.checkUser(username,password);//这里是md5加密的密码
-        if(user!=null){
-            user.setPassword(null);
-            session.setAttribute("user",user);
-            return "admin/index";
-        }
-        else {
-            attributes.addFlashAttribute("message","用户名或密码错误");
-            return "redirect:admin";
+        Subject subject = SecurityUtils.getSubject();
+        UsernamePasswordToken token = new UsernamePasswordToken(username,password);
+        try {
+            subject.login(token);
+            return "/admin/index";
+        }catch (UnknownAccountException e){
+            attributes.addFlashAttribute("message","用户名错误");
+            return "redirect:/admin";
+        }catch (IncorrectCredentialsException e){
+            attributes.addFlashAttribute("message","密码错误");
+            return "redirect:/admin";
+        } catch (AuthenticationException e) {
+            attributes.addFlashAttribute("message","错误");
+            return "redirect:/admin";
         }
 
     }
 
     @GetMapping("/logout")
     public String logout(HttpSession session){
-        session.removeAttribute("user");
+        Subject subject = SecurityUtils.getSubject();
+        subject.logout();
         return "redirect:/admin";
     }
 

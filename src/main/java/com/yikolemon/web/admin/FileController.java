@@ -3,6 +3,7 @@ package com.yikolemon.web.admin;
 import com.google.gson.Gson;
 import com.yikolemon.json.Img;
 import com.yikolemon.util.QiniuCloudUtil;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -13,6 +14,7 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
+@RequiresRoles("admin")
 @Controller
 @RequestMapping("/admin")
 public class FileController {

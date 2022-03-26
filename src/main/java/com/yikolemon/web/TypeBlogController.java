@@ -5,7 +5,9 @@ import com.github.pagehelper.PageInfo;
 import com.yikolemon.pojo.Type;
 import com.yikolemon.queue.IndexBlog;
 import com.yikolemon.queue.IndexType;
+import com.yikolemon.service.BlogService;
 import com.yikolemon.service.BlogServiceImpl;
+import com.yikolemon.service.TypeService;
 import com.yikolemon.service.TypeServiceImpl;
 import com.yikolemon.util.PageUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +23,9 @@ import java.util.List;
 public class TypeBlogController {
 
     @Autowired
-    private TypeServiceImpl typeService;
+    private TypeService typeService;
     @Autowired
-    private BlogServiceImpl blogService;
+    private BlogService blogService;
 
     int pageSize= PageUtils.getPageSize();
 

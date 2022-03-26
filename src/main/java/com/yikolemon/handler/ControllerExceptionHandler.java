@@ -1,5 +1,6 @@
 package com.yikolemon.handler;
 
+import org.apache.shiro.authz.UnauthorizedException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.annotation.AnnotationUtils;
@@ -16,8 +17,16 @@ public class ControllerExceptionHandler {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 
+    @ExceptionHandler(UnauthorizedException.class)
+    public ModelAndView AuthorizationHandler(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("error/114");
+        return mv;
+    }
+
+
     @ExceptionHandler(Exception.class)
-    public ModelAndView exceptionHander(HttpServletRequest request, Exception e) throws Exception {
+    public ModelAndView exceptionHandler(HttpServletRequest request, Exception e) throws Exception {
         logger.error("Requst URL : {}，Exception : {}", request.getRequestURL(),e);
 
         if (AnnotationUtils.findAnnotation(e.getClass(), ResponseStatus.class) != null) {

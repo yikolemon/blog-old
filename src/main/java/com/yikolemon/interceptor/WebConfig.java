@@ -1,3 +1,4 @@
+/*
 
 package com.yikolemon.interceptor;
 
@@ -15,4 +16,4 @@ public class WebConfig implements WebMvcConfigurer {
                 .excludePathPatterns("/admin/login");
     }
 }
-
+*/

@@ -9,6 +9,8 @@ import com.yikolemon.pojo.User;
 import com.yikolemon.queue.SearchBlog;
 import com.yikolemon.service.*;
 import com.yikolemon.util.PageUtils;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,20 +22,25 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
+@RequiresRoles("admin")
 @Controller
 @RequestMapping("/admin")
 public class BlogController {
 
     @Autowired
-    private BlogServiceImpl blogService;
+    private BlogService blogService;
     @Autowired
-    private TypeServiceImpl typeService;
+    private TypeService typeService;
     @Autowired
-    private TagServiceImpl tagService;
+    private TagService tagService;
     @Autowired
-    private TagBlogServiceImpl tagBlogService;
+    private TagBlogService tagBlogService;
+    @Autowired
+    private UserService userService;
 
     int pageSize= PageUtils.getPageSize();
+
+
 
     @GetMapping("/blogs")
     public String blogsAdminIndex(Model model){
@@ -89,7 +96,6 @@ public class BlogController {
         PageHelper.startPage(page,pageSize);
         boolean published=true;
         String unpublished = request.getParameter("unpublished");
-        System.out.println(unpublished);
         if (unpublished.equals("true")) published=false;
         blog.setPublished(published);
         List<Blog> list = blogService.listAllBlogsSearch(blog);
@@ -101,19 +107,20 @@ public class BlogController {
 
     @PostMapping("/blogs/input")
     @Transactional
-    public String editBlog(Blog blog, RedirectAttributes redirectAttributes, HttpSession session, HttpServletRequest request){
+    public String editBlog(Blog blog, RedirectAttributes redirectAttributes,HttpServletRequest request){
         if (blog.getId()!=null){
-            updateBlog(blog,redirectAttributes,session,request);
+            updateBlog(blog,redirectAttributes,request);
         }
         else {
-            saveBlog(blog,redirectAttributes,session,request);
+            saveBlog(blog,redirectAttributes,request);
         }
         return "redirect:/admin/blogs";
     }
 
-    public  void saveBlog(Blog blog, RedirectAttributes redirectAttributes, HttpSession session, HttpServletRequest request){
-        User user = (User) session.getAttribute("user");
-        blog.setUserId(user.getId());
+    public  void saveBlog(Blog blog, RedirectAttributes redirectAttributes, HttpServletRequest request){
+        String principal = (String) SecurityUtils.getSubject().getPrincipal();
+        long id = userService.getIdByName(principal);
+        blog.setUserId(id);
         int i = blogService.saveBlog(blog);
         Long blogId = blog.getId();//id在存完之后才能取
         String tagIds = request.getParameter("tagIds");
@@ -126,9 +133,10 @@ public class BlogController {
         }
     }
 
-    public void updateBlog(Blog blog, RedirectAttributes redirectAttributes, HttpSession session, HttpServletRequest request){
-        User user = (User) session.getAttribute("user");
-        blog.setUserId(user.getId());
+    public void updateBlog(Blog blog, RedirectAttributes redirectAttributes, HttpServletRequest request){
+        String principal = (String) SecurityUtils.getSubject().getPrincipal();
+        long id = userService.getIdByName(principal);
+        blog.setUserId(id);
         tagBlogService.deleteTagByBlogId(blog.getId());
         String tagIds = request.getParameter("tagIds");
         tagBlogService.saveTagBlogs(tagIds, blog.getId());

@@ -8,6 +8,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="251" />
+  </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
     <option name="GROUP_DATA_SOURCES" value="true" />
@@ -32,9 +35,10 @@
       <list>
         <option value="JUnit5 Test Class" />
         <option value="FxmlFile" />
+        <option value="HTML File" />
+        <option value="JUnit4 Test Class" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -63,6 +67,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -72,37 +77,29 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/yikolemon" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/shiro/shiro-1" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.yikolemon.util" />
       <recent name="com.yikolemon.mapper" />
       <recent name="com.yikolemon.web.admin" />
-      <recent name="com.yikolemon.util" />
       <recent name="com.yikolemon.web" />
       <recent name="com.yikolemon.service" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static" />
-      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources" />
-      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib" />
-      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\templates\test" />
-      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\images" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.yikolemon.web" />
       <recent name="com.yikolemon" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.yikolemon.pojo" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib\bg" />
@@ -110,6 +107,16 @@
       <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\templates\admin" />
       <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib\music" />
       <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib\click" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.yikolemon.pojo" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static" />
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources" />
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib" />
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\templates\test" />
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -125,12 +132,12 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.MyblogApplication">
-    <configuration name="put64" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.yikolemon.web.put64" />
+    <configuration name="TestMd5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yikolemon.util.TestMd5" />
       <module name="myblog" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.yikolemon.web.*" />
+          <option name="PATTERN" value="com.yikolemon.util.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -174,7 +181,7 @@
       <module name="myblog" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.yikolemon.web.admin.*" />
+          <option name="PATTERN" value="com.yikolemon.web.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -186,7 +193,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="QiniuCloudUtilTest.upload" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RedisUtilTest.getJedis" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myblog" />
       <extension name="coverage">
         <pattern>
@@ -195,8 +202,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.yikolemon.util" />
-      <option name="MAIN_CLASS_NAME" value="com.yikolemon.util.QiniuCloudUtilTest" />
-      <option name="METHOD_NAME" value="upload" />
+      <option name="MAIN_CLASS_NAME" value="com.yikolemon.util.RedisUtilTest" />
+      <option name="METHOD_NAME" value="getJedis" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -211,11 +218,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestMd5" />
+        <item itemvalue="JUnit.RedisUtilTest.getJedis" />
         <item itemvalue="JUnit.CommentMapperTest.getChildIds" />
         <item itemvalue="JUnit.CommentMapperTest.getParentId" />
         <item itemvalue="JUnit.FileControllerTest.delete" />
-        <item itemvalue="JUnit.QiniuCloudUtilTest.upload" />
-        <item itemvalue="Application.put64" />
       </list>
     </recent_temporary>
   </component>
@@ -326,6 +333,17 @@
       <workItem from="1647311822509" duration="670000" />
       <workItem from="1647345382436" duration="335000" />
       <workItem from="1647434815021" duration="3590000" />
+      <workItem from="1647439097990" duration="289000" />
+      <workItem from="1647521923363" duration="74000" />
+      <workItem from="1647862593310" duration="4019000" />
+      <workItem from="1647919118051" duration="623000" />
+      <workItem from="1648018531021" duration="8303000" />
+      <workItem from="1648104137884" duration="8000" />
+      <workItem from="1648122839578" duration="3546000" />
+      <workItem from="1648175755570" duration="2945000" />
+      <workItem from="1648178877679" duration="17435000" />
+      <workItem from="1648198557923" duration="13127000" />
+      <workItem from="1648220542778" duration="1137000" />
     </task>
     <servers />
   </component>
@@ -356,6 +374,11 @@
           <line>38</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/main/resources/templates/tags.html</url>
+          <line>79</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -369,6 +392,6 @@
     <SUITE FILE_PATH="coverage/myblog$TypeServiceImplTest_getTypeTop.ic" NAME="TypeServiceImplTest.getTypeTop Coverage Results" MODIFIED="1643197994784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.yikolemon.service.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/myblog$MyblogApplication.ic" NAME="MyblogApplication Coverage Results" MODIFIED="1645264099504" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/myblog$MyblogApplication.ic" NAME="MyblogApplication Coverage Results" MODIFIED="1648214663658" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

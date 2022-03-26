@@ -1,6 +1,10 @@
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\queue\SearchBlog.java
+F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\mapper\ViewAndLikeMapper.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\pojo\User.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\web\admin\TagController.java
+F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\Shiro\RedisCacheManager.java
+F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\util\RedisUtil.java
+F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\web\AboutController.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\interceptor\LoginInterceptor.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\web\admin\FileController.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\pojo\Blog.java
@@ -10,7 +14,9 @@ F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\pojo\TagBlog.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\service\BlogServiceImpl.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\web\admin\BlogController.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\web\admin\TypeController.java
+F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\config\ShiroConfig.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\interceptor\WebConfig.java
+F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\Shiro\RedisCache.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\queue\ArchiveBlog.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\service\TypeServiceImpl.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\util\MarkdownUtils.java
@@ -27,6 +33,7 @@ F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\MyblogApplication.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\web\TestController.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\service\TagBlogServiceImpl.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\service\TypeService.java
+F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\Shiro\UserRealm.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\pojo\Type.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\mapper\BlogMapper.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\aspect\LogAspect.java
@@ -38,8 +45,8 @@ F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\web\LikeController.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\mapper\TagMapper.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\service\BlogService.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\pojo\Comment.java
+F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\util\SerializeUtil.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\web\IndexController.java
-F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\web\admin\AboutController.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\handler\ControllerExceptionHandler.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\util\StrUtil.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\service\CommentServiceImpl.java
@@ -51,6 +58,8 @@ F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\queue\RightTopBlog.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\web\admin\CommentAdminController.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\queue\IndexBlog.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\util\QiniuCloudUtil.java
+F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\redis\MyRedisCache.java
+F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\util\ApplicationContextUtils.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\web\TypeBlogController.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\queue\IndexTag.java
 F:\Java\JavaWorkspace\myblog\src\main\java\com\yikolemon\util\TopConfig.java

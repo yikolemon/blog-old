@@ -1,7 +1,9 @@
 package com.yikolemon.web.admin;
 
 import com.yikolemon.pojo.Tag;
+import com.yikolemon.service.TagService;
 import com.yikolemon.service.TagServiceImpl;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,12 +17,14 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.validation.Valid;
 import java.util.List;
 
+
+@RequiresRoles("admin")
 @Controller
 @RequestMapping("/admin")
 public class TagController {
 
     @Autowired
-    private TagServiceImpl tagService;
+    private TagService tagService;
 
     @GetMapping("/tags")
     public String tags(Model model){
