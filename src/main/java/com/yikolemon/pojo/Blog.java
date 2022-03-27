@@ -26,7 +26,6 @@ public class Blog implements Serializable {
     private boolean published;//是否发布
     private Date createTime;
     private Date updateTime;
-    private int like;
     private int view;
 
 

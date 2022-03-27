@@ -1,5 +1,6 @@
 package com.yikolemon.mapper;
 
+import com.yikolemon.pojo.Blog;
 import com.yikolemon.queue.ArchiveBlog;
 import com.yikolemon.service.BlogServiceImpl;
 import org.junit.Test;
@@ -37,5 +38,19 @@ public class BlogMapperTest {
     @Test
     public void countBlog() {
         System.out.println(blogMapper.countBlog());
+    }
+
+    @Test
+    public void saveBlog() {
+        Blog blog = new Blog();
+        blog.setView(0);
+        blog.setShareStatement(false);
+        blog.setCommentabled(false);
+        blog.setRecommend(false);
+        blog.setPublished(false);
+        blog.setTypeId((long)26);
+        int i = blogMapper.saveBlog(blog);
+        System.out.println(blog.getId());
+        System.out.println(i);
     }
 }

@@ -18,7 +18,7 @@ public class FileControllerTest {
     @Test
     public void delete(){
         QiniuCloudUtil qiniuCloudUtil=new QiniuCloudUtil();
-        String delete = qiniuCloudUtil.delete("bg.png");
+        String delete = qiniuCloudUtil.delete("test.png");
         System.out.println(delete);
     }
 }

@@ -88,8 +88,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="com.yikolemon.util" />
       <recent name="com.yikolemon.mapper" />
+      <recent name="com.yikolemon.util" />
       <recent name="com.yikolemon.web.admin" />
       <recent name="com.yikolemon.web" />
       <recent name="com.yikolemon.service" />
@@ -97,9 +97,19 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static" />
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources" />
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib" />
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\templates\test" />
+      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\images" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.yikolemon.web" />
       <recent name="com.yikolemon" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.yikolemon.pojo" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib\bg" />
@@ -108,15 +118,8 @@
       <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib\music" />
       <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib\click" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.yikolemon.pojo" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static" />
-      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources" />
-      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\lib" />
-      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\templates\test" />
-      <recent name="F:\Java\JavaWorkspace\myblog\src\main\resources\static\images" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.yikolemon.service" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -145,6 +148,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BlogMapperTest.saveBlog" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myblog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yikolemon.mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yikolemon.mapper" />
+      <option name="MAIN_CLASS_NAME" value="com.yikolemon.mapper.BlogMapperTest" />
+      <option name="METHOD_NAME" value="saveBlog" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CommentMapperTest.getChildIds" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myblog" />
       <extension name="coverage">
@@ -161,27 +180,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CommentMapperTest.getParentId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="myblog" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.yikolemon.mapper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.yikolemon.mapper" />
-      <option name="MAIN_CLASS_NAME" value="com.yikolemon.mapper.CommentMapperTest" />
-      <option name="METHOD_NAME" value="getParentId" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="FileControllerTest.delete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myblog" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.yikolemon.web.*" />
+          <option name="PATTERN" value="com.yikolemon.web.admin.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -218,11 +221,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FileControllerTest.delete" />
+        <item itemvalue="JUnit.BlogMapperTest.saveBlog" />
         <item itemvalue="Application.TestMd5" />
         <item itemvalue="JUnit.RedisUtilTest.getJedis" />
         <item itemvalue="JUnit.CommentMapperTest.getChildIds" />
-        <item itemvalue="JUnit.CommentMapperTest.getParentId" />
-        <item itemvalue="JUnit.FileControllerTest.delete" />
       </list>
     </recent_temporary>
   </component>
@@ -344,6 +347,8 @@
       <workItem from="1648178877679" duration="17435000" />
       <workItem from="1648198557923" duration="13127000" />
       <workItem from="1648220542778" duration="1137000" />
+      <workItem from="1648275335466" duration="14998000" />
+      <workItem from="1648347014118" duration="9018000" />
     </task>
     <servers />
   </component>
@@ -392,6 +397,6 @@
     <SUITE FILE_PATH="coverage/myblog$TypeServiceImplTest_getTypeTop.ic" NAME="TypeServiceImplTest.getTypeTop Coverage Results" MODIFIED="1643197994784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.yikolemon.service.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/myblog$MyblogApplication.ic" NAME="MyblogApplication Coverage Results" MODIFIED="1648214663658" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/myblog$MyblogApplication.ic" NAME="MyblogApplication Coverage Results" MODIFIED="1648278598147" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

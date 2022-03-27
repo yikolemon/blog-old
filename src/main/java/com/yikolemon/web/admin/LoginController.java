@@ -29,7 +29,7 @@ public class LoginController {
 
     @GetMapping("")
     public String loginPage(){
-        return "/admin/login";
+        return "admin/login";
     }
 
     @PostMapping("/login")
@@ -41,7 +41,7 @@ public class LoginController {
         UsernamePasswordToken token = new UsernamePasswordToken(username,password);
         try {
             subject.login(token);
-            return "/admin/index";
+            return "admin/index";
         }catch (UnknownAccountException e){
             attributes.addFlashAttribute("message","用户名错误");
             return "redirect:/admin";

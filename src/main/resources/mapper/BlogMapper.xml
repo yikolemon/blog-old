@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.yikolemon.mapper.BlogMapper">
+    <cache type="com.yikolemon.redis.MyRedisCache"/>
+    <cache/>
 
     <!--saveBlog-->
-    <insert id="saveBlog" parameterType="com.yikolemon.pojo.Blog" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
-        insert into blog.t_blog values (#{id},#{title},#{description},#{content},#{firstPicture},#{flag},
-         #{view},#{like},#{shareStatement},#{commentabled},#{recommend},#{published},#{createTime},
+    <insert id="saveBlog" parameterType="com.yikolemon.pojo.Blog"  useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        insert into blog.t_blog values (null ,#{title},#{description},#{content},#{firstPicture},#{flag},
+         #{view},#{shareStatement},#{commentabled},#{recommend},#{published},#{createTime},
          #{updateTime}, #{typeId},#{userId});
     </insert>
 
@@ -14,10 +16,6 @@
         select * from blog.t_blog where id=#{id};
     </select>
 
-    <!--listAllBlogs-->
-    <select id="listAllBlogs" resultType="com.yikolemon.pojo.Blog">
-        select * from blog.t_blog
-    </select>
 
     <!--updateBlog-->
     <update id="updateBlog" parameterType="com.yikolemon.pojo.Blog">
@@ -115,17 +113,9 @@
 
     <!--updateView-->
     <update id="updateView">
-        update blog.t_blog set view=view+1 where id = #{id}
+        update blog.t_blog set view=view+#{num} where id = #{id}
     </update>
 
-    <!--updateLike-->
-    <update id="updateLike">
-        update blog.t_blog set `like`=`like`+1 where id = #{id}
-    </update>
 
-    <!--getLike-->
-    <select id="getLike" resultType="com.yikolemon.pojo.Blog">
-        select t_blog.id,t_blog.`like` from t_blog where id=#{id}
-    </select>
 
 </mapper>

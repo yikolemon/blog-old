@@ -64,9 +64,9 @@ public class MyRedisCache implements Cache {
             ValueOperations operation = redisTemplate.opsForValue();
             //使用值操作对象operation设置缓存对象
             operation.set(key,value,EXPRIRE_TIME_IN_MINUT, TimeUnit.MINUTES);  //TimeUnit.MINUTES系统当前时间的分钟数
-            System.out.println("缓存对象保存成功");
+            //System.out.println("缓存对象保存成功");
         }catch (Throwable t){
-            System.out.println("缓存对象保存失败"+t);
+            //System.out.println("缓存对象保存失败"+t);
         }
 
     }
@@ -80,10 +80,10 @@ public class MyRedisCache implements Cache {
             RedisTemplate redisTemplate = getRedisTemplate();
             ValueOperations operations = redisTemplate.opsForValue();
             Object result = operations.get(key);
-            System.out.println("获取缓存对象");
+            //System.out.println("获取缓存对象");
             return result;
         }catch (Throwable t){
-            System.out.println("缓存对象获取失败"+t);
+            //System.out.println("缓存对象获取失败"+t);
             return null;
         }
     }
@@ -96,9 +96,9 @@ public class MyRedisCache implements Cache {
         try{
             RedisTemplate redisTemplate = getRedisTemplate();
             redisTemplate.delete(key);
-            System.out.println("删除缓存对象成功");
+            //System.out.println("删除缓存对象成功");
         }catch (Throwable t){
-            System.out.println("删除缓存对象失败");
+            //System.out.println("删除缓存对象失败");
         }
         return null;
     }
@@ -115,7 +115,7 @@ public class MyRedisCache implements Cache {
             collection.flushDb();
             return  null;
         });
-        System.out.println("清空缓存对象成功");
+        //System.out.println("清空缓存对象成功");
     }
 
     //可选实现的方法

@@ -1,14 +1,18 @@
 package com.yikolemon.service;
 
 import com.yikolemon.mapper.BlogMapper;
+import com.yikolemon.mapper.LikeMapper;
 import com.yikolemon.pojo.Blog;
 import com.yikolemon.queue.ArchiveBlog;
 import com.yikolemon.queue.IndexBlog;
 import com.yikolemon.queue.RightTopBlog;
 import com.yikolemon.queue.SearchBlog;
 import com.yikolemon.util.MarkdownUtils;
+import com.yikolemon.util.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import redis.clients.jedis.Jedis;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -20,6 +24,8 @@ public class BlogServiceImpl implements BlogService{
 
     @Autowired
     private BlogMapper blogMapper;
+    @Autowired
+    private LikeService likeService;
 
     @Override
     public Blog getBlog(Long id) {
@@ -36,12 +42,14 @@ public class BlogServiceImpl implements BlogService{
     }
 
     @Override
+    @Transactional
     public int saveBlog(Blog blog) {
         blog.setCreateTime(new Date());
         blog.setUpdateTime(new Date());
         blog.setView(0);
-        blog.setLike(0);
-        return blogMapper.saveBlog(blog);
+        blogMapper.saveBlog(blog);
+        return  likeService.setLike(blog.getId());
+
     }
 
     @Override
@@ -51,7 +59,9 @@ public class BlogServiceImpl implements BlogService{
     }
 
     @Override
+    @Transactional
     public int deleteBlog(Long id) {
+        likeService.deleteLike(id);
         return blogMapper.deleteBlog(id);
     }
 
@@ -113,18 +123,17 @@ public class BlogServiceImpl implements BlogService{
     }
 
     @Override
-    public int updateView(Long id) {
-        return blogMapper.updateView(id);
+    //给redis定时任务使用
+    public int updateView(Long id,int num) {
+        return blogMapper.updateView(id,num);
     }
 
     @Override
-    public int updateLike(Long id) {
-        return blogMapper.updateLike(id);
-    }
-
-    @Override
-    public Blog getLike(Long id) {
-        return blogMapper.getLike(id);
+    public int updateViewOne(Long id) {
+        Jedis jedis = RedisUtil.getJedis();
+        jedis.hincrBy("myblog-view", id + "",1);
+        jedis.close();
+        return 1;
     }
 
 

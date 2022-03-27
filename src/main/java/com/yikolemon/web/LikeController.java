@@ -1,8 +1,10 @@
 package com.yikolemon.web;
 
 import com.yikolemon.pojo.Blog;
+import com.yikolemon.pojo.Like;
 import com.yikolemon.service.BlogService;
 import com.yikolemon.service.BlogServiceImpl;
+import com.yikolemon.service.LikeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,16 +19,16 @@ import javax.servlet.http.HttpServletRequest;
 public class LikeController {
 
     @Autowired
-    private BlogService blogService;
+    private LikeService LikeService;
 
     @Transactional
     @PostMapping("/like")
     public String updateLike(HttpServletRequest request, Model model){
         String blogIdstr = request.getParameter("blogId");
         Long blogId = Long.valueOf(blogIdstr);
-        blogService.updateLike(blogId);
-        Blog blog = blogService.getLike(blogId);
-        model.addAttribute("blog",blog);
+        LikeService.updateLikeOne(blogId);
+        Like like = LikeService.getLike(blogId);
+        model.addAttribute("like",like);
         return "blog :: like_fragment";
     }
 }

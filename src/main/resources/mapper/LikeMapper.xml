@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yikolemon.mapper.LikeMapper">
+    <cache type="com.yikolemon.redis.MyRedisCache"/>
+    <cache/>
+
+    <!--updateLikeOne-->
+    <update id="updateLikeOne">
+        update t_like set `like`=`like`+1 where id_blog=#{blogId}
+    </update>
+
+    <!--updateLike-->
+    <update id="updateLike">
+        update t_like set `like`=`like`+#{num} where id_blog=#{blogId}
+    </update>
+
+    <!--getLike-->
+    <select id="getLike" resultType="com.yikolemon.pojo.Like">
+        select t_like.id_blog blogId,`like` from t_like where id_blog=#{blogId}
+    </select>
+
+    <!--setLike-->
+    <insert id="setLike">
+        insert into t_like values (#{blogId},0)
+    </insert>
+
+    <!--deleteLike-->
+    <delete id="deleteLike">
+        delete from t_like where id_blog=#{blogId}
+    </delete>
+
+</mapper>

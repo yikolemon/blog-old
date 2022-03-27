@@ -21,14 +21,17 @@ public class QiniuCloudUtil {
     private static final String SECRET_KEY = "Or1Gkzxgi0jq-ZnjA2T3NKtOmYTtIZ9SIaZwaL00";
 
     // 要上传的空间
-    private static final String bucketname = "yikolemon";
+    private static final String bucketname = "yikolemon-blog";
 
     // 密钥
     private static final Auth auth = Auth.create(ACCESS_KEY, SECRET_KEY);
 
-    private static final String DOMAIN = "cdn.yikolemon.top/";
+    private static final String DOMAIN = "cdn.yikolemon.cn/";
 
     private static final String style = "自定义的图片样式";
+
+    //配置七牛云的空间区域
+    private static final Configuration con=new Configuration(Zone.huadong());
 
     public String getUpToken() {
         return auth.uploadToken(bucketname, null, 3600, new StringMap().put("insertOnly", 1));
@@ -37,7 +40,7 @@ public class QiniuCloudUtil {
     // 普通上传
     public String upload(String filePath, String fileName) throws IOException {
         // 创建上传对象
-        Configuration configuration=new Configuration(Zone.zoneAs0());
+        Configuration configuration=new Configuration(Zone.huadong());
         UploadManager uploadManager = new UploadManager(configuration);
 
         try {
@@ -73,8 +76,8 @@ public class QiniuCloudUtil {
 
 
     public String upload(InputStream in,String fileName) throws IOException{
-        Configuration configuration=new Configuration(Zone.zoneAs0());
-        UploadManager uploadManager = new UploadManager(configuration);
+        //Configuration configuration=new Configuration(Zone.zoneAs0());
+        UploadManager uploadManager = new UploadManager(con);
         try {
             // 调用put方法上传
             String token = auth.uploadToken(bucketname);
@@ -109,8 +112,8 @@ public class QiniuCloudUtil {
 
     public String delete(String fileName){
         Auth auth = Auth.create(ACCESS_KEY, SECRET_KEY);
-        Configuration config = new Configuration(Zone.zoneAs0());
-        BucketManager bucketMgr = new BucketManager(auth, config);
+        //Configuration config = new Configuration(Zone.zoneAs0());
+        BucketManager bucketMgr = new BucketManager(auth, con);
         //指定需要删除的文件，和文件所在的存储空间
         String bucketName = bucketname;
         String  key = fileName;

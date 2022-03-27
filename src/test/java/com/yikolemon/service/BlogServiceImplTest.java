@@ -121,16 +121,4 @@ public class BlogServiceImplTest {
         System.out.println(stringListMap);
     }
 
-    @Test
-    public void updateLike() {
-        int i = blogService.updateLike((long) 251);
-        System.out.println(i);
-
-    }
-
-    @Test
-    public void getLike() {
-        Blog like = blogService.getLike((long) 251);
-        System.out.println(like);
-    }
 }

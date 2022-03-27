@@ -4,10 +4,7 @@ package com.yikolemon.web;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.yikolemon.NotFoundException;
-import com.yikolemon.pojo.Blog;
-import com.yikolemon.pojo.Tag;
-import com.yikolemon.pojo.Type;
-import com.yikolemon.pojo.User;
+import com.yikolemon.pojo.*;
 import com.yikolemon.queue.IndexBlog;
 import com.yikolemon.queue.IndexTag;
 import com.yikolemon.queue.IndexType;
@@ -41,6 +38,9 @@ public class IndexController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private LikeService likeService;
 
     int pageSize= PageUtils.getPageSize();
 
@@ -85,7 +85,7 @@ public class IndexController {
     @GetMapping("/blog/{id}")
     @Transactional
     public String blog(@PathVariable long id,Model model) {
-        int i = blogService.updateView(id);
+        int i = blogService.updateViewOne(id);
         if (i==0) return "admin/500";
         Blog blog = blogService.getAndConvert(id);
         model.addAttribute("blog",blog);
@@ -95,6 +95,8 @@ public class IndexController {
         List<Tag> tags = tagService.getTagsByBlogId(blog.getId());
         /*System.out.println(tags);*/
         model.addAttribute("tags",tags);
+        Like like = likeService.getLike(id);
+        model.addAttribute("like",like);
         return "blog";
     }
 
