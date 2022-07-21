@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yikolemon.mapper.TypeMapper">
+    <cache type="com.yikolemon.redis.MyRedisCache"/>
+    <cache/>
+
+    <!--saveType-->
+    <update id="saveType" parameterType="com.yikolemon.pojo.Type">
+        insert into blog.t_type values (#{id},#{name});
+    </update>
+
+    <!--getType-->
+    <select id="getType" parameterType="_long" resultType="com.yikolemon.pojo.Type">
+        select id,name from blog.t_type where id=#{id};
+    </select>
+
+    <!--getTypeByName-->
+    <select id="getTypeByName"  resultType="com.yikolemon.pojo.Type">
+        select id,name from blog.t_type where name=#{name};
+    </select>
+
+    <!--getAllTypes-->
+    <select id="getAllTypes" resultType="com.yikolemon.pojo.Type">
+        select * from blog.t_type;
+    </select>
+
+    <!--updateType-->
+    <update id="updateType" parameterType="com.yikolemon.pojo.Type">
+        update blog.t_type set name=#{name} where id=#{id};
+    </update>
+
+    <update id="deleteType" parameterType="_long">
+        delete from blog.t_type where id=#{id};
+    </update>
+
+    <!--getTypeTop-->
+    <select id="getTypeTop" resultType="com.yikolemon.queue.IndexType">
+        select type_id id,t_type.`name`,COUNT(*) as num from t_blog,t_type where t_blog.type_id=t_type.id and t_blog.published=true
+        group by t_blog.type_id ORDER BY num desc limit #{size}
+    </select>
+
+    <!--getAllIndexTypes-->
+    <select id="getAllIndexTypes" resultType="com.yikolemon.queue.IndexType">
+        select t_type.id id,t_type.`name`, IFNULL(b.num,0) num from
+        t_type LEFT JOIN (
+	    SELECT type_id,COUNT(id) num
+            FROM t_blog
+            WHERE t_blog.published=true
+            GROUP BY type_id
+        ) b on t_type.id=b.type_id
+    </select>
+
+</mapper>

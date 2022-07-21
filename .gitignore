@@ -1,0 +1,4 @@
+*/target
+*/src/test
+*.log
+.idea

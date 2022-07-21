@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragment :: basic-head(~{::title})">
+  <title>500</title>
+</head>
+<body>
+
+<!--导航-->
+<nav th:replace="fragment :: menu(1)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small"></nav>
+
+<!--中间内容-->
+<div class="m-container">
+  <div class="ui attached segment">
+
+    <img class="ui medium circular image" src="#" style="width: 1000px;height: inherit;padding-left:30%" th:src="@{/images/404.png}">
+
+  </div>
+</div>
+
+
+<br>
+<br>
+<footer th:replace="fragment :: footer" class="ui inverted vertical segment m-padded-tb-massive"></footer>
+
+<div th:replace="fragment::basic-script"></div>
+
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yikolemon.mapper.BlogMapper">
+    <cache type="com.yikolemon.redis.MyRedisCache"/>
+    <cache/>
+
+    <!--saveBlog-->
+    <insert id="saveBlog" parameterType="com.yikolemon.pojo.Blog"  useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        insert into blog.t_blog values (null ,#{title},#{description},#{content},#{firstPicture},#{flag},
+         #{view},#{shareStatement},#{commentabled},#{recommend},#{published},#{createTime},
+         #{updateTime}, #{typeId},#{userId});
+    </insert>
+
+    <!--getBlog-->
+    <select id="getBlog" resultType="com.yikolemon.pojo.Blog">
+        select * from blog.t_blog where id=#{id};
+    </select>
+
+
+    <!--updateBlog-->
+    <update id="updateBlog" parameterType="com.yikolemon.pojo.Blog">
+        update blog.t_blog set title=#{title},description=#{description},content=#{content},first_picture=#{firstPicture},
+        flag=#{flag},`share_statement`=#{shareStatement},`user_id`=#{userId},
+         `commentabled`=#{commentabled},`recommend`=#{recommend},published=#{published},
+         `update_time`=#{updateTime},`type_id`=#{typeId} where id=#{id};
+    </update>
+
+    <!--deleteBlog-->
+    <delete id="deleteBlog">
+        delete from blog.t_blog where id=#{id};
+    </delete>
+
+    <!--listBlogsAdmin-->
+    <select id="listBlogsAdmin" resultType="com.yikolemon.pojo.Blog">
+        select t_blog.id id,title,type_id,recommend,t_type.name typeName,update_time,published from t_blog join t_type
+        on t_blog.type_id=t_type.id
+    </select>
+
+    <!--listAllBlogsSearch-->
+    <select id="listAllBlogsSearch" parameterType="com.yikolemon.queue.SearchBlog" resultType="com.yikolemon.pojo.Blog">
+        select t_blog.id id,title,type_id,recommend,t_type.name typeName,update_time from t_blog join t_type
+        on t_blog.type_id=t_type.id
+        <where>
+            <if test="typeId != null">
+                 t_type.id=#{typeId}
+            </if>
+            <if test="title != ''">
+                and t_blog.title like concat('%',#{title},'%')
+            </if>
+            <if test="recommend == true">
+                and t_blog.recommend = true
+            </if>
+            <if test="published==false ">
+                and t_blog.published= false
+            </if>
+        </where>
+    </select>
+
+    <!--listBlogsIndex-->
+    <select id="listBlogsIndex" resultType="com.yikolemon.queue.IndexBlog">
+        select t_blog.id,title,first_picture,description,nickname,`view`,type_id,t_type.name typeName,t_blog.update_time,avatar from t_blog,t_type,t_user
+        where t_blog.type_id=t_type.id and t_blog.user_id=t_user.id and published=true ORDER BY t_blog.id desc
+    </select>
+
+    <!--listRecommendBlogTop-->
+    <select id="listRecommendNewBlog" resultType="com.yikolemon.queue.RightTopBlog">
+        select t_blog.id id,t_blog.title title FROM t_blog
+        where t_blog.recommend=true and t_blog.published=true
+        ORDER BY update_time DESC limit #{size}
+    </select>
+
+    <!--listMostviewBlog-->
+    <select id="listMostviewBlog" resultType="com.yikolemon.queue.RightTopBlog">
+        select t_blog.id id,t_blog.title title FROM t_blog where t_blog.published=true
+        ORDER BY `view` DESC limit #{size}
+    </select>
+
+    <!--searchBlog-->
+    <select id="searchBlog" resultType="com.yikolemon.queue.IndexBlog">
+        select t_blog.id id,title,type_id,recommend,t_type.name typeName,update_time,first_picture firstPicture,`view`,description from t_blog join t_type
+        on t_blog.type_id=t_type.id where t_blog.published=true and t_blog.title like concat('%',#{title},'%')
+    </select>
+
+    <!--listBlogsByTypeId-->
+    <select id="listBlogsByTypeId" resultType="com.yikolemon.queue.IndexBlog">
+        select t_blog.id id,title,type_id,t_type.name typeName,t_blog.update_time,nickname,first_picture,`view`,description
+        from t_blog,t_type,t_user where t_blog.type_id=t_type.id and t_user.id=t_blog.user_id and t_blog.type_id=#{id} and t_blog.published=true
+    </select>
+
+    <!--listBlogsByTagId-->
+    <select id="listBlogsByTagId" resultType="com.yikolemon.queue.IndexBlog">
+        select t_blog.id id,title,type_id,t_type.`name` typeName,t_blog.update_time,first_picture,`view`,description,nickname
+          from t_blog,t_tag_blog,t_type,t_user
+          where t_tag_blog.blog_id=t_blog.id and t_blog.type_id=t_type.id and t_user.id=t_blog.user_id and t_tag_blog.tag_id=#{id}
+          and t_blog.published=true
+    </select>
+
+    <!--getAllYears-->
+    <select id="getAllYears" resultType="String">
+        select date_format(t_blog.update_time,'%Y')as year from t_blog where t_blog.published=true GROUP BY date_format(t_blog.update_time,'%Y')
+    </select>
+
+    <!--getBlogsByYear-->
+    <select id="getBlogsByYear" resultType="com.yikolemon.queue.ArchiveBlog">
+        select t_blog.id,flag,title,date_format(t_blog.update_time,'%m月%d日') as date from t_blog
+         where date_format(t_blog.update_time,'%Y')=#{year} and t_blog.published=true order by t_blog.update_time
+    </select>
+
+    <!--countBlog-->
+    <select id="countBlog" resultType="_int">
+        select count(*) from t_blog where t_blog.published=true
+    </select>
+
+    <!--updateView-->
+    <update id="updateView">
+        update blog.t_blog set view=view+#{num} where id = #{id}
+    </update>
+
+
+
+</mapper>

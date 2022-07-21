@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragment :: basic-head(~{::title})">
+    <title>关于我 | Yikolemon's Blog</title>
+</head>
+<body>
+<div th:replace="fragment :: canvas-bg"></div>
+<!--导航-->
+<nav th:replace="fragment :: menu(6)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small"></nav>
+
+<!--中间内容-->
+<div  class="m-container m-padded-tb-big">
+    <div class="ui container">
+
+        <div class="ui grid">
+            <input type="hidden" th:value="${user.id}" id="id">
+            <div class="ui stackable grid" style="width: 100%;">
+                <!--左侧内容-->
+                <div class="eleven wide column animated fadeInLeft">
+                    <table class="ui celled  table m-text">
+                        <thead>
+                        <tr th:align="middle"><th colspan="2">
+                            账户信息
+                        </th>
+                        </tr></thead>
+                        <tbody>
+                        <tr th:align="middle">
+                            <td>注册时间</td>
+                            <td th:text="${#dates.format(user.createTime,'yyyy-MM-dd')}"></td>
+                        </tr>
+                        <tr th:align="middle">
+                            <td>昵称</td>
+                            <td>
+                                <div class="ui input">
+                                    <input class="confirm_input" type="text" placeholder="修改昵称" style="text-align: center" th:value="${user.nickname}" id="nickname">
+                                    <button class="ui button" th:onclick="updateNickname()">修改</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr th:align="middle">
+                            <td>用户名</td>
+                            <td th:text="${user.username}">yikolemon</td>
+                        </tr>
+                        <tr th:align="middle">
+                            <td>邮箱</td>
+                            <td th:text="${user.email}">1142496307@qq.com</td>
+                        </tr>
+                        <tr th:align="middle">
+                            <td>等级</td>
+                            <td>0</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--右侧内容-->
+                <div class="five wide column animated fadeInRight">
+                    <div class="ui top attached segment open-bg" th:align="middle">
+                        <img th:src="@{/images/me.png}" alt="" class="ui rounded image" th:width="274px">
+                    </div>
+                    <div class="ui attached segment open-bg">
+                        <a>
+                            <h3 class="miku-colour" th:align="middle">头像更改</h3>
+                        </a>
+                    </div>
+                    <div class="ui bottom attached segment open-bg">
+                        <a th:href="@{/logout}">
+                            <h3 th:align="middle" style="color:gray;" >退出登录</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--底部footer-->
+
+<footer th:replace="fragment :: footer" class="ui inverted vertical segment m-padded-tb-massive"></footer>
+
+<div th:replace="fragment::basic-script"></div>
+
+<script>
+    function updateNickname()
+    {
+        var id=$('#id').val();
+        var nickname=$('#nickname').val();
+        $.post("/me/updateNickname",
+            {
+                'id': id,
+                'nickname':nickname
+            },function(data){
+                var dataObj=JSON.parse(data);
+                var flag=dataObj.res;
+                if (!flag){
+                    alert(dataObj.msg)
+                } else {
+                    alert("修改成功");
+                }
+            })
+    }
+</script>
+
+</body>
+</html>

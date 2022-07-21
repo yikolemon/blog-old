@@ -1,0 +1,12 @@
+logging:
+  level:
+    root: info
+    com.yikolemon: debug
+  file:
+    name: server-log/blog-dev.log
+  config: classpath:logback-spring.xml
+
+server:
+  port: 8080
+
+

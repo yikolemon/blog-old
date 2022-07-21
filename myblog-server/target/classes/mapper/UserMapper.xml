@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yikolemon.mapper.UserMapper">
+
+    <select id="checkByUsernameAndPassword" resultType="com.yikolemon.pojo.User">
+        select * from blog.t_user
+        where username = #{username} and password = #{password};
+    </select>
+
+    <!--getUser-->
+    <select id="getUser" resultType="com.yikolemon.pojo.User">
+        select t_user.nickname,t_user.avatar FROM t_user where t_user.id=#{id}
+    </select>
+
+    <!--getUserByUsername-->
+    <select id="getUserByUsername" resultType="com.yikolemon.pojo.User">
+        select * FROM t_user where t_user.username=#{username}
+    </select>
+
+    <select id="isAdmin" resultType="_boolean">
+        select type from t_user where t_user.username=#{username}
+    </select>
+
+    <!--getIdByName-->
+    <select id="getIdByName" resultType="_long">
+        select id from t_user where t_user.username=#{username}
+    </select>
+
+    <!--hasUserByEmail-->
+    <select id="hasUserByEmail" resultType="boolean">
+        SELECT 1 FROM t_user where email = #{email} LIMIT 1
+    </select>
+
+    <!--saveUser-->
+    <insert id="saveUser">
+        insert into `t_user` values (null,#{username},#{username},#{password},#{email},#{avatar},0,#{createTime},null,#{salt})
+    </insert>
+
+    <!--getSaltByUsername-->
+    <select id="getSaltByUsername" resultType="java.lang.String">
+        SELECT salt FROM t_user where t_user.username=#{username}
+    </select>
+
+    <!--updateNicknameById-->
+    <update id="updateNickname" parameterType="com.yikolemon.pojo.User">
+        update t_user set nickname=#{nickname} where id =#{id}
+    </update>
+
+</mapper>

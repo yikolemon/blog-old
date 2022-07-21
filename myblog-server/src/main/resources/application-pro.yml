@@ -1,0 +1,10 @@
+logging:
+  level:
+    root: warn
+    com.yikolemon: info
+  file:
+    name: server-log/blog-pro.log
+
+
+server:
+  port: 8765
