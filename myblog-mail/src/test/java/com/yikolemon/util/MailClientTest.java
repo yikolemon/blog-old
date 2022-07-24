@@ -33,4 +33,9 @@ public class MailClientTest {
         System.out.println(process);
         mailClient.sendMail("1142496307@qq.com","Yikolemon's Blog",process);
     }
+
+    @Test
+    public void sendReplayMail() {
+        mailClient.sendReplayMail("1142496307@qq.com","yikolemon","主留言","回复留言");
+    }
 }

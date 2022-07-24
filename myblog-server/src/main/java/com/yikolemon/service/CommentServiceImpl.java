@@ -29,8 +29,6 @@ public class CommentServiceImpl implements CommentService{
         }
         comment.setCreateTime(new Date());
         return commentMapper.saveComment(comment);
-
-
     }
 
     @Override

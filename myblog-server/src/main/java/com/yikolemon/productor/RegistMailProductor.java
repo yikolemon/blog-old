@@ -37,4 +37,18 @@ public class RegistMailProductor {
         rabbitTemplate.convertAndSend(QueueConfig.registExchange,QueueConfig.routingKey,msg);
     }
 
+    public void sendReplay(String replay,String nikcname,String content,String email){
+        Map<String,String> params = new HashMap<>();
+        params.put("replay",replay);
+        params.put("nikcname",nikcname);
+        params.put("email",email);
+        params.put("content",content);
+        //将对象转为JSON串
+        Gson gson = new Gson();
+        String msg = gson.toJson(params);
+        //System.out.println(jsonString);
+        //发送到消息队列
+        rabbitTemplate.convertAndSend(QueueConfig.replayExchange,QueueConfig.routingKey,msg);
+    }
+
 }

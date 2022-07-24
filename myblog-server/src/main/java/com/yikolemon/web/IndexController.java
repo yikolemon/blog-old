@@ -54,10 +54,11 @@ public class IndexController {
     public String index(@RequestParam(defaultValue = "1") int pageNum,Model model) {
         PageHelper.startPage(pageNum,pageSize);
         List<IndexBlog> indexBlogs = blogService.listBlogsIndex();
-        if (indexBlogs.size()==0)
+        if (indexBlogs.size()==0){
             pageNum=1;
-        PageHelper.startPage(pageNum,pageSize);
-        indexBlogs = blogService.listBlogsIndex();
+            PageHelper.startPage(pageNum,pageSize);
+            indexBlogs = blogService.listBlogsIndex();
+        }
         PageInfo<IndexBlog> pageInfo = new PageInfo<>(indexBlogs);
         model.addAttribute("pageInfo",pageInfo);
         //获取总的记录数的方法  long total = pageInfo.getTotal();

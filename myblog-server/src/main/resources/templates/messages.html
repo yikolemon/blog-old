@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragment :: basic-head(~{::title})">
+    <title>留言 | Yikolemon's Blog</title>
+</head>
+<body>
+<div th:replace="fragment :: canvas-bg"></div>
+<!--导航-->
+<nav th:replace="fragment :: menu(6)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small"></nav>
+
+<!--中间内容-->
+<div  class="m-container m-padded-tb-big">
+    <div class="ui container">
+        <!--中间内容-->
+        <div class="ui top attached segment open-bg">
+            <h2 class="ui m-bottom-color dividing miku-colour header">留言板</h2>
+            <form class="ui form" method="post" th:action="@{/messages}" id="msg_form">
+                <input type="hidden" th:value="${user.username}" name="username">
+                <input type="hidden" id="isParent" name="isParent" value="true">
+                <input type="hidden" name="parentId" id="parentId">
+                <input type="hidden" name="replayId" id="replayId">
+                <input type="hidden" name="replayNickname" id="replayNickname">
+                <div class="field" id="content_text" contenteditable="true" data-placeholder="请输入你的留言..." name="content" th:text="${content}"></div>
+                <div class="ui error message"></div>
+                <div class="ui message"th:unless="${#strings.isEmpty(msg)}" >
+                    <i class="close icon"></i>
+                    <div class="header">提示：</div>
+                    <p th:text="${msg}">操作失败</p>
+                </div>
+                <input type="hidden" name="content" id="content">
+                <div class="four fields">
+                    <div class="replay-input field">
+                        <div class="ui left icon input disabled">
+                            <i class="user icon"></i>
+                            <input type="text" name="nickname"  th:value="${user.nickname}">
+                        </div>
+                    </div>
+                    <div class="replay-input field">
+                        <div class="ui left icon input disabled">
+                            <i class="mail icon"></i>
+                            <input type="text" name="email"  th:value="${user.email}">
+                        </div>
+                    </div>
+                    <div class="replay-input field" style="margin-top: 0.5em">
+                        <div class="ui toggle checkbox">
+                            <input type="checkbox" name="emailMsg" id="emailMsg">
+                            <label>回复邮件通知</label>
+                        </div>
+                    </div>
+                    <div class="replay-input field">
+                        <button class="ui secondary button miku-btn replay-input" type="button" id="submit-btn" style="width: 100%">发送</button>
+                    </div>
+                </div>
+
+            </form>
+            <div class="ui attached m-top-color segment m-bg">
+                <div class="ui threaded comments" style="max-width: 100%">
+                    <div class="comment" th:each="message : ${pageInfo.list}">
+                        <a class="avatar">
+                            <!--头像设置错误-->
+                            <img src="#" class="avatar-size" th:src="@{/images/user_avatar.jpg}">
+                        </a>
+                        <div class="content">
+                            <span class="author" th:text="${message.nickname}">昵称</span>
+                            &nbsp
+                            <!--<div class="ui mini basic label miku-colour" th:if="${message.isParent}">管理</div>-->
+                            <div class="metadata">
+                                <span class="date" th:text="${#dates.format(message.createTime,'yyyy-MM-dd')}">日期</span>
+                            </div>
+                            <div class="text">
+                                <p th:text="${message.content}">评论内容</p>
+                            </div>
+                            <div class="actions">
+                                <a class="reply" onclick="reply(this)" th:attr=" data-commentnickname=${message.nickname},data-commentid=${message.id},data-replayid=${message.id}" >回复</a>
+                            </div>
+                        </div>
+                        <div class="comments" th:if="${message.childMessage}!=null">
+                            <div class="comment" th:each="childMessage:${message.childMessage}">
+                                <a class="avatar">
+                                    <img src="#"  th:src="@{/images/user_avatar.jpg}" class="avatar-size">
+                                </a>
+                                <div class="content">
+
+                                    <span class="author" th:text="${childMessage.nickname} ">昵称</span>
+                                    &nbsp
+                                    <div class="ui mini basic label miku-colour" th:if="${childMessage.isParent}">管理</div>
+                                    <span class="reply-font miku-colour">
+                                        <span>&nbsp&nbsp&nbsp@</span>
+                                        <span th:text="${childMessage.replayNickname} "></span>
+                                     </span>
+                                    <div class="metadata">
+                                        <span class="date" th:text="${#dates.format(childMessage.createTime,'yyyy-MM-dd')}">日期</span>
+                                    </div>
+                                    <div class="text" >
+                                        <p th:text="${childMessage.content}">评论内容</p>
+                                    </div>
+                                    <div class="actions">
+                                        <a class="reply" onclick="reply(this)" th:attr="data-commentnickname=${childMessage.nickname},data-commentid=${message.id},data-replayid=${childMessage.id}" >回复</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui bottom attached segment open-bg">
+                <div class="ui middle aligned three column grid">
+                    <div class="column">
+                        <div class="teal basic" align="middle">
+                            <button class="miku-colour page-button" th:if="${!pageInfo.isIsFirstPage()}"
+                                    onclick="index(this)" th:attr="data-page=${pageInfo.getPageNum()}-1">
+                                上一页
+                            </button>
+                        </div>
+                        <!--<a href="#" class="ui mini teal basic button">上一页</a>-->
+                    </div>
+                    <div class="column " align="center">
+                        <div class="ui input focus two fiels" style="align-items: center">
+                            <div class="field">
+                                <input placeholder="1" class="page-input" th:value="${pageInfo.pageNum}" id="toPageNum">&nbsp;/&nbsp;
+                                <span th:text="${pageInfo.getPages()}"></span>
+                            </div>
+                            <div class="field">
+                                <button class="mini ui button" style="margin: 0.4em" th:onclick="toPage()">跳转</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="right aligned column">
+                        <div class="teal basic" align="middle">
+                            <button class="miku-colour page-button" th:if="${!pageInfo.isIsLastPage()}"
+                                    onclick="index(this)" th:attr="data-page=${pageInfo.getPageNum()}+1">
+                                下一页
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<form method="get" th:action="@{/messages}" id="index-form">
+    <input type="hidden" name="pageNum">
+</form>
+<!--底部footer-->
+
+<footer th:replace="fragment :: footer" class="ui inverted vertical segment m-padded-tb-massive"></footer>
+
+<div th:replace="fragment::basic-script"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js" th:src="@{/jquery/jquery.scrollTo.min.js}"></script>
+<script>
+    $('.message .close')
+        .on('click',function () {
+            $(this)
+                .closest('.message')
+                .transition('fade');
+        });
+    function toPage() {
+        var toPageNum=$('#toPageNum').val();
+        $("[name='pageNum']").val(toPageNum);
+        var form = document.getElementById('index-form');
+        form.submit();
+    }
+    function index(obj) {
+        $("[name='pageNum']").val($(obj).data("page"));
+        var form = document.getElementById('index-form');
+        form.submit();
+    }
+    $('.ui.form').form({
+        fields : {
+            content : {
+                identifier: 'content',
+                rules: [{
+                    type : 'empty',
+                    prompt: '请输入留言'
+                }]
+            },
+        }
+    });
+
+    function reply(obj) {
+        var id = $(obj).data('commentid');
+        var nickanem = $(obj).data('commentnickname');
+        var replayId=$(obj).data('replayid');
+        $('#content_text').attr("data-placeholder","@"+nickanem).focus();
+        $('#parentId').val(id);
+        $('#replayNickname').val(nickanem);
+        $('#isParent').val("false");
+        $('#replayId').val(replayId);
+        $(window).scrollTo($('#msg_form'),1000);
+    }
+
+    $('#submit-btn').click(function () {
+            $('#content').val(document.getElementById("content_text").innerHTML);
+            $('#msg_form').submit();
+            /*var bool=$('#msg_form').form('validate form')
+            /!*校验通过了*!/
+            if(bool){
+                $('#msg_form').submit();
+            }*/
+        }
+    );
+
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+</script>
+
+</body>
+</html>

@@ -60,6 +60,12 @@
         <version>2.9.0</version>
     </dependency>
 
+    <dependency>
+        <groupId>com.yikolemon</groupId>
+        <artifactId>myblog-commons</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </dependency>
+
 </dependencies>
 
 </project>

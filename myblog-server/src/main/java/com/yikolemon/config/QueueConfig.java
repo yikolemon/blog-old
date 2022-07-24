@@ -18,6 +18,10 @@ public class QueueConfig {
 
     public static final String routingKey="send";
 
+    //回复交换机
+    public static final String replayExchange="replayExchange";
+    public static final String  replayQueue="replayQueue";
+
     @Bean("registExchange")
     public DirectExchange xExchange(){
         return new DirectExchange(registExchange);
@@ -36,4 +40,22 @@ public class QueueConfig {
         return BindingBuilder.bind(queue).to(exchange).with(routingKey);
     }
 
+
+    @Bean("replayExchange")
+    public DirectExchange yExchange(){
+        return new DirectExchange(replayExchange);
+    }
+
+    @Bean("replayQueue")
+    public Queue queueB(){
+        Map<String,Object> map=new HashMap<>(1);
+        //设置ttl 单位ms,100分钟过期
+        map.put("x-message-ttl",6000000);
+        return QueueBuilder.durable(replayQueue).build();
+    }
+
+    @Bean
+    public Binding queueBBindingY(@Qualifier("replayQueue") Queue queue, @Qualifier("replayExchange") DirectExchange exchange){
+        return BindingBuilder.bind(queue).to(exchange).with(routingKey);
+    }
 }

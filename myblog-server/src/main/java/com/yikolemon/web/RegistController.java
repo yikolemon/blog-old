@@ -6,6 +6,7 @@ import com.yikolemon.productor.RegistMailProductor;
 import com.yikolemon.result.Result;
 import com.yikolemon.service.UserService;
 import com.yikolemon.util.CodeUtil;
+import com.yikolemon.util.EmailUtil;
 import com.yikolemon.util.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -38,12 +39,19 @@ public class RegistController {
         return "regist";
     }
 
+/*    @GetMapping("/send")
+    @ResponseBody
+    public String  test() throws JsonProcessingException {
+        mailProductor.sendReplay("123","123","123","1142496307@qq.com");
+        return null;
+    }*/
+
     @ResponseBody
     @PostMapping("/regist/sendMail")
     public String sendMail(HttpServletRequest request,String email,String username) throws JsonProcessingException {
         //编写检查代码
         //1.获取ip
-        if(!CodeUtil.mailConfirm(email)){//邮箱格式不正确
+        if(!EmailUtil.mailConfirm(email)){//邮箱格式不正确
             return Result.fall("邮箱格式不正确");
         }
         //检查邮箱是否已经被注册

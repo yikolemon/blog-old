@@ -18,7 +18,7 @@ public class RegistMailConsumer {
     private MailClient mailClient;
 
     @RabbitListener(queues = "registQueue")
-    public void receiveDelayQueue(Message message){
+    public void receiveRegist(Message message){
         String msg = new String(message.getBody());
         HashMap<String,String> map = new Gson().fromJson(msg, HashMap.class);
         String code = map.get("code");
@@ -27,4 +27,17 @@ public class RegistMailConsumer {
         //System.out.println(email);
         mailClient.sendRegistMail(email,code);
     }
+
+    //rabbitmqListener监听线程
+    @RabbitListener(queues = "replayQueue")
+    public void receiveReplay(Message message){
+        String msg = new String(message.getBody());
+        HashMap<String,String> map = new Gson().fromJson(msg, HashMap.class);
+        String replay = map.get("replay");
+        String nickname = map.get("nickname");
+        String email = map.get("email");
+        String content = map.get("content");
+        mailClient.sendReplayMail(email,nickname,content,replay);
+    }
+
 }

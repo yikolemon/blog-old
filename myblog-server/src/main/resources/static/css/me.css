@@ -223,6 +223,50 @@ body {
     max-width: none;
 }
 
+.m-bottom-color{
+    border-bottom: 2px solid #93D6D6 !important;
+}
+.page-input{
+    width: 50px!important;
+    height: 27.76px!important;
+}
+
+/*评论区可编辑div样式*/
+#content_text {
+    height: 130px !important;
+    /* background-image: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/comment-bg.png); */
+    /* background: url(https://fp1.fghrsh.net/2020/05/29/8b719b06855f7a6f1e59a2dfa0780ef9.png); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: hsla(0, 0%, 100%, .001) !important;
+    resize: vertical;
+    border: 1px solid #ccc !important;
+    border-radius: 4px !important;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset !important;
+    color: #555 !important;
+    display: block !important;
+    font-size: 14px !important;
+    line-height: 1.42857 !important;
+    padding: 6px 12px !important;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    opacity: .9;
+}
+/*可编辑div实现placeholder效果*/
+#content_text:empty:before {
+    background-color: hsla(0, 0%, 100%, .001) !important;
+    content: attr(data-placeholder) !important;
+    color: #bbb !important;
+}
+
+#content_text:focus:before {
+    content: none !important;
+    background-color: hsla(0, 0%, 100%, .001) !important;
+}
+
 .page-button{
     border: none !important;
     background: none !important;
@@ -239,10 +283,17 @@ body {
     border-color: #93D6D6 !important;
     background: white !important;
 }
+.miku-btn{
+    background-color: #93D6D6 !important;
+    color: white !important;
+}
 .miku-label-right:hover{
     color: #00000066 !important;
     border-color: #00000066 !important;
     background: #ffffffe6 !important;
+}
+.m-top-color{
+    border-top:2px solid  #93D6D6 !important;
 }
 .a-colour{
     color: #666 !important;
@@ -272,6 +323,11 @@ body {
 }
 .upload-margin{
     margin-left: 0.5em !important;
+}
+
+.replay-input{
+    margin-left: 0.5em !important;
+    margin-right: 0.5em !important;
 }
 .img-hover{
     -webkit-transition: .5s ease;

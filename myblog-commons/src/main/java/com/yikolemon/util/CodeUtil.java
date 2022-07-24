@@ -29,19 +29,6 @@ public class CodeUtil {
         return builder.toString();
     }
 
-    //邮箱格式校验
-    public static boolean mailConfirm(String mail){
-        Pattern pattern = Pattern.compile("[\\w\\.\\-]+@([\\w\\-]+\\.)+[\\w\\-]+", Pattern.CASE_INSENSITIVE);
-        Matcher matcher = pattern.matcher(mail);
-        return matcher.matches();
-    }
 
-    public static String getMailStr(String code,TemplateEngine engine){
-        //通过code生成邮件
-        Context context=new Context();
-        context.setVariable("code",code);
-        String process = engine.process("/mail/regist_mail", context);
-        return process;
-    }
 
 }
