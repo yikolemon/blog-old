@@ -50,9 +50,6 @@
                       </div>
                     </div>
                   </div>
-                  <div class="right aligned five wide column">
-                    <a href="#" target="_blank" class="ui teal basic label m-padded-tiny m-text-thin" th:text="${blog.typeName}">认知升级</a>
-                  </div>
                 </div>
               </div>
 
@@ -96,7 +93,7 @@
 
   <form method="post" th:action="@{/search}" id="index-form">
     <input type="hidden" name="pageNum">
-    <input type="hidden" name="title" th:value="${title}">
+    <input type="hidden" name="keyword" th:value="${keyword}">
   </form>
 
   <br>

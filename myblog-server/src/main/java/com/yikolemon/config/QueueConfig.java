@@ -18,9 +18,17 @@ public class QueueConfig {
 
     public static final String routingKey="send";
 
-    //回复交换机
+    //回复发送邮件交换机
     public static final String replayExchange="replayExchange";
     public static final String  replayQueue="replayQueue";
+
+
+    //Elasticsearch添加交换机
+    public static final String elasticExchange="elasticExchange";
+    public static final String  elasticAddQueue="elasticAddQueue";
+    public static final String  elasticDeleteQueue="elasticDeleteQueue";
+    public static final String addKey="add";
+    public static final String deleteKey="delete";
 
     @Bean("registExchange")
     public DirectExchange xExchange(){
@@ -58,4 +66,42 @@ public class QueueConfig {
     public Binding queueBBindingY(@Qualifier("replayQueue") Queue queue, @Qualifier("replayExchange") DirectExchange exchange){
         return BindingBuilder.bind(queue).to(exchange).with(routingKey);
     }
+
+
+    @Bean("elasticExchange")
+    public DirectExchange zExchange(){
+        return new DirectExchange(elasticExchange);
+    }
+
+
+
+    @Bean("elasticAddQueue")
+    public Queue queueC(){
+        Map<String,Object> map=new HashMap<>(1);
+        //设置ttl 单位ms,100分钟过期
+        map.put("x-message-ttl",6000000);
+        return QueueBuilder.durable(elasticAddQueue).build();
+    }
+
+    @Bean("elasticDeleteQueue")
+    public Queue queueD(){
+        Map<String,Object> map=new HashMap<>(1);
+        //设置ttl 单位ms,10分钟过期
+        map.put("x-message-ttl",600000);
+        return QueueBuilder.durable(elasticDeleteQueue).build();
+    }
+
+    @Bean
+    public Binding queueCBindingZ(@Qualifier("elasticAddQueue") Queue queue, @Qualifier("elasticExchange") DirectExchange exchange){
+        return BindingBuilder.bind(queue).to(exchange).with(addKey);
+    }
+
+    @Bean
+    public Binding queueDBindingZ(@Qualifier("elasticDeleteQueue") Queue queue, @Qualifier("elasticExchange") DirectExchange exchange){
+        return BindingBuilder.bind(queue).to(exchange).with(deleteKey);
+    }
+
+
+
+
 }

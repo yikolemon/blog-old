@@ -52,3 +52,7 @@ mybatis:
 
 pagesize: 8
 msgsize: 6
+
+elasticsearch:
+  host: 101.43.244.40
+  port: 9200

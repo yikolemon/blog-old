@@ -1,16 +1,11 @@
 package com.yikolemon.web;
 
-import com.yikolemon.pojo.Blog;
 import com.yikolemon.pojo.Like;
-import com.yikolemon.service.BlogService;
-import com.yikolemon.service.BlogServiceImpl;
 import com.yikolemon.service.LikeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpServletRequest;

@@ -3,8 +3,6 @@ package com.yikolemon.mapper;
 
 import com.yikolemon.pojo.Blog;
 import com.yikolemon.queue.*;
-import com.yikolemon.redis.MyRedisCache;
-import org.apache.ibatis.annotations.CacheNamespace;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 

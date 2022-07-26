@@ -13,6 +13,7 @@ import com.yikolemon.service.*;
 import com.yikolemon.util.PageUtils;
 import com.yikolemon.util.TopConfig;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -41,6 +42,9 @@ public class IndexController {
 
     @Autowired
     private LikeService likeService;
+
+    @Autowired
+    private ElasticsearchService elasticService;
 
     int pageSize= PageUtils.getPageSize();
 
@@ -74,12 +78,16 @@ public class IndexController {
     }
 
    @PostMapping("/search")
-    public String search(@RequestParam String title, Model model,@RequestParam(defaultValue = "1") int pageNum){
-        PageHelper.startPage(pageNum,pageSize);
-       List<IndexBlog> indexBlogs = blogService.searchBlog(title);
-       PageInfo<IndexBlog> pageInfo = new PageInfo<>(indexBlogs);
+    public String search(@RequestParam String keyword, Model model,@RequestParam(defaultValue = "0") int pageNum){
+       Page<Blog> page = elasticService.searchBlogs(keyword, pageNum);
+       List<Blog> content = page.getContent();
+       PageInfo<Blog> pageInfo = new PageInfo<>(content);
+       pageInfo.setTotal(page.getTotalElements());
+       pageInfo.setPageNum(page.getNumber());
+       pageInfo.setIsFirstPage(page.isFirst());
+       pageInfo.setIsLastPage(page.isLast());
        model.addAttribute("pageInfo",pageInfo);
-       model.addAttribute("title",title);
+       model.addAttribute("keyword",keyword);
        return "search";
    }
 

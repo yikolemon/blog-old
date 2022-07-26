@@ -25,3 +25,8 @@ logging:
   config: classpath:logback-spring.xml
 
 
+elasticsearch:
+  host: 101.43.244.40
+  port: 9200
+
+

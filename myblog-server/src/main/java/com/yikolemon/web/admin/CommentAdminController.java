@@ -3,7 +3,6 @@ package com.yikolemon.web.admin;
 import com.yikolemon.pojo.Blog;
 import com.yikolemon.pojo.Comment;
 import com.yikolemon.service.CommentService;
-import com.yikolemon.service.CommentServiceImpl;
 import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

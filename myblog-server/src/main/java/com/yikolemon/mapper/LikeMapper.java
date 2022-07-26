@@ -1,6 +1,5 @@
 package com.yikolemon.mapper;
 
-import com.yikolemon.pojo.Blog;
 import com.yikolemon.pojo.Like;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;

@@ -1,7 +1,6 @@
 package com.yikolemon.service;
 
 import com.yikolemon.mapper.BlogMapper;
-import com.yikolemon.mapper.LikeMapper;
 import com.yikolemon.pojo.Blog;
 import com.yikolemon.queue.ArchiveBlog;
 import com.yikolemon.queue.IndexBlog;

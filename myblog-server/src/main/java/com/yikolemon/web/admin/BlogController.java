@@ -5,7 +5,7 @@ import com.github.pagehelper.PageInfo;
 import com.yikolemon.pojo.Blog;
 import com.yikolemon.pojo.Tag;
 import com.yikolemon.pojo.Type;
-import com.yikolemon.pojo.User;
+import com.yikolemon.productor.ElasticProductor;
 import com.yikolemon.queue.SearchBlog;
 import com.yikolemon.service.*;
 import com.yikolemon.util.PageUtils;
@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @RequiresRoles("admin")
@@ -37,6 +36,9 @@ public class BlogController {
     private TagBlogService tagBlogService;
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private ElasticProductor elasticProductor;
 
     int pageSize= PageUtils.getPageSize();
 
@@ -82,6 +84,7 @@ public class BlogController {
         tagBlogService.deleteTagByBlogId(id);
         int i = blogService.deleteBlog(id);
         if (i==1){
+            elasticProductor.sendElasticDelete(id);
             redirectAttributes.addFlashAttribute("message","操作成功");
         }
         else {
@@ -114,6 +117,7 @@ public class BlogController {
         else {
             saveBlog(blog,redirectAttributes,request);
         }
+        elasticProductor.sendElasticAdd(blog);
         return "redirect:/admin/blogs";
     }
 
