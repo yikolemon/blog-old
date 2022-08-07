@@ -21,4 +21,12 @@ public class FileControllerTest {
         String delete = qiniuCloudUtil.delete("test.png");
         System.out.println(delete);
     }
+
+    @Test
+    public void paixu(){
+        String a="yikolemon";
+        String b="yikolime";
+        int i = a.compareTo(b);
+        System.out.println(i);
+    }
 }

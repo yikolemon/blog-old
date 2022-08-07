@@ -3,7 +3,6 @@ package com.yikolemon.web;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.yikolemon.NotFoundException;
 import com.yikolemon.pojo.*;
 import com.yikolemon.queue.IndexBlog;
 import com.yikolemon.queue.IndexTag;
@@ -13,13 +12,11 @@ import com.yikolemon.service.*;
 import com.yikolemon.util.PageUtils;
 import com.yikolemon.util.TopConfig;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
@@ -42,9 +39,6 @@ public class IndexController {
 
     @Autowired
     private LikeService likeService;
-
-    @Autowired
-    private ElasticsearchService elasticService;
 
     int pageSize= PageUtils.getPageSize();
 
@@ -77,19 +71,7 @@ public class IndexController {
         return "index";
     }
 
-   @PostMapping("/search")
-    public String search(@RequestParam String keyword, Model model,@RequestParam(defaultValue = "0") int pageNum){
-       Page<Blog> page = elasticService.searchBlogs(keyword, pageNum);
-       List<Blog> content = page.getContent();
-       PageInfo<Blog> pageInfo = new PageInfo<>(content);
-       pageInfo.setTotal(page.getTotalElements());
-       pageInfo.setPageNum(page.getNumber());
-       pageInfo.setIsFirstPage(page.isFirst());
-       pageInfo.setIsLastPage(page.isLast());
-       model.addAttribute("pageInfo",pageInfo);
-       model.addAttribute("keyword",keyword);
-       return "search";
-   }
+
 
     @GetMapping("/blog/{id}")
     @Transactional

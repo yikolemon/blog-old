@@ -46,4 +46,9 @@
         update t_user set nickname=#{nickname} where id =#{id}
     </update>
 
+    <!--getAllUser-->
+    <select id="getAllUser" resultType="com.yikolemon.pojo.User">
+        select t_user.username,t_user.nickname from t_user
+    </select>
+
 </mapper>

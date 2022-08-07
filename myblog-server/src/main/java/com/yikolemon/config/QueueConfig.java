@@ -30,6 +30,12 @@ public class QueueConfig {
     public static final String addKey="add";
     public static final String deleteKey="delete";
 
+
+    public static final String cloudMsgExchang="cloudMsgExchang";
+    public static final String cloudMsgQueue="cloudMsgQueue";
+    public static final String cloudMsgkey="save";
+
+
     @Bean("registExchange")
     public DirectExchange xExchange(){
         return new DirectExchange(registExchange);
@@ -101,7 +107,22 @@ public class QueueConfig {
         return BindingBuilder.bind(queue).to(exchange).with(deleteKey);
     }
 
+    @Bean("cloudMsgExchang")
+    public DirectExchange cloudMsgExchang(){
+        return new DirectExchange(cloudMsgExchang);
+    }
 
+    @Bean("cloudMsgQueue")
+    public Queue cloudMsgQueue(){
+        Map<String,Object> map=new HashMap<>(1);
+        //设置ttl 单位ms,120s过期
+        map.put("x-message-ttl",120000);
+        return QueueBuilder.durable(cloudMsgQueue).build();
+    }
 
+    @Bean
+    public Binding cloudMsgQueueBindingcloudMsgExchang(@Qualifier("cloudMsgQueue") Queue queue, @Qualifier("cloudMsgExchang") DirectExchange exchange){
+        return BindingBuilder.bind(queue).to(exchange).with(cloudMsgkey);
+    }
 
 }

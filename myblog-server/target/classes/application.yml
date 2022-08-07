@@ -13,7 +13,7 @@ spring:
       max-file-size: 10MB
       max-request-size: 30MB
   profiles:
-    active: pro
+    active: dev
   redis:
     port: 6666
     host: 127.0.0.1
@@ -56,3 +56,10 @@ msgsize: 6
 elasticsearch:
   host: 101.43.244.40
   port: 9200
+
+custom-manager:
+  isOpen-custom-cache: true
+  cache-type: caffeine-redis
+
+
+

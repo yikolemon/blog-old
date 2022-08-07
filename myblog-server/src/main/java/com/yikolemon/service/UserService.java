@@ -2,6 +2,8 @@ package com.yikolemon.service;
 
 import com.yikolemon.pojo.User;
 
+import java.util.List;
+
 public interface UserService {
     User checkUser(String username, String password);
 
@@ -20,5 +22,7 @@ public interface UserService {
     String getSaltByUsername(String username);
 
     int updateNicknameById(long id, String nickname);
+
+    List<User> getAllUser();
 
 }

@@ -13,7 +13,7 @@
     <div class="ui container">
         <!--中间内容-->
         <div class="ui top attached segment open-bg">
-            <h2 class="ui m-bottom-color dividing miku-colour header">留言板</h2>
+            <h2 class="ui m-bottom-color dividing miku-colour header hard-title">留言板</h2>
             <form class="ui form" method="post" th:action="@{/messages}" id="msg_form">
                 <input type="hidden" th:value="${user.username}" name="username">
                 <input type="hidden" id="isParent" name="isParent" value="true">

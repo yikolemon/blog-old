@@ -1,4 +1,4 @@
-package com.yikolemon.Shiro;
+package com.yikolemon.shiro.shiroCache;
 
 import org.apache.shiro.codec.Base64;
 import org.apache.shiro.codec.CodecSupport;

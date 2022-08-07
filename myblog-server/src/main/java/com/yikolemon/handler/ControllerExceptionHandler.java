@@ -1,6 +1,7 @@
 package com.yikolemon.handler;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.yikolemon.exception.SearchLimitException;
 import org.apache.shiro.authz.UnauthenticatedException;
 import org.apache.shiro.authz.UnauthorizedException;
 import org.slf4j.Logger;
@@ -53,6 +54,13 @@ public class ControllerExceptionHandler {
     public ModelAndView failToSend(){
         ModelAndView mv = new ModelAndView();
         mv.setViewName("error/500");
+        return mv;
+    }
+
+    @ExceptionHandler(SearchLimitException.class)
+    public ModelAndView searchLimit(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("error/403");
         return mv;
     }
 

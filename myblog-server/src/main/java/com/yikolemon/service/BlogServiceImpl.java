@@ -1,5 +1,6 @@
 package com.yikolemon.service;
 
+import com.github.pagehelper.PageHelper;
 import com.yikolemon.mapper.BlogMapper;
 import com.yikolemon.pojo.Blog;
 import com.yikolemon.queue.ArchiveBlog;
@@ -9,6 +10,9 @@ import com.yikolemon.queue.SearchBlog;
 import com.yikolemon.util.MarkdownUtils;
 import com.yikolemon.util.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import redis.clients.jedis.Jedis;
@@ -19,6 +23,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service
+@CacheConfig(cacheNames = "blogs")
 public class BlogServiceImpl implements BlogService{
 
     @Autowired
@@ -27,12 +32,15 @@ public class BlogServiceImpl implements BlogService{
     private LikeService likeService;
 
     @Override
+    @Cacheable(key = "'getBlog'+#id")
     public Blog getBlog(Long id) {
         return blogMapper.getBlog(id);
     }
 
     @Override
+    @Cacheable(key = "'getAndConvert'+#id")
     public Blog getAndConvert(Long id) {
+        PageHelper.clearPage();
         Blog blog = blogMapper.getBlog(id);
         String content = blog.getContent();
         String str = MarkdownUtils.markdownToHtmlExtensions(content);
@@ -42,6 +50,7 @@ public class BlogServiceImpl implements BlogService{
 
     @Override
     @Transactional
+    @CacheEvict(allEntries = true)
     public int saveBlog(Blog blog) {
         blog.setCreateTime(new Date());
         blog.setUpdateTime(new Date());
@@ -52,6 +61,7 @@ public class BlogServiceImpl implements BlogService{
     }
 
     @Override
+    @CacheEvict(allEntries = true)
     public int updateBlog(Blog blog) {
         blog.setUpdateTime(new Date());
         return blogMapper.updateBlog(blog);
@@ -59,6 +69,7 @@ public class BlogServiceImpl implements BlogService{
 
     @Override
     @Transactional
+    @CacheEvict(allEntries = true)
     public int deleteBlog(Long id) {
         likeService.deleteLike(id);
         return blogMapper.deleteBlog(id);
@@ -66,6 +77,7 @@ public class BlogServiceImpl implements BlogService{
 
 
     @Override
+    @Cacheable(key = "'listBlogsIndex'")
     public List<IndexBlog> listBlogsIndex() {
         return blogMapper.listBlogsIndex();
     }
@@ -76,36 +88,43 @@ public class BlogServiceImpl implements BlogService{
     }
 
     @Override
+    @Cacheable(key = "'listRecommendNewBlog'+#size")
     public List<RightTopBlog> listRecommendNewBlog(int size) {
         return blogMapper.listRecommendNewBlog(size);
     }
 
     @Override
+    @Cacheable(key = "'listMostviewBlog'+#size")
     public List<RightTopBlog> listMostviewBlog(int size) {
         return blogMapper.listMostviewBlog(size);
     }
 
     @Override
+    @Cacheable(key = "'listBlogsAdmin'")
     public List<Blog> listBlogsAdmin() {
         return blogMapper.listBlogsAdmin();
     }
 
     @Override
+    @Cacheable(key ="listAllBlogsSearch+#blog")
     public List<Blog> listAllBlogsSearch(SearchBlog blog) {
         return blogMapper.listAllBlogsSearch(blog);
     }
 
     @Override
+    @Cacheable(key = "'listBlogsByTypeId'+#id")
     public List<IndexBlog> listBlogsByTypeId(Long id) {
         return blogMapper.listBlogsByTypeId(id);
     }
 
     @Override
+    @Cacheable(key = "'listBlogsByTagId'+#id")
     public List<IndexBlog> listBlogsByTagId(Long id) {
         return blogMapper.listBlogsByTagId(id);
     }
 
     @Override
+    @Cacheable(key = "'listBlogsArchive'")
     public Map<String, List<ArchiveBlog>> listBlogsArchive() {
         String[] years = blogMapper.getAllYears();
         Map map=new HashMap<String,List<ArchiveBlog>>();
@@ -117,12 +136,14 @@ public class BlogServiceImpl implements BlogService{
     }
 
     @Override
+    @Cacheable(key = "'countBlog'")
     public int countBlog() {
         return blogMapper.countBlog();
     }
 
     @Override
     //给redis定时任务使用
+    @CacheEvict(allEntries = true)
     public int updateView(Long id,int num) {
         return blogMapper.updateView(id,num);
     }

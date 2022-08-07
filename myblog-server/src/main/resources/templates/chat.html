@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragment :: basic-head(~{::title})">
+    <title>聊天 | Yikolemon's Blog</title>
+</head>
+<body>
+<div th:replace="fragment :: canvas-bg"></div>
+<!--导航-->
+<nav th:replace="fragment :: menu(7)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small"></nav>
+
+<div  class="m-container m-padded-tb-large">
+    <input type="hidden" th:value="${myUsername}" id="myUsername">
+    <div class="ui container">
+        <!--中间内容-->
+        <div class="ui stackable grid">
+
+            <div class="twelve wide column">
+                <div class="ui negative message" style="display: none" id="offLinNotice">
+                    <i class="close icon"></i>
+                    <div class="header">你已离线</div>
+                </div>
+                <div class="ui top attached segment open-bg">
+                    <button class="ui mini button" style="position: absolute;top:35px;right: 20px" onclick="pullCloudHistory()">聊天记录拉取</button>
+                    <h2 class="ui m-bottom-color dividing miku-colour header hard-title" id="chatTarget">
+                        公共聊天室
+                    </h2>
+
+                    <div class="ui open-bg" style="height: 20em!important;overflow-y: scroll;" id="scrollContainer">
+                        <div class="ui comments" id="msgContainer">
+                            <!--<div class="ui comment chat-msg">
+                                <div class="avatar">
+                                    <img src="/images/avatar/small/matt.jpg" th:src="@{/images/user_avatar.jpg}">
+                                </div>
+                                <div class="content">
+                                    <div class="author">Matt</div>
+
+                                    <div class="text chat_text">
+                                        这是一个测试
+                                    </div>
+                                </div>
+                            </div>-->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ui bottom attached  segment open-bg">
+                    <div class="field" id="content_text" contenteditable="true" data-placeholder="输入聊天消息" name="content" style="height:5em!important;">
+
+                    </div>
+                    <div class="ui button" style="width: 100%;margin-top: 0.5em;" onclick="sendMsg()">
+                        发送
+                    </div>
+                </div>
+            </div>
+
+            <div class="four wide column">
+                <div class="ui segments sticky">
+                    <div class="ui segment open-bg">
+                        <a class="ui m-bottom-color miku-colour header hard-title" onclick="chatWithPublic()" style="cursor:pointer;margin-bottom: 0.5em;">公共聊天室</a>
+                        <div class="ui miku-colour header hard-title" style="margin-top: 0;">在线人数<span id="onlineNum"></span></div>
+                    </div>
+                </div>
+
+                <div class="ui segments sticky">
+                    <div class="ui secondary segment open-bg">
+                        <div class="ui two column grid">
+                            <div class="column">
+                                <i class="user icon miku-colour"></i>用户
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui teal segment open-bg" >
+                        <div class="ui fluid vertical menu open-bg" style="overflow-y: scroll;height: 25em!important;" id="userContainer">
+                            <a  target="_blank" class="item"  th:each="chatuser : ${userList}" onclick="chatWithPerson(this)" th:attr="data-username=${chatuser.user.username}" th:if="${myUsername}!=${chatuser.user.username}" th:id="${chatuser.user.username}">
+                                <span th:text="${chatuser.user.nickname}"></span>
+                                <div class="ui  basic label miku-label-right uncheck_tag" th:classappend="${chatuser.unRead}?'':'hidden'">消息</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!--底部footer-->
+
+<footer th:replace="fragment :: footer" class="ui inverted vertical segment m-padded-tb-massive"></footer>
+
+<div th:replace="fragment::basic-script"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js" th:src="@{/jquery/jquery.scrollTo.min.js}"></script>
+
+<!--websocket文件-->
+<script th:src="@{/lib/chat.js}"></script>
+
+
+<script>
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+    $('.message .close')
+        .on('click',function () {
+            $(this)
+                .closest('.message')
+                .transition('fade');
+        });
+</script>
+
+</body>
+</html>

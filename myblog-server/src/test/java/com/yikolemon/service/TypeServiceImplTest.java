@@ -72,4 +72,8 @@ public class TypeServiceImplTest {
         System.out.println(typeService.getAllIndexTypes());
     }
 
+    @Test
+    public void testGetTypeTop() {
+        typeService.getTypeTop(6);
+    }
 }

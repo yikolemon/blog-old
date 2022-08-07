@@ -1,19 +1,29 @@
-package com.yikolemon.interceptor;/*
-
+/*
 package com.yikolemon.interceptor;
 
+import com.yikolemon.service.DataService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
+
+    @Bean
+    public DataInterceptor dataInterceptor(){
+        return new DataInterceptor();
+    }
+
+    @Autowired
+    private DataInterceptor dataInterceptor;
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new LoginInterceptor())
-                .addPathPatterns("/admin/**")
-                .excludePathPatterns("/admin")
-                .excludePathPatterns("/admin/login");
+        registry.addInterceptor(dataInterceptor)
+                .addPathPatterns("/");
     }
+
 }
 */

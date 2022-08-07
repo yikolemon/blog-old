@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragment :: basic-head(~{::title})">
+    <title>403</title>
+</head>
+<body>
+
+<!--导航-->
+<nav th:replace="fragment :: menu(1)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small"></nav>
+
+<!--中间内容-->
+<div class="m-container">
+    <div class="ui attached segment">
+
+        <img class="ui medium circular image" src="#" style="width: 1000px;height: inherit;padding-left:30%" th:src="@{/images/404.png}" align="middle">
+        <h1 th:align="middle" class="miku-colour">请勿频繁搜索</h1>
+        <br>
+        <h3 th:align="middle" >请稍等，<span id="n" class="miku-colour">5</span>秒后跳转页面</h3>
+
+    </div>
+</div>
+
+
+<br>
+<br>
+<footer th:replace="fragment :: footer" class="ui inverted vertical segment m-padded-tb-massive"></footer>
+
+<div th:replace="fragment::basic-script"></div>
+
+<script>
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    $('.ui.dropdown').dropdown({
+        on : 'hover'
+    });
+</script>
+<script>
+    var num=10;
+    var id=setInterval(jump,1000);
+    var n=document.getElementById("n");
+    function jump() {
+        num--;
+        n.innerHTML=num;
+        if (num==0){
+            clearInterval(id);
+            window.location.href=window.location.href+"/../";
+        }
+    }
+</script>
+
+</body>
+</html>

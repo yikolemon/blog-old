@@ -1,10 +1,9 @@
 package com.yikolemon.config;
 
 import at.pollux.thymeleaf.shiro.dialect.ShiroDialect;
-import com.yikolemon.Shiro.UserRealm;
+import com.yikolemon.shiro.UserRealm;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.realm.Realm;
-import org.apache.shiro.session.mgt.SessionManager;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;

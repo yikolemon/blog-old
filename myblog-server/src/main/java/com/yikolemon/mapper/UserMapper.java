@@ -4,6 +4,8 @@ import com.yikolemon.pojo.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Mapper
 @Repository
 public interface UserMapper {
@@ -25,4 +27,5 @@ public interface UserMapper {
 
     int updateNickname(User user);
 
+    List<User> getAllUser();
 }

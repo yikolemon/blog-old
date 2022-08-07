@@ -4,23 +4,29 @@ import com.yikolemon.mapper.CommentMapper;
 import com.yikolemon.pojo.Blog;
 import com.yikolemon.pojo.Comment;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 
 @Service
+@CacheConfig(cacheNames = "comments")
 public class CommentServiceImpl implements CommentService{
 
     @Autowired
     private CommentMapper commentMapper;
 
     @Override
+    @Cacheable(key = "'listCommentByBlogId'+#blogId")
     public List<Comment> listCommentByBlogId(long blogId) {
         return commentMapper.listCommentByBlogId(blogId);
     }
 
     @Override
+    @CacheEvict(allEntries = true)
     public int saveComment(Comment comment) {
         if (comment.getParentCommentId()!=null) {
             if (comment.getParentCommentId() == -1) {
@@ -32,6 +38,7 @@ public class CommentServiceImpl implements CommentService{
     }
 
     @Override
+    @Cacheable(key = "'listDealComments'+#blogId")
     public List<Comment> listDealComments(long blogId) {
         List<Comment> comments = commentMapper.listCommentByBlogId(blogId);
         if (comments.size()==1) return comments;
@@ -89,12 +96,14 @@ public class CommentServiceImpl implements CommentService{
     }*/
 
     @Override
+    @Cacheable(key = "'listBlogIfHasComments'")
     public List<Blog> listBlogIfHasComments() {
         return commentMapper.listBlogIfHasComments();
     }
 
     @Override
     @Transactional
+    @CacheEvict(allEntries = true)
     public void clearCommentsByBlogId(long blogId) {
         List<Comment> commentList = commentMapper.listCommentByBlogId(blogId);
         for (Comment comment:commentList) {
@@ -104,6 +113,7 @@ public class CommentServiceImpl implements CommentService{
 
     @Override
     @Transactional
+    @CacheEvict(allEntries = true)
     public void deleteCommentById(long id) {
         boolean flag = commentMapper.hasParent(id);
         if (flag){
@@ -119,6 +129,7 @@ public class CommentServiceImpl implements CommentService{
     }
 
     @Override
+    @Cacheable(key = "'getBlogIdByCommentId'+#commentId")
     public long getBlogIdByCommentId(long commentId) {
         return commentMapper.getBlogIdByCommentId(commentId);
     }

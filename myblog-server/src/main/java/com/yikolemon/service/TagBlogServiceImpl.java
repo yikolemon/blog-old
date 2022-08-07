@@ -6,10 +6,15 @@ import com.yikolemon.pojo.TagBlog;
 import com.yikolemon.util.TagBlogUtils;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@CacheConfig(cacheNames = "tagBlog")
 public class TagBlogServiceImpl implements TagBlogService{
 
     @Autowired
@@ -30,6 +35,7 @@ public class TagBlogServiceImpl implements TagBlogService{
 
 
     @Override
+    @Cacheable(key = "#id")
     public String StringTagIdsByBlogId(long id) {
         Tag[] tags = tagBlogMapper.queueByBlogId(id);
         if (tags==null) return "";
@@ -41,6 +47,7 @@ public class TagBlogServiceImpl implements TagBlogService{
     }
 
     @Override
+    @CacheEvict(key = "#blogId")
     public int deleteTagByBlogId(long id) {
         return tagBlogMapper.deleteTagByBlogId(id);
     }

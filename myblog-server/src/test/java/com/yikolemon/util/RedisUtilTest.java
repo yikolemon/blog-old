@@ -16,7 +16,6 @@ public class RedisUtilTest {
         Map<String, String> hi = jedis.hgetAll("hi");
         System.out.println(hi);
         System.out.println(jedis);
-
     }
 
     @Test

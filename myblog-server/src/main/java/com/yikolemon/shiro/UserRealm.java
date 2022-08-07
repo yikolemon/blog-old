@@ -1,7 +1,9 @@
-package com.yikolemon.Shiro;
+package com.yikolemon.shiro;
 
 import com.yikolemon.pojo.User;
 import com.yikolemon.service.UserService;
+import com.yikolemon.shiro.shiroCache.MySimpleByteSource;
+import com.yikolemon.shiro.shiroCache.RedisShiroCacheManager;
 import com.yikolemon.util.ApplicationContextUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
@@ -23,7 +25,7 @@ public class UserRealm extends AuthorizingRealm {
         //设置散列次数
         matcher.setHashIterations(1024);
         this.setCredentialsMatcher(matcher);
-        this.setCacheManager(new RedisCacheManager());
+        this.setCacheManager(new RedisShiroCacheManager());
         this.setCachingEnabled(true);
         this.setAuthenticationCacheName("AuthenticationCache");
         this.setAuthorizationCacheName("AuthorizationCache");
