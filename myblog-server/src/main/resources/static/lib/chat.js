@@ -40,7 +40,8 @@ function sendMsg(){
 //登录后显示用户名和状态
 $(function () {
     //创建websocket对象
-     ws= new WebSocket("ws://localhost:8080/chatSocket");
+    ws= new WebSocket("ws://yikolemon.cn/chatSocket");
+     //ws= new WebSocket("ws://localhost:8765/chatSocket");
 
     //建立连接后触发
     ws.onopen = function () {
@@ -188,11 +189,12 @@ function pullCloudHistory() {
     if (isPublic){
         //公共聊天记录拉取
         $.ajax({url:"/chatHistory/public",success:function(result){
+                var res=JSON.parse(result);
                 map.set("public",null);
                 var publicMsg = getPublicMsgContainer();
                 $("#msgContainer").empty();
-                for(var i=0;i<result.length;i++){
-                    var appendMsg=getMsgStr(result[i].from,result[i].msg);
+                for(var i=0;i<res.length;i++){
+                    var appendMsg=getMsgStr(res[i].from,res[i].msg);
                     publicMsg.push(appendMsg);
                     $("#msgContainer").append(appendMsg);
                 }
@@ -202,11 +204,13 @@ function pullCloudHistory() {
     }else {
         //私人聊天记录拉取
         $.ajax({url:"/chatHistory/p2p/"+toName,success:function(result){
+                var res=JSON.parse(result);
                 map.set(toName,null);
                 var p2pMsg = getP2PMsgContaine(toName);
                 $("#msgContainer").empty();
-                for(var i=0;i<result.length;i++){
-                    var appendMsg=getMsgStr(result[i].from,result[i].msg);
+                console.log(res);
+                for(var i=0;i<res.length;i++){
+                    var appendMsg=getMsgStr(res[i].from,res[i].msg);
                     p2pMsg.push(appendMsg);
                     $("#msgContainer").append(appendMsg);
                 }

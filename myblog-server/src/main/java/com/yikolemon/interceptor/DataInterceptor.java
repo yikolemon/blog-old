@@ -1,8 +1,8 @@
-/*
 package com.yikolemon.interceptor;
 
 import com.yikolemon.service.DataService;
 import com.yikolemon.service.UserService;
+import com.yikolemon.util.IpUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,8 @@ public class DataInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         //统计uv
-        String ip = request.getRemoteHost();
+        String ip = IpUtils.getIpFromRequest(request);
+        //String ip = request.getRemoteHost();
         dataService.recordUV(ip);
 
         //统计Dau
@@ -36,4 +37,3 @@ public class DataInterceptor implements HandlerInterceptor {
     }
 
 }
-*/

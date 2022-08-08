@@ -77,7 +77,7 @@ public class BlogServiceImpl implements BlogService{
 
 
     @Override
-    @Cacheable(key = "'listBlogsIndex'")
+    //@Cacheable(key = "'listBlogsIndex'")
     public List<IndexBlog> listBlogsIndex() {
         return blogMapper.listBlogsIndex();
     }
@@ -88,25 +88,25 @@ public class BlogServiceImpl implements BlogService{
     }
 
     @Override
-    @Cacheable(key = "'listRecommendNewBlog'+#size")
+    //@Cacheable(key = "'listRecommendNewBlog'+#size")
     public List<RightTopBlog> listRecommendNewBlog(int size) {
         return blogMapper.listRecommendNewBlog(size);
     }
 
     @Override
-    @Cacheable(key = "'listMostviewBlog'+#size")
+    //@Cacheable(key = "'listMostviewBlog'+#size")
     public List<RightTopBlog> listMostviewBlog(int size) {
         return blogMapper.listMostviewBlog(size);
     }
 
     @Override
-    @Cacheable(key = "'listBlogsAdmin'")
+    //@Cacheable(key = "'listBlogsAdmin'")
     public List<Blog> listBlogsAdmin() {
         return blogMapper.listBlogsAdmin();
     }
 
     @Override
-    @Cacheable(key ="listAllBlogsSearch+#blog")
+    //@Cacheable(key ="listAllBlogsSearch+#blog")
     public List<Blog> listAllBlogsSearch(SearchBlog blog) {
         return blogMapper.listAllBlogsSearch(blog);
     }

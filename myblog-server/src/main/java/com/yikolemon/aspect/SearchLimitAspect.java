@@ -1,6 +1,7 @@
 package com.yikolemon.aspect;
 
 import com.yikolemon.exception.SearchLimitException;
+import com.yikolemon.util.IpUtils;
 import com.yikolemon.util.RedisKeyUtil;
 import com.yikolemon.util.RedisUtil;
 import org.aspectj.lang.annotation.Aspect;
@@ -27,7 +28,8 @@ public class SearchLimitAspect {
     public void doBeforeSearch(){
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
-        String ip = request.getRemoteAddr();
+        String ip = IpUtils.getIpFromRequest(request);
+        //String ip = request.getRemoteAddr();
         Jedis jedis = RedisUtil.getJedis();
         String princpal = RedisKeyUtil.getSearchLimitKey(ip);
         if (jedis.get(princpal)==null){

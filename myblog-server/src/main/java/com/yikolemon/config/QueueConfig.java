@@ -1,6 +1,9 @@
 package com.yikolemon.config;
 
 import org.springframework.amqp.core.*;
+import org.springframework.amqp.rabbit.connection.ConnectionFactory;
+import org.springframework.amqp.rabbit.core.RabbitAdmin;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,6 +13,10 @@ import java.util.Map;
 
 @Configuration
 public class QueueConfig {
+
+
+    @Autowired
+    private RabbitAdmin rabbitAdmin;
 
     //普通交换机名称
     public static final String  registExchange="registExchange";
@@ -123,6 +130,27 @@ public class QueueConfig {
     @Bean
     public Binding cloudMsgQueueBindingcloudMsgExchang(@Qualifier("cloudMsgQueue") Queue queue, @Qualifier("cloudMsgExchang") DirectExchange exchange){
         return BindingBuilder.bind(queue).to(exchange).with(cloudMsgkey);
+    }
+
+    //创建初始化RabbitAdmin对象
+    @Bean
+    public RabbitAdmin rabbitAdmin(ConnectionFactory connectionFactory) {
+        RabbitAdmin rabbitAdmin = new RabbitAdmin(connectionFactory);
+        // 只有设置为 true，spring 才会加载 RabbitAdmin 这个类
+        rabbitAdmin.setAutoStartup(true);
+        rabbitAdmin.declareExchange(xExchange());
+        rabbitAdmin.declareQueue(queueA());
+        //rabbitAdmin.declareBinding(queueABindingX());
+        rabbitAdmin.declareExchange(yExchange());
+        rabbitAdmin.declareQueue(queueB());
+
+        rabbitAdmin.declareExchange(zExchange());
+        rabbitAdmin.declareQueue(queueC());
+        rabbitAdmin.declareQueue(queueD());
+
+        rabbitAdmin.declareExchange(cloudMsgExchang());
+        rabbitAdmin.declareQueue(cloudMsgQueue());
+        return rabbitAdmin;
     }
 
 }

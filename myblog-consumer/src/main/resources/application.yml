@@ -21,8 +21,10 @@ spring:
         max-idle:   8
 
   rabbitmq:
-    addresses: 192.168.56.10
-    username: guest
+    addresses: 101.43.244.40
+    #192.168.56.10
+    username: yikolemon
+    #guest
     password: 123456
     port: 5672
 

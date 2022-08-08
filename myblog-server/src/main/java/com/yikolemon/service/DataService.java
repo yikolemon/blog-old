@@ -1,5 +1,6 @@
 package com.yikolemon.service;
 
+import com.yikolemon.util.ApplicationContextUtils;
 import com.yikolemon.util.RedisKeyUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
@@ -7,8 +8,11 @@ import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.connection.RedisStringCommands;
 import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.serializer.JdkSerializationRedisSerializer;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.stereotype.Service;
 
+import javax.xml.crypto.Data;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -27,7 +31,17 @@ public class DataService {
     //将指定ip计入uv
     public void recordUV(String ip) {
         String redisKey = RedisKeyUtil.getUVKey(df.format(new Date()));
-        redisTemplate.opsForHyperLogLog().add(redisKey, ip);
+        getRedisTemplate().opsForHyperLogLog().add(redisKey, ip);
+    }
+
+    public long lastSevenDayUv(){
+        Calendar instance = Calendar.getInstance();
+        instance.add(Calendar.DATE,-7);
+        Date before = instance.getTime();
+        instance.add(Calendar.DATE,7);
+        Date after = instance.getTime();
+        long l = calculateUv(before, after);
+        return l;
     }
 
     //统计指定日期范围内的UV,统计范围内
@@ -45,14 +59,15 @@ public class DataService {
         }
         //合并数据
         String redisKey = RedisKeyUtil.getUVKey(df.format(start), df.format(end));
-        redisTemplate.opsForHyperLogLog().union(redisKey,keyList.toArray());
-        return redisTemplate.opsForHyperLogLog().size(redisKey);
+        Long union = getRedisTemplate().opsForHyperLogLog().union(redisKey, keyList.toArray());
+        System.out.println(union);
+        return getRedisTemplate().opsForHyperLogLog().size(redisKey);
     }
 
     //指定用户计入Dau
     public void recordDAU(int userId){
         String redisKey = RedisKeyUtil.getDAUKey(df.format(new Date()));
-        redisTemplate.opsForValue().setBit(redisKey,userId,true);
+        getRedisTemplate().opsForValue().setBit(redisKey,userId,true);
     }
 
     //统计指定日期范围内的DAU
@@ -65,12 +80,12 @@ public class DataService {
         Calendar instance = Calendar.getInstance();
         instance.setTime(start);
         while (!instance.getTime().after(end)){
-            String key = RedisKeyUtil.getUVKey(df.format(instance.getTime()));
+            String key = RedisKeyUtil.getDAUKey(df.format(instance.getTime()));
             keyList.add(key.getBytes());
             instance.add(Calendar.DATE,1);
         }
         //进行or运算
-        return (long) redisTemplate.execute(new RedisCallback() {
+        return (long) getRedisTemplate().execute(new RedisCallback() {
             @Override
             public Object doInRedis(RedisConnection connection) throws DataAccessException {
                 String redisKey = RedisKeyUtil.getDAUKey(df.format(start), df.format(end));
@@ -78,5 +93,24 @@ public class DataService {
                 return connection.bitCount(redisKey.getBytes());
             }
         });
+    }
+
+    public long lastSevenDayDau(){
+        Calendar instance = Calendar.getInstance();
+        instance.add(Calendar.DATE,-7);
+        Date before = instance.getTime();
+        instance.add(Calendar.DATE,7);
+        Date after = instance.getTime();
+        long l = calculateDAU(before, after);
+        return l;
+    }
+
+    //给模板对象RedisTemplate赋值，并传出去
+    private RedisTemplate getRedisTemplate(){
+        redisTemplate.setKeySerializer(new StringRedisSerializer());
+        redisTemplate.setHashKeySerializer(new StringRedisSerializer());
+        redisTemplate.setValueSerializer(new StringRedisSerializer());
+        redisTemplate.setHashValueSerializer(new StringRedisSerializer());
+        return redisTemplate;
     }
 }

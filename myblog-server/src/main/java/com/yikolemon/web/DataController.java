@@ -7,11 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class DataController {
-    
-    @Autowired
-    private DataService dataService;
-    
-    
-    
-    
+
+
 }

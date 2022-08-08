@@ -13,11 +13,11 @@ import javax.websocket.server.ServerEndpointConfig;
 @Configuration
 public class WebSocketConfig extends ServerEndpointConfig.Configurator{
 
-    /** 扫描注解了@ServerEndpoint注解的类 */
+   /* *//** 扫描注解了@ServerEndpoint注解的类 *//*
     @Bean
     public ServerEndpointExporter serverEndpointExporter() {
         return new ServerEndpointExporter();  
-    }
+    }*/
 
 
     /*修改握手前数据*/
@@ -25,7 +25,8 @@ public class WebSocketConfig extends ServerEndpointConfig.Configurator{
     public void modifyHandshake(ServerEndpointConfig sec, HandshakeRequest request, HandshakeResponse response) {
         //把username放入ServerEndpointConfig
         try {
-            sec.getUserProperties().put("username", SecurityUtils.getSubject().getPrincipal());
+            String principal = (String) SecurityUtils.getSubject().getPrincipal();
+            sec.getUserProperties().put("username", principal);
         } catch (NullPointerException e) {
             //身份校验错误
             return;

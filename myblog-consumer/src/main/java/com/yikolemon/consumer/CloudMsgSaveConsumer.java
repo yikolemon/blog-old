@@ -3,6 +3,8 @@ package com.yikolemon.consumer;
 import com.google.gson.Gson;
 import com.yikolemon.pojo.CloudMessage;
 import com.yikolemon.util.RedisKeyUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,8 @@ public class CloudMsgSaveConsumer {
     @Autowired
     private RedisTemplate redisTemplate;
 
+    private Logger logger= LoggerFactory.getLogger(CloudMsgSaveConsumer.class);
+
 
     private RedisTemplate getRedisTemplate(){
         redisTemplate.setKeySerializer(new StringRedisSerializer());
@@ -32,6 +36,7 @@ public class CloudMsgSaveConsumer {
         String msg = new String(message.getBody());
         CloudMessage cloudMessage = new Gson().fromJson(msg, CloudMessage.class);
         if (cloudMessage.getIsPublic()){
+            logger.info("保存聊天:{}",cloudMessage.getMsg());
             getRedisTemplate().opsForList().rightPush(RedisKeyUtil.getCloudPublicMsgSaveKey(),cloudMessage);
         }else {
             //p2p,其中from和to已经拍好的顺序

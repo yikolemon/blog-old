@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    @Cacheable(key = "'getUserByUsername'+#name")
+    @Cacheable(key = "'getUserByUsername'+#name" , unless="#result == null")
     public User getUserByUsername(String name) {
         return userMapper.getUserByUsername(name);
     }
@@ -52,7 +52,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    @Cacheable(key = "'hasUserByEmail'+#email")
+    //@Cacheable(key = "'hasUserByEmail'+#email")
     public Boolean hasUserByEmail(String email) {
         return userMapper.hasUserByEmail(email);
     }

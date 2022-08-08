@@ -1,5 +1,6 @@
 package com.yikolemon.aspect;
 
+import com.yikolemon.util.IpUtils;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
@@ -26,7 +27,9 @@ public class LogAspect {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
         String url = request.getRequestURL().toString();
-        String ip = request.getRemoteAddr();
+        String ip = IpUtils.getIpFromRequest(request);
+        //String ip = request.getRemoteAddr();
+
         String classMethod = joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName();
         Object[] args = joinPoint.getArgs();
         RequestLog requestLog = new RequestLog(url, ip, classMethod, args);

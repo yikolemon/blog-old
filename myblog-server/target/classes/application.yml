@@ -13,7 +13,7 @@ spring:
       max-file-size: 10MB
       max-request-size: 30MB
   profiles:
-    active: dev
+    active: pro
   redis:
     port: 6666
     host: 127.0.0.1
@@ -39,8 +39,10 @@ spring:
             port: 465
             class: javax.net.ssl.SSLSocketFactory
   rabbitmq:
-    addresses: 192.168.56.10
-    username: guest
+    addresses: 101.43.244.40
+    #192.168.56.10
+    username: yikolemon
+    #guest
     password: 123456
     port: 5672
 

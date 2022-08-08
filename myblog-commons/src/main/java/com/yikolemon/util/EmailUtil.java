@@ -20,7 +20,7 @@ public class EmailUtil {
         //通过code生成邮件
         Context context=new Context();
         context.setVariable("code",code);
-        String process = engine.process("/mail/regist_mail", context);
+        String process = engine.process("mail/regist_mail", context);
         return process;
     }
 
@@ -29,7 +29,7 @@ public class EmailUtil {
         context.setVariable("nickname",nickname);
         context.setVariable("content",content);
         context.setVariable("replay",replay);
-        String process = engine.process("/mail/replay_mail", context);
+        String process = engine.process("mail/replay_mail", context);
         return process;
     }
 
