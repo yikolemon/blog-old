@@ -1,3 +1,4 @@
+/*
 package com.yikolemon.cache;
 
 import com.yikolemon.util.ApplicationContextUtils;
@@ -12,9 +13,11 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
+*/
 /*
     使用redis实现mybatis二级缓存
- */
+ *//*
+
 public class MyRedisCache implements Cache {
 
     //缓存对象唯一标识
@@ -53,9 +56,11 @@ public class MyRedisCache implements Cache {
     }
 
 
-    /*
+    */
+/*
         保存缓存对象的方法
-     */
+     *//*
+
     @Override
     public void putObject(Object key, Object value) {
         try{
@@ -71,9 +76,11 @@ public class MyRedisCache implements Cache {
 
     }
 
-    /*
+    */
+/*
         获取缓存对象的方法
-     */
+     *//*
+
     @Override
     public Object getObject(Object key) {
         try {
@@ -88,9 +95,11 @@ public class MyRedisCache implements Cache {
         }
     }
 
-    /*
+    */
+/*
         删除缓存对象
-     */
+     *//*
+
     @Override
     public Object removeObject(Object key) {
         try{
@@ -103,10 +112,12 @@ public class MyRedisCache implements Cache {
         return null;
     }
 
-    /*
+    */
+/*
         清空缓存对象
         当缓存的对象更新了的化，就执行此方法
-     */
+     *//*
+
     @Override
     public void clear() {
         RedisTemplate redisTemplate = getRedisTemplate();
@@ -131,4 +142,4 @@ public class MyRedisCache implements Cache {
 
 
 
-}
+}*/

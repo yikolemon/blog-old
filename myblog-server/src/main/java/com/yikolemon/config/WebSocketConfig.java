@@ -13,11 +13,11 @@ import javax.websocket.server.ServerEndpointConfig;
 @Configuration
 public class WebSocketConfig extends ServerEndpointConfig.Configurator{
 
-   /* *//** 扫描注解了@ServerEndpoint注解的类 *//*
+    //** 扫描注解了@ServerEndpoint注解的类 *//*
     @Bean
     public ServerEndpointExporter serverEndpointExporter() {
         return new ServerEndpointExporter();  
-    }*/
+    }
 
 
     /*修改握手前数据*/
