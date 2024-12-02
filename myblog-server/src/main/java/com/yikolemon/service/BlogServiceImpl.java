@@ -8,14 +8,12 @@ import com.yikolemon.queue.IndexBlog;
 import com.yikolemon.queue.RightTopBlog;
 import com.yikolemon.queue.SearchBlog;
 import com.yikolemon.util.MarkdownUtils;
-import com.yikolemon.util.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import redis.clients.jedis.Jedis;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -28,8 +26,8 @@ public class BlogServiceImpl implements BlogService{
 
     @Autowired
     private BlogMapper blogMapper;
-    @Autowired
-    private LikeService likeService;
+//    @Autowired
+//    private LikeService likeService;
 
     @Override
     @Cacheable(key = "'getBlog'+#id")
@@ -56,7 +54,8 @@ public class BlogServiceImpl implements BlogService{
         blog.setUpdateTime(new Date());
         blog.setView(0);
         blogMapper.saveBlog(blog);
-        return  likeService.setLike(blog.getId());
+        return 1;
+//        return  likeService.setLike(blog.getId());
 
     }
 
@@ -71,7 +70,7 @@ public class BlogServiceImpl implements BlogService{
     @Transactional
     @CacheEvict(allEntries = true)
     public int deleteBlog(Long id) {
-        likeService.deleteLike(id);
+//        likeService.deleteLike(id);
         return blogMapper.deleteBlog(id);
     }
 
@@ -150,9 +149,9 @@ public class BlogServiceImpl implements BlogService{
 
     @Override
     public int updateViewOne(Long id) {
-        Jedis jedis = RedisUtil.getJedis();
-        jedis.hincrBy("myblog-view", id + "",1);
-        jedis.close();
+//        Jedis jedis = RedisUtil.getJedis();
+//        jedis.hincrBy("myblog-view", id + "",1);
+//        jedis.close();
         return 1;
     }
 

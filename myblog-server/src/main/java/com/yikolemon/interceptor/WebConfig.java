@@ -10,18 +10,18 @@ package com.yikolemon.interceptor;
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
-    @Bean
-    public DataInterceptor dataInterceptor(){
-        return new DataInterceptor();
-    }
-
-    @Autowired
-    private DataInterceptor dataInterceptor;
-
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(dataInterceptor)
-                .addPathPatterns("/");
-    }
+//    @Bean
+//    public DataInterceptor dataInterceptor(){
+//        return new DataInterceptor();
+//    }
+//
+//    @Autowired
+//    private DataInterceptor dataInterceptor;
+//
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//        registry.addInterceptor(dataInterceptor)
+//                .addPathPatterns("/");
+//    }
 
 }

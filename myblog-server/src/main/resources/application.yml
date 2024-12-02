@@ -1,12 +1,14 @@
 spring:
   thymeleaf:
     cache: false
+    excluded-view-names: db  # 排除 h2-console 页面
+#    enabled: false
   datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8
-    username: root
-    password: admin
+    url: jdbc:sqlite::resource:db/blog.sqlite
+    driver-class-name: org.sqlite.JDBC
+    #建表语句
+    schema: classpath:db/schema.sql
+    #dml添加数据
 
   servlet:
     multipart:

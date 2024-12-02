@@ -5,7 +5,7 @@ import com.github.pagehelper.PageInfo;
 import com.yikolemon.pojo.Blog;
 import com.yikolemon.pojo.Tag;
 import com.yikolemon.pojo.Type;
-import com.yikolemon.productor.ElasticProductor;
+//import com.yikolemon.productor.ElasticProductor;
 import com.yikolemon.queue.SearchBlog;
 import com.yikolemon.service.*;
 import com.yikolemon.util.PageUtils;
@@ -37,8 +37,8 @@ public class BlogController {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private ElasticProductor elasticProductor;
+//    @Autowired
+//    private ElasticProductor elasticProductor;
 
     int pageSize= PageUtils.getPageSize();
 
@@ -84,7 +84,7 @@ public class BlogController {
         tagBlogService.deleteTagByBlogId(id);
         int i = blogService.deleteBlog(id);
         if (i==1){
-            elasticProductor.sendElasticDelete(id);
+//            elasticProductor.sendElasticDelete(id);
             redirectAttributes.addFlashAttribute("message","操作成功");
         }
         else {
@@ -99,7 +99,9 @@ public class BlogController {
         PageHelper.startPage(page,pageSize);
         boolean published=true;
         String unpublished = request.getParameter("unpublished");
-        if (unpublished.equals("true")) published=false;
+        if (unpublished.equals("true")) {
+            published=false;
+        }
         blog.setPublished(published);
         List<Blog> list = blogService.listAllBlogsSearch(blog);
         PageInfo<Blog> pageInfo = new PageInfo<>(list);
@@ -117,7 +119,7 @@ public class BlogController {
         else {
             saveBlog(blog,redirectAttributes,request);
         }
-        elasticProductor.sendElasticAdd(blog);
+//        elasticProductor.sendElasticAdd(blog);
         return "redirect:/admin/blogs";
     }
 

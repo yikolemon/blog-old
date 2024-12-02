@@ -37,8 +37,8 @@ public class IndexController {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private LikeService likeService;
+//    @Autowired
+//    private LikeService likeService;
 
     int pageSize= PageUtils.getPageSize();
 
@@ -77,7 +77,9 @@ public class IndexController {
     @Transactional
     public String blog(@PathVariable long id,Model model) {
         int i = blogService.updateViewOne(id);
-        if (i==0) return "admin/500";
+        if (i==0) {
+            return "admin/500";
+        }
         Blog blog = blogService.getAndConvert(id);
         model.addAttribute("blog",blog);
         Long userId = blog.getUserId();
@@ -86,8 +88,8 @@ public class IndexController {
         List<Tag> tags = tagService.getTagsByBlogId(blog.getId());
         /*System.out.println(tags);*/
         model.addAttribute("tags",tags);
-        Like like = likeService.getLike(id);
-        model.addAttribute("like",like);
+//        Like like = likeService.getLike(id);
+//        model.addAttribute("like",like);
         return "blog";
     }
 
