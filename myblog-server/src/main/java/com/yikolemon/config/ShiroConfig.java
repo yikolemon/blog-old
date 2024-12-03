@@ -40,7 +40,6 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setSecurityManager(manager);
         //配置系统受限资源
         //配置系统公共资源
-
         HashMap<String, String> map = new HashMap<>();
         //让认证相关请求通过，anon为公共资源，需要放在/**前面，注意路径为/user/login
         map.put("/**","anon");
@@ -59,7 +58,6 @@ public class ShiroConfig {
         DefaultWebSecurityManager defaultWebSecurityManager = new DefaultWebSecurityManager();
         //给安全管理器设置realm
         defaultWebSecurityManager.setRealm(realm);
-
         DefaultWebSessionManager defaultWebSessionManager = new DefaultWebSessionManager();
         defaultWebSessionManager.setSessionIdUrlRewritingEnabled(false);
         defaultWebSecurityManager.setSessionManager(defaultWebSessionManager);

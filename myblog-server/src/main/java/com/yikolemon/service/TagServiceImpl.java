@@ -3,20 +3,20 @@ package com.yikolemon.service;
 import com.yikolemon.mapper.TagMapper;
 import com.yikolemon.pojo.Tag;
 import com.yikolemon.queue.IndexTag;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @Service
 @CacheConfig(cacheNames = "tags")
 public class TagServiceImpl implements TagService {
 
-    @Autowired
+    @Resource
     private TagMapper tagMapper;
 
     @Override

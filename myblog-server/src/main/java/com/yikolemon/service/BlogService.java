@@ -42,8 +42,6 @@ public interface BlogService {
 
     int countBlog();
 
-    int updateView(Long id, int num);
-
-    int updateViewOne(Long id);
+    void updateViewOne(Long id);
 
 }

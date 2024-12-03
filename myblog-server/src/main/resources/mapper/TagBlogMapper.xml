@@ -6,7 +6,7 @@
 
     <!--saveTagAndBlog-->
     <update id="saveTagAndBlog" parameterType="com.yikolemon.pojo.TagBlog">
-        insert into blog.t_tag_blog values(#{tagId},#{blogId});
+        insert into t_tag_blog values(#{tagId},#{blogId});
     </update>
 
     <!--queueByBlogId-->

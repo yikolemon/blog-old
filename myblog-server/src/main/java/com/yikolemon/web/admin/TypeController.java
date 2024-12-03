@@ -4,7 +4,7 @@ import com.yikolemon.pojo.Type;
 import com.yikolemon.service.TypeService;
 import com.yikolemon.service.TypeServiceImpl;
 import org.apache.shiro.authz.annotation.RequiresRoles;
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
 import org.springframework.boot.context.properties.bind.BindResult;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,7 +23,7 @@ import java.util.List;
 @RequestMapping("/admin")
 public class TypeController {
 
-    @Autowired
+    @Resource
     private TypeService typeService;
 
     @GetMapping("/types")

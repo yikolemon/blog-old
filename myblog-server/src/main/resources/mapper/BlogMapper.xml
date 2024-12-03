@@ -6,20 +6,20 @@
 
     <!--saveBlog-->
     <insert id="saveBlog" parameterType="com.yikolemon.pojo.Blog"  useGeneratedKeys="true" keyProperty="id" keyColumn="id">
-        insert into blog.t_blog values (null ,#{title},#{description},#{content},#{firstPicture},#{flag},
+        insert into t_blog values (null ,#{title},#{description},#{content},#{firstPicture},#{flag},
          #{view},#{shareStatement},#{commentabled},#{recommend},#{published},#{createTime},
          #{updateTime}, #{typeId},#{userId});
     </insert>
 
     <!--getBlog-->
     <select id="getBlog" resultType="com.yikolemon.pojo.Blog">
-        select * from blog.t_blog where id=#{id};
+        select * from t_blog where id=#{id};
     </select>
 
 
     <!--updateBlog-->
     <update id="updateBlog" parameterType="com.yikolemon.pojo.Blog">
-        update blog.t_blog set title=#{title},description=#{description},content=#{content},first_picture=#{firstPicture},
+        update t_blog set title=#{title},description=#{description},content=#{content},first_picture=#{firstPicture},
         flag=#{flag},`share_statement`=#{shareStatement},`user_id`=#{userId},
          `commentabled`=#{commentabled},`recommend`=#{recommend},published=#{published},
          `update_time`=#{updateTime},`type_id`=#{typeId} where id=#{id};
@@ -27,7 +27,7 @@
 
     <!--deleteBlog-->
     <delete id="deleteBlog">
-        delete from blog.t_blog where id=#{id};
+        delete from t_blog where id=#{id};
     </delete>
 
     <!--listBlogsAdmin-->
@@ -97,13 +97,15 @@
 
     <!--getAllYears-->
     <select id="getAllYears" resultType="String">
-        select date_format(t_blog.update_time,'%Y')as year from t_blog where t_blog.published=true GROUP BY date_format(t_blog.update_time,'%Y')
+        select strftime('%Y', t_blog.update_time)as year from t_blog where t_blog.published=true GROUP BY strftime('%Y', t_blog.update_time)
     </select>
 
     <!--getBlogsByYear-->
     <select id="getBlogsByYear" resultType="com.yikolemon.queue.ArchiveBlog">
-        select t_blog.id,flag,title,date_format(t_blog.update_time,'%m月%d日') as date from t_blog
-         where date_format(t_blog.update_time,'%Y')=#{year} and t_blog.published=true order by t_blog.update_time
+        SELECT t_blog.id, flag, title, strftime('%m月%d日', t_blog.update_time) AS date
+        FROM t_blog
+        WHERE strftime('%Y', t_blog.update_time) = ? AND t_blog.published = 1
+        ORDER BY t_blog.update_time;
     </select>
 
     <!--countBlog-->
@@ -113,7 +115,7 @@
 
     <!--updateView-->
     <update id="updateView">
-        update blog.t_blog set view=view+#{num} where id = #{id}
+        update t_blog set view=view+#{num} where id = #{id}
     </update>
 
 

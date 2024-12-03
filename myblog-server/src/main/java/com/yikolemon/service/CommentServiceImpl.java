@@ -3,20 +3,20 @@ package com.yikolemon.service;
 import com.yikolemon.mapper.CommentMapper;
 import com.yikolemon.pojo.Blog;
 import com.yikolemon.pojo.Comment;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.util.*;
 
 @Service
 @CacheConfig(cacheNames = "comments")
 public class CommentServiceImpl implements CommentService{
 
-    @Autowired
+    @Resource
     private CommentMapper commentMapper;
 
     @Override

@@ -3,6 +3,7 @@ spring:
     cache: false
     excluded-view-names: db  # 排除 h2-console 页面
 #    enabled: false
+
   datasource:
     url: jdbc:sqlite::resource:db/blog.sqlite
     driver-class-name: org.sqlite.JDBC
@@ -16,21 +17,12 @@ spring:
       max-request-size: 30MB
   profiles:
     active: pro
-  redis:
-    port: 6666
-    host: 127.0.0.1
-    database: 0
-    jedis:
-      pool:
-        min-idle:   0
-        max-active: 8
-        max-wait: -1ms
-        max-idle:   8
+
   mail:
     host: smtp.qq.com
     port: 465
     username: 212842183@qq.com
-    password: iirzafmmltvsbhfh
+    password: xxx
     protocol: smtps
     properties:
       mail:
@@ -40,13 +32,6 @@ spring:
           socketFactory:
             port: 465
             class: javax.net.ssl.SSLSocketFactory
-  rabbitmq:
-    addresses: 101.43.244.40
-    #192.168.56.10
-    username: yikolemon
-    #guest
-    password: 123456
-    port: 5672
 
 mybatis:
   type-aliases-package: com.yikolemon.pojo
@@ -57,13 +42,7 @@ mybatis:
 pagesize: 8
 msgsize: 6
 
-elasticsearch:
-  host: 101.43.244.40
-  port: 9200
 
-custom-manager:
-  isOpen-custom-cache: true
-  cache-type: caffeine-redis
 
 
 

@@ -2,15 +2,14 @@ package com.yikolemon.service;
 
 import com.yikolemon.mapper.UserMapper;
 import com.yikolemon.pojo.User;
-import com.yikolemon.util.CodeUtil;
 import com.yikolemon.util.MD5Utils;
 import org.apache.shiro.crypto.hash.Md5Hash;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 
@@ -18,13 +17,12 @@ import java.util.List;
 @CacheConfig(cacheNames = "users")
 public class UserServiceImpl implements UserService{
 
-    @Autowired
+    @Resource
     private UserMapper userMapper;
     @Override
     @Cacheable(key = "'checkUser'+#username+''+#password")
     public User checkUser(String username, String password) {
-        User user=userMapper.checkByUsernameAndPassword(username, MD5Utils.code(password));
-        return user;
+        return userMapper.checkByUsernameAndPassword(username, MD5Utils.code(password));
     }
 
     @Override
@@ -63,17 +61,9 @@ public class UserServiceImpl implements UserService{
         user.setCreateTime(new Date());
         user.setNickname(user.getUsername());
         user.setType(false);
-        String salt = CodeUtil.getCode();
-        Md5Hash md5Hash = new Md5Hash(user.getPassword(), salt, 1024);
-        user.setSalt(salt);
+        Md5Hash md5Hash = new Md5Hash(user.getPassword(), null, 1024);
         user.setPassword(md5Hash.toHex());
         return userMapper.saveUser(user);
-    }
-
-    @Override
-    @Cacheable(key = "'getSaltByUsername'+#username")
-    public String getSaltByUsername(String username) {
-        return userMapper.getSaltByUsername(username);
     }
 
     @Override

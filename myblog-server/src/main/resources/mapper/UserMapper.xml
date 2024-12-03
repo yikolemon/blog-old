@@ -3,7 +3,7 @@
 <mapper namespace="com.yikolemon.mapper.UserMapper">
 
     <select id="checkByUsernameAndPassword" resultType="com.yikolemon.pojo.User">
-        select * from blog.t_user
+        select * from t_user
         where username = #{username} and password = #{password};
     </select>
 
@@ -33,7 +33,7 @@
 
     <!--saveUser-->
     <insert id="saveUser">
-        insert into `t_user` values (null,#{username},#{username},#{password},#{email},#{avatar},0,#{createTime},null,#{salt})
+        insert into `t_user` values (null,#{username},#{username},#{password},#{email},#{avatar},0,#{createTime},null)
     </insert>
 
     <!--getSaltByUsername-->

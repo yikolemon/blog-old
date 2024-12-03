@@ -8,26 +8,30 @@ import com.yikolemon.queue.IndexBlog;
 import com.yikolemon.queue.RightTopBlog;
 import com.yikolemon.queue.SearchBlog;
 import com.yikolemon.util.MarkdownUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @Service
 @CacheConfig(cacheNames = "blogs")
 public class BlogServiceImpl implements BlogService{
 
-    @Autowired
+    @Resource
     private BlogMapper blogMapper;
-//    @Autowired
-//    private LikeService likeService;
+    @Resource
+    private LikeService likeService;
+
+    private final ConcurrentHashMap<Long, Integer> viewMap = new ConcurrentHashMap<>();
 
     @Override
     @Cacheable(key = "'getBlog'+#id")
@@ -53,10 +57,7 @@ public class BlogServiceImpl implements BlogService{
         blog.setCreateTime(new Date());
         blog.setUpdateTime(new Date());
         blog.setView(0);
-        blogMapper.saveBlog(blog);
-        return 1;
-//        return  likeService.setLike(blog.getId());
-
+        return blogMapper.saveBlog(blog);
     }
 
     @Override
@@ -70,7 +71,7 @@ public class BlogServiceImpl implements BlogService{
     @Transactional
     @CacheEvict(allEntries = true)
     public int deleteBlog(Long id) {
-//        likeService.deleteLike(id);
+        likeService.deleteLike(id);
         return blogMapper.deleteBlog(id);
     }
 
@@ -126,10 +127,10 @@ public class BlogServiceImpl implements BlogService{
     @Cacheable(key = "'listBlogsArchive'")
     public Map<String, List<ArchiveBlog>> listBlogsArchive() {
         String[] years = blogMapper.getAllYears();
-        Map map=new HashMap<String,List<ArchiveBlog>>();
-        for (int i = 0; i < years.length; i++) {
-            List<ArchiveBlog> blogsByYear = blogMapper.getBlogsByYear(years[i]);
-            map.put(years[i],blogsByYear);
+        Map<String, List<ArchiveBlog>> map=new HashMap<>();
+        for (String year : years) {
+            List<ArchiveBlog> blogsByYear = blogMapper.getBlogsByYear(year);
+            map.put(year, blogsByYear);
         }
         return map;
     }
@@ -141,18 +142,16 @@ public class BlogServiceImpl implements BlogService{
     }
 
     @Override
-    //给redis定时任务使用
-    @CacheEvict(allEntries = true)
-    public int updateView(Long id,int num) {
-        return blogMapper.updateView(id,num);
-    }
-
-    @Override
-    public int updateViewOne(Long id) {
-//        Jedis jedis = RedisUtil.getJedis();
-//        jedis.hincrBy("myblog-view", id + "",1);
-//        jedis.close();
-        return 1;
+    public void updateViewOne(Long id) {
+        viewMap.compute(id, (key, value)->{
+            if (value == null){
+                Blog blog = blogMapper.getBlog(id);
+                int view = blog.getView();
+                return view + 1;
+            }else{
+                return value + 1;
+            }
+        });
     }
 
 }

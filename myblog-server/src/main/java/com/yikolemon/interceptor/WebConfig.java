@@ -15,7 +15,7 @@ public class WebConfig implements WebMvcConfigurer {
 //        return new DataInterceptor();
 //    }
 //
-//    @Autowired
+//    @Resource
 //    private DataInterceptor dataInterceptor;
 //
 //    @Override

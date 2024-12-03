@@ -4,7 +4,7 @@
 
     <!--saveComment-->
     <update id="saveComment" parameterType="com.yikolemon.pojo.Comment">
-        insert into blog.t_comment values (#{id},#{nickname},#{email},
+        insert into t_comment values (#{id},#{nickname},#{email},
         #{content},#{createTime},#{blogId},#{parentCommentId},#{parentNickname},#{flag})
     </update>
 

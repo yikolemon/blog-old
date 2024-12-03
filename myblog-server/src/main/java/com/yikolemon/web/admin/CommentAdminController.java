@@ -4,7 +4,7 @@ import com.yikolemon.pojo.Blog;
 import com.yikolemon.pojo.Comment;
 import com.yikolemon.service.CommentService;
 import org.apache.shiro.authz.annotation.RequiresRoles;
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +19,7 @@ import java.util.List;
 @RequestMapping("/admin")
 public class CommentAdminController {
 
-    @Autowired
+    @Resource
     private CommentService commentService;
 
     @GetMapping("/comments")

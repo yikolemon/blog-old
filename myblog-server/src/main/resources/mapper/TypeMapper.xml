@@ -6,31 +6,31 @@
 
     <!--saveType-->
     <update id="saveType" parameterType="com.yikolemon.pojo.Type">
-        insert into blog.t_type values (#{id},#{name});
+        insert into t_type values (#{id},#{name});
     </update>
 
     <!--getType-->
     <select id="getType" parameterType="_long" resultType="com.yikolemon.pojo.Type">
-        select id,name from blog.t_type where id=#{id};
+        select id,name from t_type where id=#{id};
     </select>
 
     <!--getTypeByName-->
     <select id="getTypeByName"  resultType="com.yikolemon.pojo.Type">
-        select id,name from blog.t_type where name=#{name};
+        select id,name from t_type where name=#{name};
     </select>
 
     <!--getAllTypes-->
     <select id="getAllTypes" resultType="com.yikolemon.pojo.Type">
-        select * from blog.t_type;
+        select * from t_type;
     </select>
 
     <!--updateType-->
     <update id="updateType" parameterType="com.yikolemon.pojo.Type">
-        update blog.t_type set name=#{name} where id=#{id};
+        update t_type set name=#{name} where id=#{id};
     </update>
 
     <update id="deleteType" parameterType="_long">
-        delete from blog.t_type where id=#{id};
+        delete from t_type where id=#{id};
     </update>
 
     <!--getTypeTop-->

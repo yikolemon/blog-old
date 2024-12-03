@@ -10,7 +10,7 @@
 //
 //@Component
 //public class ChatSaveProductor {
-//    @Autowired
+//    @Resource
 //    private RabbitTemplate rabbitTemplate;
 //
 //    /*新增消息*/

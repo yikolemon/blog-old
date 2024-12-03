@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>回复通知 | Yikolemon'blog论坛</title>
+</head>
+<body>
+<h2>Hi, <span th:text="${nickname}">回复人姓名</span>！</h2>
+<p>您在 Yikolemon'blog 论坛的评论已收到回复：</p>
+<p><strong th:text="${content}">评论内容</strong></p>
+<p><em>—— <span th:text="${nickname}">回复人姓名</span></em> 的回复：</p>
+<p><strong th:text="${replay}">回复内容</strong></p>
+</body>
+</html>

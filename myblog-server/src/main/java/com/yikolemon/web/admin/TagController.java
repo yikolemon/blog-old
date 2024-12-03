@@ -4,7 +4,7 @@ import com.yikolemon.pojo.Tag;
 import com.yikolemon.service.TagService;
 import com.yikolemon.service.TagServiceImpl;
 import org.apache.shiro.authz.annotation.RequiresRoles;
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -23,7 +23,7 @@ import java.util.List;
 @RequestMapping("/admin")
 public class TagController {
 
-    @Autowired
+    @Resource
     private TagService tagService;
 
     @GetMapping("/tags")

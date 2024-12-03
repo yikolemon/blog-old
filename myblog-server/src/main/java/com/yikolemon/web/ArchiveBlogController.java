@@ -2,19 +2,18 @@ package com.yikolemon.web;
 
 import com.yikolemon.queue.ArchiveBlog;
 import com.yikolemon.service.BlogService;
-import com.yikolemon.service.BlogServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 
 @Controller
 public class ArchiveBlogController {
 
-    @Autowired
+    @Resource
     private BlogService blogService;
 
     @GetMapping("/archives")
@@ -24,7 +23,6 @@ public class ArchiveBlogController {
         int count = blogService.countBlog();
         model.addAttribute("count",count);
         return "archives";
-
     }
 
 

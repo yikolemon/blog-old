@@ -15,7 +15,7 @@
 //public class QueueConfig {
 //
 //
-//    @Autowired
+//    @Resource
 //    private RabbitAdmin rabbitAdmin;
 //
 //    //普通交换机名称

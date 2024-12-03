@@ -11,7 +11,6 @@ import com.yikolemon.queue.RightTopBlog;
 import com.yikolemon.service.*;
 import com.yikolemon.util.PageUtils;
 import com.yikolemon.util.TopConfig;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -19,26 +18,27 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 
 @Controller
 public class IndexController {
 
-    @Autowired
+    @Resource
     private BlogService blogService;
 
-    @Autowired
+    @Resource
     private TypeService typeService;
 
-    @Autowired
+    @Resource
     private  TagService tagService;
 
-    @Autowired
+    @Resource
     private UserService userService;
 
-//    @Autowired
-//    private LikeService likeService;
+    @Resource
+    private LikeService likeService;
 
     int pageSize= PageUtils.getPageSize();
 
@@ -76,20 +76,16 @@ public class IndexController {
     @GetMapping("/blog/{id}")
     @Transactional
     public String blog(@PathVariable long id,Model model) {
-        int i = blogService.updateViewOne(id);
-        if (i==0) {
-            return "admin/500";
-        }
+        blogService.updateViewOne(id);
         Blog blog = blogService.getAndConvert(id);
         model.addAttribute("blog",blog);
         Long userId = blog.getUserId();
         User user = userService.getUser(userId);
         model.addAttribute("user",user);
         List<Tag> tags = tagService.getTagsByBlogId(blog.getId());
-        /*System.out.println(tags);*/
         model.addAttribute("tags",tags);
-//        Like like = likeService.getLike(id);
-//        model.addAttribute("like",like);
+        Like like = likeService.getLike(id);
+        model.addAttribute("like",like);
         return "blog";
     }
 

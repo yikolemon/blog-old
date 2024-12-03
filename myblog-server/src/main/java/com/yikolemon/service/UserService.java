@@ -19,8 +19,6 @@ public interface UserService {
 
     int saveUser(User user);
 
-    String getSaltByUsername(String username);
-
     int updateNicknameById(long id, String nickname);
 
     List<User> getAllUser();

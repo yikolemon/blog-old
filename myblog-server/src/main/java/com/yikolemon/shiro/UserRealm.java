@@ -24,7 +24,6 @@ public class UserRealm extends AuthorizingRealm {
         //设置散列次数
         matcher.setHashIterations(1024);
         this.setCredentialsMatcher(matcher);
-//        this.setCacheManager(new RedisShiroCacheManager());
         this.setCachingEnabled(true);
         this.setAuthenticationCacheName("AuthenticationCache");
         this.setAuthorizationCacheName("AuthorizationCache");
@@ -50,14 +49,10 @@ public class UserRealm extends AuthorizingRealm {
         String user_name = (String) authenticationToken.getPrincipal();
         UserService userService = (UserService) ApplicationContextUtils.getBean("userServiceImpl");
         User user = userService.getUserByUsername(user_name);
-        String salt = userService.getSaltByUsername(user_name);
-        MySimpleByteSource mySimpleByteSource = new MySimpleByteSource(salt);
         if (user==null){
             return null;
         }else {
-            SimpleAuthenticationInfo simpleAuthenticationInfo =
-                    new SimpleAuthenticationInfo(user.getUsername(),user.getPassword(),mySimpleByteSource,this.getName());
-            return simpleAuthenticationInfo;
+            return new SimpleAuthenticationInfo(user.getUsername(),user.getPassword(), this.getName());
         }
     }
 }

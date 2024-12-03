@@ -1,116 +1,137 @@
-//package com.yikolemon.service;
-//
-//import com.yikolemon.util.ApplicationContextUtils;
-//import com.yikolemon.util.RedisKeyUtil;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.dao.DataAccessException;
-//import org.springframework.data.redis.connection.RedisConnection;
-//import org.springframework.data.redis.connection.RedisStringCommands;
-//import org.springframework.data.redis.core.RedisCallback;
-//import org.springframework.data.redis.core.RedisTemplate;
-//import org.springframework.data.redis.serializer.JdkSerializationRedisSerializer;
-//import org.springframework.data.redis.serializer.StringRedisSerializer;
-//import org.springframework.stereotype.Service;
-//
-//import javax.xml.crypto.Data;
-//import java.text.SimpleDateFormat;
-//import java.util.ArrayList;
-//import java.util.Calendar;
-//import java.util.Date;
-//import java.util.List;
-//
-//
-//@Service
-//public class DataService {
-//
-//    @Autowired
-//    private RedisTemplate redisTemplate;
-//
-//    private SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd");
-//
-//    //将指定ip计入uv
-//    public void recordUV(String ip) {
-//        String redisKey = RedisKeyUtil.getUVKey(df.format(new Date()));
-//        getRedisTemplate().opsForHyperLogLog().add(redisKey, ip);
-//    }
-//
-//    public long lastSevenDayUv(){
-//        Calendar instance = Calendar.getInstance();
-//        instance.add(Calendar.DATE,-7);
-//        Date before = instance.getTime();
-//        instance.add(Calendar.DATE,7);
-//        Date after = instance.getTime();
-//        long l = calculateUv(before, after);
-//        return l;
-//    }
-//
-//    //统计指定日期范围内的UV,统计范围内
-//    public long calculateUv(Date start,Date end){
-//        if (start==null||end==null){
-//            throw new IllegalArgumentException("参数不能为空");
-//        }
-//        List<String> keyList=new ArrayList<>();
-//        Calendar instance = Calendar.getInstance();
-//        instance.setTime(start);
-//        while (!instance.getTime().after(end)){
-//            String key = RedisKeyUtil.getUVKey(df.format(instance.getTime()));
-//            keyList.add(key);
-//            instance.add(Calendar.DATE,1);
-//        }
-//        //合并数据
-//        String redisKey = RedisKeyUtil.getUVKey(df.format(start), df.format(end));
-//        Long union = getRedisTemplate().opsForHyperLogLog().union(redisKey, keyList.toArray());
-//        System.out.println(union);
-//        return getRedisTemplate().opsForHyperLogLog().size(redisKey);
-//    }
-//
-//    //指定用户计入Dau
-//    public void recordDAU(int userId){
-//        String redisKey = RedisKeyUtil.getDAUKey(df.format(new Date()));
-//        getRedisTemplate().opsForValue().setBit(redisKey,userId,true);
-//    }
-//
-//    //统计指定日期范围内的DAU
-//    public long calculateDAU(Date start,Date end){
-//        if (start==null||end==null){
-//            throw new IllegalArgumentException("参数不能为空");
-//        }
-//
-//        List<byte[]> keyList=new ArrayList<>();
-//        Calendar instance = Calendar.getInstance();
-//        instance.setTime(start);
-//        while (!instance.getTime().after(end)){
-//            String key = RedisKeyUtil.getDAUKey(df.format(instance.getTime()));
-//            keyList.add(key.getBytes());
-//            instance.add(Calendar.DATE,1);
-//        }
-//        //进行or运算
-//        return (long) getRedisTemplate().execute(new RedisCallback() {
-//            @Override
-//            public Object doInRedis(RedisConnection connection) throws DataAccessException {
-//                String redisKey = RedisKeyUtil.getDAUKey(df.format(start), df.format(end));
-//                connection.bitOp(RedisStringCommands.BitOperation.OR,redisKey.getBytes(),keyList.toArray(new byte[0][0]));
-//                return connection.bitCount(redisKey.getBytes());
-//            }
-//        });
-//    }
-//
-//    public long lastSevenDayDau(){
-//        Calendar instance = Calendar.getInstance();
-//        instance.add(Calendar.DATE,-7);
-//        Date before = instance.getTime();
-//        instance.add(Calendar.DATE,7);
-//        Date after = instance.getTime();
-//        long l = calculateDAU(before, after);
-//        return l;
-//    }
-//
-//    //给模板对象RedisTemplate赋值，并传出去
-//    private RedisTemplate getRedisTemplate(){
-//        redisTemplate.setKeySerializer(new StringRedisSerializer());
-//        redisTemplate.setHashKeySerializer(new StringRedisSerializer());
-//        redisTemplate.setValueSerializer(new StringRedisSerializer());
-//        redisTemplate.setHashValueSerializer(new StringRedisSerializer());
-//        return redisTemplate;
-//    }
-//}
+package com.yikolemon.service;
+
+import org.springframework.stereotype.Service;
+
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
+
+@Service
+public class DataService {
+
+    // Constructor: Schedule cleanup task
+    public DataService() {
+        cleanupScheduler.scheduleAtFixedRate(this::cleanupExpiredData, 1, 1, TimeUnit.DAYS);
+    }
+
+    private final SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd");
+
+    // In-memory data structures to store UV and DAU data
+    private final Map<String, Set<String>> uvData = new ConcurrentHashMap<>();
+    private final Map<String, BitSet> dauData = new ConcurrentHashMap<>();
+    private final ScheduledExecutorService cleanupScheduler = Executors.newScheduledThreadPool(1);
+
+    // Record unique visitor (UV) for a specific IP
+    public void recordUV(String ip) {
+        String dateKey = df.format(new Date());
+        uvData.computeIfAbsent(dateKey, k -> Collections.synchronizedSet(new HashSet<>())).add(ip);
+    }
+
+    // Calculate UV for the last seven days
+    public long lastSevenDayUv() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DATE, -7);
+        Date start = calendar.getTime();
+        calendar.add(Calendar.DATE, 7);
+        Date end = calendar.getTime();
+        return calculateUv(start, end);
+    }
+
+    // Calculate UV for a specified date range
+    public long calculateUv(Date start, Date end) {
+        if (start == null || end == null) {
+            throw new IllegalArgumentException("Parameters cannot be null");
+        }
+
+        Set<String> uniqueIPs = new HashSet<>();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(start);
+        while (!calendar.getTime().after(end)) {
+            String dateKey = df.format(calendar.getTime());
+            Set<String> ips = uvData.getOrDefault(dateKey, Collections.emptySet());
+            uniqueIPs.addAll(ips);
+            calendar.add(Calendar.DATE, 1);
+        }
+        return uniqueIPs.size();
+    }
+
+    // Record daily active user (DAU) for a specific user ID
+    public void recordDAU(int userId) {
+        String dateKey = df.format(new Date());
+        dauData.computeIfAbsent(dateKey, k -> new BitSet()).set(userId);
+    }
+
+    // Calculate DAU for the last seven days
+    public long lastSevenDayDau() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DATE, -7);
+        Date start = calendar.getTime();
+        calendar.add(Calendar.DATE, 7);
+        Date end = calendar.getTime();
+        return calculateDAU(start, end);
+    }
+
+    // Calculate DAU for a specified date range
+    public long calculateDAU(Date start, Date end) {
+        if (start == null || end == null) {
+            throw new IllegalArgumentException("Parameters cannot be null");
+        }
+
+        BitSet resultBitSet = new BitSet();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(start);
+        while (!calendar.getTime().after(end)) {
+            String dateKey = df.format(calendar.getTime());
+            BitSet dailyBitSet = dauData.getOrDefault(dateKey, new BitSet());
+            resultBitSet.or(dailyBitSet);
+            calendar.add(Calendar.DATE, 1);
+        }
+        return resultBitSet.cardinality();
+    }
+
+    // Cleanup expired data (keep data for the last 8 days)
+    private void cleanupExpiredData() {
+        String expiryDateKey = df.format(getDateBeforeDays(8));
+        uvData.keySet().removeIf(dateKey -> dateKey.compareTo(expiryDateKey) < 0);
+        dauData.keySet().removeIf(dateKey -> dateKey.compareTo(expiryDateKey) < 0);
+    }
+
+    // Helper method to get a date before a certain number of days
+    private Date getDateBeforeDays(int days) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DATE, -days);
+        return calendar.getTime();
+    }
+
+    // Shutdown cleanup scheduler
+    public void shutdown() {
+        cleanupScheduler.shutdown();
+    }
+
+    // Example usage
+    public static void main(String[] args) throws InterruptedException {
+        DataService tracker = new DataService();
+
+        // Record some UVs and DAUs
+        tracker.recordUV("192.168.0.1");
+        tracker.recordUV("192.168.0.2");
+        tracker.recordDAU(1);
+        tracker.recordDAU(2);
+
+        // Wait for a day to simulate aging data
+        Thread.sleep(2000); // Replace with realistic timing in production
+        tracker.recordUV("192.168.0.3");
+        tracker.recordDAU(3);
+
+        // Calculate UV and DAU
+        System.out.println("Last 7 days UV: " + tracker.lastSevenDayUv());
+        System.out.println("Last 7 days DAU: " + tracker.lastSevenDayDau());
+
+        // Shutdown scheduler
+        tracker.shutdown();
+    }
+}

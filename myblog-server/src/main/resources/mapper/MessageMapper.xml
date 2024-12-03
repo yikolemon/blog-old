@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yikolemon.mapper.MessageMapper">
+
+    <!-- 插入一条留言 -->
+    <insert id="addMessage" parameterType="com.yikolemon.pojo.Message">
+        INSERT INTO t_message (content, nickname, is_parent, parent_id, email, email_flag, create_time, replay_nickname)
+        VALUES (#{content}, #{nickname}, #{isParent}, #{parentId}, #{email}, #{emailFlag}, CURRENT_TIMESTAMP, #{replayNickname})
+    </insert>
+
+    <!-- 删除留言 -->
+    <delete id="deleteMessage" parameterType="long">
+        DELETE FROM t_message WHERE id = #{id}
+    </delete>
+
+    <!-- 获取父留言 -->
+    <select id="getParentMessages" resultType="com.yikolemon.pojo.Message">
+        SELECT id, content, nickname, is_parent AS isParent, parent_id AS parentId, email, email_flag AS emailFlag, create_time AS createTime
+        FROM t_message
+        WHERE is_parent = TRUE
+        ORDER BY create_time DESC
+    </select>
+
+    <!-- 根据父留言ID获取子留言 -->
+    <select id="getChildMessages" parameterType="long" resultType="com.yikolemon.pojo.Message">
+        SELECT *
+        FROM t_message
+        WHERE parent_id = #{parentId}
+        ORDER BY create_time ASC
+    </select>
+
+    <!-- 获取父留言是否开启邮件提醒 -->
+    <select id="getEmailFlag" parameterType="long" resultType="java.lang.Boolean">
+        SELECT email_flag
+        FROM t_message
+        WHERE id = #{id}
+    </select>
+
+    <!-- 如果父留言开启了邮件提醒，返回邮箱地址 -->
+    <select id="getEmailIfFlag" parameterType="long" resultType="java.lang.String">
+        SELECT email
+        FROM t_message
+        WHERE id = #{id} AND email_flag = TRUE
+    </select>
+
+    <select id="getById" parameterType="long" resultType="com.yikolemon.pojo.Message">
+        select *
+        from t_message
+        where id =#{id}
+    </select>
+
+</mapper>

@@ -12,6 +12,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @Service
@@ -19,7 +20,7 @@ import java.util.List;
 public class TypeServiceImpl implements TypeService {
 
 
-    @Autowired
+    @Resource
     private TypeMapper typeMapper;
 
     @Override

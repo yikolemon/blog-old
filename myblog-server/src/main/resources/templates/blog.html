@@ -64,15 +64,12 @@
       <div class="ui attached positive message open-bg"  th:if="${blog.shareStatement}==true">
         <!--博客信息-->
         <div class="ui middle aligned grid">
-          <div class="eleven wide column">
+          <div class="sixteen wide column">
             <ui class="list">
               <li>作者：<span th:text="${user.nickname}"></span></li>
               <li>发布日期：<span th:text="${#dates.format(blog.createTime,'yyyy-MM-dd')}">2017-10-01</span></li>
               <li>版权声明：自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</li>
             </ui>
-          </div>
-          <div class="five wide column">
-            <img th:src="@{/images/wechat.jpg}" alt="" class="ui right floated rounded bordered image" style="width: 110px">
           </div>
         </div>
       </div>

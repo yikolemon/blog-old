@@ -11,7 +11,7 @@ import com.yikolemon.service.*;
 import com.yikolemon.util.PageUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.RequiresRoles;
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -26,18 +26,18 @@ import java.util.List;
 @RequestMapping("/admin")
 public class BlogController {
 
-    @Autowired
+    @Resource
     private BlogService blogService;
-    @Autowired
+    @Resource
     private TypeService typeService;
-    @Autowired
+    @Resource
     private TagService tagService;
-    @Autowired
+    @Resource
     private TagBlogService tagBlogService;
-    @Autowired
+    @Resource
     private UserService userService;
 
-//    @Autowired
+//    @Resource
 //    private ElasticProductor elasticProductor;
 
     int pageSize= PageUtils.getPageSize();

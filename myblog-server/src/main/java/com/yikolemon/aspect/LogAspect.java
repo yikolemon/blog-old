@@ -25,6 +25,7 @@ public class LogAspect {
     @Before("log()")
     public void doBefore(JoinPoint joinPoint) {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        assert attributes != null;
         HttpServletRequest request = attributes.getRequest();
         String url = request.getRequestURL().toString();
         String ip = IpUtils.getIpFromRequest(request);
@@ -46,11 +47,11 @@ public class LogAspect {
         logger.info("Result : {}", result);
     }
 
-    private class RequestLog {
-        private String url;
-        private String ip;
-        private String classMethod;
-        private Object[] args;
+    private static class RequestLog {
+        private final String url;
+        private final String ip;
+        private final String classMethod;
+        private final Object[] args;
 
         public RequestLog(String url, String ip, String classMethod, Object[] args) {
             this.url = url;

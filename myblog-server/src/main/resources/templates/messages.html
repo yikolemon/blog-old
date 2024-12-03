@@ -43,7 +43,7 @@
                     </div>
                     <div class="replay-input field" style="margin-top: 0.5em">
                         <div class="ui toggle checkbox">
-                            <input type="checkbox" name="emailMsg" id="emailMsg">
+                            <input type="checkbox" name="emailFlag" id="emailFlag">
                             <label>回复邮件通知</label>
                         </div>
                     </div>
@@ -81,12 +81,12 @@
                                 </a>
                                 <div class="content">
 
-                                    <span class="author" th:text="${childMessage.nickname} ">昵称</span>
+                                    <span class="author" th:text="${childMessage.nickname}">昵称</span>
                                     &nbsp
                                     <div class="ui mini basic label miku-colour" th:if="${childMessage.isParent}">管理</div>
                                     <span class="reply-font miku-colour">
-                                        <span>&nbsp&nbsp&nbsp@</span>
-                                        <span th:text="${childMessage.replayNickname} "></span>
+                                        <span>&nbsp@&nbsp</span>
+                                        <span th:text="${childMessage.replayNickname}"></span>
                                      </span>
                                     <div class="metadata">
                                         <span class="date" th:text="${#dates.format(childMessage.createTime,'yyyy-MM-dd')}">日期</span>

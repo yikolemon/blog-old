@@ -9,7 +9,7 @@ import com.yikolemon.service.BlogServiceImpl;
 import com.yikolemon.service.TagService;
 import com.yikolemon.service.TagServiceImpl;
 import com.yikolemon.util.PageUtils;
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,9 +21,9 @@ import java.util.List;
 @Controller
 public class TagBlogController {
 
-    @Autowired
+    @Resource
     private TagService tagService;
-    @Autowired
+    @Resource
     private BlogService blogService;
 
     int pageSize= PageUtils.getPageSize();
