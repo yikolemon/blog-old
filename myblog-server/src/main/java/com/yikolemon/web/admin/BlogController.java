@@ -5,7 +5,6 @@ import com.github.pagehelper.PageInfo;
 import com.yikolemon.pojo.Blog;
 import com.yikolemon.pojo.Tag;
 import com.yikolemon.pojo.Type;
-//import com.yikolemon.productor.ElasticProductor;
 import com.yikolemon.queue.SearchBlog;
 import com.yikolemon.service.*;
 import com.yikolemon.util.PageUtils;

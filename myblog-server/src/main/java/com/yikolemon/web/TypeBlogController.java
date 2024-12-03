@@ -48,12 +48,16 @@ public class TypeBlogController {
                     break;
                 }
             }
-            if (flag==false) return "error/404";
+            if (flag==false) {
+                return "error/404";
+            }
         }
         model.addAttribute("typeId",typeId);
         PageHelper.startPage(pageNum,pageSize);
         List<IndexBlog> blogs = blogService.listBlogsByTypeId(typeId);
-        if (blogs.size()==0) pageNum=1;
+        if (blogs.size()==0) {
+            pageNum=1;
+        }
         PageHelper.startPage(pageNum,pageSize);
         blogs = blogService.listBlogsByTypeId(typeId);
         PageInfo<IndexBlog> pageInfo = new PageInfo<>(blogs);

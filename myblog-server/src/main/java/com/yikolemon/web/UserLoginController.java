@@ -1,20 +1,16 @@
 package com.yikolemon.web;
 
-import com.yikolemon.pojo.User;
 import com.yikolemon.service.UserService;
-import com.yikolemon.service.UserServiceImpl;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
-import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.apache.shiro.subject.Subject;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -22,9 +18,6 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 public class UserLoginController {
-
-    @Resource
-    private UserService userService;
 
     @GetMapping("/login")
     public String loginPage(){

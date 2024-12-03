@@ -22,8 +22,9 @@ public class TagBlogServiceImpl implements TagBlogService{
     @Override
     @Transactional
     public int saveTagBlogs(String tagIdStr,long blogId) {
-        if (tagIdStr==null||tagIdStr.isEmpty())
+        if (tagIdStr==null||tagIdStr.isEmpty()) {
             return 0;
+        }
         long[] tagIds = TagBlogUtils.tagIds(tagIdStr);
         int num=0;
         for (int i = 0; i <tagIds.length; i++) {
@@ -34,10 +35,11 @@ public class TagBlogServiceImpl implements TagBlogService{
 
 
     @Override
-    @Cacheable(key = "#id")
     public String StringTagIdsByBlogId(long id) {
         Tag[] tags = tagBlogMapper.queueByBlogId(id);
-        if (tags==null) return "";
+        if (tags==null) {
+            return "";
+        }
         long[] arr=new long[tags.length];
         for (int i = 0; i < arr.length; i++) {
             arr[i]=tags[i].getId();
@@ -46,7 +48,6 @@ public class TagBlogServiceImpl implements TagBlogService{
     }
 
     @Override
-    @CacheEvict(key = "#blogId")
     public int deleteTagByBlogId(long id) {
         return tagBlogMapper.deleteTagByBlogId(id);
     }

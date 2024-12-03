@@ -38,14 +38,15 @@
 
     <!--listAllBlogsSearch-->
     <select id="listAllBlogsSearch" parameterType="com.yikolemon.queue.SearchBlog" resultType="com.yikolemon.pojo.Blog">
-        select t_blog.id id,title,type_id,recommend,t_type.name typeName,update_time from t_blog join t_type
+        select t_blog.*, t_type.name typeName
+        from t_blog join t_type
         on t_blog.type_id=t_type.id
         <where>
             <if test="typeId != null">
                  t_type.id=#{typeId}
             </if>
             <if test="title != ''">
-                and t_blog.title like concat('%',#{title},'%')
+                and t_blog.title like '%' || #{title} || '%'
             </if>
             <if test="recommend == true">
                 and t_blog.recommend = true
@@ -78,7 +79,7 @@
     <!--searchBlog-->
     <select id="searchBlog" resultType="com.yikolemon.queue.IndexBlog">
         select t_blog.id id,title,type_id,recommend,t_type.name typeName,update_time,first_picture firstPicture,`view`,description from t_blog join t_type
-        on t_blog.type_id=t_type.id where t_blog.published=true and t_blog.title like concat('%',#{title},'%')
+        on t_blog.type_id=t_type.id where t_blog.published=true and t_blog.title like '%'|| #{title} || '%'
     </select>
 
     <!--listBlogsByTypeId-->
