@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
 
 @Service
-@CacheConfig(cacheNames = "tagBlog")
+@CacheConfig(cacheNames = "tags")
 public class TagBlogServiceImpl implements TagBlogService{
 
     @Resource
@@ -48,6 +48,7 @@ public class TagBlogServiceImpl implements TagBlogService{
     }
 
     @Override
+    @CacheEvict(allEntries = true)
     public int deleteTagByBlogId(long id) {
         return tagBlogMapper.deleteTagByBlogId(id);
     }

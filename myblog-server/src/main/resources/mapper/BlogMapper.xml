@@ -98,14 +98,15 @@
 
     <!--getAllYears-->
     <select id="getAllYears" resultType="String">
-        select strftime('%Y', t_blog.update_time)as year from t_blog where t_blog.published=true GROUP BY strftime('%Y', t_blog.update_time)
+        select strftime('%Y', datetime(update_time / 1000, 'unixepoch'))as year from t_blog where t_blog.published=true GROUP BY strftime('%Y', datetime(update_time / 1000, 'unixepoch'))
     </select>
 
     <!--getBlogsByYear-->
     <select id="getBlogsByYear" resultType="com.yikolemon.queue.ArchiveBlog">
-        SELECT t_blog.id, flag, title, strftime('%m月%d日', t_blog.update_time) AS date
+        SELECT t_blog.id, flag, title, strftime('%m月%d日', datetime(t_blog.update_time / 1000, 'unixepoch')) AS date
         FROM t_blog
-        WHERE strftime('%Y', t_blog.update_time) = ? AND t_blog.published = 1
+        WHERE strftime('%Y', datetime(t_blog.update_time / 1000, 'unixepoch')) = #{year}
+          AND t_blog.published = 1
         ORDER BY t_blog.update_time;
     </select>
 

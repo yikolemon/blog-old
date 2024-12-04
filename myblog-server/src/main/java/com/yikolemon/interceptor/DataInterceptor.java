@@ -1,6 +1,6 @@
 package com.yikolemon.interceptor;
 
-import com.yikolemon.service.DataService;
+import com.yikolemon.service.DataServiceImpl;
 import com.yikolemon.service.UserService;
 import com.yikolemon.util.IpUtils;
 import org.apache.shiro.SecurityUtils;
@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 public class DataInterceptor implements HandlerInterceptor {
 
     @Resource
-    private DataService dataService;
+    private DataServiceImpl dataService;
     @Resource
     private UserService userService;
 

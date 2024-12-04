@@ -7,7 +7,9 @@ import com.yikolemon.pojo.Tag;
 import com.yikolemon.pojo.Type;
 import com.yikolemon.queue.SearchBlog;
 import com.yikolemon.service.*;
+import com.yikolemon.util.MdImgConvertComponent;
 import com.yikolemon.util.PageUtils;
+import com.yikolemon.util.QiniuCloudOssComponent;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.RequiresRoles;
 import javax.annotation.Resource;
@@ -36,6 +38,8 @@ public class BlogController {
     @Resource
     private UserService userService;
 
+    @Resource
+    private MdImgConvertComponent mdImgConvertComponent;
 //    @Resource
 //    private ElasticProductor elasticProductor;
 
@@ -111,7 +115,13 @@ public class BlogController {
 
     @PostMapping("/blogs/input")
     @Transactional
-    public String editBlog(Blog blog, RedirectAttributes redirectAttributes,HttpServletRequest request){
+    public String editBlog(Boolean ossImg, Blog blog,
+                           RedirectAttributes redirectAttributes,HttpServletRequest request){
+        if (Boolean.TRUE.equals(ossImg)){
+            //需要对img存储到oss上
+            String content = mdImgConvertComponent.replaceImagesWithOssPaths(blog.getContent());
+            blog.setContent(content);
+        }
         if (blog.getId()!=null){
             updateBlog(blog,redirectAttributes,request);
         }
@@ -122,7 +132,8 @@ public class BlogController {
         return "redirect:/admin/blogs";
     }
 
-    public  void saveBlog(Blog blog, RedirectAttributes redirectAttributes, HttpServletRequest request){
+    public  void saveBlog(Blog blog, RedirectAttributes redirectAttributes,
+                          HttpServletRequest request){
         String principal = (String) SecurityUtils.getSubject().getPrincipal();
         long id = userService.getIdByName(principal);
         blog.setUserId(id);

@@ -1,6 +1,6 @@
 package com.yikolemon.web;
 
-import com.yikolemon.service.DataService;
+import com.yikolemon.service.DataServiceImpl;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class AboutController {
 
     @Resource
-    private DataService dataService;
+    private DataServiceImpl dataService;
 
     @GetMapping("/about")
     public String about(Model model){

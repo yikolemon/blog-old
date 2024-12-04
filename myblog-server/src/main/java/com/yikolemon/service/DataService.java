@@ -1,137 +1,46 @@
 package com.yikolemon.service;
 
-import org.springframework.stereotype.Service;
+import com.yikolemon.pojo.DAUData;
+import com.yikolemon.pojo.UVData;
 
-import java.text.SimpleDateFormat;
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
+import java.util.Date;
+import java.util.List;
 
+public interface DataService {
 
-@Service
-public class DataService {
+    // 记录唯一访问者（UV）
+    void recordUV(String ip);
 
-    // Constructor: Schedule cleanup task
-    public DataService() {
-        cleanupScheduler.scheduleAtFixedRate(this::cleanupExpiredData, 1, 1, TimeUnit.DAYS);
-    }
+    // 记录日活跃用户（DAU）
+    void recordDAU(int userId);
 
-    private final SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd");
+    // 计算过去七天的 UV
+    long lastSevenDayUv();
 
-    // In-memory data structures to store UV and DAU data
-    private final Map<String, Set<String>> uvData = new ConcurrentHashMap<>();
-    private final Map<String, BitSet> dauData = new ConcurrentHashMap<>();
-    private final ScheduledExecutorService cleanupScheduler = Executors.newScheduledThreadPool(1);
+    // 计算过去七天的 DAU
+    long lastSevenDayDau();
 
-    // Record unique visitor (UV) for a specific IP
-    public void recordUV(String ip) {
-        String dateKey = df.format(new Date());
-        uvData.computeIfAbsent(dateKey, k -> Collections.synchronizedSet(new HashSet<>())).add(ip);
-    }
+    // 计算指定日期范围的 UV
+    long calculateUv(Date start, Date end);
 
-    // Calculate UV for the last seven days
-    public long lastSevenDayUv() {
-        Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.DATE, -7);
-        Date start = calendar.getTime();
-        calendar.add(Calendar.DATE, 7);
-        Date end = calendar.getTime();
-        return calculateUv(start, end);
-    }
+    // 计算指定日期范围的 DAU
+    long calculateDAU(Date start, Date end);
 
-    // Calculate UV for a specified date range
-    public long calculateUv(Date start, Date end) {
-        if (start == null || end == null) {
-            throw new IllegalArgumentException("Parameters cannot be null");
-        }
+    // 加载数据从数据库到内存（用于重启恢复）
+    void loadDataFromDatabase();
 
-        Set<String> uniqueIPs = new HashSet<>();
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(start);
-        while (!calendar.getTime().after(end)) {
-            String dateKey = df.format(calendar.getTime());
-            Set<String> ips = uvData.getOrDefault(dateKey, Collections.emptySet());
-            uniqueIPs.addAll(ips);
-            calendar.add(Calendar.DATE, 1);
-        }
-        return uniqueIPs.size();
-    }
+    // 同步内存数据到数据库
+    void syncDataToDatabase();
 
-    // Record daily active user (DAU) for a specific user ID
-    public void recordDAU(int userId) {
-        String dateKey = df.format(new Date());
-        dauData.computeIfAbsent(dateKey, k -> new BitSet()).set(userId);
-    }
+    // 清理过期数据（保持最近 8 天的数据）
+    void cleanupExpiredData();
 
-    // Calculate DAU for the last seven days
-    public long lastSevenDayDau() {
-        Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.DATE, -7);
-        Date start = calendar.getTime();
-        calendar.add(Calendar.DATE, 7);
-        Date end = calendar.getTime();
-        return calculateDAU(start, end);
-    }
+    // 关闭定时任务
+    void shutdown();
 
-    // Calculate DAU for a specified date range
-    public long calculateDAU(Date start, Date end) {
-        if (start == null || end == null) {
-            throw new IllegalArgumentException("Parameters cannot be null");
-        }
+    // 获取所有 UV 数据
+    List<UVData> getAllUVDataFromDb();
 
-        BitSet resultBitSet = new BitSet();
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(start);
-        while (!calendar.getTime().after(end)) {
-            String dateKey = df.format(calendar.getTime());
-            BitSet dailyBitSet = dauData.getOrDefault(dateKey, new BitSet());
-            resultBitSet.or(dailyBitSet);
-            calendar.add(Calendar.DATE, 1);
-        }
-        return resultBitSet.cardinality();
-    }
-
-    // Cleanup expired data (keep data for the last 8 days)
-    private void cleanupExpiredData() {
-        String expiryDateKey = df.format(getDateBeforeDays(8));
-        uvData.keySet().removeIf(dateKey -> dateKey.compareTo(expiryDateKey) < 0);
-        dauData.keySet().removeIf(dateKey -> dateKey.compareTo(expiryDateKey) < 0);
-    }
-
-    // Helper method to get a date before a certain number of days
-    private Date getDateBeforeDays(int days) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.DATE, -days);
-        return calendar.getTime();
-    }
-
-    // Shutdown cleanup scheduler
-    public void shutdown() {
-        cleanupScheduler.shutdown();
-    }
-
-    // Example usage
-    public static void main(String[] args) throws InterruptedException {
-        DataService tracker = new DataService();
-
-        // Record some UVs and DAUs
-        tracker.recordUV("192.168.0.1");
-        tracker.recordUV("192.168.0.2");
-        tracker.recordDAU(1);
-        tracker.recordDAU(2);
-
-        // Wait for a day to simulate aging data
-        Thread.sleep(2000); // Replace with realistic timing in production
-        tracker.recordUV("192.168.0.3");
-        tracker.recordDAU(3);
-
-        // Calculate UV and DAU
-        System.out.println("Last 7 days UV: " + tracker.lastSevenDayUv());
-        System.out.println("Last 7 days DAU: " + tracker.lastSevenDayDau());
-
-        // Shutdown scheduler
-        tracker.shutdown();
-    }
+    // 获取所有 DAU 数据
+    List<DAUData> getAllDAUDataFromDb();
 }

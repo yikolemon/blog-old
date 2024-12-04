@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 //import org.springframework.data.elasticsearch.annotations.Field;
 //import org.springframework.data.elasticsearch.annotations.FieldType;
 
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -29,6 +30,7 @@ public class Blog implements Serializable {
     private String description;//描述
 
 //    @Field(type = FieldType.Text ,analyzer = "ik_max-word" ,searchAnalyzer = "ik_smart")
+    @NotEmpty(message = "博客内容不能为空")
     private  String content;//内容
 
 //    @Field(type = FieldType.Text)

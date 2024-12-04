@@ -42,6 +42,12 @@ mybatis:
 pagesize: 8
 msgsize: 6
 
+qiniu:
+  access_key: xxx
+  secret_key: xxx
+  bucketname: yikolemon-blog
+  domain: xxx
+
 
 
 

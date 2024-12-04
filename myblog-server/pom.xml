@@ -17,6 +17,14 @@
 
     <dependencies>
 
+        <!-- hutool-core -->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.8.34</version>
+        </dependency>
+
+
         <!--email-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
