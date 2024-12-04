@@ -1,7 +1,7 @@
 //package com.yikolemon.productor;
 //
 //import com.google.gson.Gson;
-//import com.yikolemon.chat.pojo.CloudMessage;
+//import com.yikolemon.service.chat.pojo.CloudMessage;
 //import com.yikolemon.config.QueueConfig;
 //import com.yikolemon.pojo.Blog;
 //import org.springframework.amqp.rabbit.core.RabbitTemplate;

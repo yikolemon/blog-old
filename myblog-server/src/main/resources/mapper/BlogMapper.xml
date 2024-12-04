@@ -115,6 +115,10 @@
         select count(*) from t_blog where t_blog.published=true
     </select>
 
+    <select id="listAll" resultType="com.yikolemon.pojo.Blog">
+        select * from t_blog
+    </select>
+
     <!--updateView-->
     <update id="updateView">
         update t_blog set view=view+#{num} where id = #{id}

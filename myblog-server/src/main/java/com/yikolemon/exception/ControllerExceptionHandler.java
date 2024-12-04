@@ -1,4 +1,4 @@
-package com.yikolemon.handler;
+package com.yikolemon.exception;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.yikolemon.exception.SearchLimitException;

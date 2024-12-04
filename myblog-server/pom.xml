@@ -157,6 +157,43 @@
             <version>3.12.0</version>
         </dependency>
 
+        <!-- lucene 内嵌实现全文索引-->
+        <!-- Lucene核心库 -->
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-core</artifactId>
+            <version>7.6.0</version>
+        </dependency>
+
+        <!-- Lucene的查询解析器 -->
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-queryparser</artifactId>
+            <version>7.6.0</version>
+        </dependency>
+
+        <!-- Lucene的默认分词器库 -->
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-analyzers-common</artifactId>
+            <version>7.6.0</version>
+        </dependency>
+
+        <!-- Lucene的高亮显示 -->
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-highlighter</artifactId>
+            <version>7.6.0</version>
+        </dependency>
+
+        <!-- ik分词器 -->
+        <dependency>
+            <groupId>com.jianggujin</groupId>
+            <artifactId>IKAnalyzer-lucene</artifactId>
+            <version>8.0.0</version>
+        </dependency>
+
+
 
     </dependencies>
 

@@ -1,4 +1,4 @@
-package com.yikolemon.chat.pojo;
+package com.yikolemon.service.chat.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

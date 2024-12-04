@@ -1,11 +1,11 @@
-//package com.yikolemon.chat;
+//package com.yikolemon.service.chat;
 //
 //import com.fasterxml.jackson.core.JsonProcessingException;
 //import com.fasterxml.jackson.databind.ObjectMapper;
 //import com.google.gson.Gson;
-//import com.yikolemon.chat.pojo.CloudMessage;
-//import com.yikolemon.chat.pojo.ReceiveMessage;
-//import com.yikolemon.chat.pojo.SendMessage;
+//import com.yikolemon.service.chat.pojo.CloudMessage;
+//import com.yikolemon.service.chat.pojo.ReceiveMessage;
+//import com.yikolemon.service.chat.pojo.SendMessage;
 //import com.yikolemon.config.WebSocketConfig;
 //import com.yikolemon.productor.ChatSaveProductor;
 //import com.yikolemon.util.ApplicationContextUtils;

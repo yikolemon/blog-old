@@ -30,6 +30,8 @@ public interface BlogMapper {
 
     List<Blog> listBlogsAdmin();
 
+    List<Blog> listAll();
+
     List<Blog> listAllBlogsSearch(SearchBlog blog);
 
     List<IndexBlog> listBlogsByTypeId(Long id);

@@ -1,7 +1,7 @@
 //package com.yikolemon.web;
 //
 //import com.google.gson.Gson;
-//import com.yikolemon.chat.pojo.ChatUser;
+//import com.yikolemon.service.chat.pojo.ChatUser;
 //import com.yikolemon.pojo.CloudMessage;
 //import com.yikolemon.pojo.User;
 //import com.yikolemon.service.UserService;
