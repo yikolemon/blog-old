@@ -4,25 +4,17 @@
     <!--<cache type="com.yikolemon.cache.MyRedisCache"/>
     <cache/>-->
 
-    <!--updateLikeOne-->
-    <update id="updateLikeOne">
-        update t_like set `like`=`like`+1 where id_blog=#{blogId}
-    </update>
 
     <!--updateLike-->
     <update id="updateLike">
-        update t_like set `like`=`like`+#{num} where id_blog=#{blogId}
+        INSERT OR REPLACE INTO t_like (id_blog, `like`)
+        VALUES (#{blogId}, #{num});
     </update>
 
     <!--getLike-->
     <select id="getLike" resultType="com.yikolemon.pojo.Like">
         select t_like.id_blog blogId,`like` from t_like where id_blog=#{blogId}
     </select>
-
-    <!--setLike-->
-    <insert id="setLike">
-        insert into t_like values (#{blogId},0)
-    </insert>
 
     <!--deleteLike-->
     <delete id="deleteLike">

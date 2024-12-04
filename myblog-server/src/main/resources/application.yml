@@ -22,7 +22,7 @@ spring:
     host: smtp.qq.com
     port: 465
     username: 212842183@qq.com
-    password: xxx
+    password: cwdonrpkfvavcbci
     protocol: smtps
     properties:
       mail:
@@ -43,10 +43,10 @@ pagesize: 8
 msgsize: 6
 
 qiniu:
-  access_key: xxx
-  secret_key: xxx
+  access_key: XKB8qnTudEjAUUAHk01-p44QV5mGc6b2VsxrKL2o
+  secret_key: Or1Gkzxgi0jq-ZnjA2T3NKtOmYTtIZ9SIaZwaL00
   bucketname: yikolemon-blog
-  domain: xxx
+  domain: cdn.yikolemon.cn/
 
 
 

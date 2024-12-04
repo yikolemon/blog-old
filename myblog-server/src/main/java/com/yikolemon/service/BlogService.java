@@ -15,9 +15,9 @@ public interface BlogService {
 
     Blog getAndConvert(Long id);
 
-    int saveBlog(Blog blog);
+    void saveBlog(Blog blog);
 
-    int updateBlog(Blog blog);
+    void updateBlog(Blog blog);
 
     int deleteBlog(Long id);
 

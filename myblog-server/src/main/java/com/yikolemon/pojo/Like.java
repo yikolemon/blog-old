@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 @AllArgsConstructor                //有参构造
 public class Like implements Serializable {
 
-    private int like;
+    private long like;
 
     private long blogId;
 

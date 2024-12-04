@@ -19,8 +19,10 @@ public class DataServiceImpl implements DataService{
 
     // Constructor: Schedule cleanup task, sync task, and load data on startup
     public DataServiceImpl() {
-        cleanupScheduler.scheduleAtFixedRate(this::cleanupExpiredData, 1, 1, TimeUnit.DAYS); // Clean expired data
-        syncScheduler.scheduleAtFixedRate(this::syncDataToDatabase, 1, 1, TimeUnit.HOURS); // Sync UV/DAU to DB every hour
+        // Clean expired data
+        cleanupScheduler.scheduleAtFixedRate(this::cleanupExpiredData, 1, 1, TimeUnit.DAYS);
+        // Sync UV/DAU to DB every hour
+        syncScheduler.scheduleAtFixedRate(this::syncDataToDatabase, 1, 2, TimeUnit.HOURS);
     }
 
     @PostConstruct

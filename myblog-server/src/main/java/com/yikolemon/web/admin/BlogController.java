@@ -137,16 +137,10 @@ public class BlogController {
         String principal = (String) SecurityUtils.getSubject().getPrincipal();
         long id = userService.getIdByName(principal);
         blog.setUserId(id);
-        int i = blogService.saveBlog(blog);
+        blogService.saveBlog(blog);
         Long blogId = blog.getId();//id在存完之后才能取
         String tagIds = request.getParameter("tagIds");
         tagBlogService.saveTagBlogs(tagIds, blogId);
-        if (i==1){
-            redirectAttributes.addFlashAttribute("message","操作成功");
-        }
-        else {
-            redirectAttributes.addFlashAttribute("message","操作失败");
-        }
     }
 
     public void updateBlog(Blog blog, RedirectAttributes redirectAttributes, HttpServletRequest request){
@@ -156,14 +150,7 @@ public class BlogController {
         tagBlogService.deleteTagByBlogId(blog.getId());
         String tagIds = request.getParameter("tagIds");
         tagBlogService.saveTagBlogs(tagIds, blog.getId());
-        int i = blogService.updateBlog(blog);
-        if (i==1){
-            redirectAttributes.addFlashAttribute("message","操作成功");
-        }
-        else {
-            redirectAttributes.addFlashAttribute("message","操作失败");
-        }
-
+        blogService.updateBlog(blog);
     }
 
 

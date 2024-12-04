@@ -12,17 +12,12 @@ import org.springframework.stereotype.Repository;
 @CacheConfig(cacheNames = "mapper:like")
 public interface LikeMapper {
 
-    int updateLikeOne(long blogId);
 
     @CacheEvict(key = "#blogId")
-    int updateLike(long blogId, int num);
+    int updateLike(long blogId, long num);
 
     @Cacheable(key = "#blogId")
     Like getLike(long blogId);
-
-    //@CacheEvict(key = "#blogId")
-    //其实是insert
-    int setLike(long blogId);
 
     int deleteLike(long blogId);
 

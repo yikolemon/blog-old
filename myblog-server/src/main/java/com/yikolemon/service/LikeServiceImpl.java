@@ -2,15 +2,15 @@ package com.yikolemon.service;
 
 import com.yikolemon.mapper.LikeMapper;
 import com.yikolemon.pojo.Like;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CacheConfig;
-import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class LikeServiceImpl implements LikeService {
@@ -18,23 +18,32 @@ public class LikeServiceImpl implements LikeService {
     @Resource
     private LikeMapper likeMapper;
 
-    private final ConcurrentHashMap<Long, Like> likeMap = new ConcurrentHashMap<>();
+    private final ConcurrentHashMap<Long, Long> likeMap = new ConcurrentHashMap<>();
+    private final ScheduledExecutorService syncScheduler = Executors.newScheduledThreadPool(1);
+
+    // Constructor: Schedule periodic synchronization task
+    public LikeServiceImpl() {
+        syncScheduler.scheduleAtFixedRate(this::syncLikesToDatabase, 1, 2, TimeUnit.HOURS);
+    }
+
+    @PostConstruct
+    public void init() {
+        loadLikesFromDatabase(); // Load data from database on startup
+    }
 
     @Override
     public Like getLike(long blogId) {
-        likeMap.computeIfAbsent(blogId, key->{
+        Long likeNum = likeMap.computeIfAbsent(blogId, key -> {
             Like dbLike = likeMapper.getLike(blogId);
-            if (dbLike == null){
+            if (dbLike == null) {
                 dbLike = new Like(0, blogId);
             }
-            return dbLike;
+            return dbLike.getLike();
         });
-        return likeMap.get(blogId);
+        return new Like(likeNum, blogId);
     }
 
-
     @Override
-    //@CacheEvict(key = "#blogId")
     public int deleteLike(long blogId) {
         int res = likeMapper.deleteLike(blogId);
         likeMap.remove(blogId);
@@ -42,25 +51,38 @@ public class LikeServiceImpl implements LikeService {
     }
 
     @Override
-    //给Controller使用的
     public int updateLikeOne(long blogId) {
-        //更新
-        likeMap.compute(blogId, (key, val) ->{
-            if (val == null){
+        likeMap.compute(blogId, (key, val) -> {
+            if (val == null) {
                 Like dbLike = likeMapper.getLike(blogId);
-                if (dbLike == null){
+                if (dbLike == null) {
                     dbLike = new Like(0, blogId);
                 }
-                int like = dbLike.getLike();
-                dbLike.setLike(like + 1);
-                return dbLike;
-            }else{
-                int like = val.getLike();
-                val.setLike(like + 1);
-                return val;
+                long likeCount = dbLike.getLike();
+                return dbLike.getLike() + 1;
+            } else {
+                return ++val;
             }
         });
         return 1;
     }
 
+    // Synchronize like data from memory to database
+    public void syncLikesToDatabase() {
+        for (Map.Entry<Long, Long> entry : likeMap.entrySet()) {
+            likeMapper.updateLike(entry.getKey(), entry.getValue()); // Save updated like data to the database
+        }
+        System.out.println("Like data synchronized to database.");
+    }
+
+    // Load initial like data from the database
+    private void loadLikesFromDatabase() {
+        // You can add logic here if you need to pre-load data from the database into the `likeMap`.
+        System.out.println("Initial like data loaded from database.");
+    }
+
+    // Shutdown the scheduler gracefully
+    public void shutdown() {
+        syncScheduler.shutdown();
+    }
 }

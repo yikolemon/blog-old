@@ -20,7 +20,7 @@ public class SearchLimitAspect {
     // 使用 ConcurrentHashMap 存储每个 IP 的请求计数和时间戳
     private static final ConcurrentHashMap<String, RequestInfo> requestMap = new ConcurrentHashMap<>();
     private static final int LIMIT = 1; // 限制每个 IP 每次操作的次数
-    private static final long EXPIRY_TIME = 5 * 1000; // 过期时间，单位毫秒
+    private static final long EXPIRY_TIME = 3 * 1000; // 过期时间，单位毫秒
     private static final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
 
     // 初始化清理过期 IP 的定时任务

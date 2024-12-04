@@ -7,6 +7,7 @@ import com.yikolemon.queue.ArchiveBlog;
 import com.yikolemon.queue.IndexBlog;
 import com.yikolemon.queue.RightTopBlog;
 import com.yikolemon.queue.SearchBlog;
+import com.yikolemon.service.search.BlogFullTextCompoment;
 import com.yikolemon.util.MarkdownUtils;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
@@ -20,7 +21,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 @Service
 @CacheConfig(cacheNames = "blogs")
@@ -30,8 +33,16 @@ public class BlogServiceImpl implements BlogService{
     private BlogMapper blogMapper;
     @Resource
     private LikeService likeService;
+    @Resource
+    private BlogFullTextCompoment blogFullTextCompoment;
 
     private final ConcurrentHashMap<Long, Integer> viewMap = new ConcurrentHashMap<>();
+
+    private final ScheduledExecutorService syncScheduler = Executors.newScheduledThreadPool(1);
+
+    public BlogServiceImpl() {
+        syncScheduler.scheduleAtFixedRate(this::syncViewDataToDatabase, 1, 2, TimeUnit.HOURS);
+    }
 
     @Override
     @Cacheable(key = "'getBlog'+#id")
@@ -53,18 +64,20 @@ public class BlogServiceImpl implements BlogService{
     @Override
     @Transactional
     @CacheEvict(allEntries = true)
-    public int saveBlog(Blog blog) {
+    public void saveBlog(Blog blog) {
         blog.setCreateTime(new Date());
         blog.setUpdateTime(new Date());
         blog.setView(0);
-        return blogMapper.saveBlog(blog);
+        blogMapper.saveBlog(blog);
+        blogFullTextCompoment.update(blog.getId());
     }
 
     @Override
     @CacheEvict(allEntries = true)
-    public int updateBlog(Blog blog) {
+    public void updateBlog(Blog blog) {
         blog.setUpdateTime(new Date());
-        return blogMapper.updateBlog(blog);
+        blogMapper.updateBlog(blog);
+        blogFullTextCompoment.update(blog.getId());
     }
 
     @Override
@@ -72,6 +85,7 @@ public class BlogServiceImpl implements BlogService{
     @CacheEvict(allEntries = true)
     public int deleteBlog(Long id) {
         likeService.deleteLike(id);
+        blogFullTextCompoment.delete(id);
         return blogMapper.deleteBlog(id);
     }
 
@@ -152,6 +166,21 @@ public class BlogServiceImpl implements BlogService{
                 return value + 1;
             }
         });
+    }
+
+    // Synchronize view data from memory to the database
+    public void syncViewDataToDatabase() {
+        for (Map.Entry<Long, Integer> entry : viewMap.entrySet()) {
+            Long blogId = entry.getKey();
+            Integer views = entry.getValue();
+            if (views != null && views > 0) {
+                // Increment views in database
+                blogMapper.updateView(blogId, views);
+                // Reset local count after sync
+                viewMap.remove(blogId);
+            }
+        }
+        System.out.println("View data synchronized to database.");
     }
 
 }

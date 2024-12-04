@@ -22,6 +22,9 @@ import javax.annotation.Resource;
 import java.util.List;
 
 
+/**
+ * @author yikolemon
+ */
 @Controller
 public class IndexController {
 
@@ -32,7 +35,7 @@ public class IndexController {
     private TypeService typeService;
 
     @Resource
-    private  TagService tagService;
+    private TagService tagService;
 
     @Resource
     private UserService userService;
@@ -40,52 +43,51 @@ public class IndexController {
     @Resource
     private LikeService likeService;
 
-    int pageSize= PageUtils.getPageSize();
+    int pageSize = PageUtils.getPageSize();
 
-    int typeSize= TopConfig.getTypeSize();
+    int typeSize = TopConfig.getTypeSize();
 
-    int tagSize=TopConfig.getTagSize();
+    int tagSize = TopConfig.getTagSize();
 
-    int blogSize=TopConfig.getBlogSize();
+    int blogSize = TopConfig.getBlogSize();
 
     @GetMapping("/")
-    public String index(@RequestParam(defaultValue = "1") int pageNum,Model model) {
-        PageHelper.startPage(pageNum,pageSize);
+    public String index(@RequestParam(defaultValue = "1") int pageNum, Model model) {
+        PageHelper.startPage(pageNum, pageSize);
         List<IndexBlog> indexBlogs = blogService.listBlogsIndex();
-        if (indexBlogs.size()==0){
-            pageNum=1;
-            PageHelper.startPage(pageNum,pageSize);
+        if (indexBlogs.size() == 0) {
+            pageNum = 1;
+            PageHelper.startPage(pageNum, pageSize);
             indexBlogs = blogService.listBlogsIndex();
         }
         PageInfo<IndexBlog> pageInfo = new PageInfo<>(indexBlogs);
-        model.addAttribute("pageInfo",pageInfo);
+        model.addAttribute("pageInfo", pageInfo);
         //获取总的记录数的方法  long total = pageInfo.getTotal();
         List<IndexType> typeTop = typeService.getTypeTop(typeSize);
-        model.addAttribute("types",typeTop);
+        model.addAttribute("types", typeTop);
         List<IndexTag> tagTop = tagService.getTagTop(tagSize);
-        model.addAttribute("tags",tagTop);
+        model.addAttribute("tags", tagTop);
         List<RightTopBlog> recommendBlogs = blogService.listRecommendNewBlog(blogSize);
-        model.addAttribute("recommendBlogs",recommendBlogs);
+        model.addAttribute("recommendBlogs", recommendBlogs);
         List<RightTopBlog> viewBlogs = blogService.listMostviewBlog(blogSize);
-        model.addAttribute("viewBlogs",viewBlogs);
+        model.addAttribute("viewBlogs", viewBlogs);
         return "index";
     }
 
 
-
     @GetMapping("/blog/{id}")
     @Transactional
-    public String blog(@PathVariable long id,Model model) {
-        blogService.updateViewOne(id);
+    public String blog(@PathVariable long id, Model model) {
         Blog blog = blogService.getAndConvert(id);
-        model.addAttribute("blog",blog);
+        blogService.updateViewOne(id);
+        model.addAttribute("blog", blog);
         Long userId = blog.getUserId();
         User user = userService.getUser(userId);
-        model.addAttribute("user",user);
+        model.addAttribute("user", user);
         List<Tag> tags = tagService.getTagsByBlogId(blog.getId());
-        model.addAttribute("tags",tags);
+        model.addAttribute("tags", tags);
         Like like = likeService.getLike(id);
-        model.addAttribute("like",like);
+        model.addAttribute("like", like);
         return "blog";
     }
 
