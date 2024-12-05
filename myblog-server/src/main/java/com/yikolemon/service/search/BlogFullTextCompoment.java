@@ -42,12 +42,9 @@ public class BlogFullTextCompoment {
     @Resource
     private BlogMapper blogMapper;
 
-    private static Path path;
-
-    @PostConstruct
-    public void init(){
+    private static Path getPath(){
         String absolutePath = FileUtil.getAbsolutePath("./full-text-index");
-        path = FileSystems.getDefault().getPath(absolutePath);
+        return FileSystems.getDefault().getPath(absolutePath);
     }
 
 
@@ -81,7 +78,7 @@ public class BlogFullTextCompoment {
 
         // 索引目录类,指定索引在硬盘中的位置，我的设置为D盘的indexDir文件夹
         // 创建索引的写出工具类。参数：索引的目录和配置信息
-        try (Directory directory = FSDirectory.open(path);
+        try (Directory directory = FSDirectory.open(getPath());
              IndexWriter indexWriter = new IndexWriter(directory, conf)) {
             // 把文档集合交给IndexWriter
             indexWriter.addDocuments(docList);
@@ -97,7 +94,7 @@ public class BlogFullTextCompoment {
         IndexWriterConfig conf = new IndexWriterConfig(new IKAnalyzer());
         // 创建目录对象
         // 创建索引写出工具
-        try (Directory directory = FSDirectory.open(path);
+        try (Directory directory = FSDirectory.open(getPath());
              IndexWriter writer = new IndexWriter(directory, conf)) {
             // 获取更新的数据，这里只是演示
             Blog blog = blogMapper.getBlog(blogId);
@@ -114,7 +111,9 @@ public class BlogFullTextCompoment {
             // 个人理解：说白了就是为了省空间，如果回表查询，其实无所谓，如果不回表查询，需要展示就要保存，设为YES，无需展示，设为NO即可。
             document.add(new TextField("description", blog.getDescription(), Field.Store.YES));
             document.add(new TextField("content", blog.getContent(), Field.Store.YES));
-            writer.updateDocument(new Term("id", String.valueOf(blog)), document);
+            writer.updateDocument(new Term("id", String.valueOf(blog.getId())), document);
+            // 强制合并索引，确保更新生效
+            writer.forceMerge(1);
             // 提交
             writer.commit();
         } catch (Exception e) {
@@ -127,7 +126,7 @@ public class BlogFullTextCompoment {
         IndexWriterConfig conf = new IndexWriterConfig(new IKAnalyzer());
         // 创建目录对象
         // 创建索引写出工具
-        try (Directory directory = FSDirectory.open(path);
+        try (Directory directory = FSDirectory.open(getPath());
              IndexWriter writer = new IndexWriter(directory, conf)) {
             // 根据词条进行删除
             writer.deleteDocuments(new Term("id", String.valueOf(blogId)));
@@ -140,9 +139,9 @@ public class BlogFullTextCompoment {
 
     public List<Blog> searchAll(String text){
         String[] str = {"title", "description", "content"};
-        try (Directory directory = FSDirectory.open(path)){
-            // 索引读取工具
-            IndexReader reader = DirectoryReader.open(directory);
+        try (Directory directory = FSDirectory.open(getPath());
+             // 索引读取工具
+             IndexReader reader = DirectoryReader.open(directory)){
             // 索引搜索工具
             IndexSearcher searcher = new IndexSearcher(reader);
             // 创建查询解析器,两个参数：默认要查询的字段的名称，分词器
@@ -173,9 +172,9 @@ public class BlogFullTextCompoment {
 
     public PageInfo<Blog> searchPage(int pageNum, String text){
         String[] fields = {"title", "description", "content"};
-        try (Directory directory = FSDirectory.open(path)){
-            // 索引读取工具
-            IndexReader reader = DirectoryReader.open(directory);
+        try (Directory directory = FSDirectory.open(getPath());
+             // 索引读取工具
+             IndexReader reader = DirectoryReader.open(directory)){
             // 索引搜索工具
             IndexSearcher searcher = new IndexSearcher(reader);
             // 创建查询解析器,两个参数：默认要查询的字段的名称，分词器
