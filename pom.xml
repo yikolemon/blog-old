@@ -12,7 +12,7 @@
     </parent>
     
     <groupId>com.yikolemon</groupId>
-    <artifactId>Myblog</artifactId>
+    <artifactId>blog-simplified</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
